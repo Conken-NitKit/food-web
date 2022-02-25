@@ -46,3 +46,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
 ## コミットメッセージ
+
+コミットメッセージは`タイトル: 詳細`の形式
+
+タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
+
+| タイトル | コミット内容             |
+| -------- | ------------------------ |
+| add      | 機能・ファイルの追加など |
+| fix      | バグ修正                 |
+| update   | 機能修正（バグではない） |
+| remove   | ファイルの削除           |
