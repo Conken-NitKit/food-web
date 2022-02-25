@@ -1,5 +1,12 @@
+//https://fwywd.com/tech/next-eslint-prettier より
+
 {
-  "extends": ["next/core-web-vitals", "pretter"],
+  "extends": [
+    "next/core-web-vitals",
+    "pretter",
+    "plugin:import/recommended",
+    "plugin:import/warnings"
+  ],
 
   "rules": {
     "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
