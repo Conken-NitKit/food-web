@@ -43,6 +43,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. 作業用フォルダで`git clone git@github.com:Conken-NitKit/food-web.git`
 
+1. `yarn install`が必要かも知れない
+
 1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
 ## コミットメッセージ
