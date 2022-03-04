@@ -32,3 +32,34 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+---
+
+以下 food-web（仮）の留意事項を追記します。ここに書くべきかはわかりません笑 必要に応じて移動します。
+
+## 環境構築手順
+
+1. 作業用フォルダを用意
+
+1. 作業用フォルダで`git clone git@github.com:Conken-NitKit/food-web.git`
+
+1. `yarn install`が必要かも知れない
+
+1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
+
+1. `yarn add -D eslint-plugin-tailwindcss`
+
+1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
+
+## コミットメッセージ
+
+コミットメッセージは`タイトル: 詳細`の形式
+
+タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
+
+| タイトル | コミット内容             |
+| -------- | ------------------------ |
+| add      | 機能・ファイルの追加など |
+| fix      | バグ修正                 |
+| update   | 機能修正（バグではない） |
+| remove   | ファイル・コードの削除   |
