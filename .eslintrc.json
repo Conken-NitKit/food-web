@@ -1,5 +1,3 @@
-//https://fwywd.com/tech/next-eslint-prettier, https://fwywd.com/tech/next-tailwind より
-
 {
   "extends": [
     "next/core-web-vitals",
