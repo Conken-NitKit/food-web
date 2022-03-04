@@ -57,9 +57,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
 
-| タイトル | コミット内容                   |
-| -------- | ------------------------------ |
-| add      | 機能・ファイルの追加など       |
-| fix      | バグ修正                       |
-| update   | 機能修正（バグではない）       |
-| remove   | ファイル・コメントアウトの削除 |
+| タイトル | コミット内容             |
+| -------- | ------------------------ |
+| add      | 機能・ファイルの追加など |
+| fix      | バグ修正                 |
+| update   | 機能修正（バグではない） |
+| remove   | ファイル・コードの削除   |
