@@ -1,3 +1,3 @@
 export const SideBar = () => {
-  return <div></div>;
+  return <div className=".pl-32/360"></div>;
 };
