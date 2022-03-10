@@ -8,7 +8,13 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        "22.5/100": "22.5%",
+        "5/100": "5%",
+        "23/100": "23%",
+      },
+
+      colors: {
+        "co-sb-b": "#F8714B", //COlor-SideBar-Bottom
+        "co-sb-t": "#F2A649", //...-Top
       },
     },
   },
