@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const SideBar = () => {
@@ -9,37 +10,58 @@ export const SideBar = () => {
       <ul className="mt-13p">
         <li key="home">
           <Link href="/home">
-            <p>ホーム</p>
+            <p>
+              <Image src="" />
+              ホーム
+            </p>
           </Link>
         </li>
         <li key="menu">
           <Link href="/menu">
-            <p>メニュー</p>
+            <p>
+              <Image src="" />
+              メニュー
+            </p>
           </Link>
         </li>
         <li key="order">
           <Link href="/order">
-            <p>注文状況</p>
+            <p>
+              <Image src="" />
+              注文状況
+            </p>
           </Link>
         </li>
         <li key="shift">
           <Link href="/shift">
-            <p>シフト</p>
+            <p>
+              <Image src="" />
+              シフト
+            </p>
           </Link>
         </li>
         <li key="user">
           <Link href="/user">
-            <p>ユーザー管理</p>
+            <p>
+              <Image src="" />
+              ユーザー管理
+            </p>
           </Link>
         </li>
         <li key="audit">
           <Link href="/audit">
-            <p>監査ログ</p>
+            <p>
+              <Image src="" />
+              監査ログ
+            </p>
           </Link>
         </li>
         <li key="settings">
           <Link href="/settings">
-            <p>設定</p>
+            <p>
+              <Image src="" />
+              設定
+            </p>
           </Link>
         </li>
       </ul>
