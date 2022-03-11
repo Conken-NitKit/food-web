@@ -4,7 +4,7 @@ export const SideBar = () => {
       <p className="font-bold text-1.8w text-white leading-1.172">
         コンピュータ研究部
       </p>
-      <ul>
+      <ul className="mt-13p">
         <li key="home">ホーム</li>
         <li key="menu">メニュー</li>
         <li key="order">注文状況</li>
