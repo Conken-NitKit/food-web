@@ -39,6 +39,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="menu">
           <Link href="/menu">
             <p>
@@ -68,6 +69,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="sales">
           <Link href="/sales">
             <p>
@@ -102,6 +104,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="sales">
           <Link href="/sales">
             <p>
@@ -145,6 +148,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="shift">
           <Link href="/shift">
             <p>
@@ -187,6 +191,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="user">
           <Link href="/user">
             <p>
@@ -222,6 +227,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="audit">
           <Link href="/audit">
             <p>
@@ -258,6 +264,7 @@ export const SideBar = () => {
             </p>
           </Link>
         </li>
+
         <li key="settings">
           <Link href="/settings">
             <p>
