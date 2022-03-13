@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Link from "next/link";
+
 import { MenuItem } from ".";
 
 export const SideBar = () => {
+  const [chosenItem, setChosenItem] = useState("home");
+
   const homeIcon = (
     <svg
       width="32"
