@@ -1,74 +1,65 @@
-import Image from "next/image";
 import Link from "next/link";
-
-import home from "../assets/img/home.svg";
+import { MenuItem } from ".";
 
 export const SideBar = () => {
+  const homeIcon = (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5 13.25V28C5 28.2652 5.10536 28.5196 5.29289 28.7071C5.48043 28.8946 5.73478 29 6 29H9H12V20.5C12 20.1022 12.158 19.7206 12.4393 19.4393C12.7206 19.158 13.1022 19 13.5 19H18.5C18.8978 19 19.2794 19.158 19.5607 19.4393C19.842 19.7206 20 20.1022 20 20.5V29H26C26.2652 29 26.5196 28.8946 26.7071 28.7071C26.8946 28.5196 27 28.2652 27 28V13.25"
+        stroke="white"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M30 16L16.6806 3.24893C16.3681 2.9189 15.6375 2.91515 15.3194 3.24893L2 16"
+        stroke="white"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+
+  const menuIcon = (
+    <svg
+      width="36"
+      height="32"
+      viewBox="0 0 36 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M31.537 21.3357V10.6632C31.5365 10.3139 31.4353 9.97076 31.2435 9.66801C31.0518 9.36526 30.7761 9.11342 30.4439 8.93756L19.9875 3.40881C19.4837 3.14234 18.9112 3.00195 18.3282 3.00195C17.7453 3.00195 17.1727 3.14234 16.669 3.40881L6.21395 8.93756C5.88175 9.11342 5.60604 9.36526 5.41426 9.66801C5.22248 9.97076 5.12132 10.3139 5.12085 10.6632V21.3357C5.12108 21.6852 5.22212 22.0286 5.41392 22.3316C5.60571 22.6346 5.88155 22.8866 6.21395 23.0626L16.6703 28.5913C17.1743 28.8574 17.7467 28.9976 18.3296 28.9976C18.9125 28.9976 19.4849 28.8574 19.9889 28.5913L30.4452 23.0626C30.7774 22.8864 31.0529 22.6343 31.2445 22.3313C31.436 22.0284 31.5369 21.6851 31.537 21.3357Z"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5.46484 9.62439L18.3289 16.4994M18.3289 16.4994L31.193 9.62439M18.3289 16.4994V28.9994"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+
   return (
     <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-co-m-f to-co-m-t">
       <p className="font-bold text-1.8w text-white leading-1.172">
         コンピュータ研究部
       </p>
       <ul className="mt-13p">
-        <li key="home">
-          <Link href="/home">
-            <p>
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 13.25V28C5 28.2652 5.10536 28.5196 5.29289 28.7071C5.48043 28.8946 5.73478 29 6 29H9H12V20.5C12 20.1022 12.158 19.7206 12.4393 19.4393C12.7206 19.158 13.1022 19 13.5 19H18.5C18.8978 19 19.2794 19.158 19.5607 19.4393C19.842 19.7206 20 20.1022 20 20.5V29H26C26.2652 29 26.5196 28.8946 26.7071 28.7071C26.8946 28.5196 27 28.2652 27 28V13.25"
-                  stroke="white"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M30 16L16.6806 3.24893C16.3681 2.9189 15.6375 2.91515 15.3194 3.24893L2 16"
-                  stroke="white"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              ホーム
-            </p>
-          </Link>
-        </li>
-
-        <li key="menu">
-          <Link href="/menu">
-            <p>
-              <svg
-                width="36"
-                height="32"
-                viewBox="0 0 36 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31.537 21.3357V10.6632C31.5365 10.3139 31.4353 9.97076 31.2435 9.66801C31.0518 9.36526 30.7761 9.11342 30.4439 8.93756L19.9875 3.40881C19.4837 3.14234 18.9112 3.00195 18.3282 3.00195C17.7453 3.00195 17.1727 3.14234 16.669 3.40881L6.21395 8.93756C5.88175 9.11342 5.60604 9.36526 5.41426 9.66801C5.22248 9.97076 5.12132 10.3139 5.12085 10.6632V21.3357C5.12108 21.6852 5.22212 22.0286 5.41392 22.3316C5.60571 22.6346 5.88155 22.8866 6.21395 23.0626L16.6703 28.5913C17.1743 28.8574 17.7467 28.9976 18.3296 28.9976C18.9125 28.9976 19.4849 28.8574 19.9889 28.5913L30.4452 23.0626C30.7774 22.8864 31.0529 22.6343 31.2445 22.3313C31.436 22.0284 31.5369 21.6851 31.537 21.3357Z"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M5.46484 9.62439L18.3289 16.4994M18.3289 16.4994L31.193 9.62439M18.3289 16.4994V28.9994"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              メニュー
-            </p>
-          </Link>
-        </li>
+        <MenuItem href="home" name="ホーム" />
+        <MenuItem href="menu" name="メニュー" />
 
         <li key="sales">
           <Link href="/sales">
