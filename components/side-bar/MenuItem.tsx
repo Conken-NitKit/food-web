@@ -30,19 +30,19 @@ export const MenuItem = ({ href, name }: Props) => {
   const SETTINGS = "settings";
 
   const icon = //hrefに対応したIconの選定
-    href === "menu" ? (
+    href === MENU ? (
       <MenuIcon chosenItem={chosenItem} />
-    ) : href === "order" ? (
+    ) : href === ORDER ? (
       <OrderIcon chosenItem={chosenItem} />
-    ) : href === "sales" ? (
+    ) : href === SALES ? (
       <SalesIcon chosenItem={chosenItem} />
-    ) : href === "shift" ? (
+    ) : href === SHIFT ? (
       <ShiftIcon chosenItem={chosenItem} />
-    ) : href === "user" ? (
+    ) : href === USER ? (
       <UserIcon chosenItem={chosenItem} />
-    ) : href === "audit" ? (
+    ) : href === AUDIT ? (
       <AuditIcon chosenItem={chosenItem} />
-    ) : href === "settings" ? (
+    ) : href === SETTINGS ? (
       <SettingsIcon chosenItem={chosenItem} />
     ) : (
       <HomeIcon chosenItem={chosenItem} /> //対応するIconがなければHomeIconを表示
