@@ -21,7 +21,7 @@ interface Props {
 export const MenuItem = ({ href, name }: Props) => {
   const { chosenItem, setChosenItem } = useContext(ChosenItemContext);
 
-  const icon =
+  const icon = //hrefに対応したIconの選定
     href === "menu" ? (
       <MenuIcon />
     ) : href === "order" ? (
@@ -37,7 +37,7 @@ export const MenuItem = ({ href, name }: Props) => {
     ) : href === "settings" ? (
       <SettingsIcon />
     ) : (
-      <HomeIcon /> //対応するIconがなければHomeIconを表示する
+      <HomeIcon /> //対応するIconがなければHomeIconを表示
     );
 
   return (
