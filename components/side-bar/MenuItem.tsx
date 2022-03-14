@@ -41,7 +41,12 @@ export const MenuItem = ({ href, name }: Props) => {
     );
 
   return (
-    <li key={href}>
+    <li
+      key={href}
+      onClick={() => {
+        setChosenItem(href);
+      }}
+    >
       <Link href={href}>
         <p>
           {icon}
