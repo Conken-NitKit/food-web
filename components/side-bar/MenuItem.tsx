@@ -12,7 +12,6 @@ import {
   ShiftIcon,
   UserIcon,
 } from "./side-bar-icons";
-import Home from "../../pages";
 
 interface Props {
   href: string;
