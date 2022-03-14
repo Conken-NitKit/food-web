@@ -5,20 +5,16 @@ import { ChosenItemContext } from "./SideBar";
 
 interface Props {
   href: string;
-  icon: () => JSX.Element;
   name: string;
 }
 
-export const MenuItem = ({ href, icon, name }: Props) => {
+export const MenuItem = ({ href, name }: Props) => {
   const { chosenItem, setChosenItem } = useContext(ChosenItemContext);
 
   return (
     <li key={href}>
       <Link href={href}>
-        <p>
-          {icon}
-          {name}
-        </p>
+        <p>{name}</p>
       </Link>
     </li>
   );
