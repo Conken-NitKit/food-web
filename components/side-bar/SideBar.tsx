@@ -3,11 +3,6 @@ import Link from "next/link";
 
 import { MenuItem } from ".";
 
-export const ChosenItemContext = createContext<{
-  chosenItem: string;
-  setChosenItem: Dispatch<SetStateAction<string>>;
-}>({ chosenItem: "", setChosenItem: () => {} });
-
 export const SideBar = () => {
   const [chosenItem, setChosenItem] = useState("home");
 
