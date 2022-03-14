@@ -2,6 +2,16 @@ import { createContext, Dispatch, SetStateAction, useState } from "react";
 import Link from "next/link";
 
 import { MenuItem } from ".";
+import {
+  AuditIcon,
+  HomeIcon,
+  MenuIcon,
+  OrderIcon,
+  SalesIcon,
+  SettingsIcon,
+  ShiftIcon,
+  UserIcon,
+} from "./side-bar-icons";
 
 export const ChosenItemContext = createContext<{
   chosenItem: string;
@@ -20,21 +30,21 @@ export const SideBar = () => {
         <ChosenItemContext.Provider
           value={{ chosenItem: chosenItem, setChosenItem: setChosenItem }}
         >
-          <MenuItem href="home" name="ホーム" />
+          <MenuItem href="home" icon={HomeIcon} name="ホーム" />
 
-          <MenuItem href="menu" name="メニュー" />
+          <MenuItem href="menu" icon={MenuIcon} name="メニュー" />
 
-          <MenuItem href="order" name="注文状況" />
+          <MenuItem href="order" icon={OrderIcon} name="注文状況" />
 
-          <MenuItem href="sales" name="売上解析" />
+          <MenuItem href="sales" icon={SalesIcon} name="売上解析" />
 
-          <MenuItem href="shift" name="シフト" />
+          <MenuItem href="shift" icon={ShiftIcon} name="シフト" />
 
-          <MenuItem href="user" name="ユーザー管理" />
+          <MenuItem href="user" icon={UserIcon} name="ユーザー管理" />
 
-          <MenuItem href="audit" name="監査ログ" />
+          <MenuItem href="audit" icon={AuditIcon} name="監査ログ" />
 
-          <MenuItem href="settings" name="設定" />
+          <MenuItem href="settings" icon={SettingsIcon} name="設定" />
         </ChosenItemContext.Provider>
       </ul>
     </div>
