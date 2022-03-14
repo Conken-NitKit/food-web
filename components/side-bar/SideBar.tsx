@@ -4,7 +4,7 @@ import { MenuItem } from ".";
 import { ChosenItemContext } from "../../contexts";
 
 export const SideBar = () => {
-  const [chosenItem, setChosenItem] = useState("home");
+  const [chosenItem, setChosenItem] = useState("home"); //選択中のMenuItemを保持
 
   return (
     <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-co-m-f to-co-m-t">
