@@ -21,6 +21,14 @@ interface Props {
 export const MenuItem = ({ href, name }: Props) => {
   const { chosenItem, setChosenItem } = useContext(ChosenItemContext);
 
+  const MENU = "menu";
+  const ORDER = "order";
+  const SALES = "Sales";
+  const SHIFT = "shift";
+  const USER = "user";
+  const AUDIT = "audit";
+  const SETTINGS = "settings";
+
   const icon = //hrefに対応したIconの選定
     href === "menu" ? (
       <MenuIcon chosenItem={chosenItem} />
