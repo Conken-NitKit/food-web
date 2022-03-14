@@ -23,21 +23,21 @@ export const MenuItem = ({ href, name }: Props) => {
 
   const icon = //hrefに対応したIconの選定
     href === "menu" ? (
-      <MenuIcon />
+      <MenuIcon chosenItem={chosenItem} />
     ) : href === "order" ? (
-      <OrderIcon />
+      <OrderIcon chosenItem={chosenItem} />
     ) : href === "sales" ? (
-      <SalesIcon />
+      <SalesIcon chosenItem={chosenItem} />
     ) : href === "shift" ? (
-      <ShiftIcon />
+      <ShiftIcon chosenItem={chosenItem} />
     ) : href === "user" ? (
-      <UserIcon />
+      <UserIcon chosenItem={chosenItem} />
     ) : href === "audit" ? (
-      <AuditIcon />
+      <AuditIcon chosenItem={chosenItem} />
     ) : href === "settings" ? (
-      <SettingsIcon />
+      <SettingsIcon chosenItem={chosenItem} />
     ) : (
-      <HomeIcon /> //対応するIconがなければHomeIconを表示
+      <HomeIcon chosenItem={chosenItem} /> //対応するIconがなければHomeIconを表示
     );
 
   return (
