@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Link from "next/link";
 
-import { ChosenItemContext } from "./SideBar";
+import { ChosenItemContext } from "../../contexts";
 import {
   AuditIcon,
   HomeIcon,
