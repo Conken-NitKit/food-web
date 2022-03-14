@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { MenuItem } from ".";
+import { ChosenItemContext } from "../../contexts";
 
 export const SideBar = () => {
   const [chosenItem, setChosenItem] = useState("home");
