@@ -2,16 +2,6 @@ import { createContext, Dispatch, SetStateAction, useState } from "react";
 import Link from "next/link";
 
 import { MenuItem } from ".";
-import {
-  AuditIcon,
-  HomeIcon,
-  MenuIcon,
-  OrderIcon,
-  SalesIcon,
-  SettingsIcon,
-  ShiftIcon,
-  UserIcon,
-} from "./side-bar-icons";
 
 export const ChosenItemContext = createContext<{
   chosenItem: string;
