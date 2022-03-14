@@ -15,8 +15,10 @@ export const MenuItem = ({ href, icon, name }: Props) => {
   return (
     <li key={href}>
       <Link href={href}>
-        {icon}
-        <p>{name}</p>
+        <p>
+          {icon}
+          {name}
+        </p>
       </Link>
     </li>
   );
