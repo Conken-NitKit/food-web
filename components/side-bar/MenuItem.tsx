@@ -2,6 +2,16 @@ import { useContext } from "react";
 import Link from "next/link";
 
 import { ChosenItemContext } from "./SideBar";
+import {
+  AuditIcon,
+  HomeIcon,
+  MenuIcon,
+  OrderIcon,
+  SalesIcon,
+  SettingsIcon,
+  ShiftIcon,
+  UserIcon,
+} from "./side-bar-icons";
 
 interface Props {
   href: string;
