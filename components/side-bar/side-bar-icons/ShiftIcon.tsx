@@ -1,3 +1,7 @@
+interface Props {
+  chosenItem: string;
+}
+
 export const ShiftIcon = () => {
   return (
     <svg
