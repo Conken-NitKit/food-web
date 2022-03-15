@@ -1,3 +1,5 @@
+import { menuItemIconProps } from "../../../interfaces";
+
 interface Props {
   chosenItem: string;
 }
