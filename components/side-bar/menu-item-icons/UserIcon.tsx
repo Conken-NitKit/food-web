@@ -1,6 +1,6 @@
 import { menuItemIconProps } from "../../../interfaces";
 
-export const UserIcon = ({ chosenItem }: menuItemIconProps) => {
+export const UserIcon = ({ item, chosenItem }: menuItemIconProps) => {
   return (
     <svg
       width="36"
