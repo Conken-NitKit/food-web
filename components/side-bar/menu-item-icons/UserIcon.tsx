@@ -4,7 +4,7 @@ interface Props {
   chosenItem: string;
 }
 
-export const UserIcon = ({ chosenItem }: Props) => {
+export const UserIcon = ({ chosenItem }: menuItemIconProps) => {
   return (
     <svg
       width="36"
