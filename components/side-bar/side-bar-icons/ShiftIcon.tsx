@@ -23,9 +23,9 @@ export const ShiftIcon = ({ chosenItem }: Props) => {
         <path
           d="M2.94519 16.7778C3.1511 20.1665 4.70595 23.3717 7.32005 25.7961C13.2885 31.3403 23.1789 31.3722 29.2256 25.8992C35.2638 20.4339 35.2507 11.5744 29.2256 6.10034C23.2929 0.710308 13.7237 0.631934 7.68892 5.86832"
           stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
