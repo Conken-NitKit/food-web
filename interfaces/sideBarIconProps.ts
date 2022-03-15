@@ -1,1 +1,4 @@
-export interface Porps {}
+export interface Porps {
+  item: string;
+  chosenItem: string;
+}
