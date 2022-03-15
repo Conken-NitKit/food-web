@@ -11,7 +11,7 @@ import {
   SettingsIcon,
   ShiftIcon,
   UserIcon,
-} from "./side-bar-icons";
+} from "./menu-item-icons";
 
 interface Props {
   href: string;
