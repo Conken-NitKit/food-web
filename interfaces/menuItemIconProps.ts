@@ -1,4 +1,4 @@
-export interface menuItemIconPorps {
+export interface menuItemIconProps {
   item: string;
   chosenItem: string;
 }
