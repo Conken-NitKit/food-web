@@ -11,8 +11,6 @@ interface Props {
 }
 
 export const MenuItem = ({ href, setChosen, children, name }: Props) => {
-  const { chosen, setChosen } = useContext(ChosenContext);
-
   return (
     <li
       key={href}
