@@ -1,6 +1,8 @@
 import { menuItemIconProps } from "../../../interfaces";
 
 export const AuditIcon = ({ item, chosenItem }: menuItemIconProps) => {
+  const isChose = item === chosenItem;
+
   return (
     <svg
       width="32"
