@@ -22,41 +22,37 @@ export const SideBar = () => {
         コンピュータ研究部
       </p>
       <ul>
-        <ChosenContext.Provider
-          value={{ chosen: chosen, setChosen: setChosen }}
-        >
-          <MenuItem href="home" setChosen={setChosen} name="ホーム">
-            <HomeIcon item="home" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="home" setChosen={setChosen} name="ホーム">
+          <HomeIcon item="home" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="menu" setChosen={setChosen} name="メニュー">
-            <MenuIcon item="menu" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="menu" setChosen={setChosen} name="メニュー">
+          <MenuIcon item="menu" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="order" setChosen={setChosen} name="注文状況">
-            <OrderIcon item="order" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="order" setChosen={setChosen} name="注文状況">
+          <OrderIcon item="order" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="sales" setChosen={setChosen} name="売上解析">
-            <SalesIcon item="sales" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="sales" setChosen={setChosen} name="売上解析">
+          <SalesIcon item="sales" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="shift" setChosen={setChosen} name="シフト">
-            <ShiftIcon item="shift" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="shift" setChosen={setChosen} name="シフト">
+          <ShiftIcon item="shift" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="user" setChosen={setChosen} name="ユーザー管理">
-            <UserIcon item="user" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="user" setChosen={setChosen} name="ユーザー管理">
+          <UserIcon item="user" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="audit" setChosen={setChosen} name="監査ログ">
-            <AuditIcon item="audit" chosenItem={chosen} />
-          </MenuItem>
+        <MenuItem href="audit" setChosen={setChosen} name="監査ログ">
+          <AuditIcon item="audit" chosenItem={chosen} />
+        </MenuItem>
 
-          <MenuItem href="settings" setChosen={setChosen} name="設定">
-            <SettingsIcon item="settings" chosenItem={chosen} />
-          </MenuItem>
-        </ChosenContext.Provider>
+        <MenuItem href="settings" setChosen={setChosen} name="設定">
+          <SettingsIcon item="settings" chosenItem={chosen} />
+        </MenuItem>
       </ul>
     </div>
   );
