@@ -25,6 +25,31 @@ export const HomeIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_12_152"
+          x1="16"
+          y1="13.25"
+          x2="16"
+          y2="29"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_12_152"
+          x1="16"
+          y1="3"
+          x2="16"
+          y2="16"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
