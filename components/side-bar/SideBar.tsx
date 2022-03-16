@@ -2,7 +2,16 @@ import { useState } from "react";
 
 import { MenuItem } from ".";
 import { ChosenItemContext } from "../../contexts";
-import { HomeIcon } from "./menu-item-icons";
+import {
+  AuditIcon,
+  HomeIcon,
+  MenuIcon,
+  OrderIcon,
+  SalesIcon,
+  SettingsIcon,
+  ShiftIcon,
+  UserIcon,
+} from "./menu-item-icons";
 
 export const SideBar = () => {
   const [chosenItem, setChosenItem] = useState("home"); //選択中のMenuItemを保持
@@ -21,31 +30,31 @@ export const SideBar = () => {
           </MenuItem>
 
           <MenuItem href="menu" name="メニュー">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <MenuIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="order" name="注文状況">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <OrderIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="sales" name="売上解析">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <SalesIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="shift" name="シフト">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <ShiftIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="user" name="ユーザー管理">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <UserIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="audit" name="監査ログ">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <AuditIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="settings" name="設定">
-            <HomeIcon item="home" chosenItem={chosenItem} />
+            <SettingsIcon item="home" chosenItem={chosenItem} />
           </MenuItem>
         </ChosenItemContext.Provider>
       </ul>
