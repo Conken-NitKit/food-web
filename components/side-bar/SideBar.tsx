@@ -23,7 +23,7 @@ export const SideBar = () => {
       </p>
       <ul>
         <ChosenContext.Provider
-          value={{ chosenItem: chosen, setChosenItem: setChosen }}
+          value={{ chosen: chosen, setChosen: setChosen }}
         >
           <MenuItem href="home" name="ホーム">
             <HomeIcon item="home" chosenItem={chosen} />
