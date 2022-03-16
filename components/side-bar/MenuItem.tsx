@@ -5,11 +5,11 @@ import { ChosenItemContext } from "../../contexts";
 
 interface Props {
   href: string;
-  icon: ReactNode;
+  children: ReactNode;
   name: string;
 }
 
-export const MenuItem = ({ href, icon, name }: Props) => {
+export const MenuItem = ({ href, children, name }: Props) => {
   const { chosenItem, setChosenItem } = useContext(ChosenItemContext);
 
   return (
@@ -20,7 +20,10 @@ export const MenuItem = ({ href, icon, name }: Props) => {
       }}
     >
       <Link href={href}>
-        <p>{name}</p>
+        <p>
+          {children}
+          {name}
+        </p>
       </Link>
     </li>
   );
