@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { MenuItem } from ".";
-import { ChosenItemContext } from "../../contexts";
+import { ChosenContext } from "../../contexts";
 import {
   AuditIcon,
   HomeIcon,
@@ -22,7 +22,7 @@ export const SideBar = () => {
         コンピュータ研究部
       </p>
       <ul>
-        <ChosenItemContext.Provider
+        <ChosenContext.Provider
           value={{ chosenItem: chosen, setChosenItem: setChosen }}
         >
           <MenuItem href="home" name="ホーム">
@@ -56,7 +56,7 @@ export const SideBar = () => {
           <MenuItem href="settings" name="設定">
             <SettingsIcon item="settings" chosenItem={chosen} />
           </MenuItem>
-        </ChosenItemContext.Provider>
+        </ChosenContext.Provider>
       </ul>
     </div>
   );
