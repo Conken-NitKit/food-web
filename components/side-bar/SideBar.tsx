@@ -30,31 +30,31 @@ export const SideBar = () => {
           </MenuItem>
 
           <MenuItem href="menu" name="メニュー">
-            <MenuIcon item="home" chosenItem={chosenItem} />
+            <MenuIcon item="menu" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="order" name="注文状況">
-            <OrderIcon item="home" chosenItem={chosenItem} />
+            <OrderIcon item="order" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="sales" name="売上解析">
-            <SalesIcon item="home" chosenItem={chosenItem} />
+            <SalesIcon item="sales" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="shift" name="シフト">
-            <ShiftIcon item="home" chosenItem={chosenItem} />
+            <ShiftIcon item="shift" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="user" name="ユーザー管理">
-            <UserIcon item="home" chosenItem={chosenItem} />
+            <UserIcon item="user" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="audit" name="監査ログ">
-            <AuditIcon item="home" chosenItem={chosenItem} />
+            <AuditIcon item="audit" chosenItem={chosenItem} />
           </MenuItem>
 
           <MenuItem href="settings" name="設定">
-            <SettingsIcon item="home" chosenItem={chosenItem} />
+            <SettingsIcon item="settings" chosenItem={chosenItem} />
           </MenuItem>
         </ChosenItemContext.Provider>
       </ul>
