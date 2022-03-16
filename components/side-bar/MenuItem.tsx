@@ -1,7 +1,7 @@
 import { ReactNode, useContext } from "react";
 import Link from "next/link";
 
-import { ChosenItemContext } from "../../contexts";
+import { ChosenContext } from "../../contexts";
 
 interface Props {
   href: string;
@@ -10,13 +10,13 @@ interface Props {
 }
 
 export const MenuItem = ({ href, children, name }: Props) => {
-  const { chosenItem, setChosenItem } = useContext(ChosenItemContext);
+  const { chosen, setChosen } = useContext(ChosenContext);
 
   return (
     <li
       key={href}
       onClick={() => {
-        setChosenItem(href);
+        setChosen(href);
       }}
     >
       <Link href={href}>
