@@ -15,21 +15,21 @@ export const SideBar = () => {
         <ChosenItemContext.Provider
           value={{ chosenItem: chosenItem, setChosenItem: setChosenItem }}
         >
-          <MenuItem href="home" name="ホーム" />
+          <MenuItem href="home" name="ホーム"></MenuItem>
 
-          <MenuItem href="menu" name="メニュー" />
+          <MenuItem href="menu" name="メニュー"></MenuItem>
 
-          <MenuItem href="order" name="注文状況" />
+          <MenuItem href="order" name="注文状況"></MenuItem>
 
-          <MenuItem href="sales" name="売上解析" />
+          <MenuItem href="sales" name="売上解析"></MenuItem>
 
-          <MenuItem href="shift" name="シフト" />
+          <MenuItem href="shift" name="シフト"></MenuItem>
 
-          <MenuItem href="user" name="ユーザー管理" />
+          <MenuItem href="user" name="ユーザー管理"></MenuItem>
 
-          <MenuItem href="audit" name="監査ログ" />
+          <MenuItem href="audit" name="監査ログ"></MenuItem>
 
-          <MenuItem href="settings" name="設定" />
+          <MenuItem href="settings" name="設定"></MenuItem>
         </ChosenItemContext.Provider>
       </ul>
     </div>
