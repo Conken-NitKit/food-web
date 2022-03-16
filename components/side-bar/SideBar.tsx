@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { MenuItem } from ".";
-import { ChosenContext } from "../../contexts";
 import {
   AuditIcon,
   HomeIcon,
