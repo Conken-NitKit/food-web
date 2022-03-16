@@ -1,10 +1,11 @@
-import { ReactNode, useContext } from "react";
+import { Dispatch, ReactNode, SetStateAction, useContext } from "react";
 import Link from "next/link";
 
 import { ChosenContext } from "../../contexts";
 
 interface Props {
   href: string;
+  setChosen: Dispatch<SetStateAction<string>>;
   children: ReactNode;
   name: string;
 }
