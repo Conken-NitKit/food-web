@@ -1,1 +1,1 @@
-export { ChosenItemContext } from "./ChosenContext";
+export { ChosenContext } from "./ChosenContext";
