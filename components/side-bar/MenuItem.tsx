@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import Link from "next/link";
 
 import { ChosenItemContext } from "../../contexts";
@@ -15,6 +15,7 @@ import {
 
 interface Props {
   href: string;
+  icon: ReactNode;
   name: string;
 }
 
