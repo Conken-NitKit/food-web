@@ -9,7 +9,7 @@ interface Props {
   name: string;
 }
 
-export const MenuItem = ({ href, name }: Props) => {
+export const MenuItem = ({ href, icon, name }: Props) => {
   const { chosenItem, setChosenItem } = useContext(ChosenItemContext);
 
   return (
