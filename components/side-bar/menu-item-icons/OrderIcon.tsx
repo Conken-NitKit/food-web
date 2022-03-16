@@ -1,6 +1,8 @@
 import { menuItemIconProps } from "../../../interfaces";
 
 export const OrderIcon = ({ item, chosenItem }: menuItemIconProps) => {
+  const isChose = item === chosenItem;
+
   return (
     <svg
       width="36"
