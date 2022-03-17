@@ -24,6 +24,31 @@ export const MonitoringIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeMiterlimit="10"
         strokeLinecap="round"
       />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_28_1136"
+          x1="13.8181"
+          y1="4"
+          x2="13.8181"
+          y2="23.6363"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_28_1136"
+          x1="24.572"
+          y1="21.1431"
+          x2="24.572"
+          y2="27.9999"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
