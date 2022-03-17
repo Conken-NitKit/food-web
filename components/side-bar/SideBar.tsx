@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { MenuItem } from ".";
 import {
-  AuditIcon,
+  MonitoringIcon,
   HomeIcon,
   MenuIcon,
   OrderIcon,
@@ -46,7 +46,7 @@ export const SideBar = () => {
         </MenuItem>
 
         <MenuItem href="audit" setChosen={setChosen} name="監査ログ">
-          <AuditIcon item="audit" chosenItem={chosen} />
+          <MonitoringIcon item="audit" chosenItem={chosen} />
         </MenuItem>
 
         <MenuItem href="settings" setChosen={setChosen} name="設定">
