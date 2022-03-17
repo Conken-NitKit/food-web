@@ -30,6 +30,42 @@ export const OrderIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_12_300"
+          x1="22.7318"
+          y1="3"
+          x2="22.7318"
+          y2="21"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_12_300"
+          x1="18.3288"
+          y1="17"
+          x2="18.3288"
+          y2="29"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_12_300"
+          x1="22.7315"
+          y1="9"
+          x2="22.7315"
+          y2="14"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
