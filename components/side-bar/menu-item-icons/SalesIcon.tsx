@@ -39,6 +39,20 @@ export const SalesIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_21_653"
+          x1="3.86105"
+          y1="1"
+          x2="3.86105"
+          y2="20"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
