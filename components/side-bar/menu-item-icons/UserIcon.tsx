@@ -31,6 +31,42 @@ export const UserIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_28_920"
+          x1="20.5301"
+          y1="3"
+          x2="20.5301"
+          y2="15"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_28_920"
+          x1="20.5301"
+          y1="19"
+          x2="20.5301"
+          y2="29"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_28_920"
+          x1="6.77129"
+          y1="11"
+          x2="6.77129"
+          y2="18"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
