@@ -18,6 +18,20 @@ export const SettingsIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_28_1073"
+          x1="15.3292"
+          y1="1"
+          x2="15.3292"
+          y2="27.75"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
