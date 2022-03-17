@@ -28,7 +28,41 @@ export const ShiftIcon = ({ item, chosenItem }: menuItemIconProps) => {
           strokeLinejoin="round"
         />
       </g>
+
       <defs>
+        <linearGradient
+          id="paint0_linear_28_799"
+          x1="21.6311"
+          y1="8"
+          x2="21.6311"
+          y2="20"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_28_799"
+          x1="8.69829"
+          y1="2.75"
+          x2="8.69829"
+          y2="7.25"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_28_799"
+          x1="7.43345"
+          y1="6.10064"
+          x2="27.1416"
+          y2="27.7928"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
         <clipPath id="clip0_12_175">
           <rect
             width="35.2215"
