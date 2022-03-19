@@ -27,6 +27,9 @@ module.exports = {
       lineHeight: {
         1.172: "1.172",
       },
+      borderRadius: {
+        "1w": "1vw",
+      },
     },
   },
   plugins: [],
