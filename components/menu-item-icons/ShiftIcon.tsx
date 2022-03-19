@@ -37,8 +37,8 @@ export const ShiftIcon = ({ item, chosenItem }: menuItemIconProps) => {
           y2="20"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F2A649" />
-          <stop offset="1" stop-color="#F8714B" />
+          <stop stopColor="#F2A649" />
+          <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_28_799"
@@ -48,8 +48,8 @@ export const ShiftIcon = ({ item, chosenItem }: menuItemIconProps) => {
           y2="7.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F2A649" />
-          <stop offset="1" stop-color="#F8714B" />
+          <stop stopColor="#F2A649" />
+          <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_28_799"
@@ -59,8 +59,8 @@ export const ShiftIcon = ({ item, chosenItem }: menuItemIconProps) => {
           y2="27.7928"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F2A649" />
-          <stop offset="1" stop-color="#F8714B" />
+          <stop stopColor="#F2A649" />
+          <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <clipPath id="clip0_12_175">
           <rect
