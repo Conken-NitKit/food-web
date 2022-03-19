@@ -34,8 +34,8 @@ export const HomeIcon = ({ item, chosenItem }: menuItemIconProps) => {
           y2="29"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F2A649" />
-          <stop offset="1" stop-color="#F8714B" />
+          <stop stopColor="#F2A649" />
+          <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_12_152"
@@ -45,8 +45,8 @@ export const HomeIcon = ({ item, chosenItem }: menuItemIconProps) => {
           y2="16"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F2A649" />
-          <stop offset="1" stop-color="#F8714B" />
+          <stop stopColor="#F2A649" />
+          <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
       </defs>
     </svg>
