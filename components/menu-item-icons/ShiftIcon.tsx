@@ -28,7 +28,6 @@ export const ShiftIcon = ({ item, chosenItem }: menuItemIconProps) => {
           strokeLinejoin="round"
         />
       </g>
-
       <defs>
         <linearGradient
           id="paint0_linear_28_799"
