@@ -13,33 +13,32 @@ export const SalesIcon = ({ item, chosenItem }: menuItemIconProps) => {
     >
       <path
         d="M2.91943 2V29C2.91943 29.2652 3.0354 29.5196 3.24181 29.7071C3.44823 29.8946 3.72819 30 4.0201 30H33.7382"
-        stroke={isChose ? "url(paint0_linear_21_649)" : "white"}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke={isChose ? "url(#paint0_linear_21_649)" : "white"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <path
-        d="M11.4497 14H8.69798C7.93813 14 7.32214 14.5596 7.32214 15.25V24.75C7.32214 25.4404 7.93813 26 8.69798 26H11.4497C12.2095 26 12.8255 25.4404 12.8255 24.75V15.25C12.8255 14.5596 12.2095 14 11.4497 14Z"
-        stroke={isChose ? "url(paint1_linear_21_649)" : "white"}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M11.4498 14H8.6981C7.93825 14 7.32227 14.5596 7.32227 15.25V24.75C7.32227 25.4404 7.93825 26 8.6981 26H11.4498C12.2096 26 12.8256 25.4404 12.8256 24.75V15.25C12.8256 14.5596 12.2096 14 11.4498 14Z"
+        stroke={isChose ? "url(#paint1_linear_21_649)" : "white"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <path
-        d="M21.3557 11H18.604C17.8441 11 17.2281 11.5596 17.2281 12.25V24.75C17.2281 25.4404 17.8441 26 18.604 26H21.3557C22.1155 26 22.7315 25.4404 22.7315 24.75V12.25C22.7315 11.5596 22.1155 11 21.3557 11Z"
-        stroke={isChose ? "url(paint2_linear_21_649)" : "white"}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M21.356 11H18.6044C17.8445 11 17.2285 11.5596 17.2285 12.25V24.75C17.2285 25.4404 17.8445 26 18.6044 26H21.356C22.1159 26 22.7319 25.4404 22.7319 24.75V12.25C22.7319 11.5596 22.1159 11 21.356 11Z"
+        stroke={isChose ? "url(#paint2_linear_21_649)" : "white"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
       <path
-        d="M31.237 7H28.4853C27.7255 7 27.1095 7.55964 27.1095 8.25V24.75C27.1095 25.4404 27.7255 26 28.4853 26H31.237C31.9969 26 32.6129 25.4404 32.6129 24.75V8.25C32.6129 7.55964 31.9969 7 31.237 7Z"
-        stroke={isChose ? "url(paint3_linear_21_649)" : "white"}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M31.2369 7H28.4852C27.7254 7 27.1094 7.55964 27.1094 8.25V24.75C27.1094 25.4404 27.7254 26 28.4852 26H31.2369C31.9967 26 32.6127 25.4404 32.6127 24.75V8.25C32.6127 7.55964 31.9967 7 31.2369 7Z"
+        stroke={isChose ? "url(#paint3_linear_21_649)" : "white"}
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
-
       <defs>
         <linearGradient
           id="paint0_linear_21_649"
