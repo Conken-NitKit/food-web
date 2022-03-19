@@ -1,8 +1,8 @@
 import { url } from "inspector";
 import { menuItemIconProps } from "../../interfaces";
 
-export const SettingsIcon = ({ item, chosenItem }: menuItemIconProps) => {
-  const isChose = item === chosenItem;
+export const SettingsIcon = ({ item, chosen }: menuItemIconProps) => {
+  const isChose = item === chosen;
 
   return (
     <svg

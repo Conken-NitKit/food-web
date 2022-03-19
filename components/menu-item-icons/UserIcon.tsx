@@ -1,7 +1,7 @@
 import { menuItemIconProps } from "../../interfaces";
 
-export const UserIcon = ({ item, chosenItem }: menuItemIconProps) => {
-  const isChose = item === chosenItem;
+export const UserIcon = ({ item, chosen }: menuItemIconProps) => {
+  const isChose = item === chosen;
 
   return (
     <svg
