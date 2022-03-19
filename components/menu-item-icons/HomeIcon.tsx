@@ -25,7 +25,6 @@ export const HomeIcon = ({ item, chosenItem }: menuItemIconProps) => {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-
       <defs>
         <linearGradient
           id="paint0_linear_12_152"
