@@ -14,6 +14,8 @@ module.exports = {
         "9p": "9%",
         "13p": "13%",
         "23p": "23%",
+
+        "4w": "4vw",
       },
 
       colors: {
@@ -28,6 +30,7 @@ module.exports = {
       lineHeight: {
         1.172: "1.172",
       },
+
       borderRadius: {
         "1w": "1vw",
       },
