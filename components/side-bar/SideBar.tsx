@@ -49,7 +49,7 @@ export const SideBar = () => {
     {
       href: "monitoring",
       name: "モニタリング",
-      icon: <MonitoringIcon item="audit" chosenItem={chosen} />,
+      icon: <MonitoringIcon item="monitoring" chosenItem={chosen} />,
     },
     {
       href: "settings",
