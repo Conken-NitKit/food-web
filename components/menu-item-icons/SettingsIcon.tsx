@@ -28,8 +28,8 @@ export const SettingsIcon = ({ item, chosenItem }: menuItemIconProps) => {
           y2="27.75"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F2A649" />
-          <stop offset="1" stop-color="#F8714B" />
+          <stop stopColor="#F2A649" />
+          <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
       </defs>
     </svg>
