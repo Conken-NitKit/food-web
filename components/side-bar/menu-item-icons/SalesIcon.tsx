@@ -13,7 +13,7 @@ export const SalesIcon = ({ item, chosenItem }: menuItemIconProps) => {
     >
       <path
         d="M2.91943 2V29C2.91943 29.2652 3.0354 29.5196 3.24181 29.7071C3.44823 29.8946 3.72819 30 4.0201 30H33.7382"
-        stroke="white"
+        stroke={isChose ? "url(paint0_linear_21_649)" : "white"}
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -42,11 +42,44 @@ export const SalesIcon = ({ item, chosenItem }: menuItemIconProps) => {
 
       <defs>
         <linearGradient
-          id="paint0_linear_21_653"
-          x1="3.86105"
-          y1="1"
-          x2="3.86105"
-          y2="20"
+          id="paint0_linear_21_649"
+          x1="18.3288"
+          y1="2"
+          x2="18.3288"
+          y2="30"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_21_649"
+          x1="10.0739"
+          y1="14"
+          x2="10.0739"
+          y2="26"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_21_649"
+          x1="19.9802"
+          y1="11"
+          x2="19.9802"
+          y2="26"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#F2A649" />
+          <stop offset="1" stop-color="#F8714B" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_21_649"
+          x1="29.8611"
+          y1="7"
+          x2="29.8611"
+          y2="26"
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="#F2A649" />
