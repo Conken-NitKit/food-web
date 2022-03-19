@@ -15,6 +15,49 @@ import {
 export const SideBar = () => {
   const [chosen, setChosen] = useState("home"); //選択中のMenuItemを保持
 
+  const menuItemsProps = [
+    {
+      href: "home",
+      name: "ホーム",
+      icon: <HomeIcon item="home" chosenItem={chosen} />,
+    },
+    {
+      href: "menu",
+      name: "メニュー",
+      icon: <MenuIcon item="menu" chosenItem={chosen} />,
+    },
+    {
+      href: "order",
+      name: "注文状況",
+      icon: <OrderIcon item="order" chosenItem={chosen} />,
+    },
+    {
+      href: "sales",
+      name: "売上解析",
+      icon: <SalesIcon item="sales" chosenItem={chosen} />,
+    },
+    {
+      href: "shift",
+      name: "シフト",
+      icon: <ShiftIcon item="shift" chosenItem={chosen} />,
+    },
+    {
+      href: "user",
+      name: "ユーザー",
+      icon: <UserIcon item="user" chosenItem={chosen} />,
+    },
+    {
+      href: "monitoring",
+      name: "モニタリング",
+      icon: <MonitoringIcon item="audit" chosenItem={chosen} />,
+    },
+    {
+      href: "settings",
+      name: "設定",
+      icon: <SettingsIcon item="settings" chosenItem={chosen} />,
+    },
+  ];
+
   return (
     <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-co-m-f to-co-m-t">
       <p className="mb-13p font-bold text-1.8w text-white leading-1.172">
