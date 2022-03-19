@@ -25,6 +25,7 @@ module.exports = {
 
       fontSize: {
         "1.8w": "1.8vw",
+        1.25: "1.25vw",
       },
 
       lineHeight: {
