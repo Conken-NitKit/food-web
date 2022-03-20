@@ -1,3 +1,3 @@
-export interface menuItemIconProps {
+export interface MenuItemIconProps {
   chosen: string;
 }
