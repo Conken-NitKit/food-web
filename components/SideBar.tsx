@@ -69,9 +69,6 @@ export const SideBar = ({ chosen }: Props) => {
         {menuItemsProps.map((menuItemProps) => (
           <li
             key={menuItemProps.href}
-            onClick={() => {
-              setChosen(menuItemProps.href);
-            }}
             className={`pl-9p h-4w${
               menuItemProps.href === chosen && " rounded-l-1 bg-white"
             }`}
