@@ -1,7 +1,7 @@
 import { menuItemIconProps } from "../../interfaces";
 
 export const ShiftIcon = ({ chosen }: menuItemIconProps) => {
-  const isChose = item === chosen;
+  const isChose = chosen === "";
 
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
