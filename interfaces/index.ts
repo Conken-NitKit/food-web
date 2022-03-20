@@ -1,1 +1,1 @@
-export type { menuItemIconProps } from "./menuItemIconProps";
+export type { MenuItemIconProps } from "./menuItemIconProps";
