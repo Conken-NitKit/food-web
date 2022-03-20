@@ -59,7 +59,7 @@ export const SideBar = () => {
   ];
 
   return (
-    <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-co-m-f to-co-m-t">
+    <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-m-f to-m-t">
       <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
         コンピュータ研究部
       </p>
@@ -75,7 +75,7 @@ export const SideBar = () => {
             }`}
           >
             <Link href={menuItemProps.href}>
-              <div className="flex items-center h-4w text-white text-1.25">
+              <div className="flex items-center h-4w text-1.25">
                 <div className="mr-6p w-2w h-1/2">{menuItemProps.icon}</div>
                 {menuItemProps.name}
               </div>
