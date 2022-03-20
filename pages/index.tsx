@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SideBar></SideBar>
+      <SideBar chosen="Home"></SideBar>
     </div>
   );
 };
