@@ -1,7 +1,7 @@
 import { menuItemIconProps } from "../../interfaces";
 
 export const OrderIcon = ({ chosen }: menuItemIconProps) => {
-  const isChose = chosen === "";
+  const isChose = chosen === "Order";
 
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
