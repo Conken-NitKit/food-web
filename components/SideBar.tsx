@@ -71,7 +71,7 @@ export const SideBar = () => {
               setChosen(menuItemProps.href);
             }}
             className={`pl-9p h-4w${
-              menuItemProps.href === chosen ? " rounded-l-1 bg-white" : ""
+              menuItemProps.href === chosen && " rounded-l-1 bg-white"
             }`}
           >
             <Link href={menuItemProps.href}>
