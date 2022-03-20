@@ -16,7 +16,7 @@ interface Props {
   chosen: string;
 }
 
-export const SideBar = () => {
+export const SideBar = ({ chosen }: Props) => {
   const [chosen, setChosen] = useState("home"); //選択中のMenuItemを保持
 
   const menuItemsProps = [
