@@ -17,44 +17,44 @@ export const SideBar = () => {
 
   const menuItemsProps = [
     {
-      href: "home",
+      href: "Home",
       name: "ホーム",
-      icon: <HomeIcon item="home" chosen={chosen} />,
+      icon: <HomeIcon item="Home" chosen={chosen} />,
     },
     {
-      href: "menu",
+      href: "Menu",
       name: "メニュー",
-      icon: <MenuIcon item="menu" chosen={chosen} />,
+      icon: <MenuIcon item="Menu" chosen={chosen} />,
     },
     {
-      href: "order",
+      href: "Order",
       name: "注文状況",
-      icon: <OrderIcon item="order" chosen={chosen} />,
+      icon: <OrderIcon item="Order" chosen={chosen} />,
     },
     {
-      href: "sales",
+      href: "Sales",
       name: "売上解析",
-      icon: <SalesIcon item="sales" chosen={chosen} />,
+      icon: <SalesIcon item="Sales" chosen={chosen} />,
     },
     {
-      href: "shift",
+      href: "Shift",
       name: "シフト",
-      icon: <ShiftIcon item="shift" chosen={chosen} />,
+      icon: <ShiftIcon item="Shift" chosen={chosen} />,
     },
     {
-      href: "user",
+      href: "User",
       name: "ユーザー",
-      icon: <UserIcon item="user" chosen={chosen} />,
+      icon: <UserIcon item="User" chosen={chosen} />,
     },
     {
-      href: "monitoring",
+      href: "Monitoring",
       name: "モニタリング",
-      icon: <MonitoringIcon item="monitoring" chosen={chosen} />,
+      icon: <MonitoringIcon item="Monitoring" chosen={chosen} />,
     },
     {
-      href: "settings",
+      href: "Settings",
       name: "設定",
-      icon: <SettingsIcon item="settings" chosen={chosen} />,
+      icon: <SettingsIcon item="Settings" chosen={chosen} />,
     },
   ];
 
