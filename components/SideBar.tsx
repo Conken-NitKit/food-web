@@ -12,7 +12,9 @@ import {
   UserIcon,
 } from "./menu-item-icons";
 
-interface Props {}
+interface Props {
+  chosen: string;
+}
 
 export const SideBar = () => {
   const [chosen, setChosen] = useState("home"); //選択中のMenuItemを保持
