@@ -79,7 +79,7 @@ export const SideBar = ({ chosen }: Props) => {
                 }`}
               >
                 <div className="mr-6p w-2w h-1/2">{menuItemProps.icon}</div>
-                <p className="">{menuItemProps.name}</p>
+                {menuItemProps.name}
               </div>
             </Link>
           </li>
