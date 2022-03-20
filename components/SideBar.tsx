@@ -74,7 +74,7 @@ export const SideBar = ({ chosen }: Props) => {
           >
             <Link href={menuItemProps.href}>
               <div
-                className={`flex items-center h-4w text-1.25 ${
+                className={`flex items-center h-4w text-1.25 font-bold ${
                   menuItemProps.href === chosen ? "text-m" : "text-white" //text-をスコープ外に出すとtailwind.configの更新時に色が反映されない不具合を確認しました。
                 }`}
               >
