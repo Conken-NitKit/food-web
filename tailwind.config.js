@@ -23,6 +23,7 @@ module.exports = {
       colors: {
         "co-m-f": "#F8714B", //COlor-SideBar-From
         "co-m-t": "#F2A649", //...-To
+        m: "#F58B4A",
       },
 
       fontSize: {
