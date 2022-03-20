@@ -1,7 +1,7 @@
 import { url } from "inspector";
 import { menuItemIconProps } from "../../interfaces";
 
-export const SettingsIcon = ({ item, chosen }: menuItemIconProps) => {
+export const SettingsIcon = ({ chosen }: menuItemIconProps) => {
   const isChose = item === chosen;
 
   return (
