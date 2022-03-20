@@ -22,7 +22,7 @@ module.exports = {
 
       colors: {
         "m-f": "#F8714B", //Main-From
-        "co-m-t": "#F2A649", //...-To
+        "m-t": "#F2A649", //...-To
         m: "#F58B4A", //Main
       },
 
