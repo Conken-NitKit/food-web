@@ -2,7 +2,7 @@ import { url } from "inspector";
 import { menuItemIconProps } from "../../interfaces";
 
 export const SettingsIcon = ({ chosen }: menuItemIconProps) => {
-  const isChose = item === chosen;
+  const isChose = chosen === "";
 
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
