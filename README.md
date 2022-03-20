@@ -74,3 +74,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 各ページごとに`ページ名`ブランチを作成する。
 各ページのコンポーネントは`ページ名`ブランチから切る。
+
+## コンポーネント使用法
+
+### SideBar
+
+1. `<SideBar chosen="[ページコンポーネント名]" />`として使用する。
+
+1. 各ページコンポーネントの*最初*に使用する。
+
+1. 各ページコンポーネントのファイル名は`/components/menu-item-icons/...`の各ファイルから Icon を抜いたものを想定している。
