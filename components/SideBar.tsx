@@ -75,10 +75,10 @@ export const SideBar = () => {
             }`}
           >
             <Link href={menuItemProps.href}>
-              <p className="flex items-center h-4w text-white text-1.25">
+              <div className="flex items-center h-4w text-white text-1.25">
                 {menuItemProps.icon}
                 {menuItemProps.name}
-              </p>
+              </div>
             </Link>
           </li>
         ))}
