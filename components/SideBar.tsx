@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const SideBar = ({ chosen }: Props) => {
-  const menuItemsProps = [
+  const MENU_ITEMS_PROPS = [
     {
       href: "Home",
       name: "ホーム",
@@ -65,21 +65,21 @@ export const SideBar = ({ chosen }: Props) => {
         コンピュータ研究部
       </p>
       <ul>
-        {menuItemsProps.map((menuItemProps) => (
+        {MENU_ITEMS_PROPS.map((MENU_ITEM_PROPS) => (
           <li
-            key={menuItemProps.href}
+            key={MENU_ITEM_PROPS.href}
             className={`pl-9p h-4w${
-              menuItemProps.href === chosen && " rounded-l-1 bg-white"
+              MENU_ITEM_PROPS.href === chosen && " rounded-l-1 bg-white"
             }`}
           >
-            <Link href={menuItemProps.href}>
+            <Link href={MENU_ITEM_PROPS.href}>
               <div
                 className={`flex items-center h-4w text-1.25 font-bold ${
-                  menuItemProps.href === chosen ? "text-m" : "text-white" //text-をスコープ外に出すとtailwind.configの更新時に色が反映されない不具合を確認しました。
+                  MENU_ITEM_PROPS.href === chosen ? "text-m" : "text-white" //text-をスコープ外に出すとtailwind.configの更新時に色が反映されない不具合を確認しました。
                 }`}
               >
-                <div className="mr-6p w-2w h-1/2">{menuItemProps.icon}</div>
-                {menuItemProps.name}
+                <div className="mr-6p w-2w h-1/2">{MENU_ITEM_PROPS.icon}</div>
+                {MENU_ITEM_PROPS.name}
               </div>
             </Link>
           </li>
