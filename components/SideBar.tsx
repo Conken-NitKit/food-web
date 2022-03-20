@@ -17,8 +17,6 @@ interface Props {
 }
 
 export const SideBar = ({ chosen }: Props) => {
-  const [chosen, setChosen] = useState("home"); //選択中のMenuItemを保持
-
   const menuItemsProps = [
     {
       href: "Home",
