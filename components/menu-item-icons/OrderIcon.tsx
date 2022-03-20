@@ -4,13 +4,7 @@ export const OrderIcon = ({ item, chosen }: menuItemIconProps) => {
   const isChose = item === chosen;
 
   return (
-    <svg
-      width="36"
-      height="32"
-      viewBox="0 0 36 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M11.7251 21V3L13.9264 4L16.1278 3L18.325 4L20.5518 3L22.7318 4L24.9187 3L27.1152 4L29.3358 3L31.5379 4L33.7385 3V17"
         stroke={isChose ? "url(#paint0_linear_12_300)" : "white"}

@@ -4,13 +4,7 @@ export const UserIcon = ({ item, chosen }: menuItemIconProps) => {
   const isChose = item === chosen;
 
   return (
-    <svg
-      width="36"
-      height="32"
-      viewBox="0 0 36 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M26.5838 9C26.3142 12.3044 23.557 15 20.5301 15C17.5033 15 14.7413 12.305 14.4764 9C14.2013 5.5625 16.8842 3 20.5301 3C24.1761 3 26.859 5.625 26.5838 9Z"
         stroke={isChose ? "url(#paint0_linear_28_920)" : "white"}
