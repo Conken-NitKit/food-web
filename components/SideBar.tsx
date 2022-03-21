@@ -18,42 +18,42 @@ interface Props {
 export const SideBar = ({ chosen }: Props) => {
   const MENU_ITEMS_PROPS = [
     {
-      href: "Home",
+      href: "home",
       name: "ホーム",
       icon: <HomeIcon chosen={chosen} />,
     },
     {
-      href: "Menu",
+      href: "menu",
       name: "メニュー",
       icon: <MenuIcon chosen={chosen} />,
     },
     {
-      href: "Order",
+      href: "order",
       name: "注文状況",
       icon: <OrderIcon chosen={chosen} />,
     },
     {
-      href: "Sales",
+      href: "sales",
       name: "売上解析",
       icon: <SalesIcon chosen={chosen} />,
     },
     {
-      href: "Shift",
+      href: "shift",
       name: "シフト",
       icon: <ShiftIcon chosen={chosen} />,
     },
     {
-      href: "User",
+      href: "user",
       name: "ユーザー",
       icon: <UserIcon chosen={chosen} />,
     },
     {
-      href: "Monitoring",
+      href: "monitoring",
       name: "モニタリング",
       icon: <MonitoringIcon chosen={chosen} />,
     },
     {
-      href: "Settings",
+      href: "settings",
       name: "設定",
       icon: <SettingsIcon chosen={chosen} />,
     },
