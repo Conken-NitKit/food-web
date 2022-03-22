@@ -1,6 +1,6 @@
 import { IconProps } from "../../interfaces";
 
-export const SettingsIcon = ({ chosen }: MenuItemIconProps) => {
+export const SettingsIcon = ({ chosen }: IconProps) => {
   const isChose = chosen === "settings";
 
   return (

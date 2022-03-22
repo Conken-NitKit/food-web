@@ -1,6 +1,6 @@
 import { IconProps } from "../../interfaces";
 
-export const UserIcon = ({ chosen }: MenuItemIconProps) => {
+export const UserIcon = ({ chosen }: IconProps) => {
   const isChose = chosen === "user";
 
   return (

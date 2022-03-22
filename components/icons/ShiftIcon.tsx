@@ -1,6 +1,6 @@
 import { IconProps } from "../../interfaces";
 
-export const ShiftIcon = ({ chosen }: MenuItemIconProps) => {
+export const ShiftIcon = ({ chosen }: IconProps) => {
   const isChose = chosen === "shift";
 
   return (
