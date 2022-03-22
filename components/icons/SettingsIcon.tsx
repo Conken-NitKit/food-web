@@ -1,5 +1,5 @@
 import { url } from "inspector";
-import { MenuItemIconProps } from "../../interfaces";
+import { IconProps } from "../../interfaces";
 
 export const SettingsIcon = ({ chosen }: MenuItemIconProps) => {
   const isChose = chosen === "settings";
