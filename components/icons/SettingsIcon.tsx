@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import { IconProps } from "../../interfaces";
 
 export const SettingsIcon = ({ chosen }: MenuItemIconProps) => {
