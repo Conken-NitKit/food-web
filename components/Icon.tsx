@@ -3,5 +3,6 @@ interface Props {
 }
 
 export const Icon = ({ chosen }: Props) => {
-  return;
+  switch (chosen) {
+  }
 };
