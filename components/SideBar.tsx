@@ -57,21 +57,21 @@ export const SideBar = ({ chosen }: Props) => {
         コンピュータ研究部
       </p>
       <ul>
-        {MENUS_ITEMS.map((menuItemProps) => (
+        {MENUS_ITEMS.map((menuItems) => (
           <li
-            key={menuItemProps.href}
+            key={menuItems.href}
             className={`pl-9p h-4w${
-              menuItemProps.href === chosen && " rounded-l-1 bg-white"
+              menuItems.href === chosen && " rounded-l-1 bg-white"
             }`}
           >
-            <Link href={menuItemProps.href}>
+            <Link href={menuItems.href}>
               <div
                 className={`flex items-center h-4w text-1.25 font-bold ${
-                  menuItemProps.href === chosen ? "text-m" : "text-white" //text-をスコープ外に出すとtailwind.configの更新時に色が反映されない不具合を確認しました。
+                  menuItems.href === chosen ? "text-m" : "text-white" //text-をスコープ外に出すとtailwind.configの更新時に色が反映されない不具合を確認しました。
                 }`}
               >
                 <div className="mr-6p w-2w h-1/2"></div>
-                {menuItemProps.name}
+                {menuItems.name}
               </div>
             </Link>
           </li>
