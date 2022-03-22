@@ -1,6 +1,6 @@
 import { IconProps } from "../../interfaces";
 
-export const MonitoringIcon = ({ chosen }: IconProps) => {
+export const MonitoringIcon = ({ isChose }: IconProps) => {
   return (
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
