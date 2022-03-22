@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const SideBar = ({ chosen }: Props) => {
-  const MENU_ITEMS_PROPS = [
+  const MENUS_ITEMS = [
     {
       href: "home",
       name: "ホーム",
@@ -57,7 +57,7 @@ export const SideBar = ({ chosen }: Props) => {
         コンピュータ研究部
       </p>
       <ul>
-        {MENU_ITEMS_PROPS.map((menuItemProps) => (
+        {MENUS_ITEMS.map((menuItemProps) => (
           <li
             key={menuItemProps.href}
             className={`pl-9p h-4w${
