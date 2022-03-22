@@ -20,42 +20,34 @@ export const SideBar = ({ chosen }: Props) => {
     {
       href: "home",
       name: "ホーム",
-      icon: <HomeIcon chosen={chosen} />,
     },
     {
       href: "menu",
       name: "メニュー",
-      icon: <MenuIcon chosen={chosen} />,
     },
     {
       href: "order",
       name: "注文状況",
-      icon: <OrderIcon chosen={chosen} />,
     },
     {
       href: "sales",
       name: "売上解析",
-      icon: <SalesIcon chosen={chosen} />,
     },
     {
       href: "shift",
       name: "シフト",
-      icon: <ShiftIcon chosen={chosen} />,
     },
     {
       href: "user",
       name: "ユーザー",
-      icon: <UserIcon chosen={chosen} />,
     },
     {
       href: "monitoring",
       name: "モニタリング",
-      icon: <MonitoringIcon chosen={chosen} />,
     },
     {
       href: "settings",
       name: "設定",
-      icon: <SettingsIcon chosen={chosen} />,
     },
   ];
 
