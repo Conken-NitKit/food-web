@@ -1,3 +1,1 @@
-export interface IconProps {
-  chosen: string;
-}
+export interface IconProps {}
