@@ -11,46 +11,46 @@ import {
   UserIcon,
 } from "./icons";
 
+const MENUS_ITEMS = [
+  {
+    href: "home",
+    name: "ホーム",
+  },
+  {
+    href: "menu",
+    name: "メニュー",
+  },
+  {
+    href: "order",
+    name: "注文状況",
+  },
+  {
+    href: "sales",
+    name: "売上解析",
+  },
+  {
+    href: "shift",
+    name: "シフト",
+  },
+  {
+    href: "user",
+    name: "ユーザー",
+  },
+  {
+    href: "monitoring",
+    name: "モニタリング",
+  },
+  {
+    href: "settings",
+    name: "設定",
+  },
+];
+
 interface Props {
   chosen: string;
 }
 
 export const SideBar = ({ chosen }: Props) => {
-  const MENUS_ITEMS = [
-    {
-      href: "home",
-      name: "ホーム",
-    },
-    {
-      href: "menu",
-      name: "メニュー",
-    },
-    {
-      href: "order",
-      name: "注文状況",
-    },
-    {
-      href: "sales",
-      name: "売上解析",
-    },
-    {
-      href: "shift",
-      name: "シフト",
-    },
-    {
-      href: "user",
-      name: "ユーザー",
-    },
-    {
-      href: "monitoring",
-      name: "モニタリング",
-    },
-    {
-      href: "settings",
-      name: "設定",
-    },
-  ];
-
   return (
     <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-m-f to-m-t">
       <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
