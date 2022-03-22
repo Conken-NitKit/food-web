@@ -1,8 +1,6 @@
 import { IconProps } from "../../interfaces";
 
 export const OrderIcon = ({ chosen }: IconProps) => {
-  const isChose = chosen === "order";
-
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
