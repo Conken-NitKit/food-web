@@ -2,6 +2,6 @@ interface Props {
   chosen: string;
 }
 
-export const Icon = () => {
+export const Icon = ({ chosen }: Props) => {
   return;
 };
