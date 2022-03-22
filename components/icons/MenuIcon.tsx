@@ -1,6 +1,6 @@
 import { IconProps } from "../../interfaces";
 
-export const MenuIcon = ({ chosen }: IconProps) => {
+export const MenuIcon = ({ isChose }: IconProps) => {
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path

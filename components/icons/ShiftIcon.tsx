@@ -1,6 +1,6 @@
 import { IconProps } from "../../interfaces";
 
-export const ShiftIcon = ({ chosen }: IconProps) => {
+export const ShiftIcon = ({ isChose }: IconProps) => {
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_12_175)">
