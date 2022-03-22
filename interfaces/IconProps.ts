@@ -1,1 +1,3 @@
-export interface IconProps {}
+export interface IconProps {
+  isChose: boolean;
+}
