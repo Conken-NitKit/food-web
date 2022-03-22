@@ -9,7 +9,7 @@ import {
   SettingsIcon,
   ShiftIcon,
   UserIcon,
-} from "./menu-icons";
+} from "./icons";
 
 interface Props {
   chosen: string;
