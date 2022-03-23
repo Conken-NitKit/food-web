@@ -1,4 +1,13 @@
-import { HomeIcon } from "./icons";
+import {
+  HomeIcon,
+  MenuIcon,
+  MonitoringIcon,
+  OrderIcon,
+  SalesIcon,
+  SettingsIcon,
+  ShiftIcon,
+  UserIcon,
+} from "./icons";
 
 interface Props {
   chosen: string;
@@ -10,18 +19,18 @@ export const Icon = ({ chosen, isChose }: Props) => {
     case "home":
       return <HomeIcon isChose={isChose} />;
     case "menu":
-      return <HomeIcon isChose={isChose} />;
+      return <MenuIcon isChose={isChose} />;
     case "monitoring":
-      return <HomeIcon isChose={isChose} />;
+      return <MonitoringIcon isChose={isChose} />;
     case "order":
-      return <HomeIcon isChose={isChose} />;
+      return <OrderIcon isChose={isChose} />;
     case "sales":
-      return <HomeIcon isChose={isChose} />;
+      return <SalesIcon isChose={isChose} />;
     case "settings":
-      return <HomeIcon isChose={isChose} />;
+      return <SettingsIcon isChose={isChose} />;
     case "shift":
-      return <HomeIcon isChose={isChose} />;
+      return <ShiftIcon isChose={isChose} />;
     case "user":
-      return <HomeIcon isChose={isChose} />;
+      return <UserIcon isChose={isChose} />;
   }
 };
