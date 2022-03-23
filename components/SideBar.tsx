@@ -61,10 +61,7 @@ export const SideBar = ({ chosen }: Props) => {
                 }`}
               >
                 <div className="mr-6p w-2w h-1/2">
-                  <Icon
-                    chosen={menuItems.id}
-                    isChose={menuItems.id === chosen}
-                  />
+                  <Icon id={menuItems.id} isChose={menuItems.id === chosen} />
                 </div>
                 {menuItems.name}
               </div>
