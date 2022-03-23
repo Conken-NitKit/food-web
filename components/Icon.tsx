@@ -10,7 +10,7 @@ import {
 } from "./icons";
 
 interface Props {
-  chosen: string;
+  id: string;
   isChose: boolean;
 }
 
