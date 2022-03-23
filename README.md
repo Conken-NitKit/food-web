@@ -83,4 +83,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. 各ページコンポーネントの*最初*に使用する。
 
-1. 各ページコンポーネントのファイル名は`/components/menu-item-icons/...`の各ファイルから Icon を抜いたものを想定している。
+1. 各ページコンポーネントのファイル名は`/components/SideBar.tsx`の`MENUS_ITEMS`の各 id を想定している。
