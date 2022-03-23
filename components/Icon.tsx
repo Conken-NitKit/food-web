@@ -16,8 +16,6 @@ interface Props {
 
 export const Icon = ({ chosen, isChose }: Props) => {
   switch (chosen) {
-    case "home":
-      return <HomeIcon isChose={isChose} />;
     case "menu":
       return <MenuIcon isChose={isChose} />;
     case "monitoring":
@@ -32,5 +30,7 @@ export const Icon = ({ chosen, isChose }: Props) => {
       return <ShiftIcon isChose={isChose} />;
     case "user":
       return <UserIcon isChose={isChose} />;
+    default:
+      return <HomeIcon isChose={isChose} />;
   }
 };
