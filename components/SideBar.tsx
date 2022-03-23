@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from ".";
 
 import {
   MonitoringIcon,
@@ -70,7 +71,12 @@ export const SideBar = ({ chosen }: Props) => {
                   menuItems.id === chosen ? "text-m" : "text-white" //text-をスコープ外に出すとtailwind.configの更新時に色が反映されない不具合を確認しました。
                 }`}
               >
-                <div className="mr-6p w-2w h-1/2"></div>
+                <div className="mr-6p w-2w h-1/2">
+                  <Icon
+                    chosen={menuItems.id}
+                    isChose={menuItems.id === chosen}
+                  />
+                </div>
                 {menuItems.name}
               </div>
             </Link>
