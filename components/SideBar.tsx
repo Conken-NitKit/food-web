@@ -1,17 +1,6 @@
 import Link from "next/link";
 import { Icon } from ".";
 
-import {
-  MonitoringIcon,
-  HomeIcon,
-  MenuIcon,
-  OrderIcon,
-  SalesIcon,
-  SettingsIcon,
-  ShiftIcon,
-  UserIcon,
-} from "./icons";
-
 const MENUS_ITEMS = [
   {
     id: "home",
