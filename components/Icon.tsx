@@ -1,3 +1,5 @@
+import { HomeIcon } from "./icons";
+
 interface Props {
   chosen: string;
   isChose: boolean;
@@ -6,20 +8,20 @@ interface Props {
 export const Icon = ({ chosen, isChose }: Props) => {
   switch (chosen) {
     case "home":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "menu":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "monitoring":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "order":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "sales":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "settings":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "shift":
-      return;
+      return <HomeIcon isChose={isChose} />;
     case "user":
-      return;
+      return <HomeIcon isChose={isChose} />;
   }
 };
