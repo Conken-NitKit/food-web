@@ -14,8 +14,8 @@ interface Props {
   isChose: boolean;
 }
 
-export const Icon = ({ chosen, isChose }: Props) => {
-  switch (chosen) {
+export const Icon = ({ id, isChose }: Props) => {
+  switch (id) {
     case "menu":
       return <MenuIcon isChose={isChose} />;
     case "monitoring":
