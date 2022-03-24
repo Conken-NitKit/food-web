@@ -51,7 +51,7 @@ export const SideBar = ({ chosen }: Props) => {
         {MENUS_ITEMS.map((menuItems) => (
           <li
             key={menuItems.id}
-            className={classNames("mt-7p pl-9p h-4w", {
+            className={classNames("mt-7p first:mt-0 pl-9p h-4w", {
               "rounded-l-1 bg-white": menuItems.id === chosen,
             })}
           >
