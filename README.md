@@ -51,6 +51,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. `yarn add -D eslint-plugin-tailwindcss`
 
+1. `yarn add classnames`
+
 1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
 ## コミットメッセージ
