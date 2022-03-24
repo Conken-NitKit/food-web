@@ -43,7 +43,7 @@ interface Props {
 
 export const SideBar = ({ chosen }: Props) => {
   return (
-    <div className="pt-13p pl-9p w-full h-full bg-gradient-to-t from-theme-f to-theme-t">
+    <div className="pt-13p pl-9p w-full h-full bg-gradient-to-t from-theme-start to-theme-end">
       <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
         コンピュータ研究部
       </p>
