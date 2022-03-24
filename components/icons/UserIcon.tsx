@@ -1,3 +1,4 @@
+import { COLORS } from "../../constants";
 import { IconProps } from "../../interfaces";
 
 export const UserIcon = ({ isChose }: IconProps) => {
@@ -32,7 +33,7 @@ export const UserIcon = ({ isChose }: IconProps) => {
           y2="15"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
@@ -43,7 +44,7 @@ export const UserIcon = ({ isChose }: IconProps) => {
           y2="29"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
@@ -54,7 +55,7 @@ export const UserIcon = ({ isChose }: IconProps) => {
           y2="18"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
       </defs>

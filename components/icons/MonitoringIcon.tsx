@@ -1,3 +1,4 @@
+import { COLORS } from "../../constants";
 import { IconProps } from "../../interfaces";
 
 export const MonitoringIcon = ({ isChose }: IconProps) => {
@@ -25,7 +26,7 @@ export const MonitoringIcon = ({ isChose }: IconProps) => {
           y2="23.6363"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
@@ -36,7 +37,7 @@ export const MonitoringIcon = ({ isChose }: IconProps) => {
           y2="27.9999"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
       </defs>
