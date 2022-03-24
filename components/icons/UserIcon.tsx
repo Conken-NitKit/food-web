@@ -34,7 +34,7 @@ export const UserIcon = ({ isChose }: IconProps) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor={COLORS.THEME_START} />
-          <stop offset="1" stopColor="#F8714B" />
+          <stop offset="1" stopColor={COLORS.THEME_END} />
         </linearGradient>
         <linearGradient
           id="paint1_linear_28_920"
@@ -45,7 +45,7 @@ export const UserIcon = ({ isChose }: IconProps) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor={COLORS.THEME_START} />
-          <stop offset="1" stopColor="#F8714B" />
+          <stop offset="1" stopColor={COLORS.THEME_END} />
         </linearGradient>
         <linearGradient
           id="paint2_linear_28_920"
@@ -56,7 +56,7 @@ export const UserIcon = ({ isChose }: IconProps) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor={COLORS.THEME_START} />
-          <stop offset="1" stopColor="#F8714B" />
+          <stop offset="1" stopColor={COLORS.THEME_END} />
         </linearGradient>
       </defs>
     </svg>

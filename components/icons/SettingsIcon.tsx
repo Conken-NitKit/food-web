@@ -21,7 +21,7 @@ export const SettingsIcon = ({ isChose }: IconProps) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor={COLORS.THEME_START} />
-          <stop offset="1" stopColor="#F8714B" />
+          <stop offset="1" stopColor={COLORS.THEME_END} />
         </linearGradient>
       </defs>
     </svg>

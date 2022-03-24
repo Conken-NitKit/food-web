@@ -28,7 +28,7 @@ export const MenuIcon = ({ isChose }: IconProps) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor={COLORS.THEME_START} />
-          <stop offset="1" stopColor="#F8714B" />
+          <stop offset="1" stopColor={COLORS.THEME_END} />
         </linearGradient>
         <linearGradient
           id="paint1_linear_12_250"
@@ -39,7 +39,7 @@ export const MenuIcon = ({ isChose }: IconProps) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor={COLORS.THEME_START} />
-          <stop offset="1" stopColor="#F8714B" />
+          <stop offset="1" stopColor={COLORS.THEME_END} />
         </linearGradient>
       </defs>
     </svg>
