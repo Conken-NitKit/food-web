@@ -41,7 +41,7 @@ interface Props {
   chosen: string;
 }
 
-export const SideBar = ({ chosen }: Props) => {
+export const MenuBar = ({ chosen }: Props) => {
   return (
     <div className="pt-13p pl-9p w-full h-full bg-gradient-to-t from-theme-start to-theme-end">
       <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
