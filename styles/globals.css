@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.text-theme {
+  background: linear-gradient(180deg, #f2a649 0%, #f8714b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
