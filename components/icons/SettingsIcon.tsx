@@ -1,3 +1,4 @@
+import { COLORS } from "../../constants";
 import { IconProps } from "../../interfaces";
 
 export const SettingsIcon = ({ isChose }: IconProps) => {
@@ -19,7 +20,7 @@ export const SettingsIcon = ({ isChose }: IconProps) => {
           y2="27.75"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
       </defs>

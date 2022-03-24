@@ -1,3 +1,4 @@
+import { COLORS } from "../../constants";
 import { IconProps } from "../../interfaces";
 
 export const ShiftIcon = ({ isChose }: IconProps) => {
@@ -29,7 +30,7 @@ export const ShiftIcon = ({ isChose }: IconProps) => {
           y2="20"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
@@ -40,7 +41,7 @@ export const ShiftIcon = ({ isChose }: IconProps) => {
           y2="7.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <linearGradient
@@ -51,7 +52,7 @@ export const ShiftIcon = ({ isChose }: IconProps) => {
           y2="27.7928"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F2A649" />
+          <stop stopColor={COLORS.THEME_START} />
           <stop offset="1" stopColor="#F8714B" />
         </linearGradient>
         <clipPath id="clip0_12_175">
