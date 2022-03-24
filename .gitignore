@@ -35,3 +35,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# SideBar開発でindexにSideBarを仮置きするため
+pages/index.tsx
