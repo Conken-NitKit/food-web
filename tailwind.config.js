@@ -20,7 +20,7 @@ module.exports = {
 
       colors: {
         "theme-start": "#F8714B",
-        "theme-t": "#F2A649", //...-To
+        "theme-end": "#F2A649", //...-To
         theme: "#F58B4A", //Main
       },
 
