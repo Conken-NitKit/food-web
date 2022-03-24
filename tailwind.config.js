@@ -19,7 +19,7 @@ module.exports = {
       },
 
       colors: {
-        "theme-f": "#F8714B", //Main-From
+        "theme-start": "#F8714B",
         "theme-t": "#F2A649", //...-To
         theme: "#F58B4A", //Main
       },
