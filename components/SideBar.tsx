@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Link from "next/link";
 import { Icon } from ".";
 
@@ -50,9 +51,9 @@ export const SideBar = ({ chosen }: Props) => {
         {MENUS_ITEMS.map((menuItems) => (
           <li
             key={menuItems.id}
-            className={`pl-9p h-4w${
-              menuItems.id === chosen && " rounded-l-1 bg-white"
-            }`}
+            className={classNames("pl-9p h-4w", {
+              "rounded-l-1 bg-white": menuItems.id === chosen,
+            })}
           >
             <Link href={menuItems.id}>
               <div
