@@ -43,11 +43,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. 作業用フォルダで`git clone git@github.com:Conken-NitKit/food-web.git`
 
+1. `cd food-web`
+
 1. `yarn install`が必要かも知れない
 
 1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
 
 1. `yarn add -D eslint-plugin-tailwindcss`
+
+1. `yarn add classnames`
 
 1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
@@ -57,9 +61,28 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
 
-| タイトル | コミット内容             |
-| -------- | ------------------------ |
-| add      | 機能・ファイルの追加など |
-| fix      | バグ修正                 |
-| update   | 機能修正（バグではない） |
-| remove   | ファイル・コードの削除   |
+| タイトル | コミット内容               |
+| -------- | -------------------------- |
+| add      | 機能・ファイルの追加等     |
+| fix      | バグ修正等                 |
+| update   | 機能修正（バグではない）等 |
+| rename   | ファイル・変数の改名等     |
+| move     | ファイル・フォルダの移動   |
+| remove   | ファイル・コードの削除等   |
+
+## ブランチ命名法
+
+ブランチ名は`ページ名-コンポーネント名`の形式
+
+各ページごとに`ページ名`ブランチを作成する。
+各ページのコンポーネントは`ページ名`ブランチから切る。
+
+## コンポーネント使用法
+
+### SideBar
+
+1. `<SideBar chosen="[ページコンポーネント名]" />`として使用する。
+
+1. 各ページコンポーネントの*最初*に使用する。
+
+1. 各ページコンポーネントのファイル名は`/components/SideBar.tsx`の`MENUS_ITEMS`の各 id を想定している。
