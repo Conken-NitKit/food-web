@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { MenuBar } from "../components";
+import { Layout } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="ml-5p w-23p h-full">
-        <MenuBar chosen="home" />
+        <Layout chosen="home" />
       </div>
     </div>
   );
