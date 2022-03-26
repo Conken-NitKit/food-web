@@ -79,10 +79,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## コンポーネント使用法
 
-### SideBar
+### Layout
 
-1. `<SideBar chosen="[ページコンポーネント名]" />`として使用する。
+1. `<Layout chosen="[ページコンポーネント名]">{children}<Layout />`として使用する。
 
-1. 各ページコンポーネントの*最初*に使用する。
+1. 基本的に全てのページコンポーネントで使用する。
 
-1. 各ページコンポーネントのファイル名は`/components/SideBar.tsx`の`MENUS_ITEMS`の各 id を想定している。
+1. 各ページコンポーネントのファイル名は`/components/Layout.tsx`の`MENUS_ITEMS`の各 id を想定している。
