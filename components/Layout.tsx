@@ -76,6 +76,7 @@ export const Layout = ({ chosen, children }: Props) => {
           </li>
         ))}
       </ul>
+      {children}
     </div>
   );
 };
