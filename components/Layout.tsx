@@ -43,7 +43,7 @@ interface Props {
 
 export const Layout = ({ chosen }: Props) => {
   return (
-    <div className="pt-13p pl-9p w-full h-full bg-gradient-to-t from-theme-start to-theme-end">
+    <div className="ml-5p pt-13p pl-9p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
       <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
         コンピュータ研究部
       </p>
