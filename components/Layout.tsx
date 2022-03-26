@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
+import { ReactNode } from "react";
 import { Icon } from ".";
 
 const MENUS_ITEMS = [
@@ -39,6 +40,7 @@ const MENUS_ITEMS = [
 
 interface Props {
   chosen: string;
+  children: ReactNode;
 }
 
 export const Layout = ({ chosen }: Props) => {
