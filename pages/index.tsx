@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { MenuBar } from "../components";
+import { Layout } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +12,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="ml-5p w-23p h-full">
-        <MenuBar chosen="home" />
-      </div>
+      <Layout chosen="home">
+        <></>
+      </Layout>
     </div>
   );
 };
