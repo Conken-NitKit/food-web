@@ -12,9 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="ml-5p w-23p h-full">
-        <Layout chosen="home" />
-      </div>
+      <Layout chosen="home" />
     </div>
   );
 };
