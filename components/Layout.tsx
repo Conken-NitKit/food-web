@@ -1,5 +1,7 @@
-import classNames from "classnames";
+import { ReactNode } from "react";
 import Link from "next/link";
+import classNames from "classnames";
+
 import { Icon } from ".";
 
 const MENUS_ITEMS = [
@@ -39,11 +41,12 @@ const MENUS_ITEMS = [
 
 interface Props {
   chosen: string;
+  children: ReactNode;
 }
 
-export const MenuBar = ({ chosen }: Props) => {
+export const Layout = ({ chosen, children }: Props) => {
   return (
-    <div className="pt-13p pl-9p w-full h-full bg-gradient-to-t from-theme-start to-theme-end">
+    <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
       <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
         コンピュータ研究部
       </p>
@@ -51,9 +54,12 @@ export const MenuBar = ({ chosen }: Props) => {
         {MENUS_ITEMS.map((menuItems) => (
           <li
             key={menuItems.id}
-            className={classNames("mt-7p first:mt-0 pl-9p h-4w", {
-              "rounded-l-1 bg-white": menuItems.id === chosen,
-            })}
+            className={classNames(
+              "mt-7p first:mt-0 pl-9p h-4w cursor-pointer",
+              {
+                "rounded-l-1 bg-white": menuItems.id === chosen,
+              }
+            )}
           >
             <Link href={menuItems.id}>
               <div
@@ -61,7 +67,7 @@ export const MenuBar = ({ chosen }: Props) => {
                   "flex items-center h-4w text-1.25 font-bold",
                   menuItems.id === chosen
                     ? "text-theme-sub text-theme"
-                    : "text-white" //"text-"を演算から外すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
+                    : "text-white" //"error: text-"を演算から外すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
                 )}
               >
                 <div className="mr-6p w-2w h-1/2">
@@ -73,6 +79,7 @@ export const MenuBar = ({ chosen }: Props) => {
           </li>
         ))}
       </ul>
+      {children}
     </div>
   );
 };
