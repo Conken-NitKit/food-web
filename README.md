@@ -74,7 +74,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## ブランチ命名法
 
-ブランチ名は`ページ名-コンポーネント名`の形式
+ブランチ名は`ページ名/コンポーネント名`の形式
 
 各ページごとに`ページ名`ブランチを作成する。
 各ページのコンポーネントは`ページ名`ブランチから切る。
