@@ -55,6 +55,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
+1. `food-web/.env`を作成。内容は平田に申請。
+
 ## コミットメッセージ
 
 コミットメッセージは`タイトル: 詳細`の形式
