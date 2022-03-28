@@ -78,6 +78,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 各ページごとに`ページ名`ブランチを作成する。
 各ページのコンポーネントは`ページ名`ブランチから切る。
+各ページ毎に`ページ名/reademe`ブランチを切る。
 
 ## コンポーネント使用法
 
