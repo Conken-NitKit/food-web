@@ -39,13 +39,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## 環境構築手順
 
-1. 作業用フォルダを用意
+1. 作業用フォルダを用意。
 
 1. 作業用フォルダで`git clone git@github.com:Conken-NitKit/food-web.git`
 
 1. `cd food-web`
 
-1. `yarn install`が必要かも知れない
+1. `yarn install`が必要かも知れない。
 
 1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
 
@@ -53,7 +53,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. `yarn add classnames`
 
-1. VScode の拡張機能`ESlint`をインストール [参考](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
+1. VScode の拡張機能`ESlint`をインストール。 [[参考]](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
+
+1. `food-web/.env`を作成。内容は[平田海輝](https://github.com/Umiteru2004)に申請。
 
 ## コミットメッセージ
 
@@ -72,10 +74,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## ブランチ命名法
 
-ブランチ名は`ページ名-コンポーネント名`の形式
+ブランチ名は`ページ名/コンポーネント名`の形式
 
 各ページごとに`ページ名`ブランチを作成する。
 各ページのコンポーネントは`ページ名`ブランチから切る。
+各ページ毎に`ページ名/reademe`ブランチを切る。
 
 ## コンポーネント使用法
 
