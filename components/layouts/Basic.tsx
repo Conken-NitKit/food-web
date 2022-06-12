@@ -67,7 +67,7 @@ export const BasicLayout = ({ chosen, children }: Props) => {
                   "flex items-center h-4w text-1.25 font-bold",
                   menuItems.id === chosen
                     ? "text-theme-sub text-theme"
-                    : "text-white" //"error: text-"を演算から外すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
+                    : "text-white" //"error: text-"を条件式の外に出すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
                 )}
               >
                 <div className="mr-6p w-2w h-1/2">
