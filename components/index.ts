@@ -1,2 +1,2 @@
-export { Layout } from "./Layout";
+export { Layout } from "./layouts/Layout";
 export { Icon } from "./Icon";
