@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
-import { Icon } from ".";
+import { Icon } from "..";
 
 const MENUS_ITEMS = [
   {
