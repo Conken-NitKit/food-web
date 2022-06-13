@@ -81,7 +81,7 @@ export const BasicLayout = ({ chosen, children }: Props) => {
           ))}
         </ul>
       </div>
-      {children}
+      <div>{children}</div>
     </div>
   );
 };
