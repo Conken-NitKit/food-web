@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { BasicLayout } from "../components";
+import { FeaturePageLayout } from "../components/layouts/FeaturePage";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <BasicLayout chosen="home">
-        <></>
+        <FeaturePageLayout></FeaturePageLayout>
       </BasicLayout>
     </div>
   );
