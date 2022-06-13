@@ -46,7 +46,7 @@ interface Props {
 
 export const BasicLayout = ({ chosen, children }: Props) => {
   return (
-    <div className="w-hull h-full">
+    <div className="flex w-hull h-full">
       <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
         <p className="mb-13p font-bold text-1.8 text-white leading-1.172">
           コンピュータ研究部
@@ -81,7 +81,7 @@ export const BasicLayout = ({ chosen, children }: Props) => {
           ))}
         </ul>
       </div>
-      <div>{children}</div>
+      <div className="w-72p h-full">{children}</div>
     </div>
   );
 };
