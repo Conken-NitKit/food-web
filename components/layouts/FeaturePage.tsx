@@ -1,3 +1,3 @@
 export const FeaturePageLayout = () => {
-  return <div className="w-full h-full"></div>;
+  return <div className="p-5p w-full h-full"></div>;
 };
