@@ -24,8 +24,8 @@ module.exports = {
 
       colors: {
         "theme-start": "#F8714B",
-        "theme-end": "#F2A649", //...-To
-        "theme-sub": "#F58B4A", //Main
+        "theme-end": "#F2A649",
+        "theme-sub": "#F58B4A",
       },
 
       fontSize: {
