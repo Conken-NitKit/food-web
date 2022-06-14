@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <BasicLayout chosen="home">
+      <BasicLayout chosen="menu">
         <FeaturePageLayout title="メニュー"></FeaturePageLayout>
       </BasicLayout>
     </div>
