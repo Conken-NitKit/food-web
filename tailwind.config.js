@@ -26,6 +26,7 @@ module.exports = {
         "theme-start": "#F8714B",
         "theme-end": "#F2A649",
         "theme-sub": "#F58B4A",
+        letter: "#2D0D0D",
       },
 
       fontSize: {
