@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <BasicLayout chosen="home">
-        <FeaturePageLayout></FeaturePageLayout>
+        <FeaturePageLayout title="メニュー"></FeaturePageLayout>
       </BasicLayout>
     </div>
   );
