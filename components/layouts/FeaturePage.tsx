@@ -1,4 +1,6 @@
-interface Props {}
+interface Props {
+  title: string;
+}
 
 export const FeaturePageLayout = () => {
   return (
