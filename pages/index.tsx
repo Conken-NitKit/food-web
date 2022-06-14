@@ -13,9 +13,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* 仮置き */}
+
       <BasicLayout chosen="menu">
         <FeaturePageLayout title="メニュー"></FeaturePageLayout>
       </BasicLayout>
+
+      {/* 仮置きここまで */}
     </div>
   );
 };
