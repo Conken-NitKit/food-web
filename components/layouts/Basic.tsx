@@ -40,11 +40,11 @@ const MENUS_ITEMS = [
 ];
 
 interface Props {
-  chosen: string;
+  type: string;
   children: ReactNode;
 }
 
-export const BasicLayout = ({ chosen, children }: Props) => {
+export const BasicLayout = ({ type, children }: Props) => {
   return (
     <div className="flex w-hull h-full">
       <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
@@ -58,7 +58,7 @@ export const BasicLayout = ({ chosen, children }: Props) => {
               className={classNames(
                 "mt-7p first:mt-0 pl-9p h-4w cursor-pointer",
                 {
-                  "rounded-l-1 bg-white": menuItems.id === chosen,
+                  "rounded-l-1 bg-white": menuItems.id === type,
                 }
               )}
             >
@@ -66,13 +66,13 @@ export const BasicLayout = ({ chosen, children }: Props) => {
                 <div
                   className={classNames(
                     "flex items-center h-4w text-1.25 font-bold",
-                    menuItems.id === chosen
+                    menuItems.id === type
                       ? "text-theme-sub text-theme"
                       : "text-white" //"error: text-"を条件式の外に出すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
                   )}
                 >
                   <div className="mr-6p w-2w h-1/2">
-                    <Icon id={menuItems.id} isChose={menuItems.id === chosen} />
+                    <Icon id={menuItems.id} isChose={menuItems.id === type} />
                   </div>
                   {menuItems.name}
                 </div>
