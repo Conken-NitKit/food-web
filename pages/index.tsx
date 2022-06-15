@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { BasicLayout } from "../components/layouts";
 import { FeaturePageLayout } from "../components/layouts";
 
 const Home: NextPage = () => {
