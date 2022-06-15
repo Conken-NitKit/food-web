@@ -96,3 +96,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ### BasicLayout
 
 - `<BasicLayout type="(ページファイル名)">(JSX)<BasicLayout />`として、()内を編集して使用する。
+
+### FeaturePageLayout
