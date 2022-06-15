@@ -15,6 +15,8 @@ const Home: NextPage = () => {
 
       {/* 仮置き */}
 
+      <FeaturePageLayout type="menu"></FeaturePageLayout>
+
       {/* 仮置きここまで */}
     </div>
   );
