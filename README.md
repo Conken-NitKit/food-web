@@ -87,6 +87,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 例:
 `pages/index`
 
+## ファイル命名法
+
 ## コンポーネント使用法
 
 ### BasicLayout
