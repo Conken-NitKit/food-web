@@ -93,6 +93,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. `<BasicLayout chosen="[ページコンポーネント名]">{children}<BasicLayout />`として使用する。
 
-1. 基本的に全てのページで使用する。
-
 1. 各ページのファイル名は`/components/Layout.tsx`の`MENUS_ITEMS`の各`id`を想定している。
