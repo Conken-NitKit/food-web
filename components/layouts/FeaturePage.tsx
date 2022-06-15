@@ -1,8 +1,11 @@
+import { ReactNode } from "react";
+
 import { BasicLayout } from "./Basic";
 import { MENUS_ITEMS } from "../../constants";
 
 interface Props {
   type: string;
+  children: ReactNode;
 }
 
 export const FeaturePageLayout = ({ type }: Props) => {
