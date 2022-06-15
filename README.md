@@ -89,7 +89,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## ファイル命名法
 
-- 各ページのファイル名は`/components/Layout.tsx`の`MENUS_ITEMS`の各`id`を想定している。
+- 各ページのファイル名は`/constants/menusItems.ts`の`MENUS_ITEMS`の各`id`を想定している。
 
 ## コンポーネント使用法
 
