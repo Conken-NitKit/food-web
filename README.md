@@ -95,4 +95,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### BasicLayout
 
-1. `<BasicLayout type="[ページコンポーネント名]">{children}<BasicLayout />`として使用する。
+- `<BasicLayout type="[ページコンポーネント名]">{children}<BasicLayout />`として使用する。
