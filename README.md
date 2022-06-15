@@ -91,8 +91,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## コンポーネント使用法
 
+- 各ページのファイル名は`/components/Layout.tsx`の`MENUS_ITEMS`の各`id`を想定している。
+
 ### BasicLayout
 
 1. `<BasicLayout type="[ページコンポーネント名]">{children}<BasicLayout />`として使用する。
-
-1. 各ページのファイル名は`/components/Layout.tsx`の`MENUS_ITEMS`の各`id`を想定している。
