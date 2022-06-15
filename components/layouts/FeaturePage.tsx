@@ -19,6 +19,7 @@ export const FeaturePageLayout = ({ type, children }: Props) => {
                 <p className="mb-4p text-2.25 font-bold leading-1.172 text-letter">
                   {menuItems.name}
                 </p>
+                {children}
               </div>
             </BasicLayout>
           )
