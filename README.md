@@ -98,3 +98,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - `<BasicLayout type="(ページファイル名)">(JSX)</BasicLayout>`として、()内を編集してページファイルで使用する。
 
 ### FeaturePageLayout
+
+- `<FeaturePageLayout type="(ページファイル名)">(JSX)</FeaturePageLayout>`として、()内を編集してページファイルで使用する。
+
+- 基本的にホーム以外の全てのページで使用する。
