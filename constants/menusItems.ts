@@ -2,6 +2,7 @@ import { MenuId } from "../types/menuId";
 
 interface MenuItems {
   id: MenuId;
+  name: string;
 }
 
 export const MENUS_ITEMS = [
