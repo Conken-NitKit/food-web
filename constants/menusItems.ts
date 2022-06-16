@@ -1,3 +1,5 @@
+interface MenuItems {}
+
 export const MENUS_ITEMS = [
   {
     id: "home",
