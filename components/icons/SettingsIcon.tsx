@@ -1,5 +1,5 @@
 import { COLORS } from "../../constants";
-import { IconProps } from "../../interfaces";
+import { IconProps } from "../../types";
 
 export const SettingsIcon = ({ isChose }: IconProps) => {
   return (
