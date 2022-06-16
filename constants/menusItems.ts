@@ -1,8 +1,10 @@
 import { MenuId } from "../types/menuId";
+import { IconProps } from "../types";
 
 interface MenuItems {
   id: MenuId;
   name: string;
+  icon: (props: IconProps) => JSX.Element;
 }
 
 export const MENUS_ITEMS = [
