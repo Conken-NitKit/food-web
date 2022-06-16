@@ -8,7 +8,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const FeaturePageLayout = ({ type, children }: Props) => {
+export const FeatureLayout = ({ type, children }: Props) => {
   return (
     <>
       {MENUS_ITEMS.map(
