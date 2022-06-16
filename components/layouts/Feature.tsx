@@ -16,9 +16,9 @@ export const FeatureLayout = ({ type, children }: Props) => {
           menuItems.id === type && (
             <BasicLayout type={type} key={type}>
               <div className="p-5p pb-0 w-full h-full">
-                <p className="mb-4p text-2.25 font-bold leading-1.172 text-letter">
+                <h1 className="mb-4p text-2.25 font-bold leading-1.172 text-letter">
                   {menuItems.name}
-                </p>
+                </h1>
 
                 {children}
               </div>
