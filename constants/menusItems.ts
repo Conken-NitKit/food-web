@@ -7,7 +7,7 @@ interface MenuItems {
   icon: (props: IconProps) => JSX.Element;
 }
 
-export const MENUS_ITEMS: MenuItems[] = [
+export const menusItems: MenuItems[] = [
   {
     id: "home",
     name: "ホーム",
