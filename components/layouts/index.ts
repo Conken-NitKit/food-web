@@ -1,2 +1,2 @@
 export { BasicLayout } from "./Basic";
-export { FeaturePageLayout } from "./FeaturePage";
+export { FeaturePageLayout } from "./Feature";
