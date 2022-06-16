@@ -1,3 +1,4 @@
+import { HomeIcon } from "../components/icons";
 import { MenuId, IconProps } from "../types";
 
 interface MenuItems {
@@ -6,7 +7,7 @@ interface MenuItems {
   icon: (props: IconProps) => JSX.Element;
 }
 
-export const MENUS_ITEMS = [
+export const MENUS_ITEMS: MenuItems[] = [
   {
     id: "home",
     name: "ホーム",
