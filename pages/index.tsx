@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { FeaturePageLayout } from "../components/layouts";
+import { FeatureLayout } from "../components/layouts";
 
 const Home: NextPage = () => {
   return (
@@ -14,9 +14,9 @@ const Home: NextPage = () => {
 
       {/* 仮置き */}
 
-      <FeaturePageLayout type="menu">
+      <FeatureLayout type="menu">
         <></>
-      </FeaturePageLayout>
+      </FeatureLayout>
 
       {/* 仮置きここまで */}
     </div>
