@@ -1,5 +1,4 @@
-import { MenuId } from "../types/menuId";
-import { IconProps } from "../types";
+import { MenuId, IconProps } from "../types";
 
 interface MenuItems {
   id: MenuId;
