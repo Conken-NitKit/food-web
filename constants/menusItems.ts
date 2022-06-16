@@ -1,4 +1,8 @@
-interface MenuItems {}
+import { MenuId } from "../types/menuId";
+
+interface MenuItems {
+  id: MenuId;
+}
 
 export const MENUS_ITEMS = [
   {
