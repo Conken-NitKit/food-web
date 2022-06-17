@@ -5,7 +5,7 @@ interface MenuItems {
   name: string;
 }
 
-export const menusItems: MenuItems[] = [
+export const MENUS_ITEMS: MenuItems[] = [
   {
     id: "home",
     name: "ホーム",
