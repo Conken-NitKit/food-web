@@ -24,7 +24,7 @@ const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {
 };
 
 interface Props {
-  id: string;
+  id: MenuId;
   isChose: boolean;
 }
 
