@@ -1,5 +1,4 @@
-import { HomeIcon } from "../components/icons";
-import { MenuId, IconProps } from "../types";
+import { MenuId } from "../types";
 
 interface MenuItems {
   id: MenuId;
