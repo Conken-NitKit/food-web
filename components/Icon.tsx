@@ -29,22 +29,5 @@ interface Props {
 }
 
 export const Icon: NextPage<Props> = ({ id, isChose }) => {
-  switch (id) {
-    case "menu":
-      return <MenuIcon isChose={isChose} />;
-    case "monitoring":
-      return <MonitoringIcon isChose={isChose} />;
-    case "order":
-      return <OrderIcon isChose={isChose} />;
-    case "sales":
-      return <SalesIcon isChose={isChose} />;
-    case "settings":
-      return <SettingsIcon isChose={isChose} />;
-    case "shift":
-      return <ShiftIcon isChose={isChose} />;
-    case "user":
-      return <UserIcon isChose={isChose} />;
-    default:
-      return <HomeIcon isChose={isChose} />;
-  }
+  return icons[id]({ isChose: isChose });
 };
