@@ -1,3 +1,4 @@
+import { IconProps, MenuId } from "../types";
 import {
   HomeIcon,
   MenuIcon,
@@ -9,7 +10,7 @@ import {
   UserIcon,
 } from "./icons";
 
-const icons = {};
+const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {};
 
 interface Props {
   id: string;
