@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
 import { NextPage } from "next";
 
-import { BasicLayout } from "./Basic";
+import { MenuId } from "../../types";
 import { MENUS_ITEMS } from "../../constants";
+import { BasicLayout } from "./Basic";
 
 interface Props {
-  type: string;
+  type: MenuId;
   children: ReactNode;
 }
 
