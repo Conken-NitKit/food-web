@@ -9,6 +9,8 @@ import {
   UserIcon,
 } from "./icons";
 
+const icons = {};
+
 interface Props {
   id: string;
   isChose: boolean;
