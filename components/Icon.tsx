@@ -1,3 +1,5 @@
+import { NextPage } from "next";
+
 import { IconProps, MenuId } from "../types";
 import {
   HomeIcon,
@@ -17,7 +19,7 @@ interface Props {
   isChose: boolean;
 }
 
-export const Icon = ({ id, isChose }: Props) => {
+export const Icon: NextPage<Props> = ({ id, isChose }) => {
   switch (id) {
     case "menu":
       return <MenuIcon isChose={isChose} />;
