@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { NextPage } from "next";
 
 import { BasicLayout } from "./Basic";
 import { MENUS_ITEMS } from "../../constants";
@@ -8,7 +9,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const FeatureLayout = ({ type, children }: Props) => {
+export const FeatureLayout: NextPage<Props> = ({ type, children }) => {
   return (
     <>
       {MENUS_ITEMS.map(
