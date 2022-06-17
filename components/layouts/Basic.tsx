@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { NextPage } from "next";
 import Link from "next/link";
 import classNames from "classnames";
 
@@ -10,7 +11,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const BasicLayout = ({ type, children }: Props) => {
+export const BasicLayout: NextPage<Props> = ({ type, children }) => {
   return (
     <div className="flex w-hull h-full">
       <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
