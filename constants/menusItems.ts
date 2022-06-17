@@ -4,7 +4,6 @@ import { MenuId, IconProps } from "../types";
 interface MenuItems {
   id: MenuId;
   name: string;
-  icon: (props: IconProps) => JSX.Element;
 }
 
 export const menusItems: MenuItems[] = [
