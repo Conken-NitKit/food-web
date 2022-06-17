@@ -5,9 +5,10 @@ import classNames from "classnames";
 
 import { Icon } from "..";
 import { MENUS_ITEMS } from "../../constants";
+import { MenuId } from "../../types";
 
 interface Props {
-  type: string;
+  type: MenuId;
   children: ReactNode;
 }
 
