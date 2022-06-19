@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { NextPage } from "next";
 
 import { MenuId } from "../../types";
-import { MENUS_ITEMS } from "../../constants";
+import { MENUS_NAMES } from "../../constants";
 import { BasicLayout } from "./Basic";
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 export const FeatureLayout: NextPage<Props> = ({ type, children }) => {
   return (
     <>
-      {MENUS_ITEMS.map(
+      {MENUS_NAMES.map(
         (menuItems) =>
           menuItems.id === type && (
             <BasicLayout type={type} key={type}>
