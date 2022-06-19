@@ -1,2 +1,2 @@
 export { COLORS } from "./colors";
-export { MENUS_NAMES } from "./menusNames";
+export { MENUS_NAMES } from "./menusItems";

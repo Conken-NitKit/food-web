@@ -13,8 +13,6 @@ interface Props {
 }
 
 export const BasicLayout: NextPage<Props> = ({ type, children }) => {
-  const menuIds: string[] = Object.keys(MENUS_NAMES);
-
   return (
     <div className="flex w-hull h-full">
       <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
