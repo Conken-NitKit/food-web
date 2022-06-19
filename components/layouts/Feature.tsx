@@ -11,6 +11,8 @@ interface Props {
 }
 
 export const FeatureLayout: NextPage<Props> = ({ type, children }) => {
+  const pageName: string = MENUS_ITEMS[type].name;
+
   return (
     <>
       {MENUS_ITEMS.map(
