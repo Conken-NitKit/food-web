@@ -20,7 +20,7 @@ export const BasicLayout: NextPage<Props> = ({ type, children }) => {
           コンピュータ研究部
         </h2>
         <ul>
-          {MENUS_ITEMS.map((menuItems) => (
+          {Object.values(MENUS_ITEMS).map((menuItems) => (
             <li
               key={menuItems.id}
               className={classNames(
