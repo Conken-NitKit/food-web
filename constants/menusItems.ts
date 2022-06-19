@@ -1,6 +1,6 @@
 import { MenuId } from "../types";
 
-export const MENUS_ITEMS: Record<MenuId, string> = {
+export const MENUS_NAMES: Record<MenuId, string> = {
   home: "ホーム",
   menu: "メニュー",
   monitoring: "注文状況",

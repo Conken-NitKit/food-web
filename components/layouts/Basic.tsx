@@ -4,7 +4,7 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import { Icon } from "..";
-import { MENUS_ITEMS } from "../../constants";
+import { MENUS_NAMES } from "../../constants";
 import { MenuId } from "../../types";
 
 interface Props {
@@ -20,7 +20,7 @@ export const BasicLayout: NextPage<Props> = ({ type, children }) => {
           コンピュータ研究部
         </h2>
         <ul>
-          {MENUS_ITEMS.map((menuItems) => (
+          {MENUS_NAMES.map((menuItems) => (
             <li
               key={menuItems.id}
               className={classNames(
