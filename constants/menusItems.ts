@@ -5,37 +5,13 @@ interface MenuItems {
   name: string;
 }
 
-export const MENUS_ITEMS: Record<MenuId, MenuItems> = {
-  home: {
-    id: "home",
-    name: "ホーム",
-  },
-  menu: {
-    id: "menu",
-    name: "メニュー",
-  },
-  monitoring: {
-    id: "order",
-    name: "注文状況",
-  },
-  order: {
-    id: "sales",
-    name: "売上解析",
-  },
-  sales: {
-    id: "shift",
-    name: "シフト",
-  },
-  settings: {
-    id: "user",
-    name: "ユーザー",
-  },
-  shift: {
-    id: "monitoring",
-    name: "モニタリング",
-  },
-  user: {
-    id: "settings",
-    name: "設定",
-  },
+export const MENUS_ITEMS: Record<MenuId, string> = {
+  home: "ホーム",
+  menu: "メニュー",
+  monitoring: "注文状況",
+  order: "売上解析",
+  sales: "シフト",
+  settings: "ユーザー",
+  shift: "モニタリング",
+  user: "設定",
 };
