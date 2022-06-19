@@ -15,12 +15,12 @@ import {
 const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {
   home: (props) => <HomeIcon {...props} />,
   menu: (props) => <MenuIcon {...props} />,
+  monitoring: (props) => <MonitoringIcon {...props} />,
   order: (props) => <OrderIcon {...props} />,
   sales: (props) => <SalesIcon {...props} />,
+  settings: (props) => <SettingsIcon {...props} />,
   shift: (props) => <ShiftIcon {...props} />,
   user: (props) => <UserIcon {...props} />,
-  monitoring: (props) => <MonitoringIcon {...props} />,
-  settings: (props) => <SettingsIcon {...props} />,
 };
 
 interface Props {
