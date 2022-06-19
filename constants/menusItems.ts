@@ -1,10 +1,5 @@
 import { MenuId } from "../types";
 
-interface MenuItems {
-  id: MenuId;
-  name: string;
-}
-
 export const MENUS_ITEMS: Record<MenuId, string> = {
   home: "ホーム",
   menu: "メニュー",
