@@ -74,6 +74,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | style    | スタイリング               |
 | readme   | README の編集              |
 
+## 命名法
+
 ## ブランチ命名法
 
 `ファイル名`: そのブランチで作業するファイルの名前
