@@ -76,7 +76,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## 命名法
 
-## ブランチ命名法
+### ブランチ
 
 `ファイル名`: そのブランチで作業するファイルの名前
 `種類名`: `ファイル名`のファイルを含む`/`ディレクトリ内のディレクトリの名前
