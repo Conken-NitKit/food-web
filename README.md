@@ -106,3 +106,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - 基本的にホーム以外の全てのページで使用する。
 
 ## その他
+
+- 定数の宣言時は必ず型付けする。
+
+- コンポーネントの型は `: NextPage` とする。
