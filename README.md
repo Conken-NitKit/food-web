@@ -89,7 +89,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 例:
 `pages/index`
 
-## ファイル命名法
+### ファイル
 
 - 各ページのファイル名は`/constants/menusItems.ts`の`MENUS_ITEMS`の各`id`を想定している。
 
