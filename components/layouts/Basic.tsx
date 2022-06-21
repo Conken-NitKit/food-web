@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import classNames from "classnames";
 
-import { Icon } from "..";
+import { Icon } from "../menu-list-icons";
 import { MENUS_ITEMS } from "../../constants";
 import { MenuId } from "../../types";
 
