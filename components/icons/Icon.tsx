@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 
-import { IconProps, MenuId } from "../types";
+import { IconProps, MenuId } from "../../types";
 import {
   HomeIcon,
   MenuIcon,
@@ -10,7 +10,7 @@ import {
   SettingsIcon,
   ShiftIcon,
   UserIcon,
-} from "./icons";
+} from ".";
 
 const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {
   home: (props) => <HomeIcon {...props} />,
