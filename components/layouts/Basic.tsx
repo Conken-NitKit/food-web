@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import classNames from "classnames";
 
-import { Icon } from "../menu-bar-icons";
+import { MenuItemIcon } from "../menu-bar-icons";
 import { MENUS_ITEMS } from "../../constants";
 import { MenuId } from "../../types";
 
@@ -40,7 +40,10 @@ export const BasicLayout: NextPage<Props> = ({ type, children }) => {
                   )}
                 >
                   <div className="mr-6p w-2w h-1/2">
-                    <Icon id={menuItems.id} isChose={menuItems.id === type} />
+                    <MenuItemIcon
+                      id={menuItems.id}
+                      isChose={menuItems.id === type}
+                    />
                   </div>
                   {menuItems.name}
                 </div>

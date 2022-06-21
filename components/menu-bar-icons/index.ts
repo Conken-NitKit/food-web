@@ -1,4 +1,4 @@
-export { Icon } from "./MenuBarIcons";
+export { MenuItemIcon } from "./MenuBarIcons";
 export { HomeIcon } from "./HomeIcon";
 export { MenuIcon } from "./MenuIcon";
 export { OrderIcon } from "./OrderIcon";
