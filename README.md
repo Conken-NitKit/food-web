@@ -110,3 +110,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - 定数の宣言時は必ず型付けする。
 
 - ページコンポーネントの型は `: NextPage` とする。
+
+- ページコンポーネント以外のコンポーネントの型は `() => JSX.Element` とする。
