@@ -109,4 +109,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 定数の宣言時は必ず型付けする。
 
-- コンポーネントの型は `: NextPage` とする。
+- ページコンポーネントの型は `: NextPage` とする。
