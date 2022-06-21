@@ -1,9 +1,9 @@
 export type MenuId =
   | "home"
   | "menu"
-  | "order"
+  | "orders"
   | "sales"
   | "shift"
-  | "user"
+  | "users"
   | "monitoring"
   | "settings";

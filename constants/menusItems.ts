@@ -15,10 +15,10 @@ export const MENUS_ITEMS: Record<MenuId, MenuItems> = {
     name: "メニュー",
   },
   monitoring: {
-    id: "order",
+    id: "orders",
     name: "注文状況",
   },
-  order: {
+  orders: {
     id: "sales",
     name: "売上解析",
   },
@@ -27,14 +27,14 @@ export const MENUS_ITEMS: Record<MenuId, MenuItems> = {
     name: "シフト",
   },
   settings: {
-    id: "user",
+    id: "users",
     name: "ユーザー",
   },
   shift: {
     id: "monitoring",
     name: "モニタリング",
   },
-  user: {
+  users: {
     id: "settings",
     name: "設定",
   },
