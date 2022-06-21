@@ -28,6 +28,6 @@ interface Props {
   isChose: boolean;
 }
 
-export const Icon: NextPage<Props> = ({ id, isChose }) => {
+export const MenuItemIcon: NextPage<Props> = ({ id, isChose }) => {
   return icons[id]({ isChose: isChose });
 };
