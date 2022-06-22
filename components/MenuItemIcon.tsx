@@ -28,6 +28,9 @@ interface Props {
   isChose: boolean;
 }
 
-export const MenuItemIcon: NextPage<Props> = ({ id, isChose }) => {
+export const MenuItemIcon: ({ id, isChose }: Props) => JSX.Element = ({
+  id,
+  isChose,
+}) => {
   return icons[id]({ isChose: isChose });
 };
