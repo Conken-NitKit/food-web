@@ -1,5 +1,3 @@
-import { NextPage } from "next";
-
 import { IconProps, MenuId } from "../types";
 import {
   HomeIcon,
