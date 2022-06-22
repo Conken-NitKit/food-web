@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classNames from "classnames";
 
-import { LayoutProps } from "../../types/LayoutProps";
+import { LayoutProps } from "../../types";
 import { MenuItemIcon } from "..";
 import { MENUS_ITEMS } from "../../constants";
 
