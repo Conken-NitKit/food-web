@@ -10,12 +10,14 @@ module.exports = {
       spacing: {
         "2p": "2%",
         "3p": "3%",
+        "4p": "4%",
         "5p": "5%",
         "6p": "6%",
         "7p": "7%",
         "9p": "9%",
         "13p": "13%",
         "23p": "23%",
+        "72p": "72%",
 
         "2w": "2vw",
         "4w": "4vw",
@@ -23,13 +25,15 @@ module.exports = {
 
       colors: {
         "theme-start": "#F8714B",
-        "theme-end": "#F2A649", //...-To
-        "theme-sub": "#F58B4A", //Main
+        "theme-end": "#F2A649",
+        "theme-sub": "#F58B4A",
+        letter: "#2D0D0D",
       },
 
       fontSize: {
         1.8: "1.8vw",
         1.25: "1.25vw",
+        2.25: "2.25vw",
       },
 
       lineHeight: {
