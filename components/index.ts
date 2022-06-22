@@ -1,1 +1,1 @@
-export {};
+export { MenuItemIcon } from "./MenuItemIcon";
