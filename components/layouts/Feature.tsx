@@ -1,4 +1,4 @@
-import { LayoutProps } from "../../types/LayoutProps";
+import { LayoutProps } from "../../types";
 import { MENUS_ITEMS } from "../../constants";
 import { BasicLayout } from "./Basic";
 
