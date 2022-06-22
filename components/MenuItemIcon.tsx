@@ -8,7 +8,7 @@ import {
   SettingsIcon,
   ShiftIcon,
   UserIcon,
-} from "./menu-icons";
+} from "./icons";
 
 const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {
   home: (props) => <HomeIcon {...props} />,
