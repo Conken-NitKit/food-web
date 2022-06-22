@@ -1,7 +1,9 @@
 import { COLORS } from "../../constants";
 import { IconProps } from "../../types";
 
-export const SalesIcon = ({ isChose }: IconProps) => {
+export const SalesIcon: ({ isChose }: IconProps) => JSX.Element = ({
+  isChose,
+}) => {
   return (
     <svg viewBox="0 0 36 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
