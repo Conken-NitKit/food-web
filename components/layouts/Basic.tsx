@@ -1,17 +1,11 @@
-import { ReactNode } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
+import { LayoutProps } from "../../types/LayoutProps";
 import { MenuItemIcon } from "..";
 import { MENUS_ITEMS } from "../../constants";
-import { MenuId } from "../../types";
 
-interface Props {
-  type: MenuId;
-  children: ReactNode;
-}
-
-export const BasicLayout: ({ type, children }: Props) => JSX.Element = ({
+export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
   children,
 }) => {

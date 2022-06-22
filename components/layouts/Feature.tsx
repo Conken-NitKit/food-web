@@ -1,18 +1,11 @@
-import { ReactNode } from "react";
-
-import { MenuId } from "../../types";
+import { LayoutProps } from "../../types/LayoutProps";
 import { MENUS_ITEMS } from "../../constants";
 import { BasicLayout } from "./Basic";
 
-interface Props {
-  type: MenuId;
-  children: ReactNode;
-}
-
-export const FeatureLayout: ({ type, children }: Props) => JSX.Element = ({
+export const FeatureLayout: ({
   type,
   children,
-}) => {
+}: LayoutProps) => JSX.Element = ({ type, children }) => {
   const pageName: string = MENUS_ITEMS[type].name;
 
   return (
