@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Layout } from "../components";
+import { FeatureLayout } from "../components/layouts";
 
 const Home: NextPage = () => {
   return (
@@ -12,9 +12,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout chosen="home">
+      {/* 仮置き */}
+
+      <FeatureLayout type="menu">
         <></>
-      </Layout>
+      </FeatureLayout>
+
+      {/* 仮置きここまで */}
     </div>
   );
 };
