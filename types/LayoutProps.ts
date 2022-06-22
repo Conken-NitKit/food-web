@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { MenuId } from "./menuId";
+import { MenuId } from ".";
 
 export interface LayoutProps {
   type: MenuId;
