@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { NextPage } from "next";
 
 import { MenuId } from "../../types";
 import { MENUS_ITEMS } from "../../constants";
@@ -10,7 +9,10 @@ interface Props {
   children: ReactNode;
 }
 
-export const FeatureLayout: NextPage<Props> = ({ type, children }) => {
+export const FeatureLayout: ({ type, children }: Props) => JSX.Element = ({
+  type,
+  children,
+}) => {
   const pageName: string = MENUS_ITEMS[type].name;
 
   return (
