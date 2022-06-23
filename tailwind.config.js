@@ -30,7 +30,9 @@ module.exports = {
         letter: "#2D0D0D",
       },
 
-      fontSize: {},
+      fontSize: {
+        "2.3h": "2.3vh",
+      },
 
       lineHeight: {
         1.172: "1.172",
