@@ -11,7 +11,7 @@ export const FeatureLayout: ({
   return (
     <BasicLayout type={type}>
       <div className="p-5p pb-0 w-full h-full">
-        <h1 className="mb-4p text-2.25 font-bold leading-1.172 text-letter">
+        <h1 className="mb-4p text-2.3w font-bold leading-1.172 text-letter">
           {pageName}
         </h1>
 
