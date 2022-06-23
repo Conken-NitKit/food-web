@@ -31,7 +31,7 @@ module.exports = {
       },
 
       fontSize: {
-        "2.3w": "2.3vw",
+        "2.2w": "2.2vw",
 
         "2.3h": "2.3vh",
         "1.6h": "1.6vh",
