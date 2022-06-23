@@ -12,7 +12,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   return (
     <div className="flex w-screen h-screen">
       <div className="ml-5p pt-3p pl-2p w-23p h-full bg-gradient-to-t from-theme-start to-theme-end">
-        <h2 className="mb-13p font-bold text-1.8 text-white leading-1.172">
+        <h2 className="mb-13p font-bold text-2.3h text-white leading-1.172">
           コンピュータ研究部
         </h2>
         <ul>
