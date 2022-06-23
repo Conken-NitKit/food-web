@@ -43,15 +43,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. 作業用フォルダで`git clone git@github.com:Conken-NitKit/food-web.git`
 
-1. `cd food-web`
+1. 以下のコマンドを上から順に実行。
 
-1. `yarn install`
+   1. `cd food-web`
 
-1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
+   1. `yarn install`
 
-1. `yarn add -D eslint-plugin-tailwindcss`
+   1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
 
-1. `yarn add classnames`
+   1. `yarn add -D eslint-plugin-tailwindcss`
+
+   1. `yarn add classnames`
 
 1. VScode の拡張機能`ESlint`をインストール。 [[参考]](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
