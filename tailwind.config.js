@@ -20,6 +20,8 @@ module.exports = {
 
         "2w": "2vw",
         "4w": "4vw",
+
+        "4v": "4vh",
       },
 
       colors: {
