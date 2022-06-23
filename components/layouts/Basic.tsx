@@ -29,7 +29,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
               <Link href={menuItems.id}>
                 <div
                   className={classNames(
-                    "flex items-center h-4w text-1.25 font-bold",
+                    "flex items-center h-4w text-1.6h font-bold",
                     menuItems.id === type
                       ? "text-theme-sub text-theme"
                       : "text-white" //"error: text-"を条件式の外に出すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
