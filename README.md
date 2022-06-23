@@ -45,7 +45,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. `cd food-web`
 
-1. `yarn install`が必要かも知れない。
+1. `yarn install`
 
 1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
 
