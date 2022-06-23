@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       spacing: {
         "2p": "2%",
-        "3p": "3%",
         "4p": "4%",
         "5p": "5%",
         "6p": "6%",
