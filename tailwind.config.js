@@ -41,9 +41,7 @@ module.exports = {
         1.17: "1.17",
       },
 
-      borderRadius: {
-        1: "1vw",
-      },
+      borderRadius: {},
     },
   },
   plugins: [],
