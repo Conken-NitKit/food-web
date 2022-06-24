@@ -20,7 +20,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
             <li
               key={menuItems.id}
               className={classNames("mt-2h first:mt-0 h-4w cursor-pointer", {
-                "rounded-l-1 bg-white": menuItems.id === type,
+                "rounded-l-1h bg-white": menuItems.id === type,
               })}
             >
               <Link href={menuItems.id}>
