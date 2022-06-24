@@ -19,17 +19,14 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
           {Object.values(MENUS_ITEMS).map((menuItems) => (
             <li
               key={menuItems.id}
-              className={classNames(
-                "mt-2h first:mt-0 pl-9p h-4w cursor-pointer",
-                {
-                  "rounded-l-1 bg-white": menuItems.id === type,
-                }
-              )}
+              className={classNames("mt-2h first:mt-0 h-4w cursor-pointer", {
+                "rounded-l-1 bg-white": menuItems.id === type,
+              })}
             >
               <Link href={menuItems.id}>
                 <div
                   className={classNames(
-                    "flex items-center h-full text-1.6h font-bold",
+                    "flex items-center pl-9p h-full text-1.6h font-bold",
                     menuItems.id === type
                       ? "text-theme-sub text-theme"
                       : "text-white" //"error: text-"を条件式の外に出すとtailwind.configの更新時にスタイルが反映されない不具合を確認しました。
