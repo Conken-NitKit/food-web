@@ -39,7 +39,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                     />
                   </div>
 
-                  <p>{menuItems.name}</p>
+                  <p className="ml-6p">{menuItems.name}</p>
                 </div>
               </Link>
             </li>
