@@ -38,7 +38,8 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                       isChose={menuItems.id === type}
                     />
                   </div>
-                  {menuItems.name}
+
+                  <p>{menuItems.name}</p>
                 </div>
               </Link>
             </li>
