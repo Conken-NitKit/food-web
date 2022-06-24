@@ -19,6 +19,7 @@ module.exports = {
         "2w": "2vw",
         "4w": "4vw",
 
+        "2h": "2vh",
         "4h": "4vh",
       },
 
