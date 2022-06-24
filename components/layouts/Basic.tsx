@@ -20,7 +20,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
             <li
               key={menuItems.id}
               className={classNames(
-                "mt-7p first:mt-0 pl-9p h-4w cursor-pointer",
+                "mt-2h first:mt-0 pl-9p h-4w cursor-pointer",
                 {
                   "rounded-l-1 bg-white": menuItems.id === type,
                 }
