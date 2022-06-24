@@ -32,7 +32,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                       : "text-white"
                   )}
                 >
-                  <div className="mr-6p w-2w h-1/2">
+                  <div className="w-2w h-1/2">
                     <MenuItemIcon
                       id={menuItems.id}
                       isChose={menuItems.id === type}
