@@ -26,7 +26,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
               <Link href={menuItems.id}>
                 <div
                   className={classNames(
-                    "flex items-center pl-9p h-full text-1.6h font-bold",
+                    "flex items-center pl-9p h-full",
                     menuItems.id === type
                       ? "text-theme-sub text-theme"
                       : "text-white"
@@ -39,7 +39,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                     />
                   </div>
 
-                  <p className="ml-6p">{menuItems.name}</p>
+                  <p className="ml-6p text-1.6h font-bold">{menuItems.name}</p>
                 </div>
               </Link>
             </li>
