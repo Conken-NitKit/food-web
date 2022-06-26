@@ -19,7 +19,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
           {Object.values(MENUS_ITEMS).map((menuItems) => (
             <li
               key={menuItems.id}
-              className={classNames("mt-2h first:mt-0 h-4w cursor-pointer", {
+              className={classNames("mt-2h first:mt-0 h-5h cursor-pointer", {
                 "rounded-l-1h bg-white": menuItems.id === type,
               })}
             >
@@ -32,7 +32,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                       : "text-white"
                   )}
                 >
-                  <div className="w-2w h-1/2">
+                  <div className="w-3h">
                     <MenuItemIcon
                       id={menuItems.id}
                       isChose={menuItems.id === type}

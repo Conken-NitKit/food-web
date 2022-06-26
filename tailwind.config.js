@@ -17,10 +17,11 @@ module.exports = {
         "72p": "72%",
 
         "2w": "2vw",
-        "4w": "4vw",
 
         "2h": "2vh",
+        "3h": "3vh",
         "4h": "4vh",
+        "5h": "5vh",
       },
 
       colors: {
