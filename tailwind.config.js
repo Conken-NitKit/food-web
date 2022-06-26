@@ -9,7 +9,6 @@ module.exports = {
     extend: {
       spacing: {
         "2p": "2%",
-        "4p": "4%",
         "5p": "5%",
         "6p": "6%",
         "9p": "9%",
@@ -32,10 +31,9 @@ module.exports = {
       },
 
       fontSize: {
-        "2.2w": "2.2vw",
-
-        "2.3h": "2.3vh",
         "1.6h": "1.6vh",
+        "2.3h": "2.3vh",
+        "3h": "3vh",
       },
 
       lineHeight: {
