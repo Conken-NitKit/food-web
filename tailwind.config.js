@@ -23,6 +23,10 @@ module.exports = {
         "30h": "30vh",
       },
 
+      borderRadius: {
+        "1h": "1vh",
+      },
+
       colors: {
         "theme-start": "#F8714B",
         "theme-end": "#F2A649",
@@ -38,10 +42,6 @@ module.exports = {
 
       lineHeight: {
         1.17: "1.17",
-      },
-
-      borderRadius: {
-        "1h": "1vh",
       },
     },
   },
