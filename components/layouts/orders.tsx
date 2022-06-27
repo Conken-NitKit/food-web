@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { FeatureLayout } from "../components/layouts";
+import { FeatureLayout } from ".";
 
 const Orders: NextPage = () => {
   return (
