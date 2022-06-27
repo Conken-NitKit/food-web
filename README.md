@@ -71,8 +71,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | rename   | ファイル・変数等の改名     |
 | move     | ファイル・フォルダの移動   |
 | remove   | ファイル・コード等の削除   |
-| style    | スタイリング               |
-| readme   | README の編集              |
 
 ## 命名法
 
