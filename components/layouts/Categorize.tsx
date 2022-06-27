@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { FeatureLayout } from ".";
 
-export const Orders: NextPage = () => {
+export const CategorizeLayout: NextPage = () => {
   return (
     <FeatureLayout type="orders">
       <></>
