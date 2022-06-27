@@ -1,6 +1,7 @@
 //https://fwywd.com/tech/next-tailwind より
 
 module.exports = {
+  mode: "jit",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -8,11 +9,13 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+        "360px": "360px",
+
         "2p": "2%",
         "5p": "5%",
         "6p": "6%",
         "9p": "9%",
-        "72p": "72%",
+        "13%": "13%",
 
         "2w": "2vw",
 
@@ -20,7 +23,6 @@ module.exports = {
         "3h": "3vh",
         "4h": "4vh",
         "5h": "5vh",
-        "30h": "30vh",
       },
 
       borderRadius: {
