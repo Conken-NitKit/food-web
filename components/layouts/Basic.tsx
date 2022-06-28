@@ -26,7 +26,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
               <Link href={menuItems.id}>
                 <div
                   className={classNames(
-                    "flex items-center pl-9p h-full",
+                    "flex items-center pl-9% h-full",
                     menuItems.id === type
                       ? "text-theme-sub text-theme"
                       : "text-white"
