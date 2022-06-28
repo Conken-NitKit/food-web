@@ -16,7 +16,7 @@ module.exports = {
       },
 
       lineHeight: {
-        1.17: "1.17",
+        basic: "1.17",
       },
     },
   },
