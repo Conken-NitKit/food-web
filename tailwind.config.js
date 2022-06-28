@@ -16,18 +16,9 @@ module.exports = {
         "6p": "6%",
         "9p": "9%",
         "13%": "13%",
-
-        "2w": "2vw",
-
-        "2h": "2vh",
-        "3h": "3vh",
-        "4h": "4vh",
-        "5h": "5vh",
       },
 
-      borderRadius: {
-        "1h": "1vh",
-      },
+      borderRadius: {},
 
       colors: {
         "theme-start": "#F8714B",
