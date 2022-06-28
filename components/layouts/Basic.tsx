@@ -46,7 +46,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
           ))}
         </ul>
       </div>
-      <div className="w-[calc(95%-30vh)] h-full">{children}</div>
+      <div className="w-[calc(100%-440px)] h-full">{children}</div>
     </div>
   );
 };
