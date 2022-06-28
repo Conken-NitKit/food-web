@@ -19,8 +19,8 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
           {Object.values(MENUS_ITEMS).map((menuItems) => (
             <li
               key={menuItems.id}
-              className={classNames("mt-2h first:mt-0 h-5h cursor-pointer", {
-                "rounded-l-1h bg-white": menuItems.id === type,
+              className={classNames("mt-7% first:mt-0 h-16 cursor-pointer", {
+                "rounded-l-2xl bg-white": menuItems.id === type,
               })}
             >
               <Link href={menuItems.id}>
