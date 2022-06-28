@@ -11,8 +11,8 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
 }) => {
   return (
     <div className="flex w-screen h-screen">
-      <div className="ml-20 w-360px h-full bg-gradient-to-t from-theme-start to-theme-end">
-        <h2 className="mb-4h font-bold text-2.3h text-white leading-1.17">
+      <div className="ml-20 pl-8 w-360px h-full bg-gradient-to-t from-theme-start to-theme-end">
+        <h2 className="my-13% text-28px text-white font-bold leading-1.17">
           コンピュータ研究部
         </h2>
         <ul>

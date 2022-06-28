@@ -37,9 +37,7 @@ module.exports = {
       },
 
       fontSize: {
-        "1.6h": "1.6vh",
-        "2.3h": "2.3vh",
-        "3h": "3vh",
+        "28px": "26px",
       },
 
       lineHeight: {
