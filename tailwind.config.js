@@ -7,10 +7,6 @@ module.exports = {
   ],
 
   theme: {
-    screens: {
-      "2xl": "1600px",
-    },
-
     extend: {
       colors: {
         "theme-start": "#F8714B",
