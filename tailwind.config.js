@@ -1,5 +1,3 @@
-//https://fwywd.com/tech/next-tailwind より
-
 module.exports = {
   mode: "jit",
 
