@@ -54,7 +54,9 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
         </div>
       </div>
 
-      <div className="w-[calc(100%-440px)] h-full">{children}</div>
+      <div className="w-[calc(100%-176px)] md:w-[calc(100%-212px)] lg:w-[calc(100%-282px)] xl:w-[calc(100%-352px)] 2xl:w-[calc(100%-422px)] h-full">
+        {children}
+      </div>
     </div>
   );
 };
