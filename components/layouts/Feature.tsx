@@ -10,7 +10,7 @@ export const FeatureLayout: ({
 
   return (
     <BasicLayout type={type}>
-      <div className="p-[19px] md:p-[23px] lg:p-[31px] xl:p-[38px] 2xl:p-[46px] pb-0 w-full h-full">
+      <div className="px-[19px] md:px-[23px] lg:px-[31px] xl:px-[38px] 2xl:px-[46px] pb-0 w-full h-full">
         <h1 className="mb-12 text-letter text-4xl font-bold leading-basic">
           {pageName}
         </h1>
