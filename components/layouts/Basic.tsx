@@ -28,14 +28,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                 )}
               >
                 <Link href={menuItems.id}>
-                  <div
-                    className={classNames(
-                      "flex items-center pl-[9%] h-full",
-                      menuItems.id === type
-                        ? "text-theme-sub text-theme"
-                        : "text-white"
-                    )}
-                  >
+                  <div className="flex items-center pl-[9%] h-full">
                     <div className="w-[11%]">
                       <MenuItemIcon
                         id={menuItems.id}
@@ -43,7 +36,14 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                       />
                     </div>
 
-                    <p className="ml-[6%] text-xl font-bold">
+                    <p
+                      className={classNames(
+                        "ml-[6%] text-xl font-bold",
+                        menuItems.id === type
+                          ? "text-theme-sub text-theme"
+                          : "text-white"
+                      )}
+                    >
                       {menuItems.name}
                     </p>
                   </div>
