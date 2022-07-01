@@ -5,9 +5,5 @@ export const CategorizeLayout: ({
   type,
   children,
 }: LayoutProps) => JSX.Element = ({ type, children }) => {
-  return (
-    <FeatureLayout type={type}>
-      <></>
-    </FeatureLayout>
-  );
+  return <FeatureLayout type={type}>{children}</FeatureLayout>;
 };
