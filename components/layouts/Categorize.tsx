@@ -1,6 +1,10 @@
+import { LayoutProps } from "../../types";
 import { FeatureLayout } from ".";
 
-export const CategorizeLayout: () => JSX.Element = () => {
+export const CategorizeLayout: ({
+  type,
+  children,
+}: LayoutProps) => JSX.Element = () => {
   return (
     <FeatureLayout type="orders">
       <></>
