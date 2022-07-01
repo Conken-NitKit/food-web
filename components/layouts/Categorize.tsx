@@ -4,7 +4,7 @@ import { FeatureLayout } from ".";
 export const CategorizeLayout: ({
   type,
   children,
-}: LayoutProps) => JSX.Element = () => {
+}: LayoutProps) => JSX.Element = ({ type, children }) => {
   return (
     <FeatureLayout type="orders">
       <></>
