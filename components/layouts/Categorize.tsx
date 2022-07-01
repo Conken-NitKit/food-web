@@ -6,7 +6,7 @@ export const CategorizeLayout: ({
   children,
 }: LayoutProps) => JSX.Element = ({ type, children }) => {
   return (
-    <FeatureLayout type="orders">
+    <FeatureLayout type={type}>
       <></>
     </FeatureLayout>
   );
