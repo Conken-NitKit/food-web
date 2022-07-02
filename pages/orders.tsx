@@ -24,7 +24,7 @@ const ORDER_CATEGORIES: OrderCategories = {
 
 const Orders: NextPage = () => {
   return (
-    <CategorizeLayout type="orders">
+    <CategorizeLayout type="orders" categories={ORDER_CATEGORIES}>
       <></>
     </CategorizeLayout>
   );
