@@ -1,11 +1,11 @@
-import { MenuId } from "../types";
+import { PageId } from "../types";
 
 interface MenuItems {
-  id: MenuId;
+  id: PageId;
   name: string;
 }
 
-export const MENUS_ITEMS: Record<MenuId, MenuItems> = {
+export const MENUS_ITEMS: Record<PageId, MenuItems> = {
   home: {
     id: "home",
     name: "ホーム",
