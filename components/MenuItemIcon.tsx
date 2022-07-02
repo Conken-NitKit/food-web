@@ -23,12 +23,12 @@ const icons: Record<PageId, (props: IconProps) => JSX.Element> = {
 
 interface Props {
   id: PageId;
-  isChose: boolean;
+  isChoose: boolean;
 }
 
-export const MenuItemIcon: ({ id, isChose }: Props) => JSX.Element = ({
+export const MenuItemIcon: ({ id, isChoose }: Props) => JSX.Element = ({
   id,
-  isChose,
+  isChoose,
 }) => {
-  return icons[id]({ isChose: isChose });
+  return icons[id]({ isChoose: isChoose });
 };
