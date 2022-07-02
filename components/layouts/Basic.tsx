@@ -34,7 +34,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                     <div className="w-[11%]">
                       <MenuItemIcon
                         id={menuItems.id}
-                        isChose={menuItems.id === type}
+                        isChoose={menuItems.id === type}
                       />
                     </div>
 
