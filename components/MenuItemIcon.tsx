@@ -1,4 +1,4 @@
-import { IconProps, MenuId } from "../types";
+import { IconProps, PageId } from "../types";
 import {
   HomeIcon,
   MenuIcon,
@@ -10,7 +10,7 @@ import {
   UserIcon,
 } from "./icons";
 
-const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {
+const icons: Record<PageId, (props: IconProps) => JSX.Element> = {
   home: (props) => <HomeIcon {...props} />,
   menu: (props) => <MenuIcon {...props} />,
   monitoring: (props) => <MonitoringIcon {...props} />,
@@ -22,7 +22,7 @@ const icons: Record<MenuId, (props: IconProps) => JSX.Element> = {
 };
 
 interface Props {
-  id: MenuId;
+  id: PageId;
   isChose: boolean;
 }
 
