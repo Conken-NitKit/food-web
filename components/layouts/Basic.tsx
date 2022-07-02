@@ -16,6 +16,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
           <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-white font-bold leading-basic">
             コンピュータ研究部
           </h2>
+
           <ul>
             {Object.values(MENUS_ITEMS).map((menuItems) => (
               <li
