@@ -24,7 +24,8 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                 className={classNames(
                   "mt-[7%] first:mt-0 h-[26px] md:h-[31px] lg:h-[41px] xl:h-[51px] 2xl:h-[61px] cursor-pointer",
                   {
-                    "rounded-l-2xl bg-white": menuItems.id === type,
+                    "rounded-l-md md:rounded-l-lg lg:rounded-l-[10px] xl:rounded-l-[13px] 2xl:rounded-l-[15px] bg-white":
+                      menuItems.id === type,
                   }
                 )}
               >
