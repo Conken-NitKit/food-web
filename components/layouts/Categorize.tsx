@@ -1,5 +1,9 @@
-import { LayoutProps } from "../../types";
+import { LayoutProps, OrderCategories } from "../../types";
 import { FeatureLayout } from ".";
+
+interface CategorizeLayoutProps extends LayoutProps {
+  categories: OrderCategories;
+}
 
 export const CategorizeLayout: ({
   type,
