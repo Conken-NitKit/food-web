@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { MenuId } from ".";
+import { PageId } from ".";
 
 export interface LayoutProps {
-  type: MenuId;
+  type: PageId;
   children: ReactNode;
 }
