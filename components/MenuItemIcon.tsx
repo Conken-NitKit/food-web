@@ -30,5 +30,5 @@ export const MenuItemIcon: ({ id, isChoose }: Props) => JSX.Element = ({
   id,
   isChoose,
 }) => {
-  return icons[id]({ isChoose: isChoose });
+  return icons[id]({ isChoose });
 };

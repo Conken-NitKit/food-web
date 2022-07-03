@@ -5,13 +5,33 @@ import { LayoutProps } from "../../types";
 import { MenuItemIcon } from "..";
 import { MENUS_ITEMS } from "../../constants";
 
+const MENU_BAR_WIDTH: string = "176";
+const MENU_BAR_WIDTH_MD: string = "211";
+const MENU_BAR_WIDTH_LG: string = "282";
+const MENU_BAR_WIDTH_XL: string = "352";
+const MENU_BAR_WIDTH_2XL: string = "422";
+
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
   children,
 }) => {
   return (
     <div className="flex w-screen h-screen">
-      <div className="flex flex-row-reverse w-44 md:w-[211px] lg:w-[282px] xl:w-[352px] 2xl:w-[422px] h-full">
+      <div
+        className={
+          "flex flex-row-reverse w-[" +
+          MENU_BAR_WIDTH +
+          "px] md:w-[" +
+          MENU_BAR_WIDTH_MD +
+          "px] lg:w-[" +
+          MENU_BAR_WIDTH_LG +
+          "px] xl:w-[" +
+          MENU_BAR_WIDTH_XL +
+          "px] 2xl:w-[" +
+          MENU_BAR_WIDTH_2XL +
+          "px] h-full"
+        }
+      >
         <div className="pl-[7%] w-[82%] h-full bg-gradient-to-b from-theme-start to-theme-end">
           <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-white font-bold leading-basic">
             コンピュータ研究部
@@ -56,7 +76,21 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
         </div>
       </div>
 
-      <main className="w-[calc(100%-176px)] md:w-[calc(100%-212px)] lg:w-[calc(100%-282px)] xl:w-[calc(100%-352px)] 2xl:w-[calc(100%-422px)] h-full">
+      <main
+        className={
+          "w-[calc(100%-" +
+          MENU_BAR_WIDTH +
+          "px)] md:w-[calc(100%-" +
+          MENU_BAR_WIDTH_MD +
+          "px)] lg:w-[calc(100%-" +
+          MENU_BAR_WIDTH_LG +
+          "px)] xl:w-[calc(100%-" +
+          MENU_BAR_WIDTH_XL +
+          "px)] 2xl:w-[calc(100%-" +
+          MENU_BAR_WIDTH_2XL +
+          "px)] h-full"
+        }
+      >
         {children}
       </main>
     </div>
