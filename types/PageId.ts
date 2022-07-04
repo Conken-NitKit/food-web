@@ -1,4 +1,4 @@
-export type MenuId =
+export type PageId =
   | "home"
   | "menu"
   | "orders"
