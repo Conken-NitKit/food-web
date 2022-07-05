@@ -61,9 +61,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## コミットメッセージ
 
-コミットメッセージは`タイトル: 詳細`の形式
+- コミットメッセージは`タイトル: 詳細`の形式
 
-タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
+- タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
 
 | タイトル | コミット内容               |
 | -------- | -------------------------- |
