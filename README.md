@@ -78,6 +78,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## 型指定
 
+- 定数の宣言時は必ず型付けする。
+
+- ページコンポーネントの型は `: NextPage` とする。
+
+- ページコンポーネント以外のコンポーネントの型は `() => JSX.Element` とする。
+
 ## 命名法
 
 ### ブランチ
@@ -110,11 +116,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - 基本的にホーム以外の全てのページで使用する。
 
 ## その他
-
-- 定数の宣言時は必ず型付けする。
-
-- ページコンポーネントの型は `: NextPage` とする。
-
-- ページコンポーネント以外のコンポーネントの型は `() => JSX.Element` とする。
 
 - 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
