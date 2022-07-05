@@ -88,6 +88,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 極力、HTML 要素の大きさを画面の大きさに対して相対指定しないこと。（具体的には、極力 vw、vh を使わないこと。また、画面直下の要素、または直接・間接問わず、大きさを画面の大きさに対して相対指定した要素の子要素について、大きさを%で指定しないこと。）
 
+- 要素の大きさは、tailwind にデフォルトで用意された([参考](https://tailwindcss.jp/docs/responsive-design))、表のブレイクポイントについてレスポンシブ対応すること。ただし、sm は`sm:`とせず基準のスタイルとすること。また、大きさは、[Figma](https://www.figma.com/file/xRETNoeIAtd6L5akb6KOsK/Food?node-id=12%3A286)の値に表の倍率をかけて求めること。
+
+| ブレイクポイント | min-width | 倍率    |
+| ---------------- | --------- | ------- |
+| sm               | 640px     | 0.4 倍  |
+| md               | 768px     | 0.48 倍 |
+| lg               | 1024px    | 0.64 倍 |
+| xl               | 1280px    | 0.8 倍  |
+| 2xl              | 1536px    | 0.96 倍 |
+
 ## 命名法
 
 ### ブランチ
