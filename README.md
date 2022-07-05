@@ -78,7 +78,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## 型指定
 
-- 定数の宣言時は必ず型付けする。
+- 定数・変数は基本的に全て型を明示的に指定する。
 
 - ページコンポーネントの型は `: NextPage` とする。
 
