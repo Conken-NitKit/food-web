@@ -84,6 +84,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - ページコンポーネント以外のコンポーネントの型は `() => JSX.Element` とする。
 
+## CSS
+
 ## 命名法
 
 ### ブランチ
