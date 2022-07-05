@@ -86,6 +86,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## CSS
 
+- 極力、HTML 要素の大きさを画面の大きさに対して相対指定しないこと。（具体的には、極力 vw、vh を使わないこと。また、画面直下の要素、または直接・間接問わず、大きさを画面の大きさに対して相対指定した要素の子要素について、大きさを%で指定しないこと。）
+
 ## 命名法
 
 ### ブランチ
