@@ -35,7 +35,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ---
 
-以下 food-web（仮）の留意事項を追記します。ここに書くべきかはわかりません笑 必要に応じて移動します。
+以下 food-web（仮）のコーディングルールを追記します。不明な点は[平田](https://github.com/Umiteru2004)まで。
 
 ## 環境構築手順
 
