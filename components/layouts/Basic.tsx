@@ -83,18 +83,18 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
         </div>
       </div>
 
-      <main className={"h-full"}>{children}</main>
-      {/* w-[calc(100%-" +
-          MENU_BAR_WIDTH +
-          "px)] md:w-[calc(100%-" +
-          MENU_BAR_WIDTH_MD +
-          "px)] lg:w-[calc(100%-" +
-          MENU_BAR_WIDTH_LG +
-          "px)] xl:w-[calc(100%-" +
-          MENU_BAR_WIDTH_XL +
-          "px)] 2xl:w-[calc(100%-" +
-          MENU_BAR_WIDTH_2XL +
-          "px)] */}
+      <main
+        className={classNames(
+          "h-full",
+          MAIN_W_CLASS,
+          MAIN_W_CLASS_MD,
+          MAIN_W_CLASS_LG,
+          MAIN_W_CLASS_XL,
+          MAIN_W_CLASS_2XL
+        )}
+      >
+        {children}
+      </main>
     </div>
   );
 };
