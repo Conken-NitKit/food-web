@@ -11,6 +11,12 @@ const MENU_BAR_W_LG: number = 282;
 const MENU_BAR_W_XL: number = 352;
 const MENU_BAR_W_2XL: number = 422;
 
+const MENU_BAR_W_CLASS: string = "w-[" + MENU_BAR_W + "px]";
+const MENU_BAR_W_CLASS_MD: string = "md:w-[" + MENU_BAR_W_MD + "px]";
+const MENU_BAR_W_CLASS_LG: string = "lg:w-[" + MENU_BAR_W_LG + "px]";
+const MENU_BAR_W_CLASS_XL: string = "xl:w-[" + MENU_BAR_W_XL + "px]";
+const MENU_BAR_W_CLASS_2XL: string = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
+
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
   children,
