@@ -29,18 +29,16 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
 }) => {
   return (
     <div className="flex w-screen h-screen">
-      <div className={"flex flex-row-reverse h-full"}>
-        {/* w-[" +
-          MENU_BAR_WIDTH +
-          "px] md:w-[" +
-          MENU_BAR_WIDTH_MD +
-          "px] lg:w-[" +
-          MENU_BAR_WIDTH_LG +
-          "px] xl:w-[" +
-          MENU_BAR_WIDTH_XL +
-          "px] 2xl:w-[" +
-          MENU_BAR_WIDTH_2XL +
-          "px] */}
+      <div
+        className={classNames(
+          "flex flex-row-reverse h-full",
+          MENU_BAR_W_CLASS,
+          MENU_BAR_W_CLASS_MD,
+          MENU_BAR_W_CLASS_LG,
+          MENU_BAR_W_CLASS_XL,
+          MENU_BAR_W_CLASS_2XL
+        )}
+      >
         <div className="pl-[7%] w-[82%] h-full bg-gradient-to-b from-theme-start to-theme-end">
           <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-white font-bold leading-basic">
             コンピュータ研究部
