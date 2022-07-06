@@ -8,6 +8,7 @@ interface CategorizeLayoutProps extends LayoutProps {
 export const CategorizeLayout: ({
   type,
   children,
+  categories,
 }: CategorizeLayoutProps) => JSX.Element = ({ type, children }) => {
   return (
     <FeatureLayout type={type}>
