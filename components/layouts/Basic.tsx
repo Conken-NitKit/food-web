@@ -17,11 +17,11 @@ const menuBarWClassLg: string = "lg:w-[" + MENU_BAR_W_LG + "px]";
 const menuBarWClassXl: string = "xl:w-[" + MENU_BAR_W_XL + "px]";
 const menuBarWClass2xl: string = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
 
-const MAIN_W_CLASS: string = "w-[calc(100%-" + MENU_BAR_W + "px)]";
-const MAIN_W_CLASS_MD: string = "md:w-[calc(100%-" + MENU_BAR_W_MD + "px)]";
-const MAIN_W_CLASS_LG: string = "lg:w-[calc(100%-" + MENU_BAR_W_LG + "px)]";
-const MAIN_W_CLASS_XL: string = "xl:w-[calc(100%-" + MENU_BAR_W_XL + "px)]";
-const MAIN_W_CLASS_2XL: string = "2xl:w-[calc(100%-" + MENU_BAR_W_2XL + "px)]";
+const mainWClass: string = "w-[calc(100%-" + MENU_BAR_W + "px)]";
+const mainWClassMd: string = "md:w-[calc(100%-" + MENU_BAR_W_MD + "px)]";
+const mainWClassLg: string = "lg:w-[calc(100%-" + MENU_BAR_W_LG + "px)]";
+const mainWClassXl: string = "xl:w-[calc(100%-" + MENU_BAR_W_XL + "px)]";
+const mainWClass2xl: string = "2xl:w-[calc(100%-" + MENU_BAR_W_2XL + "px)]";
 
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
@@ -86,11 +86,11 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
       <main
         className={classNames(
           "h-full",
-          MAIN_W_CLASS,
-          MAIN_W_CLASS_MD,
-          MAIN_W_CLASS_LG,
-          MAIN_W_CLASS_XL,
-          MAIN_W_CLASS_2XL
+          mainWClass,
+          mainWClassMd,
+          mainWClassLg,
+          mainWClassXl,
+          mainWClass2xl
         )}
       >
         {children}
