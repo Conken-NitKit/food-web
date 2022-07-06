@@ -130,3 +130,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## その他
 
 - 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
+
+- push の前には必ず`git pull origin develop`すること。
