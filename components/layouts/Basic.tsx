@@ -5,11 +5,11 @@ import { LayoutProps } from "../../types";
 import { MenuItemIcon } from "..";
 import { MENUS_ITEMS } from "../../constants";
 
-const MENU_BAR_WIDTH: number = 176;
-const MENU_BAR_WIDTH_MD: number = 211;
-const MENU_BAR_WIDTH_LG: number = 282;
-const MENU_BAR_WIDTH_XL: number = 352;
-const MENU_BAR_WIDTH_2XL: number = 422;
+const MENU_BAR_W: number = 176;
+const MENU_BAR_W_MD: number = 211;
+const MENU_BAR_W_LG: number = 282;
+const MENU_BAR_W_XL: number = 352;
+const MENU_BAR_W_2XL: number = 422;
 
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
