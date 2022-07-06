@@ -11,11 +11,11 @@ const MENU_BAR_W_LG: number = 282;
 const MENU_BAR_W_XL: number = 352;
 const MENU_BAR_W_2XL: number = 422;
 
-const MENU_BAR_W_CLASS: string = "w-[" + MENU_BAR_W + "px]";
-const MENU_BAR_W_CLASS_MD: string = "md:w-[" + MENU_BAR_W_MD + "px]";
-const MENU_BAR_W_CLASS_LG: string = "lg:w-[" + MENU_BAR_W_LG + "px]";
-const MENU_BAR_W_CLASS_XL: string = "xl:w-[" + MENU_BAR_W_XL + "px]";
-const MENU_BAR_W_CLASS_2XL: string = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
+const menuBarWClass: string = "w-[" + MENU_BAR_W + "px]";
+const menuBarWClassMd: string = "md:w-[" + MENU_BAR_W_MD + "px]";
+const menuBarWClassLg: string = "lg:w-[" + MENU_BAR_W_LG + "px]";
+const menuBarWClassXl: string = "xl:w-[" + MENU_BAR_W_XL + "px]";
+const menuBarWClass2xl: string = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
 
 const MAIN_W_CLASS: string = "w-[calc(100%-" + MENU_BAR_W + "px)]";
 const MAIN_W_CLASS_MD: string = "md:w-[calc(100%-" + MENU_BAR_W_MD + "px)]";
@@ -32,11 +32,11 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
       <div
         className={classNames(
           "flex flex-row-reverse h-full",
-          MENU_BAR_W_CLASS,
-          MENU_BAR_W_CLASS_MD,
-          MENU_BAR_W_CLASS_LG,
-          MENU_BAR_W_CLASS_XL,
-          MENU_BAR_W_CLASS_2XL
+          menuBarWClass,
+          menuBarWClassMd,
+          menuBarWClassLg,
+          menuBarWClassXl,
+          menuBarWClass2xl
         )}
       >
         <div className="pl-[7%] w-[82%] h-full bg-gradient-to-b from-theme-start to-theme-end">
