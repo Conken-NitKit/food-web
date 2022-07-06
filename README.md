@@ -35,7 +35,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ---
 
-以下 food-web（仮）の留意事項を追記します。ここに書くべきかはわかりません笑 必要に応じて移動します。
+以下 food-web（仮）のコーディングルールを追記します。不明な点は[平田](https://github.com/Umiteru2004)まで。
 
 ## 環境構築手順
 
@@ -57,13 +57,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 1. VScode の拡張機能`ESlint`をインストール。 [[参考]](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
-1. `food-web/.env`を作成。内容は[平田海輝](https://github.com/Umiteru2004)に申請。
+1. `food-web/.env`を作成。内容は[平田](https://github.com/Umiteru2004)に申請。
 
 ## コミットメッセージ
 
-コミットメッセージは`タイトル: 詳細`の形式
+- コミットメッセージは`タイトル: 詳細`の形式
 
-タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
+- タイトルは次のいずれか [参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
 
 | タイトル | コミット内容               |
 | -------- | -------------------------- |
@@ -74,15 +74,37 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | move     | ファイル・フォルダの移動   |
 | remove   | ファイル・コード等の削除   |
 
+## 型指定
+
+- 定数・変数は基本的に全て型を明示的に指定する。
+
+- ページコンポーネントの型は `: NextPage` とする。
+
+- ページコンポーネント以外のコンポーネントの型は `() => JSX.Element` とする。
+
+## CSS
+
+- 極力、HTML 要素の大きさを画面の大きさに対して相対指定しないこと。（具体的には、極力 vw、vh を使わないこと。また、画面直下の要素、または直接・間接問わず、大きさを画面の大きさに対して相対指定した要素の子要素について、大きさを%で指定しないこと。）
+
+- 要素の大きさは、tailwind にデフォルトで用意された([参考](https://tailwindcss.jp/docs/responsive-design))、表のブレイクポイントについてレスポンシブ対応すること。ただし、sm は`sm:`とせず基準のスタイルとすること。また、大きさは、[Figma](https://www.figma.com/file/xRETNoeIAtd6L5akb6KOsK/Food?node-id=12%3A286)の値に表の倍率をかけて求めること。
+
+| ブレイクポイント | min-width | 倍率    |
+| ---------------- | --------- | ------- |
+| sm               | 640px     | 0.4 倍  |
+| md               | 768px     | 0.48 倍 |
+| lg               | 1024px    | 0.64 倍 |
+| xl               | 1280px    | 0.8 倍  |
+| 2xl              | 1536px    | 0.96 倍 |
+
 ## 命名法
 
 ### ブランチ
 
-`ファイル名`: そのブランチで作業するファイルの名前
-`種類名`: `ファイル名`のファイルを含む`/`ディレクトリ内のディレクトリの名前
+- ブランチ名は右の形式: `種類名/ファイル名`
 
-- ブランチ名は以下の形式
-  : `種類名/ファイル名`
+`ファイル名`: そのブランチで作業するファイルの名前
+
+`種類名`: `ファイル名`のファイルを含む`/`ディレクトリ内のディレクトリの名前
 
 - ケバブケース
 
@@ -107,8 +129,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## その他
 
-- 定数の宣言時は必ず型付けする。
-
-- ページコンポーネントの型は `: NextPage` とする。
-
-- ページコンポーネント以外のコンポーネントの型は `() => JSX.Element` とする。
+- 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
