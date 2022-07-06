@@ -8,17 +8,17 @@ const ORDER_CATEGORIES: OrderCategories = {
     id: "all",
     name: "すべて",
   },
-  canceled: {
-    id: "canceled",
-    name: "すべて",
+  waiting: {
+    id: "waiting",
+    name: "提供待ち",
   },
   done: {
     id: "done",
-    name: "すべて",
+    name: "提供済み",
   },
-  waiting: {
-    id: "waiting",
-    name: "すべて",
+  canceled: {
+    id: "canceled",
+    name: "キャンセル済み",
   },
 };
 
