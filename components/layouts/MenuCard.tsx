@@ -16,6 +16,14 @@ export const MenuCard: () => JSX.Element = () => {
         <p className="text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] mt-[4px] md:mt-[5px] lg:mt-[6px] xl:mt-[8px] 2xl:mt-[10px]">
           おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。
         </p>
+        <div className="flex items-center">
+          <p className="text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] font-bold ">
+            単品 ￥
+            <span className="text-[8px] md:text-[10px] lg:text-[13px] xl:text-[16px] 2xl:text-[19px]">
+              490
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );
