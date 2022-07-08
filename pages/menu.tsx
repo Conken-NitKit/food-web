@@ -7,7 +7,7 @@ const Menu: NextPage = () => {
   return (
     <div className="w-screen h-screen">
       <FeatureLayout type="menu">
-        <MenuCard />
+        <MenuCard isSold={true}/>
       </FeatureLayout>
     </div>
   );
