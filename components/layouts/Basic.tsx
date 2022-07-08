@@ -74,18 +74,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
         </div>
       </div>
 
-      <main
-        className={classNames(
-          "h-full",
-          mainWClass,
-          mainWClassMd,
-          mainWClassLg,
-          mainWClassXl,
-          mainWClass2xl
-        )}
-      >
-        {children}
-      </main>
+      <main className={"h-full"}>{children}</main>
     </div>
   );
 };
