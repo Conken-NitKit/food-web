@@ -58,6 +58,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
       </div>
 
       <main className="w-[calc(100%-176px)] md:w-[calc(100%-211px)] lg:w-[calc(100%-282px)] xl:w-[calc(100%-352px)] 2xl:w-[calc(100%-422px)] h-full">
+        {/* note: <main className = "w-[calc(100%-n px)]… n: メニューバースペースのdivのwidth */}
         {children}
       </main>
     </div>
