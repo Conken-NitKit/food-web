@@ -23,6 +23,9 @@ export const MenuCard: () => JSX.Element = () => {
               490
             </span>
           </p>
+          <div className="text-center w-[38px] md:w-[46px] lg:w-[61px] xl:w-[77px] 2xl:w-[92px] py-[1px] md:py-[1px] lg:py-[2px] xl:py-[2px] 2xl:py-[3px] bg-[#FFBC0D] rounded-[2px] md:rounded-[2px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[4px] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] ml-[auto]">
+            内容を編集
+          </div>
         </div>
       </div>
     </div>
