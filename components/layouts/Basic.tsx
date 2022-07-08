@@ -11,12 +11,6 @@ const MENU_BAR_W_LG: number = 282;
 const MENU_BAR_W_XL: number = 352;
 const MENU_BAR_W_2XL: number = 422;
 
-const menuBarWClass: string = "w-[" + MENU_BAR_W + "px]";
-const menuBarWClassMd: string = "md:w-[" + MENU_BAR_W_MD + "px]";
-const menuBarWClassLg: string = "lg:w-[" + MENU_BAR_W_LG + "px]";
-const menuBarWClassXl: string = "xl:w-[" + MENU_BAR_W_XL + "px]";
-const menuBarWClass2xl: string = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
-
 const mainWClass: string = "w-[calc(100%-" + MENU_BAR_W + "px)]";
 const mainWClassMd: string = "md:w-[calc(100%-" + MENU_BAR_W_MD + "px)]";
 const mainWClassLg: string = "lg:w-[calc(100%-" + MENU_BAR_W_LG + "px)]";
