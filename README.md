@@ -98,6 +98,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | xl               | 1280px    | 0.8 倍  |
 | 2xl              | 1536px    | 0.96 倍 |
 
+- CSSは、基本的にdisplay, position, top/bottom/right/left, m, border, p, w, hの順で記述する。
+
 ## 命名法
 
 ### ブランチ
