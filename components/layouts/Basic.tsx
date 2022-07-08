@@ -11,6 +11,18 @@ const MENU_BAR_W_LG: number = 282;
 const MENU_BAR_W_XL: number = 352;
 const MENU_BAR_W_2XL: number = 422;
 
+const menuBarWClass: string = "w-[" + MENU_BAR_W + "px]";
+const menuBarWClassMd: string = "md:w-[" + MENU_BAR_W_MD + "px]";
+const menuBarWClassLg: string = "lg:w-[" + MENU_BAR_W_LG + "px]";
+const menuBarWClassXl: string = "xl:w-[" + MENU_BAR_W_XL + "px]";
+const menuBarWClass2xl: string = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
+
+const mainWClass: string = "w-[calc(100%-" + MENU_BAR_W + "px)]";
+const mainWClassMd: string = "md:w-[calc(100%-" + MENU_BAR_W_MD + "px)]";
+const mainWClassLg: string = "lg:w-[calc(100%-" + MENU_BAR_W_LG + "px)]";
+const mainWClassXl: string = "xl:w-[calc(100%-" + MENU_BAR_W_XL + "px)]";
+const mainWClass2xl: string = "2xl:w-[calc(100%-" + MENU_BAR_W_2XL + "px)]";
+
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
   children,
@@ -18,7 +30,14 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   return (
     <div className="flex w-screen h-screen">
       <div
-        className={`flex flex-row-reverse w-[${MENU_BAR_W}px] md:w-[${MENU_BAR_W_MD}px] lg:w-[${MENU_BAR_W_LG}px] xl:w-[${MENU_BAR_W_XL}px] 2xl:w-[${MENU_BAR_W_2XL}px] h-full`}
+        className={classNames(
+          "flex flex-row-reverse h-full",
+          menuBarWClass,
+          menuBarWClassMd,
+          menuBarWClassLg,
+          menuBarWClassXl,
+          menuBarWClass2xl
+        )}
       >
         <div className="pl-[7%] w-[82%] h-full bg-gradient-to-b from-theme-start to-theme-end">
           <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-white font-bold leading-basic">
@@ -65,7 +84,14 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
       </div>
 
       <main
-        className={`w-[calc(100%-${MENU_BAR_W}px)] md:w-[calc(100%-${MENU_BAR_W_MD}px)] lg:w-[calc(100%-${MENU_BAR_W_LG}px)] xl:w-[calc(100%-${MENU_BAR_W_XL}px)] 2xl:w-[calc(100%-${MENU_BAR_W_2XL}px)] h-full`}
+        className={classNames(
+          "h-full",
+          mainWClass,
+          mainWClassMd,
+          mainWClassLg,
+          mainWClassXl,
+          mainWClass2xl
+        )}
       >
         {children}
       </main>
