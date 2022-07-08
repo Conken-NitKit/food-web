@@ -5,24 +5,6 @@ import { LayoutProps } from "../../types";
 import { MenuItemIcon } from "..";
 import { MENUS_ITEMS } from "../../constants";
 
-const MENU_BAR_W = 176;
-const MENU_BAR_W_MD = 211;
-const MENU_BAR_W_LG = 282;
-const MENU_BAR_W_XL = 352;
-const MENU_BAR_W_2XL = 422;
-
-const menuBarWClass = "w-[" + MENU_BAR_W + "px]";
-const menuBarWClassMd = "md:w-[" + MENU_BAR_W_MD + "px]";
-const menuBarWClassLg = "lg:w-[" + MENU_BAR_W_LG + "px]";
-const menuBarWClassXl = "xl:w-[" + MENU_BAR_W_XL + "px]";
-const menuBarWClass2xl = "2xl:w-[" + MENU_BAR_W_2XL + "px]";
-
-const mainWClass = "w-[calc(100%-" + MENU_BAR_W + "px)]";
-const mainWClassMd = "md:w-[calc(100%-" + MENU_BAR_W_MD + "px)]";
-const mainWClassLg = "lg:w-[calc(100%-" + MENU_BAR_W_LG + "px)]";
-const mainWClassXl = "xl:w-[calc(100%-" + MENU_BAR_W_XL + "px)]";
-const mainWClass2xl = "2xl:w-[calc(100%-" + MENU_BAR_W_2XL + "px)]";
-
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
   children,
