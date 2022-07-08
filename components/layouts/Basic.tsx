@@ -17,7 +17,9 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
 }) => {
   return (
     <div className="flex w-screen h-screen">
-      <div className={"flex flex-row-reverse h-full"}>
+      <div
+        className={`flex flex-row-reverse w-[${MENU_BAR_W}px] md:w-[${MENU_BAR_W_MD}px] lg:w-[${MENU_BAR_W_LG}px] xl:w-[${MENU_BAR_W_XL}px] 2xl:w-[${MENU_BAR_W_2XL}px] h-full`}
+      >
         <div className="pl-[7%] w-[82%] h-full bg-gradient-to-b from-theme-start to-theme-end">
           <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-white font-bold leading-basic">
             コンピュータ研究部
