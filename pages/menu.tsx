@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { MenuCard } from "../components/layouts";
+import { MenuCard } from "../components/MenuCard";
 import { FeatureLayout } from "../components/layouts";
 
 const Menu: NextPage = () => {
