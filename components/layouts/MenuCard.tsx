@@ -13,6 +13,9 @@ export const MenuCard: () => JSX.Element = () => {
             ビーフハンバーガー
           </p>
         </div>
+        <p className="text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] mt-[4px] md:mt-[5px] lg:mt-[6px] xl:mt-[8px] 2xl:mt-[10px]">
+          おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。
+        </p>
       </div>
     </div>
   );
