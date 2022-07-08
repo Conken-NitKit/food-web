@@ -32,10 +32,10 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
       <div
         className={classNames(
           "flex flex-row-reverse h-full",
-          menuBarWClass,
-          menuBarWClassMd,
-          menuBarWClassLg,
-          menuBarWClassXl,
+          "w-[176px]",
+          "md:w-[211px]",
+          "lg:w-[282px]",
+          "xl:w-[352px]",
           menuBarWClass2xl
         )}
       >
