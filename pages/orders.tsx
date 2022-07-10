@@ -1,9 +1,12 @@
 import { NextPage } from "next";
 
-import { OrderCategories } from "../types";
+import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
 
-const ORDER_CATEGORIES: OrderCategories = {
+const ORDER_CATEGORIES: Record<
+  OrderCategoryId,
+  { id: OrderCategoryId; name: string }
+> = {
   all: {
     id: "all",
     name: "すべて",
