@@ -6,6 +6,6 @@ interface Props {
   name: string;
 }
 
-export const CategoryLi = () => {
+export const CategoryLi = ({ key, isChosen, name }: Props) => {
   return <li></li>;
 };
