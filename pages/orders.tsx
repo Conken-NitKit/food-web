@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 
 import { FeatureLayout } from "../components/layouts";
+import { CategoryUl } from "../components/category-menu-components/CategoryUl";
 
 type CategoryId = "all" | "waiting" | "done" | "canceled";
 
@@ -26,9 +27,11 @@ const CATEGORIES: Record<CategoryId, { id: CategoryId; name: string }> = {
 const Orders: NextPage = () => {
   return (
     <FeatureLayout type="orders">
-      {Object.values(CATEGORIES).map((category) => (
-        <li key={category.id}>{category.name}</li>
-      ))}
+      <CategoryUl>
+        {Object.values(CATEGORIES).map((category) => (
+          <li key={category.id}>{category.name}</li>
+        ))}
+      </CategoryUl>
     </FeatureLayout>
   );
 };
