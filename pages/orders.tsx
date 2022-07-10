@@ -26,11 +26,9 @@ const CATEGORIES: Record<CategoryId, { id: CategoryId; name: string }> = {
 const Orders: NextPage = () => {
   return (
     <FeatureLayout type="orders">
-      <ul className="flex h-[18px] md:h-[22px] lg:h-[29px] xl:h-[37px] 2xl:h-11">
-        {Object.values(CATEGORIES).map((category) => (
-          <li key={category.id}>{category.name}</li>
-        ))}
-      </ul>
+      {Object.values(CATEGORIES).map((category) => (
+        <li key={category.id}>{category.name}</li>
+      ))}
     </FeatureLayout>
   );
 };
