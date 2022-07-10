@@ -2,12 +2,9 @@ import { NextPage } from "next";
 
 import { FeatureLayout } from "../components/layouts";
 
-type OrderCategoryId = "all" | "waiting" | "done" | "canceled";
+type CategoryId = "all" | "waiting" | "done" | "canceled";
 
-const CATEGORIES: Record<
-  OrderCategoryId,
-  { id: OrderCategoryId; name: string }
-> = {
+const CATEGORIES: Record<CategoryId, { id: CategoryId; name: string }> = {
   all: {
     id: "all",
     name: "すべて",
