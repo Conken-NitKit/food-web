@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 
-import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
+
+type OrderCategoryId = "all" | "waiting" | "done" | "canceled";
 
 const ORDER_CATEGORIES: Record<
   OrderCategoryId,
