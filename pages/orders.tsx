@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 import { OrderCategories } from "../types";
-import { CategorizeLayout } from "../components/layouts/Categorize";
+import { FeatureLayout } from "../components/layouts";
 
 const ORDER_CATEGORIES: OrderCategories = {
   all: {
@@ -24,9 +24,13 @@ const ORDER_CATEGORIES: OrderCategories = {
 
 const Orders: NextPage = () => {
   return (
-    <CategorizeLayout type="orders" categories={ORDER_CATEGORIES}>
-      <></>
-    </CategorizeLayout>
+    <FeatureLayout type="orders">
+      <ul className="flex h-[18px] md:h-[22px] lg:h-[29px] xl:h-[37px] 2xl:h-11">
+        {Object.values(ORDER_CATEGORIES).map((category) => (
+          <li key={category.id}>{category.name}</li>
+        ))}
+      </ul>
+    </FeatureLayout>
   );
 };
 

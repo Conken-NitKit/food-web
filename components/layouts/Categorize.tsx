@@ -1,8 +1,15 @@
 import { LayoutProps, OrderCategories } from "../../types";
 import { FeatureLayout } from ".";
 
+type SalesCategoryId = "sales";
+
+type SalesCategories = Record<
+  SalesCategoryId,
+  { id: SalesCategoryId; name: string }
+>;
+
 interface CategorizeLayoutProps extends LayoutProps {
-  categories: OrderCategories;
+  categories: OrderCategories | SalesCategories;
 }
 
 export const CategorizeLayout: ({
