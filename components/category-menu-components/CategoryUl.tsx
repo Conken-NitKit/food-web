@@ -1,4 +1,8 @@
-interface Props {}
+import { ReactNode } from "react";
+
+interface Props {
+  children: ReactNode;
+}
 
 export const CategoryUl = () => {
   return (
