@@ -1,11 +1,13 @@
 import { NextPage } from "next";
 
+import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
 import { CategoryUl } from "../components/category-menu-components/CategoryUl";
 
-type CategoryId = "all" | "waiting" | "done" | "canceled";
-
-const CATEGORIES: Record<CategoryId, { id: CategoryId; name: string }> = {
+const CATEGORIES: Record<
+  OrderCategoryId,
+  { id: OrderCategoryId; name: string }
+> = {
   all: {
     id: "all",
     name: "すべて",
