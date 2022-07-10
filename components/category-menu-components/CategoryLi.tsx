@@ -2,10 +2,10 @@ import { OrderCategoryId } from "../../types";
 
 interface Props {
   key: OrderCategoryId;
-  isChosen: boolean;
+  isSelected: boolean;
   name: string;
 }
 
-export const CategoryLi = ({ key, isChosen, name }: Props) => {
+export const CategoryLi = ({ key, isSelected, name }: Props) => {
   return <li key={key}>{name}</li>;
 };
