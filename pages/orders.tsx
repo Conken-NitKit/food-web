@@ -4,7 +4,7 @@ import { FeatureLayout } from "../components/layouts";
 
 type OrderCategoryId = "all" | "waiting" | "done" | "canceled";
 
-const ORDER_CATEGORIES: Record<
+const CATEGORIES: Record<
   OrderCategoryId,
   { id: OrderCategoryId; name: string }
 > = {
@@ -30,7 +30,7 @@ const Orders: NextPage = () => {
   return (
     <FeatureLayout type="orders">
       <ul className="flex h-[18px] md:h-[22px] lg:h-[29px] xl:h-[37px] 2xl:h-11">
-        {Object.values(ORDER_CATEGORIES).map((category) => (
+        {Object.values(CATEGORIES).map((category) => (
           <li key={category.id}>{category.name}</li>
         ))}
       </ul>
