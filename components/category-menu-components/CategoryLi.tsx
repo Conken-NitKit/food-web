@@ -7,5 +7,5 @@ interface Props {
 }
 
 export const CategoryLi = ({ key, isChosen, name }: Props) => {
-  return <li></li>;
+  return <li key={key}></li>;
 };
