@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction, useState } from "react";
 import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
@@ -27,6 +28,9 @@ const CATEGORIES: Record<
 };
 
 const Orders: NextPage = () => {
+  const [selectedCategory, setSelectedCategory] =
+    useState<OrderCategoryId>("all");
+
   return (
     <FeatureLayout type="orders">
       <CategoryUl>
