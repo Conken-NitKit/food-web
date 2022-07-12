@@ -1,12 +1,9 @@
 export const MenuCard: ({ isSold: boolean }) => JSX.Element = ({ isSold }) => {
   return (
-    <div className="overflow-hidden shadow-md shadow-md m-[19px] md:m-[23px] lg:m-[31px] xl:m-[38px] 2xl:m-[46px] w-[118px] md:w-[142px] lg:w-[189px] xl:w-[237px] 2xl:w-[284px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px]">
-      <img
-        src="https://www.freshnessburger.co.jp/images/menu/thumb/classic_burger.jpg?ver=220316_000357"
-        className="w-[100%] h-[75px] md:h-[90px] lg:h-[120px] xl:h-[150px] 2xl:h-[180px]"
-      />
-      <div className="text-letter mx-auto w-[106px] md:w-[127px] lg:w-[169px] xl:w-[211px] 2xl:w-[253px] h-[48px] md:h-[58px] lg:h-[77px] xl:h-[97px] 2xl:h-[116px]">
-        <div className="flex items-center font-bold mt-[5px] md:mt-[6px] lg:mt-[8px] xl:mt-[10px] 2xl:mt-[12px] h-[7px] md:h-[9px] lg:h-[12px] xl:h-[14px] 2xl:h-[17px]">
+    <div className="overflow-hidden shadow-md shadow-md m-[19px] md:m-[23px] lg:m-[31px] xl:m-[38px] 2xl:m-[46px] h-[124px] md:h-[148px] lg:h-[198px] xl:h-[247px] 2xl:h-[297px] w-[118px] md:w-[142px] lg:w-[189px] xl:w-[237px] 2xl:w-[284px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px]">
+      <div className={`h-[60%] w-full text-[26px] md:text-[31px] lg:text-[41px] xl:text-[51px] 2xl:text-[61px] items-center flex items-center justify-center bg-[${isSold ? '#E5A3B0' : '#FFDEB5' }]`}>🍔</div>
+      <div className="text-letter mx-auto w-full h-[40%]">
+        <div className="flex items-center font-bold h-[7px] md:h-[9px] lg:h-[12px] xl:h-[14px] 2xl:h-[17px]">
           <p className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
             ビーフハンバーガー
           </p>
