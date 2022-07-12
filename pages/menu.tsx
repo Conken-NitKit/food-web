@@ -5,9 +5,11 @@ import { FeatureLayout } from "../components/layouts";
 
 const Menu: NextPage = () => {
   return (
-      <FeatureLayout type="menu">
-        <MenuCard isSold/>
-      </FeatureLayout>
+    <FeatureLayout type="menu">
+      <div className="flex">
+        <MenuCard isSold />
+      </div>
+    </FeatureLayout>
   );
 };
 
