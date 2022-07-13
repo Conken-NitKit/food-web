@@ -13,6 +13,7 @@ module.exports = {
         "theme-end": "#F8714B",
         "theme-sub": "#F58B4A",
         letter: "#2D0D0D",
+        "letter-sub": "#998888",
       },
 
       lineHeight: {
