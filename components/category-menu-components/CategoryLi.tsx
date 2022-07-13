@@ -2,7 +2,6 @@ import { OrderCategoryId } from "../../types";
 
 interface Props {
   key: OrderCategoryId;
-  isSelected: boolean;
   name: string;
 }
 
