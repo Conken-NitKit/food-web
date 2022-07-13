@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
