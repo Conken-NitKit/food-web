@@ -34,6 +34,8 @@ export const CategoryLi = ({
       >
         {name}
       </p>
+
+      {isSelected && <hr />}
     </li>
   );
 };
