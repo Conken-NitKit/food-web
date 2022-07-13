@@ -17,9 +17,11 @@ export const CategoryLi = ({ id, name, setSelectedCategory }: Props) => {
       onClick={() => {
         setSelectedCategory(id);
       }}
-      className="flex justify-center items-center px-[5px] md:px-[6px] lg:px-2 xl:px-[10px] 2xl:px-3 h-full"
+      className="h-full"
     >
-      <p>{name}</p>
+      <p className="flex justify-center items-center px-[5px] md:px-[6px] lg:px-2 xl:px-[10px] 2xl:px-3">
+        {name}
+      </p>
     </li>
   );
 };
