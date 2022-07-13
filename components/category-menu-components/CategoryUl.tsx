@@ -8,7 +8,7 @@ export const CategoryUl: ({ children }: Props) => JSX.Element = ({
   children,
 }: Props) => {
   return (
-    <ul className="flex h-[18px] md:h-[22px] lg:h-[29px] xl:h-[37px] 2xl:h-11">
+    <ul className="flex h-[19px] md:h-[23px] lg:h-[30px] xl:h-[37px] 2xl:h-[46px]">
       {children}
     </ul>
   );
