@@ -6,6 +6,6 @@ interface Props {
   name: string;
 }
 
-export const CategoryLi = ({ key, isSelected, name }: Props) => {
+export const CategoryLi = ({ key, name }: Props) => {
   return <li key={key}>{name}</li>;
 };
