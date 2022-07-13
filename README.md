@@ -96,7 +96,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | xl               | 1280px    | 0.8 倍  |
 | 2xl              | 1536px    | 0.96 倍 |
 
-- CSSは、基本的にdisplay, position, top/bottom/right/left, m, border, p, w, hの順で記述する。
+- CSS は、基本的に display, position, top/bottom/right/left, m, border, p, w, h の順で記述する。
 
 ## 命名法
 
@@ -128,6 +128,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - `<FeaturePageLayout type="(ページファイル名)">(JSX)</FeaturePageLayout>`として、()内を編集してページファイルで使用する。
 
 - 基本的にホーム以外の全てのページで使用する。
+
+### CategoryUl(/components/category-menu-components/CategoryUl.tsx)
 
 ## その他
 
