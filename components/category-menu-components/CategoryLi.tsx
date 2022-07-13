@@ -10,5 +10,14 @@ interface Props {
 }
 
 export const CategoryLi = ({ key, setSelectedCategory, name }: Props) => {
-  return <li key={key}>{name}</li>;
+  return (
+    <li
+      key={key}
+      onClick={() => {
+        setSelectedCategory(key);
+      }}
+    >
+      {name}
+    </li>
+  );
 };
