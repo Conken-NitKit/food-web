@@ -2,6 +2,7 @@ import { OrderCategoryId } from "../../types";
 
 interface Props {
   key: OrderCategoryId;
+  selectedCategory: OrderCategoryId;
   name: string;
 }
 
