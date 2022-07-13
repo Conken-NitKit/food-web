@@ -3,18 +3,18 @@ import { Dispatch, SetStateAction } from "react";
 import { OrderCategoryId } from "../../types";
 
 interface Props {
-  key: OrderCategoryId;
+  id: OrderCategoryId;
   selectedCategory: OrderCategoryId;
   setSelectedCategory: Dispatch<SetStateAction<OrderCategoryId>>;
   name: string;
 }
 
-export const CategoryLi = ({ key, setSelectedCategory, name }: Props) => {
+export const CategoryLi = ({ id, setSelectedCategory, name }: Props) => {
   return (
     <li
-      key={key}
+      key={id}
       onClick={() => {
-        setSelectedCategory(key);
+        setSelectedCategory(id);
       }}
     >
       {name}
