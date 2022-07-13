@@ -16,6 +16,8 @@ export const CategoryLi = ({
   selectedCategory,
   setSelectedCategory,
 }: Props) => {
+  const isSelected = id === selectedCategory;
+
   return (
     <li
       key={id}
