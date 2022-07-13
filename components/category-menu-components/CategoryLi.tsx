@@ -35,7 +35,9 @@ export const CategoryLi = ({
         {name}
       </p>
 
-      {isSelected && <hr />}
+      {isSelected && (
+        <hr className="border-0 rounded-[1px] lg:rounded-sm h-[8%] bg-gradient-to-b from-theme-start to-theme-end" />
+      )}
     </li>
   );
 };
