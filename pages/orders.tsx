@@ -3,7 +3,7 @@ import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
-import { CategoryUl } from "../components/category-menu-components";
+import { CategoryLi, CategoryUl } from "../components/category-menu-components";
 
 const CATEGORIES: Record<
   OrderCategoryId,
@@ -35,7 +35,12 @@ const Orders: NextPage = () => {
     <FeatureLayout type="orders">
       <CategoryUl>
         {Object.values(CATEGORIES).map((category) => (
-          <li key={category.id}>{category.name}</li>
+          <CategoryLi
+            id={category.id}
+            name={category.name}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
         ))}
       </CategoryUl>
     </FeatureLayout>
