@@ -19,7 +19,7 @@ export const CategoryLi = ({ id, name, setSelectedCategory }: Props) => {
       }}
       className="flex justify-center items-center px-[5px] md:px-[6px] lg:px-2 xl:px-[10px] 2xl:px-3 h-full"
     >
-      <p>{name}</p>
+      {name}
     </li>
   );
 };
