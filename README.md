@@ -129,11 +129,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 基本的にホーム以外の全てのページで使用する。
 
-### CategoryUl(/components/category-menu-components/CategoryUl.tsx)
-
-- `<CategoryUl>(CategoryLi)</CategoryUl>`として、[Figma](https://www.figma.com/file/xRETNoeIAtd6L5akb6KOsK/Food?node-id=12%3A286)/Frame5（注文履歴ページ）, 6（売上解析ページ）にあるような、カテゴリメニューの ul として、()内を編集して、ページ内容をカテゴライズするページで使用する。
-
-### CategoryLi(/components/category-menu-components/CategoryLi.tsx)
+### category-menu-components
 
 ## その他
 
