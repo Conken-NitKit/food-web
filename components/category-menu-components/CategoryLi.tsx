@@ -1,11 +1,11 @@
 import classNames from "classnames";
 
 interface Props {
-  name: string;
+  CategoryName: string;
   isSelected: boolean;
 }
 
-export const CategoryLi = ({ name, isSelected }: Props) => {
+export const CategoryLi = ({ CategoryName, isSelected }: Props) => {
   return (
     <>
       <p
@@ -14,7 +14,7 @@ export const CategoryLi = ({ name, isSelected }: Props) => {
           isSelected ? "text-letter font-bold" : "text-letter-sub"
         )}
       >
-        {name}
+        {CategoryName}
       </p>
 
       {isSelected && (
