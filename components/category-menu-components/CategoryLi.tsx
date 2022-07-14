@@ -6,6 +6,7 @@ import { OrderCategoryId } from "../../types";
 interface Props {
   id: OrderCategoryId;
   name: string;
+  isSelected: boolean;
   selectedCategory: OrderCategoryId;
   setSelectedCategory: Dispatch<SetStateAction<OrderCategoryId>>;
 }
