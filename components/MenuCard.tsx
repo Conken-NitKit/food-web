@@ -29,9 +29,9 @@ export const MenuCard: ({ isSold: boolean }) => JSX.Element = ({ isSold }) => {
               490
             </span>
           </p>
-          <div className="text-center bg-[#FFBC0D] py-[1px] md:py-[1px] lg:py-[2px] xl:py-[2px] 2xl:py-[3px] w-[38px] md:w-[46px] lg:w-[61px] xl:w-[77px] 2xl:w-[92px]  rounded-[2px] md:rounded-[2px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[4px] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] ml-[auto]">
+          <button className="text-center bg-[#FFBC0D] py-[1px] md:py-[1px] lg:py-[2px] xl:py-[2px] 2xl:py-[3px] w-[38px] md:w-[46px] lg:w-[61px] xl:w-[77px] 2xl:w-[92px]  rounded-[2px] md:rounded-[2px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[4px] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] ml-[auto]">
             内容を編集
-          </div>
+          </button>
         </div>
       </div>
     </div>
