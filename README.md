@@ -131,6 +131,46 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### category-menu-components
 
+- 以下の形で使用する。
+
+```ts
+import {
+  CategoryMenuItems,
+  CategoryUl,
+} from "../components/category-menu-components";
+
+const CATEGORIES: Record<
+  カテゴリIDの型,
+  { id: カテゴリIDの型; name: string }
+> = {…}
+
+const カテゴリメニューがあるページコンポーネント: NextPage = () => {
+  const [selectedCategory, setSelectedCategory] =
+    useState<カテゴリIDの型>("初期値");
+
+  return (
+   …
+    <CategoryUl>
+      {Object.values(CATEGORIES).map((category) => (
+        <li
+          key={category.id}
+          onClick={() => {
+            setSelectedCategory(category.id);
+          }}
+          className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
+        >
+          <CategoryMenuItems
+            CategoryName={category.name}
+            isSelected={selectedCategory === category.id}
+          />
+        </li>
+      ))}
+    </CategoryUl>
+    …
+  );
+};
+```
+
 ## その他
 
 - 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
