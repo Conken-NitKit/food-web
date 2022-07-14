@@ -35,13 +35,7 @@ const Orders: NextPage = () => {
     <FeatureLayout type="orders">
       <CategoryUl>
         {Object.values(CATEGORIES).map((category) => (
-          <CategoryLi
-            key={category.id}
-            id={category.id}
-            name={category.name}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-          />
+          <></>
         ))}
       </CategoryUl>
     </FeatureLayout>
