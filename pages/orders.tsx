@@ -39,6 +39,7 @@ const Orders: NextPage = () => {
       <CategoryUl>
         {Object.values(CATEGORIES).map((category) => (
           <li
+            key={category.id}
             onClick={() => {
               setSelectedCategory(category.id);
             }}
