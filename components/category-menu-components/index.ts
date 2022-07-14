@@ -1,2 +1,2 @@
 export { CategoryUl } from "./CategoryUl";
-export { CategoryMenuItems } from "./CategoryLi";
+export { CategoryMenuItems } from "./CategoryMenuItems";
