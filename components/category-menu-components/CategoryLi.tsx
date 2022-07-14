@@ -14,6 +14,7 @@ interface Props {
 export const CategoryLi = ({
   id,
   name,
+  isSelected,
   selectedCategory,
   setSelectedCategory,
 }: Props) => {
