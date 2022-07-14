@@ -35,7 +35,12 @@ const Orders: NextPage = () => {
     <FeatureLayout type="orders">
       <CategoryUl>
         {Object.values(CATEGORIES).map((category) => (
-          <></>
+          <li
+            onClick={() => {
+              setSelectedCategory(category.id);
+            }}
+            className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
+          ></li>
         ))}
       </CategoryUl>
     </FeatureLayout>
