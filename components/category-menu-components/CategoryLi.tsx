@@ -1,23 +1,11 @@
-import { Dispatch, SetStateAction } from "react";
 import classNames from "classnames";
 
-import { OrderCategoryId } from "../../types";
-
 interface Props {
-  id: OrderCategoryId;
   name: string;
   isSelected: boolean;
-  selectedCategory: OrderCategoryId;
-  setSelectedCategory: Dispatch<SetStateAction<OrderCategoryId>>;
 }
 
-export const CategoryLi = ({
-  id,
-  name,
-  isSelected,
-  selectedCategory,
-  setSelectedCategory,
-}: Props) => {
+export const CategoryLi = ({ name, isSelected }: Props) => {
   return (
     <>
       <p
