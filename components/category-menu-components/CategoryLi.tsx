@@ -20,7 +20,6 @@ export const CategoryLi = ({
 
   return (
     <li
-      key={id}
       onClick={() => {
         setSelectedCategory(id);
       }}

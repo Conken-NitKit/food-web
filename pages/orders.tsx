@@ -36,6 +36,7 @@ const Orders: NextPage = () => {
       <CategoryUl>
         {Object.values(CATEGORIES).map((category) => (
           <CategoryLi
+            key={category.id}
             id={category.id}
             name={category.name}
             selectedCategory={selectedCategory}
