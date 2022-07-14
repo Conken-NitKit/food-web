@@ -133,6 +133,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - `<CategoryUl>(CategoryLi)</CategoryUl>`として、[Figma](https://www.figma.com/file/xRETNoeIAtd6L5akb6KOsK/Food?node-id=12%3A286)/Frame5（注文履歴ページ）, 6（売上解析ページ）にあるような、カテゴリメニューの ul として、()内を編集して、ページ内容をカテゴライズするページで使用する。
 
+### CategoryLi(/components/category-menu-components/CategoryLi.tsx)
+
 ## その他
 
 - 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
