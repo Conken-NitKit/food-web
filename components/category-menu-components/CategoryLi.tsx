@@ -24,7 +24,7 @@ export const CategoryLi = ({
       onClick={() => {
         setSelectedCategory(id);
       }}
-      className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full"
+      className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
     >
       <p
         className={classNames(
