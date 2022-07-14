@@ -3,7 +3,10 @@ import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
-import { CategoryUl } from "../components/category-menu-components";
+import {
+  CategoryMenuItems,
+  CategoryUl,
+} from "../components/category-menu-components";
 
 const CATEGORIES: Record<
   OrderCategoryId,
@@ -40,7 +43,12 @@ const Orders: NextPage = () => {
               setSelectedCategory(category.id);
             }}
             className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
-          ></li>
+          >
+            <CategoryMenuItems
+              CategoryName={category.name}
+              isSelected={selectedCategory === category.id}
+            />
+          </li>
         ))}
       </CategoryUl>
     </FeatureLayout>
