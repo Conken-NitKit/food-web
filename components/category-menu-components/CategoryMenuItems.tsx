@@ -5,7 +5,10 @@ interface Props {
   isSelected: boolean;
 }
 
-export const CategoryMenuItems = ({ CategoryName, isSelected }: Props) => {
+export const CategoryMenuItems: ({
+  CategoryName,
+  isSelected,
+}: Props) => JSX.Element = ({ CategoryName, isSelected }) => {
   return (
     <>
       <p
