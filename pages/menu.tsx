@@ -7,7 +7,7 @@ import { FeatureLayout } from "../components/layouts";
 const MenuContents = {
   hamburger1: {
     ideogram: "🍔",
-    products: "ビーフバーガー",
+    products: "ビーフバーガー1",
     isSold: false,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -16,7 +16,7 @@ const MenuContents = {
   },
   hamburger2: {
     ideogram: "🍔",
-    products: "ビーフバーガー",
+    products: "ビーフバーガー2",
     isSold: true,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -25,7 +25,7 @@ const MenuContents = {
   },
   hamburger3: {
     ideogram: "🍔",
-    products: "ビーフバーガー",
+    products: "ビーフバーガー3",
     isSold: false,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -40,6 +40,7 @@ const Menu: NextPage = () => {
       <ul className="flex">
         {Object.values(MenuContents).map((content) => (
           <MenuCard
+            key={content.products}
             ideogram={content.ideogram}
             products={content.products}
             isSold={content.isSold}
