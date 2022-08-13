@@ -29,7 +29,7 @@ export const MenuCard: ({
       <div
         className={classNames(
           "flex items-center justify-center w-full h-[60%] text-[61px] ",
-          isSold ? "bg-negative" : "bg-basic"
+          isSold ? "bg-sold-out" : "bg-on-sale"
         )}
       >
         {ideogram}
@@ -55,7 +55,7 @@ export const MenuCard: ({
               {price}
             </span>
           </p>
-          <button className="ml-[auto] rounded-[2px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[4px] py-px w-[30%] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] text-center bg-[#FFBC0D]">
+          <button className="ml-[auto] rounded-[2px] lg:rounded-[3px] xl:rounded-[3px] 2xl:rounded-[4px] py-px w-[30%] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] text-center bg-edit">
             内容を編集
           </button>
         </div>
