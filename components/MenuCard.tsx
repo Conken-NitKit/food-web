@@ -45,7 +45,7 @@ export const MenuCard: ({
             </div>
           )}
         </div>
-        <p className="overflow-scroll mb-[2.5%] py-[2.5%] h-[30%] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] leading-3 break-all">
+        <p className="overflow-scroll py-[2.5%] h-[30%] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] leading-3 break-all">
           {promotion}
         </p>
         <div className="whitespace-nowrap flex">
