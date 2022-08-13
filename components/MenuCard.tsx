@@ -25,7 +25,7 @@ export const MenuCard: ({
   price,
 }) => {
   return (
-    <li className="overflow-hidden mt-[48px] ml-[38px] 2xl:ml-[46px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px] shadow-md cursor-pointer list-none">
+    <li className="overflow-hidden mt-[48px] ml-[38px] 2xl:ml-[46px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px] shadow-md cursor-pointer">
       <div
         className={classNames(
           "flex items-center justify-center w-full h-[60%] text-[61px] ",
