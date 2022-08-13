@@ -8,6 +8,9 @@ module.exports = {
 
   theme: {
     extend: {
+      fontFamily: {
+        "menu-card": "lato",
+      },
       colors: {
         "theme-start": "#F2A649",
         "theme-end": "#F8714B",
