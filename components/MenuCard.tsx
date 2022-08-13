@@ -35,17 +35,17 @@ export const MenuCard: ({
         {ideogram}
       </div>
       <div className="mx-auto w-[90%] h-[40%] text-letter">
-        <div className="flex items-center h-[25%] font-bold">
+        <div className="flex items-center pt-[5%] font-bold">
           <p className="truncate w-[70%] text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
             {products}
           </p>
           {isSold && (
-            <div className="truncate ml-[auto] rounded-[2px] lg:rounded-[3px] 2xl:rounded-[4px] py-px w-[20%] 2xl:w-[54px] text-[63%] text-center bg-sold-label">
+            <div className="ml-[auto] rounded-[2px] lg:rounded-[3px] 2xl:rounded-[4px] py-px w-[20%] 2xl:w-[54px] text-[63%] text-center bg-sold-label">
               売り切れ
             </div>
           )}
         </div>
-        <p className="overflow-scroll h-[45%] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] break-all">
+        <p className="overflow-scroll mb-[2.5%] py-[2.5%] h-[30%] text-[4px] md:text-[5px] lg:text-[6px] xl:text-[8px] 2xl:text-[10px] leading-3 break-all">
           {promotion}
         </p>
         <div className="whitespace-nowrap flex">
