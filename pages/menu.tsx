@@ -12,7 +12,7 @@ const MenuContents = {
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
     SalesFormat: "単品",
-    price: 490000000000000000000,
+    price: 490000,
   },
   hamburger2: {
     ideogram: "🍔",
