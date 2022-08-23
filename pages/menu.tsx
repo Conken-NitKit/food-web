@@ -7,7 +7,7 @@ import { FeatureLayout } from "../components/layouts";
 const MenuContents = {
   hamburger1: {
     ideogram: "🍔",
-    products: "ビーフバーガー１",
+    name: "ビーフバーガー１",
     isSold: false,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -15,7 +15,7 @@ const MenuContents = {
   },
   hamburger2: {
     ideogram: "🍔",
-    products: "ビーフバーガー2",
+    name: "ビーフバーガー2",
     isSold: true,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -23,7 +23,7 @@ const MenuContents = {
   },
   hamburger3: {
     ideogram: "🍔",
-    products: "ビーフバーガー3",
+    name: "ビーフバーガー3",
     isSold: false,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -31,7 +31,7 @@ const MenuContents = {
   },
   hamburger4: {
     ideogram: "🍔",
-    products: "ビーフバーガー4",
+    name: "ビーフバーガー4",
     isSold: false,
     promotion:
       "おいしさも食べごたえもビッグな人気メニュー、ビッグマック。パティが倍でそのビッグな食べごたえもボリュームアップ。",
@@ -45,9 +45,9 @@ const Menu: NextPage = () => {
       <ul className="flex flex-wrap ml-[-38px] 2xl:ml-[-46px]">
         {Object.values(MenuContents).map((content) => (
           <MenuCard
-            key={content.products}
+            key={content.name}
             ideogram={content.ideogram}
-            products={content.products}
+            name={content.name}
             isSold={content.isSold}
             promotion={content.promotion}
             price={content.price}
