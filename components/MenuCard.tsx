@@ -5,23 +5,19 @@ interface Props {
   products: string;
   isSold: boolean;
   promotion: string;
-  SalesFormat: string;
   price: number;
 }
-
 export const MenuCard: ({
   ideogram,
   products,
   isSold,
   promotion,
-  SalesFormat,
   price,
 }: Props) => JSX.Element = ({
   ideogram,
   products,
   isSold,
   promotion,
-  SalesFormat,
   price,
 }) => {
   return (
@@ -36,7 +32,9 @@ export const MenuCard: ({
       </div>
       <div className="mx-auto pt-[3.5%] pb-[4.4%] w-[89.5%] h-[39.2%] text-letter">
         <div className="flex items-center font-bold">
-          <p className="truncate w-[70%] text-[14px] 2xl:text-[17px]">{products}</p>
+          <p className="truncate w-[70%] text-[14px] 2xl:text-[17px]">
+            {products}
+          </p>
           {isSold && (
             <div className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] px-[3.8%] py-[1.2%] text-[10px] bg-sold-label">
               売り切れ
@@ -48,7 +46,7 @@ export const MenuCard: ({
         </p>
         <div className="flex items-center">
           <p className="w-[60%] text-[10px] font-bold">
-            {SalesFormat} ￥<span className="text-[16px] 2xl:text-[19px]">{price}</span>
+            単品 ￥<span className="text-[16px] 2xl:text-[19px]">{price}</span>
           </p>
           <button className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] py-[1%] w-[36.4%] text-[10px] text-center bg-edit">
             内容を編集
