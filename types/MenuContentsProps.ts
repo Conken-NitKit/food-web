@@ -3,4 +3,4 @@ export interface MenuContentsProps {
   name: string;
   promotion: string;
   price: number;
-  }
+}
