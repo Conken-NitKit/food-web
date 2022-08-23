@@ -7,12 +7,12 @@ import { MenuContentsProps } from "../types/MenuContentsProps";
 //仮置きのデータ（実際はデータベースから取得する）
 const MenuContents: {
   [key: string]: {
-    content: MenuContentsProps;
+    product: MenuContentsProps;
     isSold: boolean;
   };
 } = {
   hamburger1: {
-    content: {
+    product: {
       ideogram: "🍔",
       name: "ビーフバーガー１",
       promotion:
@@ -22,7 +22,7 @@ const MenuContents: {
     isSold: false,
   },
   hamburger2: {
-    content: {
+    product: {
       ideogram: "🍔",
       name: "ビーフバーガー２",
       promotion:
@@ -32,7 +32,7 @@ const MenuContents: {
     isSold: false,
   },
   hamburger3: {
-    content: {
+    product: {
       ideogram: "🍔",
       name: "ビーフバーガー３",
       promotion:
@@ -42,7 +42,7 @@ const MenuContents: {
     isSold: true,
   },
   hamburger4: {
-    content: {
+    product: {
       ideogram: "🍔",
       name: "ビーフバーガー４",
       promotion:
@@ -59,8 +59,8 @@ const Menu: NextPage = () => {
       <ul className="flex flex-wrap ml-[-38px] 2xl:ml-[-46px]">
         {Object.values(MenuContents).map((content) => (
           <MenuCard
-            key={content.content.name}
-            content={content.content}
+            key={content.product.name}
+            content={content.product}
             isSold={content.isSold}
           />
         ))}
