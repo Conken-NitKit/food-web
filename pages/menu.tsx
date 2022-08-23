@@ -46,11 +46,8 @@ const Menu: NextPage = () => {
         {Object.values(MenuContents).map((content) => (
           <MenuCard
             key={content.name}
-            ideogram={content.ideogram}
-            name={content.name}
+            content={content}
             isSold={content.isSold}
-            promotion={content.promotion}
-            price={content.price}
           />
         ))}
       </ul>
