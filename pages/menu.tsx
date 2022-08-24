@@ -2,12 +2,12 @@ import type { NextPage } from "next";
 
 import { MenuCard } from "../components";
 import { FeatureLayout } from "../components/layouts";
-import { MenuContentsProps } from "../types/MenuContentsProps";
+import { MenuContents } from "../types/MenuContents";
 
 //仮置きのデータ（実際はデータベースから取得する）
 const MenuContents: {
   [key: string]: {
-    product: MenuContentsProps;
+    product: MenuContents;
     isSold: boolean;
   };
 } = {
