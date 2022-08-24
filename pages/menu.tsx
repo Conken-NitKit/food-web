@@ -58,12 +58,8 @@ const Menu: NextPage = () => {
     <FeatureLayout type="menu">
       <ul className="flex flex-wrap ml-[-38px] 2xl:ml-[-46px]">
         {Object.values(MenuContents).map((content) => (
-          <li>
-            <MenuCard
-              key={content.product.name}
-              content={content.product}
-              isSold={content.isSold}
-            />
+          <li key={content.product.name}>
+            <MenuCard content={content.product} isSold={content.isSold} />
           </li>
         ))}
       </ul>
