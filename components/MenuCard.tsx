@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import { MenuContents } from "../types/MenuContents";
+import { MenuContent } from "../types/MenuContent";
 
 interface Props {
-  content: MenuContents;
+  content: MenuContent;
   isSold: boolean;
 }
 

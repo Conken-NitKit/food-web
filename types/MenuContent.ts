@@ -1,4 +1,4 @@
-export interface MenuContents {
+export interface MenuContent {
   ideogram: string;
   name: string;
   promotion: string;
