@@ -28,7 +28,7 @@ export const MENUS_ITEMS: Record<PageId, MenuItems> = {
   },
   users: {
     id: "users",
-    name: "ユーザー",
+    name: "ユーザー管理",
   },
   monitoring: {
     id: "monitoring",
