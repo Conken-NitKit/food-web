@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
@@ -34,15 +34,19 @@ const Orders: NextPage = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<OrderCategoryId>("all");
 
+  const createCategoryClickHandler = useCallback((id: OrderCategoryId) => {
+    return () => {
+      setSelectedCategory(id);
+    };
+  }, []);
+
   return (
     <FeatureLayout type="orders">
       <CategoryUl>
         {Object.values(CATEGORIES).map((category) => (
           <li
             key={category.id}
-            onClick={() => {
-              setSelectedCategory(category.id);
-            }}
+            onClick={createCategoryClickHandler(category.id)}
             className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
           >
             <CategoryMenuItems
