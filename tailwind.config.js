@@ -12,8 +12,8 @@ module.exports = {
         "theme-start": "#F2A649",
         "theme-end": "#F8714B",
         "theme-sub": "#F58B4A",
-        "pale-black": "#998888",
         letter: "#2D0D0D",
+        dash: "#998888",
       },
 
       lineHeight: {
