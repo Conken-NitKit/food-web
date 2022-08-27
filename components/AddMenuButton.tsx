@@ -1,4 +1,4 @@
-export const MenuPlus = () => {
+export const AddMenuButton = () => {
   return (
     <div className="mt-[48px] 2xl:mt-[58px] ml-[38px] 2xl:ml-[46px] border border-pale-black border-dashed rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px]">
       <div className="flex mt-[38.3%] mx-auto border-[3px] border-pale-black rounded-full w-[26px] 2xl:w-[32px] h-[26px] 2xl:h-[32px]">

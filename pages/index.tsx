@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { AddMenuButton } from "../components";
 
 import { FeatureLayout } from "../components/layouts";
-import { MenuPlus } from "../components/MenuPlus";
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
       <FeatureLayout type="menu">
         <>
-        <MenuPlus />
+        <AddMenuButton />
         </>
       </FeatureLayout>
 
