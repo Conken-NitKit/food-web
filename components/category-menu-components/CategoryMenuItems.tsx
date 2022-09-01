@@ -1,14 +1,14 @@
 import classNames from "classnames";
 
 interface Props {
-  CategoryName: string;
+  categoryName: string;
   isSelected: boolean;
 }
 
 export const CategoryMenuItems: ({
-  CategoryName,
+  categoryName,
   isSelected,
-}: Props) => JSX.Element = ({ CategoryName, isSelected }) => {
+}: Props) => JSX.Element = ({ categoryName, isSelected }) => {
   return (
     <>
       <p
@@ -17,7 +17,7 @@ export const CategoryMenuItems: ({
           isSelected ? "text-letter font-bold" : "text-letter-sub"
         )}
       >
-        {CategoryName}
+        {categoryName}
       </p>
 
       {isSelected && (

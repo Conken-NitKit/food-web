@@ -50,7 +50,7 @@ const Orders: NextPage = () => {
             className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
           >
             <CategoryMenuItems
-              CategoryName={category.name}
+              categoryName={category.name}
               isSelected={selectedCategory === category.id}
             />
           </li>
