@@ -149,23 +149,21 @@ const カテゴリメニューがあるページコンポーネント: NextPage 
     useState<カテゴリIDの型>("初期値");
 
   return (
-   …
-    <CategoryUl>
-      {Object.values(CATEGORIES).map((category) => (
-        <li
-          key={category.id}
-          onClick={() => {
-            setSelectedCategory(category.id);
-          }}
-          className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
-        >
-          <CategoryMenuItems
-            CategoryName={category.name}
-            isSelected={selectedCategory === category.id}
-          />
-        </li>
-      ))}
-    </CategoryUl>
+    …
+      <CategoryUl>
+        {Object.values(CATEGORIES).map((category) => (
+          <li
+            key={category.id}
+            onClick={createCategoryClickHandler(category.id)}
+            className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
+          >
+            <CategoryMenuItems
+              categoryName={category.name}
+              isSelected={selectedCategory === category.id}
+            />
+          </li>
+        ))}
+      </CategoryUl>
     …
   );
 };
