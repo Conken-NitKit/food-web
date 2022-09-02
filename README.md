@@ -164,9 +164,10 @@ const カテゴリメニューがあるページコンポーネント: NextPage 
             onClick={createCategoryClickHandler(category.id)}
             className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
           >
-            <CategoryMenuItems isSelected={selectedCategory === category.id}>
-              {category.name}
-            </CategoryMenuItems>
+            <CategoryMenuItems
+              categoryName={category.name}
+              isSelected={selectedCategory === category.id}
+            />
           </li>
         ))}
       </CategoryUl>
