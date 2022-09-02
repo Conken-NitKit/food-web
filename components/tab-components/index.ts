@@ -1,2 +1,2 @@
-export { CategoryUl } from "./TabUl";
+export { TabUl } from "./TabUl";
 export { CategoryMenuItems } from "./TabItems";

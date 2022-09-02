@@ -3,7 +3,7 @@ import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
-import { CategoryMenuItems, CategoryUl } from "../components/tab-components";
+import { CategoryMenuItems, TabUl } from "../components/tab-components";
 
 const CATEGORIES: Record<
   OrderCategoryId,
@@ -39,7 +39,7 @@ const Orders: NextPage = () => {
 
   return (
     <FeatureLayout type="orders">
-      <CategoryUl>
+      <TabUl>
         {Object.values(CATEGORIES).map((category) => (
           <li
             key={category.id}
@@ -52,7 +52,7 @@ const Orders: NextPage = () => {
             />
           </li>
         ))}
-      </CategoryUl>
+      </TabUl>
     </FeatureLayout>
   );
 };
