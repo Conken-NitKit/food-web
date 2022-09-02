@@ -3,7 +3,7 @@ import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
-import { CategoryMenuItems, TabUl } from "../components/tab-components";
+import { TabItems, TabUl } from "../components/tab-components";
 
 const CATEGORIES: Record<
   OrderCategoryId,
@@ -46,7 +46,7 @@ const Orders: NextPage = () => {
             onClick={createCategoryClickHandler(category.id)}
             className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
           >
-            <CategoryMenuItems
+            <TabItems
               categoryName={category.name}
               isSelected={selectedCategory === category.id}
             />
