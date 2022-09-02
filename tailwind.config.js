@@ -21,6 +21,7 @@ module.exports = {
         edit: "#FFBC0D",
         letter: "#2D0D0D",
         "letter-sub": "#998888",
+        dash: "#998888",
       },
 
       lineHeight: {
