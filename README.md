@@ -73,8 +73,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | rename   | ファイル・変数等の改名     |
 | move     | ファイル・フォルダの移動   |
 | remove   | ファイル・コード等の削除   |
-| style    | スタイリング               |
-| readme   | README の編集              |
+| readme   | README の追記              |
 
 ## 型指定
 
@@ -98,7 +97,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 | xl               | 1280px    | 0.8 倍  |
 | 2xl              | 1536px    | 0.96 倍 |
 
-- CSSは、基本的にdisplay, position, top/bottom/right/left, m, border, p, w, hの順で記述する。
+- CSS は、基本的に display, position, top/bottom/right/left, m, border, p, w, h の順で記述する。
 
 ## 命名法
 
@@ -131,6 +130,54 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 基本的にホーム以外の全てのページで使用する。
 
+### category-menu-components
+
+- 以下の形で使用することを想定している。
+
+```tsx
+import {
+  CategoryMenuItems,
+  CategoryUl,
+} from "../components/category-menu-components";
+
+const CATEGORIES: Record<
+  カテゴリIDの型,
+  { id: カテゴリIDの型; name: string }
+> = {…}
+
+const カテゴリメニューがあるページコンポーネント: NextPage = () => {
+  const [selectedCategory, setSelectedCategory] =
+    useState<カテゴリIDの型>("初期値");
+
+  const createCategoryClickHandler = useCallback((id: カテゴリIDの型) => {
+    return () => {
+      setSelectedCategory(id);
+    };
+  }, []);
+
+  return (
+    …
+      <CategoryUl>
+        {Object.values(CATEGORIES).map((category) => (
+          <li
+            key={category.id}
+            onClick={createCategoryClickHandler(category.id)}
+            className="mr-5 md:mr-6 lg:mr-8 xl:mr-10 2xl:mr-12 h-full cursor-pointer"
+          >
+            <CategoryMenuItems
+              categoryName={category.name}
+              isSelected={selectedCategory === category.id}
+            />
+          </li>
+        ))}
+      </CategoryUl>
+    …
+  );
+};
+```
+
 ## その他
 
 - 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
+
+- push の前には必ず`git pull origin develop`すること。
