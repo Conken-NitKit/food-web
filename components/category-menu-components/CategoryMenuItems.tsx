@@ -4,13 +4,13 @@ import classNames from "classnames";
 import { OrderCategoryId } from "../../types";
 
 interface Props {
+  categoryName: string;
   isSelected: boolean;
-  children: ReactNode;
 }
 
 export const CategoryMenuItems = ({
+  categoryName,
   isSelected,
-  children,
 }: Props): JSX.Element => {
   return (
     <div className="w-full h-full">
@@ -20,7 +20,7 @@ export const CategoryMenuItems = ({
           isSelected ? "text-letter font-bold" : "text-letter-sub"
         )}
       >
-        {children}
+        {categoryName}
       </p>
 
       {isSelected && (
