@@ -1,21 +1,17 @@
+import { Children, ReactNode } from "react";
 import classNames from "classnames";
 
 import { OrderCategoryId } from "../../types";
 
 interface Props {
-  category: {
-    id: OrderCategoryId;
-    name: string;
-  };
-  selectedCategory: OrderCategoryId;
+  isSelected: boolean;
+  children: ReactNode;
 }
 
 export const CategoryMenuItems = ({
-  category,
-  selectedCategory,
+  isSelected,
+  children,
 }: Props): JSX.Element => {
-  const isSelected = selectedCategory === category.id;
-
   return (
     <div className="w-full h-full">
       <p
@@ -24,7 +20,7 @@ export const CategoryMenuItems = ({
           isSelected ? "text-letter font-bold" : "text-letter-sub"
         )}
       >
-        {category.name}
+        {children}
       </p>
 
       {isSelected && (
