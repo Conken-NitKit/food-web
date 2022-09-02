@@ -3,10 +3,7 @@ import { NextPage } from "next";
 
 import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
-import {
-  CategoryMenuItems,
-  CategoryUl,
-} from "../components/category-menu-components";
+import { CategoryMenuItems, CategoryUl } from "../components/tab-components";
 
 const CATEGORIES: Record<
   OrderCategoryId,
