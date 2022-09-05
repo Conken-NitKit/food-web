@@ -14,7 +14,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
       <div className="flex flex-row-reverse w-[176px] md:w-[211px] lg:w-[282px] xl:w-[352px] 2xl:w-[422px] h-full">
         {/* note: 上のdivのwidthの値を変更する場合、<main>のwidthの値も変更すること。*/}
         <div className="pl-[7%] w-[82%] h-full bg-gradient-to-b from-theme-start to-theme-end">
-          <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-white font-bold leading-basic">
+          <h2 className="my-[13%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-primary-inverted font-bold leading-basic">
             コンピュータ研究部
           </h2>
 
@@ -25,7 +25,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                 className={classNames(
                   "mt-[7%] first:mt-0 h-[26px] md:h-[31px] lg:h-[41px] xl:h-[51px] 2xl:h-[61px] cursor-pointer",
                   {
-                    "rounded-l-md md:rounded-l-lg lg:rounded-l-[10px] xl:rounded-l-[13px] 2xl:rounded-l-[15px] bg-white":
+                    "rounded-l-md md:rounded-l-lg lg:rounded-l-[10px] xl:rounded-l-[13px] 2xl:rounded-l-[15px] bg-primary-regular":
                       menuItems.id === type,
                   }
                 )}
@@ -44,7 +44,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                         "ml-[6%] text-[8px] md:text-[10px] lg:text-[13px] xl:text-base 2xl:text-[19px] font-bold",
                         menuItems.id === type
                           ? "text-theme-sub text-theme"
-                          : "text-white"
+                          : "text-primary-inverted"
                       )}
                     >
                       {menuItems.name}
