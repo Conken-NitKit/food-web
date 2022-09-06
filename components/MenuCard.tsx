@@ -23,7 +23,7 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
             {content.name}
           </p>
           {isSold && (
-            <div className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] px-[3.8%] py-[1.2%] text-[10px] bg-sold-label">
+            <div className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] px-[3.8%] py-[1.2%] text-[10px] bg-accent-primary-regular">
               売り切れ
             </div>
           )}
