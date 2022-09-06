@@ -21,7 +21,7 @@ export const TabItems = ({ categoryName, isSelected }: Props): JSX.Element => {
       </p>
 
       {isSelected && (
-        <hr className="border-0 rounded-[1px] lg:rounded-sm h-[8%] bg-gradient-to-b from-theme-start to-theme-end" />
+        <hr className="border-0 rounded-[1px] lg:rounded-sm h-[8%] bg-gradient-to-b bg-accent-gradient-primary" />
       )}
     </div>
   );
