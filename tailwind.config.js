@@ -110,6 +110,7 @@ module.exports = {
         "primary-regular": theme("colors.white.a100"),
         "secondary-regular": theme("colors.whitesmoke.a100"),
         "secondary-dark-regular": theme("colors.lightgray.a100"),
+        "thirdly-regular": theme("colors.gray.a100"),
         "accent-primary-regular": theme("colors.red.a100"),
         "reject-regular": theme("colors.pink.a100"),
       }),
@@ -119,6 +120,9 @@ module.exports = {
         "primary-regular": theme("colors.brown.a100"),
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
+      }),
+      borderColor: (theme) => ({
+        "primary-regular": theme("colors.gray.a100"),
       }),
       fontFamily: {
         "menu-card": "lato",
