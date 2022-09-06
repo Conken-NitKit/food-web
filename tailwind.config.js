@@ -155,8 +155,6 @@ module.exports = {
         "menu-card": "lato",
       },
       colors: {
-        "theme-start": "#F2A649",
-        "theme-end": "#F8714B",
         "theme-sub": "#F58B4A",
         "on-sale": "#FFDEB5",
         edit: "#FFBC0D",
