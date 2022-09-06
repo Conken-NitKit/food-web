@@ -129,7 +129,6 @@ module.exports = {
         "theme-sub": "#F58B4A",
         "on-sale": "#FFDEB5",
         edit: "#FFBC0D",
-        letter: "#2D0D0D",
         "letter-sub": "#998888",
         dash: "#998888",
       },

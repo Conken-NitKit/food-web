@@ -17,7 +17,7 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
       >
         {content.ideogram}
       </div>
-      <div className="mx-auto pt-[3.5%] pb-[4.4%] w-[89.5%] h-[39.2%] text-letter">
+      <div className="mx-auto pt-[3.5%] pb-[4.4%] w-[89.5%] h-[39.2%] text-primary-regular">
         <div className="flex items-center font-bold">
           <p className="truncate w-[70%] text-[14px] 2xl:text-[17px]">
             {content.name}
