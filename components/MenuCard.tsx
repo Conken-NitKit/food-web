@@ -12,7 +12,7 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
       <div
         className={classNames(
           "flex items-center justify-center w-full h-[60.8%] text-[51px] 2xl:text-[61px]",
-          isSold ? "bg-sold-out" : "bg-on-sale"
+          isSold ? "bg-reject-regular" : "bg-on-sale"
         )}
       >
         {content.ideogram}

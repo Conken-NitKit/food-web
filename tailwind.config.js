@@ -111,6 +111,7 @@ module.exports = {
         "secondary-regular": theme("colors.whitesmoke.a100"),
         "secondary-dark-regular": theme("colors.lightgray.a100"),
         "accent-primary-regular": theme("colors.red.a100"),
+        "reject-regular": theme("colors.pink.a100"),
       }),
       textColor: (theme) => ({
         "primary-inverted": theme("colors.white.a100"),
@@ -126,7 +127,6 @@ module.exports = {
         "theme-start": "#F2A649",
         "theme-end": "#F8714B",
         "theme-sub": "#F58B4A",
-        "sold-out": "#E5A3B0",
         "on-sale": "#FFDEB5",
         edit: "#FFBC0D",
         letter: "#2D0D0D",
