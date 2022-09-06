@@ -145,6 +145,9 @@ module.exports = {
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
       }),
+      backgroundImage: {
+        "accent-gradient-primary": "linear-gradient(#F8714B, #F2A649)",
+      },
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
       }),
