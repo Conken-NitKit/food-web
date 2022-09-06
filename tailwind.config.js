@@ -129,8 +129,6 @@ module.exports = {
         "theme-sub": "#F58B4A",
         "on-sale": "#FFDEB5",
         edit: "#FFBC0D",
-        "letter-sub": "#998888",
-        dash: "#998888",
       },
       lineHeight: {
         basic: "1.17",
