@@ -128,6 +128,42 @@ module.exports = {
         a16: "rgba(248, 113, 75, .16)",
         a10: "rgba(248, 113, 75, .1)",
       },
+      goldenyellow: {
+        a100: "#FFBC0D",
+        a95: "rgba(255, 188, 13, .95)",
+        a90: "rgba(255, 188, 13, .9)",
+        a50: "rgba(255, 188, 13, .5)",
+        a40: "rgba(255, 188, 13, .4)",
+        a35: "rgba(255, 188, 13, .35)",
+        a32: "rgba(255, 188, 13, .32)",
+        a20: "rgba(255, 188, 13, .2)",
+        a16: "rgba(255, 188, 13, .16)",
+        a10: "rgba(255, 188, 13, .1)",
+      },
+      navajowhite: {
+        a100: "#FFDEB5",
+        a95: "rgba(255, 222, 181, .95)",
+        a90: "rgba(255, 222, 181, .9)",
+        a50: "rgba(255, 222, 181, .5)",
+        a40: "rgba(255, 222, 181, .4)",
+        a35: "rgba(255, 222, 181, .35)",
+        a32: "rgba(255, 222, 181, .32)",
+        a20: "rgba(255, 222, 181, .2)",
+        a16: "rgba(255, 222, 181, .16)",
+        a10: "rgba(255, 222, 181, .1)",
+      },
+      coral: {
+        a100: "#F58B4A",
+        a95: "rgba(245, 139, 74, .95)",
+        a90: "rgba(245, 139, 74, .9)",
+        a50: "rgba(245, 139, 74, .5)",
+        a40: "rgba(245, 139, 74, .4)",
+        a35: "rgba(245, 139, 74, .35)",
+        a32: "rgba(245, 139, 74, .32)",
+        a20: "rgba(245, 139, 74, .2)",
+        a16: "rgba(245, 139, 74, .16)",
+        a10: "rgba(245, 139, 74, .1)",
+      },
     },
     extend: {
       backgroundColor: (theme) => ({
@@ -145,8 +181,10 @@ module.exports = {
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
       }),
-      backgroundImage:(theme) => ({
-        "accent-gradient-primary": `linear-gradient(${theme("colors.yellow.a100")}, ${theme("colors.orange.a100")})`,
+      backgroundImage: (theme) => ({
+        "accent-gradient-primary": `linear-gradient(${theme(
+          "colors.yellow.a100"
+        )}, ${theme("colors.orange.a100")})`,
       }),
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
