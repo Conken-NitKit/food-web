@@ -173,6 +173,8 @@ module.exports = {
         "thirdly-regular": theme("colors.gray.a100"),
         "accent-primary-regular": theme("colors.red.a100"),
         "reject-regular": theme("colors.pink.a100"),
+        "accent-secondary-regular": theme("colors.goldenyellow.a100"),
+        "accent-secondary-light-regular": theme("colors.navajowhite.a100"),
       }),
       textColor: (theme) => ({
         "primary-inverted": theme("colors.white.a100"),
