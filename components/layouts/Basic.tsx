@@ -43,7 +43,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                       className={classNames(
                         "ml-[6%] text-[8px] md:text-[10px] lg:text-[13px] xl:text-base 2xl:text-[19px] font-bold",
                         menuItems.id === type
-                          ? "text-theme-sub text-theme"
+                          ? "text-tertiary-regular text-theme"
                           : "text-primary-inverted"
                       )}
                     >

@@ -12,7 +12,7 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
       <div
         className={classNames(
           "flex items-center justify-center w-full h-[60.8%] text-[51px] 2xl:text-[61px]",
-          isSold ? "bg-reject-regular" : "bg-on-sale"
+          isSold ? "bg-reject-regular" : "bg-accent-secondary-light-regular"
         )}
       >
         {content.ideogram}
@@ -36,7 +36,7 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
             単品 ￥
             <span className="text-[16px] 2xl:text-[19px]">{content.price}</span>
           </p>
-          <button className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] py-[1%] w-[36.4%] text-[10px] text-center bg-edit">
+          <button className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] py-[1%] w-[36.4%] text-[10px] text-center bg-accent-secondary-regular">
             内容を編集
           </button>
         </div>
