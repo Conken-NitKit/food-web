@@ -12,18 +12,18 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
       <div
         className={classNames(
           "flex items-center justify-center w-full h-[60.8%] text-[51px] 2xl:text-[61px]",
-          isSold ? "bg-sold-out" : "bg-on-sale"
+          isSold ? "bg-reject-regular" : "bg-accent-secondary-light-regular"
         )}
       >
         {content.ideogram}
       </div>
-      <div className="mx-auto pt-[3.5%] pb-[4.4%] w-[89.5%] h-[39.2%] text-letter">
+      <div className="mx-auto pt-[3.5%] pb-[4.4%] w-[89.5%] h-[39.2%] text-primary-regular">
         <div className="flex items-center font-bold">
           <p className="truncate w-[70%] text-[14px] 2xl:text-[17px]">
             {content.name}
           </p>
           {isSold && (
-            <div className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] px-[3.8%] py-[1.2%] text-[10px] bg-sold-label">
+            <div className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] px-[3.8%] py-[1.2%] text-[10px] bg-accent-primary-regular">
               売り切れ
             </div>
           )}
@@ -36,7 +36,7 @@ export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
             単品 ￥
             <span className="text-[16px] 2xl:text-[19px]">{content.price}</span>
           </p>
-          <button className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] py-[1%] w-[36.4%] text-[10px] text-center bg-edit">
+          <button className="ml-[auto] rounded-[3px] 2xl:rounded-[4px] py-[1%] w-[36.4%] text-[10px] text-center bg-accent-secondary-regular">
             内容を編集
           </button>
         </div>
