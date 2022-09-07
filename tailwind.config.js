@@ -195,11 +195,6 @@ module.exports = {
       fontFamily: {
         "menu-card": "lato",
       },
-      colors: {
-        "theme-sub": "#F58B4A",
-        "on-sale": "#FFDEB5",
-        edit: "#FFBC0D",
-      },
       lineHeight: {
         basic: "1.17",
       },
