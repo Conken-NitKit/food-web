@@ -195,6 +195,7 @@ module.exports = {
       fontFamily: {
         "menu-card": "lato",
       },
+      boxShadow: {},
       lineHeight: {
         basic: "1.17",
       },
