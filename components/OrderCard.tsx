@@ -5,8 +5,8 @@ export const OrderCard = (): JSX.Element => {
         <div className="mt-[2.7%] ml-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold font-menu-card leading-[1.2]">
           注文番号 #9521
         </div>
-        <div className="mx-auto mt-[3.5%] w-[92%]">
-          <ul className="my-auto font-bold font-menu-card pb-[1.7%] w-full border-b border-primary-regular border-dashed">
+        <div className="mt-[3.5%] mx-auto w-[95%] border-b border-primary-regular border-dashed">
+          <ul className="mx-auto my-auto w-[97%] font-bold font-menu-card pb-[1.7%]">
             <li className="flex items-center justify-center mb-[1.7%] w-full">
               <div className="flex items-center justify-center w-[5.8%] aspect-square text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] rounded-[16px] bg-accent-secondary-light-regular">
                 🍔
@@ -36,9 +36,11 @@ export const OrderCard = (): JSX.Element => {
               </div>
             </li>
           </ul>
-          <div className="">
-          <div className="mt-[2.2%] font-bold font-menu-card text-[28px]"><span className="text-[18px]">合計 ￥</span>4,260</div>
         </div>
+        <div className="">
+          <div className="mt-[2.2%] font-bold font-menu-card text-[28px]">
+            <span className="text-[18px]">合計 ￥</span>4,260
+          </div>
         </div>
       </div>
     </div>
