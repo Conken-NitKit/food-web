@@ -193,6 +193,8 @@ module.exports = {
       }),
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
+        "reject-regular": theme("colors.pink.a100"),
+        "complete-regular": theme("colors.green.a100"),
       }),
       fontFamily: {
         "menu-card": "lato",
