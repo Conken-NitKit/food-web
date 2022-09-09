@@ -175,6 +175,8 @@ module.exports = {
         "reject-regular": theme("colors.pink.a100"),
         "accent-secondary-regular": theme("colors.goldenyellow.a100"),
         "accent-secondary-light-regular": theme("colors.navajowhite.a100"),
+        "order-card-reject": theme("colors.pink.a10"),
+        "order-card-accept": theme("colors.green.a10"),
       }),
       textColor: (theme) => ({
         "primary-inverted": theme("colors.white.a100"),
