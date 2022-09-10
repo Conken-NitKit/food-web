@@ -1,4 +1,10 @@
-export const OrderCard = (): JSX.Element => {
+import { OrderState } from "../types/OrderState";
+
+interface Props {
+  state: OrderState;
+}
+
+export const OrderCard = ({ state }: Props): JSX.Element => {
   return (
     <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] font-bold font-menu-card text-primary-regular shadow-2xl bg-primary-regular">
       <div className="mt-[2.7%] ml-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
@@ -49,10 +55,12 @@ export const OrderCard = (): JSX.Element => {
           </span>
           4,260
         </div>
-        <div className="flex justify-between ml-auto mt-[1.5%] w-[13%]">
-          <div className="border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject"></div>
-          <div className="border border-complete-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-complete"></div>
-        </div>
+        {state === "wait" && (
+          <div className="flex justify-between ml-auto mt-[1.5%] w-[13%]">
+            <div className="border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject"></div>
+            <div className="border border-complete-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-complete"></div>
+          </div>
+        )}
       </div>
     </div>
   );
