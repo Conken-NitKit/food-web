@@ -37,9 +37,13 @@ export const OrderCard = (): JSX.Element => {
             </li>
           </ul>
         </div>
-        <div className="">
+        <div className="flex">
           <div className="mt-[2.2%] font-bold font-menu-card text-[28px]">
             <span className="text-[18px]">合計 ￥</span>4,260
+          </div>
+          <div className="h-full flex justify-between mr-[12px] w-[136px] ml-auto">
+            <div className="w-[41.2%] aspect-square bg-order-card-reject rounded-[16px] border border-reject-regular"></div>
+            <div className="w-[41.2%] aspect-square bg-order-card-complete rounded-[16px] border border-complete-regular"></div>
           </div>
         </div>
       </div>
