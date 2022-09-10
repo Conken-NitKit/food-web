@@ -1,1 +1,1 @@
-export type OrderState = "wait" | "cpmplete" | "reject";
+export type OrderState = "wait" | "complete" | "reject";
