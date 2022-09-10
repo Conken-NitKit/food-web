@@ -4,8 +4,8 @@ export const OrderCard = (): JSX.Element => {
       <div className="mt-[2.7%] ml-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold font-menu-card leading-[1.2] text-primary-regular">
         注文番号 #9521
       </div>
-      <div className="mt-[3.5%] mx-auto w-[95%] border-b border-primary-regular border-dashed">
-        <ul className="mx-auto my-auto w-[97%] font-bold font-menu-card pb-[1.7%]">
+      <div className="mt-[3.5%] mx-auto w-[95%] h-[44%] border-b border-primary-regular border-dashed">
+        <ul className="mx-auto my-auto w-[97%] font-bold font-menu-card pb-[1.7%] h-full overflow-scroll">
           <li className="flex items-center justify-center mb-[1.7%] w-full">
             <div className="flex items-center justify-center w-[5.8%] aspect-square text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px]  bg-accent-secondary-light-regular">
               🍔
@@ -23,7 +23,7 @@ export const OrderCard = (): JSX.Element => {
               490
             </div>
           </li>
-          <li className="flex items-center justify-center  w-full">
+          <li className="flex items-center justify-center mb-[1.7%] w-full">
             <div className="flex items-center justify-center w-[5.8%] aspect-square text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px]  bg-accent-secondary-light-regular">
               🍨
             </div>
@@ -38,6 +38,40 @@ export const OrderCard = (): JSX.Element => {
                 単品 ￥
               </span>
               230
+            </div>
+          </li>
+          <li className="flex items-center justify-center mb-[1.7%] w-full">
+            <div className="flex items-center justify-center w-[5.8%] aspect-square text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px]  bg-accent-secondary-light-regular">
+              🍔
+            </div>
+            <div className="ml-[1.2%] my-auto font-bold font-menu-card text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-primary-regular">
+              ビーフハンバーガー
+            </div>
+            <div className="ml-auto my-auto mr-[1.9%] font-bold font-menu-card text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-primary-regular">
+              4 x
+            </div>
+            <div className="ml-0 my-auto font-bold font-menu-card text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-gradient-primary bg-clip-text text-[transparent]">
+              <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
+                単品 ￥
+              </span>
+              490
+            </div>
+          </li>
+          <li className="flex items-center justify-center mb-[1.7%] w-full">
+            <div className="flex items-center justify-center w-[5.8%] aspect-square text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px]  bg-accent-secondary-light-regular">
+              🍔
+            </div>
+            <div className="ml-[1.2%] my-auto font-bold font-menu-card text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-primary-regular">
+              ビーフハンバーガー
+            </div>
+            <div className="ml-auto my-auto mr-[1.9%] font-bold font-menu-card text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-primary-regular">
+              4 x
+            </div>
+            <div className="ml-0 my-auto font-bold font-menu-card text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-gradient-primary bg-clip-text text-[transparent]">
+              <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
+                単品 ￥
+              </span>
+              490
             </div>
           </li>
         </ul>
