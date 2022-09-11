@@ -1,10 +1,12 @@
+import { MenuContent } from "../types/MenuContent";
 import { OrderState } from "../types/OrderState";
 
 interface Props {
   state: OrderState;
+  content: MenuContent;
 }
 
-export const OrderCard = ({ state }: Props): JSX.Element => {
+export const OrderCard = ({ state, content }: Props): JSX.Element => {
   return (
     <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] font-bold font-menu-card text-primary-regular shadow-2xl bg-primary-regular">
       <div className="pt-[2.7%] ml-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
