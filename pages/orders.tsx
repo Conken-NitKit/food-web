@@ -4,6 +4,9 @@ import { NextPage } from "next";
 import { OrderCategoryId } from "../types";
 import { FeatureLayout } from "../components/layouts";
 import { TabItems, TabUl } from "../components/tab-components";
+import { OrderCard } from "../components";
+import { OrderState } from "../types/OrderState";
+import { OrderDetail } from "../types/OrderDetail";
 
 const CATEGORIES: Record<
   OrderCategoryId,
@@ -24,6 +27,70 @@ const CATEGORIES: Record<
   canceled: {
     id: "canceled",
     name: "キャンセル済み",
+  },
+};
+
+//仮置きのデータ（実際はデータベースから取得する）
+const OrderDetails: {
+  [key: number]: {
+    details: OrderDetail[];
+    OrderNumber: number;
+    state: OrderState;
+  };
+} = {
+  9521: {
+    details: [
+      {
+        ideogram: "🍔",
+        name: "ビーフバーガー",
+        NumberOfOrders: 4,
+        price: 490,
+      },
+      {
+        ideogram: "🍨",
+        name: "アイスハンバーグ",
+        NumberOfOrders: 10,
+        price: 230,
+      },
+    ],
+    OrderNumber: 9521,
+    state: "wait",
+  },
+  8100: {
+    details: [
+      {
+        ideogram: "🍔",
+        name: "ビーフバーガー",
+        NumberOfOrders: 4,
+        price: 490,
+      },
+      {
+        ideogram: "🍨",
+        name: "アイスハンバーグ",
+        NumberOfOrders: 10,
+        price: 230,
+      },
+    ],
+    OrderNumber: 8100,
+    state: "complete",
+  },
+  2929: {
+    details: [
+      {
+        ideogram: "🍔",
+        name: "ビーフバーガー",
+        NumberOfOrders: 4,
+        price: 490,
+      },
+      {
+        ideogram: "🍨",
+        name: "アイスハンバーグ",
+        NumberOfOrders: 10,
+        price: 230,
+      },
+    ],
+    OrderNumber: 2929,
+    state: "reject",
   },
 };
 
@@ -52,6 +119,17 @@ const Orders: NextPage = () => {
             />
           </li>
         ))}
+        <ul>
+          {Object.values(OrderDetails).map((detail) => (
+            <li key={detail.OrderNumber}>
+              <OrderCard
+                state={detail.state}
+                OrderNumber={detail.OrderNumber}
+                details={detail.details}
+              />
+            </li>
+          ))}
+        </ul>
       </TabUl>
     </FeatureLayout>
   );
