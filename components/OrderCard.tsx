@@ -66,6 +66,11 @@ export const OrderCard = ({ state }: Props): JSX.Element => {
             提供済み
           </div>
         )}
+        {state === "reject" && (
+          <div className="flex items-center justify-center ml-auto border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[25.9%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-reject-regular font-normal bg-order-card-reject">
+            キャンセル済み
+          </div>
+        )}
       </div>
     </div>
   );
