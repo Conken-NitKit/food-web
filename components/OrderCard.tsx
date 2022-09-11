@@ -48,17 +48,22 @@ export const OrderCard = ({ state }: Props): JSX.Element => {
           </li>
         </ul>
       </div>
-      <div className="flex mx-auto w-[92.4%]">
-        <div className="mt-[2.3%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
+      <div className="flex items-center mt-[1.5%] mx-auto w-[92.4%] h-[17%]">
+        <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
           <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
             合計 ￥
           </span>
           4,260
         </div>
         {state === "wait" && (
-          <div className="flex justify-between ml-auto mt-[1.5%] w-[14.1%]">
+          <div className="flex justify-between ml-auto w-[14.1%]">
             <div className="border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject"></div>
             <div className="border border-complete-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-complete"></div>
+          </div>
+        )}
+        {state === "complete" && (
+          <div className="flex items-center justify-center ml-auto border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[18.3%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-complete-regular font-normal bg-order-card-complete">
+            提供済み
           </div>
         )}
       </div>
