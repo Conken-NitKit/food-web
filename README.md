@@ -49,12 +49,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
    1. `yarn install`
 
-   1. `yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest`
-
-   1. `yarn add -D eslint-plugin-tailwindcss`
-
-   1. `yarn add classnames`
-
 1. VScode の拡張機能`ESlint`をインストール。 [[参考]](https://drive.google.com/file/d/1oPZpg67sT3jeqDCns6ZR924q-cXADhHE/view?usp=sharing)
 
 1. `food-web/.env`を作成。内容は[平田](https://github.com/Umiteru2004)に申請。
