@@ -20,7 +20,7 @@ export const OrderCard = ({
       <div className="mx-auto mt-[3.5%] border-b border-primary-regular border-dashed w-[95%] h-[44.2%]">
         <ul className="overflow-scroll mx-auto pb-[1.7%] w-[97%] h-full">
           {Object.values(details).map((detail) => (
-            <li className="flex items-center mb-[1.7%]" key={detail.name}>
+            <li className="flex items-center mb-[1.7%] last:mb-0" key={detail.name}>
               <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[5.8%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-secondary-light-regular">
                 {detail.ideogram}
               </div>
