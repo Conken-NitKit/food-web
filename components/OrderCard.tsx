@@ -52,12 +52,12 @@ export const OrderCard = ({
         </div>
         {state === "wait" && (
           <div className="flex justify-between ml-auto w-[14.1%]">
-            <div className="flex items-center justify-center border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject">
+            <button className="flex items-center justify-center border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject">
               <img src="/reject.svg" className="w-[29%]" />
-            </div>
-            <div className="flex items-center justify-center border border-complete-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-complete">
+            </button>
+            <button className="flex items-center justify-center border border-complete-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-complete">
             <img src="/complete.svg" className="w-[42%]" />
-            </div>
+            </button>
           </div>
         )}
         {state === "complete" && (
