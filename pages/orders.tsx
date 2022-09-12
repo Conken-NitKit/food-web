@@ -119,8 +119,10 @@ const Orders: NextPage = () => {
             />
           </li>
         ))}
-        <ul>
-          {Object.values(OrderDetails).map((detail) => (
+      </TabUl>
+      <ul>
+        {selectedCategory === "all" &&
+          Object.values(OrderDetails).map((detail) => (
             <li key={detail.OrderNumber}>
               <OrderCard
                 state={detail.state}
@@ -129,8 +131,43 @@ const Orders: NextPage = () => {
               />
             </li>
           ))}
-        </ul>
-      </TabUl>
+        {selectedCategory === "waiting" &&
+          Object.values(OrderDetails)
+            .filter((detail) => detail.state === "wait")
+            .map((detail) => (
+              <li key={detail.OrderNumber}>
+                <OrderCard
+                  state={detail.state}
+                  OrderNumber={detail.OrderNumber}
+                  details={detail.details}
+                />
+              </li>
+            ))}
+        {selectedCategory === "done" &&
+          Object.values(OrderDetails)
+            .filter((detail) => detail.state === "complete")
+            .map((detail) => (
+              <li key={detail.OrderNumber}>
+                <OrderCard
+                  state={detail.state}
+                  OrderNumber={detail.OrderNumber}
+                  details={detail.details}
+                />
+              </li>
+            ))}
+        {selectedCategory === "canceled" &&
+          Object.values(OrderDetails)
+            .filter((detail) => detail.state === "reject")
+            .map((detail) => (
+              <li key={detail.OrderNumber}>
+                <OrderCard
+                  state={detail.state}
+                  OrderNumber={detail.OrderNumber}
+                  details={detail.details}
+                />
+              </li>
+            ))}
+      </ul>
     </FeatureLayout>
   );
 };
