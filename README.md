@@ -101,20 +101,27 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - CSS は、基本的に display, position, top/bottom/right/left, m, border, p, w, h の順で記述する。
 
-## 命名法
+## 命名ルール
 
 ### ブランチ
 
-- ブランチ名は右の形式: `種類名/ファイル名`
+- ブランチ名は右の形式: `タイトル/コンポーネント名`
 
-`ファイル名`: そのブランチで作業するファイルの名前
+`コンポーネント名`: そのブランチで主に作業するコンポーネントの名前（拡張子を含まない。）
 
-`種類名`: `ファイル名`のファイルを含む`/`ディレクトリ内のディレクトリの名前
+`タイトル`:
+
+コンポーネントを作成するブランチの場合は`コンポーネント名`のコンポーネントを含む`/`ディレクトリ内のディレクトリの名前。
+
+不具合を修正するブランチの場合は`"fix"`
 
 - ケバブケース
 
 例:
-`pages/index`
+
+- `pages/Home`（`Home`コンポーネントの作成）
+- `components/basicLayout`（`basicLayout`コンポーネントの作成）
+- `fix/Home`（`Home`コンポーネントの不具合の修正）
 
 ### ファイル
 
