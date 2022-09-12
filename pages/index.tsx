@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { AddMenuCard } from "../components";
 
-import { BasicLayout, FeatureLayout } from "../components/layouts";
+import { BasicLayout } from "../components/layouts";
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +15,7 @@ const Home: NextPage = () => {
       {/* 仮置き */}
 
       <BasicLayout type="home">
+        <></>
       </BasicLayout>
 
       {/* 仮置きここまで */}
