@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { MenuCard } from "../components";
+import { AddMenuCard, MenuCard } from "../components";
 import { FeatureLayout } from "../components/layouts";
 import { MenuContent } from "../types/MenuContent";
 
@@ -62,6 +62,9 @@ const Menu: NextPage = () => {
             <MenuCard content={content.product} isSold={content.isSold} />
           </li>
         ))}
+        <li>
+          <AddMenuCard />
+        </li>
       </ul>
     </FeatureLayout>
   );
