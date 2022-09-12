@@ -17,7 +17,6 @@ const Home: NextPage = () => {
 
       <FeatureLayout type="menu">
         <>
-        <AddMenuCard />
         </>
       </FeatureLayout>
 
