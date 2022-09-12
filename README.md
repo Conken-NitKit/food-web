@@ -89,7 +89,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 要素の大きさは、tailwind にデフォルトで用意された([参考](https://tailwindcss.jp/docs/responsive-design))、表のブレイクポイントについてレスポンシブ対応すること。ただし、sm は`sm:`とせず基準のスタイルとすること。また、大きさは、[Figma](https://www.figma.com/file/xRETNoeIAtd6L5akb6KOsK/Food?node-id=12%3A286)の値に表の倍率をかけて求めること。
 
-   ※ 例えば、Figmaでwidthが100pxの要素のwは、`"w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"`となる。
+  ※ 例えば、Figmaでwidthが100pxの要素のwは、`"w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"`となる。
 
 | ブレイクポイント | min-width | 倍率    |
 | ---------------- | --------- | ------- |
