@@ -20,13 +20,14 @@ export const OrderCard = ({
       <div className="mx-auto mt-[3.5%] border-b border-primary-regular border-dashed w-[95%] h-[44.2%]">
         <ul className="overflow-scroll mx-auto pb-[1.7%] w-[97%] h-full">
           {Object.values(details).map((detail) => (
-            <li className="flex items-center mb-[1.7%] last:mb-0" key={detail.name}>
+            <li
+              className="flex items-center mb-[1.7%] last:mb-0"
+              key={detail.name}
+            >
               <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[5.8%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-secondary-light-regular">
                 {detail.ideogram}
               </div>
-              <div className="ml-[1.2%]">
-                {detail.name}
-              </div>
+              <div className="ml-[1.2%]">{detail.name}</div>
               <div className="ml-auto mr-[1.9%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
                 {detail.NumberOfOrders} x
               </div>
@@ -34,7 +35,7 @@ export const OrderCard = ({
                 <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
                   単品 ￥
                 </span>
-                {detail.price}
+                {detail.price.toLocaleString()}
               </div>
             </li>
           ))}
@@ -45,10 +46,9 @@ export const OrderCard = ({
           <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
             合計 ￥
           </span>
-          {details.reduce(
-            (acc, cur) => acc + cur.price * cur.NumberOfOrders,
-            0
-          )}
+          {details
+            .reduce((acc, cur) => acc + cur.price * cur.NumberOfOrders, 0)
+            .toLocaleString()}
         </div>
         {state === "waiting" && (
           <div className="flex justify-between ml-auto w-[14.1%]">
@@ -56,19 +56,19 @@ export const OrderCard = ({
               <img src="/reject.svg" className="w-[29%]" />
             </button>
             <button className="flex items-center justify-center border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[41.2%] bg-order-card-complete">
-            <img src="/complete.svg" className="w-[42%]" />
+              <img src="/complete.svg" className="w-[42%]" />
             </button>
           </div>
         )}
         {state === "done" && (
           <div className="flex items-center ml-auto border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[18.3%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-complete-regular font-normal bg-order-card-complete">
-          <img src="/complete.svg" className="mx-[12%] w-[13%]" />
+            <img src="/complete.svg" className="mx-[12%] w-[13%]" />
             提供済み
           </div>
         )}
         {state === "canceled" && (
           <div className="flex items-center ml-auto border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[25.9%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-reject-regular font-normal bg-order-card-reject">
-          <img src="/reject.svg" className="mx-[8.5%] w-[6.3%]" />
+            <img src="/reject.svg" className="mx-[8.5%] w-[6.3%]" />
             キャンセル済み
           </div>
         )}
