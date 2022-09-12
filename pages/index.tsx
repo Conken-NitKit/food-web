@@ -16,6 +16,7 @@ const Home: NextPage = () => {
       {/* 仮置き */}
 
       <BasicLayout type="home">
+        <></>
       </BasicLayout>
 
       {/* 仮置きここまで */}
