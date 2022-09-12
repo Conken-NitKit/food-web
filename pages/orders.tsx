@@ -88,6 +88,12 @@ const OrderDetails: {
         NumberOfOrders: 10,
         price: 230,
       },
+      {
+        ideogram: "🍟",
+        name: "ポテト",
+        NumberOfOrders: 2,
+        price: 150,
+      },
     ],
     OrderNumber: 2929,
     state: "reject",
