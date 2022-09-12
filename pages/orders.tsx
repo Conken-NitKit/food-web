@@ -54,7 +54,7 @@ const OrderDetails: {
       },
     ],
     OrderNumber: 9521,
-    state: "wait",
+    state: "waiting",
   },
   8100: {
     details: [
@@ -72,7 +72,7 @@ const OrderDetails: {
       },
     ],
     OrderNumber: 8100,
-    state: "complete",
+    state: "done",
   },
   2929: {
     details: [
@@ -96,7 +96,7 @@ const OrderDetails: {
       },
     ],
     OrderNumber: 2929,
-    state: "reject",
+    state: "canceled",
   },
 };
 
@@ -139,7 +139,7 @@ const Orders: NextPage = () => {
           ))}
         {selectedCategory === "waiting" &&
           Object.values(OrderDetails)
-            .filter((detail) => detail.state === "wait")
+            .filter((detail) => detail.state === selectedCategory)
             .map((detail) => (
               <li key={detail.OrderNumber}>
                 <OrderCard
@@ -151,7 +151,7 @@ const Orders: NextPage = () => {
             ))}
         {selectedCategory === "done" &&
           Object.values(OrderDetails)
-            .filter((detail) => detail.state === "complete")
+            .filter((detail) => detail.state === selectedCategory)
             .map((detail) => (
               <li key={detail.OrderNumber}>
                 <OrderCard
@@ -163,7 +163,7 @@ const Orders: NextPage = () => {
             ))}
         {selectedCategory === "canceled" &&
           Object.values(OrderDetails)
-            .filter((detail) => detail.state === "reject")
+            .filter((detail) => detail.state === selectedCategory)
             .map((detail) => (
               <li key={detail.OrderNumber}>
                 <OrderCard

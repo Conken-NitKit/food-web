@@ -50,7 +50,7 @@ export const OrderCard = ({
             0
           )}
         </div>
-        {state === "wait" && (
+        {state === "waiting" && (
           <div className="flex justify-between ml-auto w-[14.1%]">
             <button className="flex items-center justify-center border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject">
               <img src="/reject.svg" className="w-[29%]" />
@@ -60,13 +60,13 @@ export const OrderCard = ({
             </button>
           </div>
         )}
-        {state === "complete" && (
+        {state === "done" && (
           <div className="flex items-center ml-auto border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[18.3%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-complete-regular font-normal bg-order-card-complete">
           <img src="/complete.svg" className="w-[13%] mx-[12%]" />
             提供済み
           </div>
         )}
-        {state === "reject" && (
+        {state === "canceled" && (
           <div className="flex items-center ml-auto border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[25.9%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-reject-regular font-normal bg-order-card-reject">
           <img src="/reject.svg" className="w-[6.3%] mx-[8.5%]" />
             キャンセル済み
