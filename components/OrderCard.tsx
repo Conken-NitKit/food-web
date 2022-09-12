@@ -13,7 +13,7 @@ export const OrderCard = ({
   details,
 }: Props): JSX.Element => {
   return (
-    <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] font-bold font-menu-card text-primary-regular shadow-regular bg-primary-regular">
+    <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold font-menu-card text-primary-regular shadow-regular bg-primary-regular">
       <div className="pt-[2.7%] ml-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
         注文番号 #{OrderNumber}
       </div>
@@ -24,7 +24,7 @@ export const OrderCard = ({
               <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[5.8%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-secondary-light-regular">
                 {detail.ideogram}
               </div>
-              <div className="ml-[1.2%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
+              <div className="ml-[1.2%] ">
                 {detail.name}
               </div>
               <div className="ml-auto mr-[1.9%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
