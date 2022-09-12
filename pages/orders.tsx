@@ -137,42 +137,21 @@ const Orders: NextPage = () => {
               />
             </li>
           ))}
-        {selectedCategory === "waiting" &&
-          Object.values(OrderDetails)
-            .filter((detail) => detail.state === selectedCategory)
-            .map((detail) => (
-              <li key={detail.OrderNumber}>
-                <OrderCard
-                  state={detail.state}
-                  OrderNumber={detail.OrderNumber}
-                  details={detail.details}
-                />
-              </li>
-            ))}
-        {selectedCategory === "done" &&
-          Object.values(OrderDetails)
-            .filter((detail) => detail.state === selectedCategory)
-            .map((detail) => (
-              <li key={detail.OrderNumber}>
-                <OrderCard
-                  state={detail.state}
-                  OrderNumber={detail.OrderNumber}
-                  details={detail.details}
-                />
-              </li>
-            ))}
-        {selectedCategory === "canceled" &&
-          Object.values(OrderDetails)
-            .filter((detail) => detail.state === selectedCategory)
-            .map((detail) => (
-              <li key={detail.OrderNumber}>
-                <OrderCard
-                  state={detail.state}
-                  OrderNumber={detail.OrderNumber}
-                  details={detail.details}
-                />
-              </li>
-            ))}
+        {Object.values(CATEGORIES).map(
+          (category) =>
+            selectedCategory === category.id &&
+            Object.values(OrderDetails)
+              .filter((detail) => detail.state === category.id)
+              .map((detail) => (
+                <li key={detail.OrderNumber}>
+                  <OrderCard
+                    state={detail.state}
+                    OrderNumber={detail.OrderNumber}
+                    details={detail.details}
+                  />
+                </li>
+              ))
+        )}
       </ul>
     </FeatureLayout>
   );
