@@ -14,7 +14,7 @@ export const OrderCard = ({
 }: Props): JSX.Element => {
   return (
     <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold font-menu-card text-primary-regular shadow-regular bg-primary-regular">
-      <div className="pt-[2.7%] ml-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
+      <div className="ml-[2.7%] pt-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
         注文番号 #{OrderNumber}
       </div>
       <div className="mx-auto mt-[3.5%] border-b border-primary-regular border-dashed w-[95%] h-[44.2%]">
@@ -24,7 +24,7 @@ export const OrderCard = ({
               <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[5.8%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-secondary-light-regular">
                 {detail.ideogram}
               </div>
-              <div className="ml-[1.2%] ">
+              <div className="ml-[1.2%]">
                 {detail.name}
               </div>
               <div className="ml-auto mr-[1.9%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
@@ -52,23 +52,23 @@ export const OrderCard = ({
         </div>
         {state === "waiting" && (
           <div className="flex justify-between ml-auto w-[14.1%]">
-            <button className="flex items-center justify-center border border-reject-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-reject">
+            <button className="flex items-center justify-center border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[41.2%] bg-order-card-reject">
               <img src="/reject.svg" className="w-[29%]" />
             </button>
-            <button className="flex items-center justify-center border border-complete-regular aspect-square w-[41.2%] rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] bg-order-card-complete">
+            <button className="flex items-center justify-center border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[41.2%] bg-order-card-complete">
             <img src="/complete.svg" className="w-[42%]" />
             </button>
           </div>
         )}
         {state === "done" && (
           <div className="flex items-center ml-auto border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[18.3%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-complete-regular font-normal bg-order-card-complete">
-          <img src="/complete.svg" className="w-[13%] mx-[12%]" />
+          <img src="/complete.svg" className="mx-[12%] w-[13%]" />
             提供済み
           </div>
         )}
         {state === "canceled" && (
           <div className="flex items-center ml-auto border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[25.9%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-reject-regular font-normal bg-order-card-reject">
-          <img src="/reject.svg" className="w-[6.3%] mx-[8.5%]" />
+          <img src="/reject.svg" className="mx-[8.5%] w-[6.3%]" />
             キャンセル済み
           </div>
         )}
