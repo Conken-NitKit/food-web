@@ -89,7 +89,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 要素の大きさは、tailwind にデフォルトで用意された([参考](https://tailwindcss.jp/docs/responsive-design))、表のブレイクポイントについてレスポンシブ対応すること。ただし、sm は`sm:`とせず基準のスタイルとすること。また、大きさは、[Figma](https://www.figma.com/file/xRETNoeIAtd6L5akb6KOsK/Food?node-id=12%3A286)の値に表の倍率をかけて求めること。
 
-   ※ 例えば、Figmaでwidthが100pxの要素のwは、`"w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"`となる。
+  ※ 例えば、Figma で width が 100px の要素の w は、`"w-10 md:w-12 lg:w-16 xl:w-20 2xl:w-24"`となる。
 
 | ブレイクポイント | min-width | 倍率    |
 | ---------------- | --------- | ------- |
@@ -101,20 +101,24 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - CSS は、基本的に display, position, top/bottom/right/left, m, border, p, w, h の順で記述する。
 
-## 命名法
+## 命名ルール
 
 ### ブランチ
 
-- ブランチ名は右の形式: `種類名/ファイル名`
-
-`ファイル名`: そのブランチで作業するファイルの名前
-
-`種類名`: `ファイル名`のファイルを含む`/`ディレクトリ内のディレクトリの名前
-
 - ケバブケース
 
+- ブランチ名は右の形式: `タイトル/詳細`
+
+|                                            | タイトル                                                            | 詳細                         |
+| ------------------------------------------ | ------------------------------------------------------------------- | ---------------------------- |
+| **コンポーネントを作成するブランチの場合** | 作成するコンポーネントを含む`/`ディレクトリ直下のディレクトリの名前 | 作成するコンポーネントの名前 |
+| **不具合を修正するブランチの場合**         | `"fix"`                                                             | 修正箇所                     |
+
 例:
-`pages/index`
+
+- `pages/home`（`Home`コンポーネントの作成）
+- `components/basic-layout`（`basicLayout`コンポーネントの作成）
+- `fix/home-bg`（`Home`コンポーネントの背景の不具合の修正）
 
 ### ファイル
 
