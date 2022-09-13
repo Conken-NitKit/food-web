@@ -62,7 +62,7 @@ const Menu: NextPage = () => {
             <MenuCard content={content.product} isSold={content.isSold} />
           </li>
         ))}
-        <li>
+        <li key="add-menu-card">
           <AddMenuCard />
         </li>
       </ul>
