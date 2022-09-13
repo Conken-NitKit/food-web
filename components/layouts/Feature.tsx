@@ -15,8 +15,8 @@ export const FeatureLayout: ({
           {pageName}
         </h1>
 
-        {/* このdivのheightはh1のheightに依存 */}
-        <div className="w-full h-[calc(100%-17px)] md:h-[calc(100%-20px)] lg:h-[calc(100%-27px)] xl:h-[100%-34px] 2xl:h-[100%-40px]">
+        {/* このdivのheightはh1のheight+margin-bottomに依存 */}
+        <div className="w-full h-[calc(100%-36px)] md:h-[calc(100%-43px)] lg:h-[calc(100%-58px)] xl:h-[calc(100%-72px)] 2xl:h-[calc(100%-86px)]">
           {children}
         </div>
       </div>
