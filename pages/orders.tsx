@@ -33,13 +33,13 @@ const CATEGORIES: Record<
 //仮置きのデータ（実際はデータベースから取得する）
 const OrderDetails: {
   [key: number]: {
-    details: OrderDetail[];
+    products: OrderDetail[];
     OrderNumber: number;
     state: OrderState;
   };
 } = {
   9521: {
-    details: [
+    products: [
       {
         ideogram: "🍔",
         name: "ビーフバーガー",
@@ -57,7 +57,7 @@ const OrderDetails: {
     state: "waiting",
   },
   8100: {
-    details: [
+    products: [
       {
         ideogram: "🍔",
         name: "ビーフバーガー",
@@ -75,7 +75,7 @@ const OrderDetails: {
     state: "done",
   },
   2929: {
-    details: [
+    products: [
       {
         ideogram: "🍔",
         name: "ビーフバーガー",
@@ -133,7 +133,7 @@ const Orders: NextPage = () => {
               <OrderCard
                 state={detail.state}
                 OrderNumber={detail.OrderNumber}
-                details={detail.details}
+                details={detail.products}
               />
             </li>
           ))}
@@ -147,7 +147,7 @@ const Orders: NextPage = () => {
                   <OrderCard
                     state={detail.state}
                     OrderNumber={detail.OrderNumber}
-                    details={detail.details}
+                    details={detail.products}
                   />
                 </li>
               ))
