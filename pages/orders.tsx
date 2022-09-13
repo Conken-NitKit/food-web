@@ -130,22 +130,14 @@ const Orders: NextPage = () => {
         {selectedCategory === "all"
           ? Object.values(OrderDetails).map((detail) => (
               <li key={detail.OrderNumber}>
-                <OrderCard
-                  state={detail.state}
-                  OrderNumber={detail.OrderNumber}
-                  details={detail.products}
-                />
+                <OrderCard content={detail} />
               </li>
             ))
           : Object.values(OrderDetails)
               .filter((detail) => detail.state === selectedCategory)
               .map((detail) => (
                 <li key={detail.OrderNumber}>
-                  <OrderCard
-                    state={detail.state}
-                    OrderNumber={detail.OrderNumber}
-                    details={detail.products}
-                  />
+                  <OrderCard content={detail} />
                 </li>
               ))}
       </ul>
