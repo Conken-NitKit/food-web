@@ -16,7 +16,7 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
         注文番号 #{content.OrderNumber}
       </div>
       <div className="mx-auto mt-[3.5%] border-b border-primary-regular border-dashed w-[95%] h-[44.2%]">
-        <ul className="overflow-scroll mx-auto pb-[1.7%] w-[97%] h-full">
+        <ul className="overflow-scroll mx-auto pb-[1.7%] w-[97%] h-[101%]">
           {Object.values(content.products).map((product) => (
             <li
               className="flex items-center mb-[1.7%] last:mb-0"
