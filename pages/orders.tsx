@@ -127,21 +127,18 @@ const Orders: NextPage = () => {
         ))}
       </TabUl>
       <ul className="overflow-y-scroll h-[80%]">
-        {selectedCategory === "all" &&
-          Object.values(OrderDetails).map((detail) => (
-            <li key={detail.OrderNumber}>
-              <OrderCard
-                state={detail.state}
-                OrderNumber={detail.OrderNumber}
-                details={detail.products}
-              />
-            </li>
-          ))}
-        {Object.values(CATEGORIES).map(
-          (category) =>
-            selectedCategory === category.id &&
-            Object.values(OrderDetails)
-              .filter((detail) => detail.state === category.id)
+        {selectedCategory === "all"
+          ? Object.values(OrderDetails).map((detail) => (
+              <li key={detail.OrderNumber}>
+                <OrderCard
+                  state={detail.state}
+                  OrderNumber={detail.OrderNumber}
+                  details={detail.products}
+                />
+              </li>
+            ))
+          : Object.values(OrderDetails)
+              .filter((detail) => detail.state === selectedCategory)
               .map((detail) => (
                 <li key={detail.OrderNumber}>
                   <OrderCard
@@ -150,8 +147,7 @@ const Orders: NextPage = () => {
                     details={detail.products}
                   />
                 </li>
-              ))
-        )}
+              ))}
       </ul>
     </FeatureLayout>
   );
