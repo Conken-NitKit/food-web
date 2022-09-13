@@ -14,8 +14,7 @@ export const FeatureLayout: ({
         <h1 className="mb-[19px] md:mb-[23px] lg:mb-[31px] xl:mb-[38px] 2xl:mb-[46px] h-[17px] md:h-5 lg:h-[27px] xl:h-[34px] 2xl:h-10 text-primary-regular text-sm md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] font-bold leading-[17px] md:leading-[20px] lg:leading-[27px] xl:leading-[34px] 2xl:leading-[40px]">
           {pageName}
         </h1>
-
-        {children}
+        <div>{children}</div>
       </div>
     </BasicLayout>
   );
