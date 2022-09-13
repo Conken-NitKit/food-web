@@ -11,7 +11,7 @@ export const FeatureLayout: ({
   return (
     <BasicLayout type={type}>
       <div className="p-[19px] md:p-[23px] lg:p-[31px] xl:p-[38px] 2xl:p-[46px] !pb-0 w-full h-full">
-        <h1 className="mb-[19px] md:mb-[23px] lg:mb-[31px] xl:mb-[38px] 2xl:mb-[46px] text-primary-regular text-sm md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] font-bold leading-basic">
+        <h1 className="mb-[19px] md:mb-[23px] lg:mb-[31px] xl:mb-[38px] 2xl:mb-[46px] h-[17px] md:h-5 lg:h-[27px] xl:h-[34px] 2xl:h-10 text-primary-regular text-sm md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] font-bold leading-basic">
           {pageName}
         </h1>
 
