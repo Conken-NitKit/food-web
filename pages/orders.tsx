@@ -126,7 +126,7 @@ const Orders: NextPage = () => {
           </li>
         ))}
       </TabUl>
-      <ul className="overflow-y-scroll h-[calc(100%-31px)] md:h-[calc(100%-37px)] lg:h-[calc(100%-49px)] xl:h-[calc(100%-61px)] 2xl:h-[calc(100%-75px)]">
+      <ul className="overflow-y-scroll mt-[-2px] ml-[-8px] pt-[2px] pl-[8px] h-[calc(100%-31px)] md:h-[calc(100%-37px)] lg:h-[calc(100%-49px)] xl:h-[calc(100%-61px)] 2xl:h-[calc(100%-75px)]">
         {selectedCategory === "all"
           ? Object.values(OrderDetails).map((detail) => (
               <li key={detail.OrderNumber}>
