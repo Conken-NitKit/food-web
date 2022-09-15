@@ -32,7 +32,7 @@ const CATEGORIES: Record<
 const OrderDetails: {
   [key: number]: {
     products: OrderDetail[];
-    OrderNumber: number;
+    orderNumber: number;
     state: OrderState;
   };
 } = {
@@ -51,7 +51,7 @@ const OrderDetails: {
         price: 230,
       },
     ],
-    OrderNumber: 9521,
+    orderNumber: 9521,
     state: "waiting",
   },
   8100: {
@@ -69,7 +69,7 @@ const OrderDetails: {
         price: 230,
       },
     ],
-    OrderNumber: 8100,
+    orderNumber: 8100,
     state: "done",
   },
   2929: {
@@ -93,7 +93,7 @@ const OrderDetails: {
         price: 150,
       },
     ],
-    OrderNumber: 2929,
+    orderNumber: 2929,
     state: "canceled",
   },
 };
@@ -127,14 +127,14 @@ const Orders: NextPage = () => {
       <ul className="overflow-y-scroll mt-[-8px] ml-[-8px] pt-[8px] pl-[8px] h-[calc(100%-31px)] md:h-[calc(100%-37px)] lg:h-[calc(100%-49px)] xl:h-[calc(100%-61px)] 2xl:h-[calc(100%-75px)]">
         {selectedCategory === "all"
           ? Object.values(OrderDetails).map((detail) => (
-              <li key={detail.OrderNumber}>
+              <li key={detail.orderNumber}>
                 <OrderCard content={detail} />
               </li>
             ))
           : Object.values(OrderDetails)
               .filter((detail) => detail.state === selectedCategory)
               .map((detail) => (
-                <li key={detail.OrderNumber}>
+                <li key={detail.orderNumber}>
                   <OrderCard content={detail} />
                 </li>
               ))}

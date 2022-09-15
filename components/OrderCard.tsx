@@ -4,7 +4,7 @@ interface Props {
   content: {
     products: OrderDetail[];
     state: OrderState;
-    OrderNumber: number;
+    orderNumber: number;
   };
 }
 
@@ -12,7 +12,7 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
   return (
     <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold font-menu-card text-primary-regular shadow-regular bg-primary-regular">
       <div className="ml-[2.7%] pt-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
-        注文番号 #{content.OrderNumber}
+        注文番号 #{content.orderNumber}
       </div>
       <div className="mx-auto mt-[3.5%] border-b border-primary-regular border-dashed w-[95%] h-[44.2%]">
         <ul className="overflow-scroll mx-auto pb-[1.7%] w-[97%] h-[101%]">
