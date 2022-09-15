@@ -26,7 +26,7 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
               </div>
               <div className="ml-[1.2%]">{product.name}</div>
               <div className="ml-auto mr-[1.9%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
-                {product.NumberOfOrders} x
+                {product.orderVolume} x
               </div>
               <div className="ml-0 text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] text-[transparent] bg-accent-gradient-primary bg-clip-text">
                 <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
@@ -44,7 +44,7 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
             合計 ￥
           </span>
           {content.products
-            .reduce((acc, cur) => acc + cur.price * cur.NumberOfOrders, 0)
+            .reduce((acc, cur) => acc + cur.price * cur.orderVolume, 0)
             .toLocaleString()}
         </div>
         {content.state === "waiting" && (

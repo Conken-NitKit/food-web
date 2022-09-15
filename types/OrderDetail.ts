@@ -1,6 +1,6 @@
 export interface OrderDetail {
   ideogram: string;
   name: string;
-  NumberOfOrders: number;
+  orderVolume: number;
   price: number;
 }
