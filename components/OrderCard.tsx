@@ -11,8 +11,8 @@ interface Props {
 const getTotalAmount: (
   previousValue: number,
   currentValue: OrderDetail
-) => number = (previousValue, currentValue) => {
-  return previousValue + currentValue.price * currentValue.orderVolume;
+) => number = (prev, cur) => {
+  return prev + cur.price * cur.orderVolume;
 };
 
 export const OrderCard = ({ content }: Props): JSX.Element => {
