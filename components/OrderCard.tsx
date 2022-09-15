@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { OrderDetail, OrderState } from "../types";
 
 interface Props {
@@ -55,22 +56,30 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
         {content.state === "waiting" && (
           <div className="flex justify-between ml-auto w-[14.1%]">
             <button className="flex items-center justify-center border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[41.2%] bg-order-card-reject">
-              <img src="/reject.svg" className="w-[29%]" />
+              <div className="relative w-[29.1%] aspect-square">
+                <Image src="/reject.svg" layout="fill" />
+              </div>
             </button>
             <button className="flex items-center justify-center border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[41.2%] bg-order-card-complete">
-              <img src="/complete.svg" className="w-[42%]" />
+              <div className="relative w-[41.5%] h-[33.2%]">
+                <Image src="/complete.svg" layout="fill" />
+              </div>
             </button>
           </div>
         )}
         {content.state === "done" && (
           <div className="flex items-center ml-auto border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[18.3%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-complete-regular font-normal bg-order-card-complete">
-            <img src="/complete.svg" className="mx-[12%] w-[13%]" />
+            <div className="relative mx-[12%] w-[12.9%] h-[33.5%]">
+              <Image src="/complete.svg" layout="fill" />
+            </div>
             <p>提供済み</p>
           </div>
         )}
         {content.state === "canceled" && (
           <div className="flex items-center ml-auto border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[25.9%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-reject-regular font-normal bg-order-card-reject">
-            <img src="/reject.svg" className="mx-[8.5%] w-[6.3%]" />
+            <div className="relative mx-[8.5%] w-[6.4%] aspect-square">
+              <Image src="/reject.svg" layout="fill" />
+            </div>
             <p>キャンセル済み</p>
           </div>
         )}
