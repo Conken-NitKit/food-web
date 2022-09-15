@@ -24,7 +24,7 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
               <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[5.8%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-secondary-light-regular">
                 {product.ideogram}
               </div>
-              <div className="ml-[1.2%]">{product.name}</div>
+              <p className="ml-[1.2%]">{product.name}</p>
               <div className="ml-auto mr-[1.9%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
                 {product.orderVolume} x
               </div>
