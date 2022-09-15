@@ -1,12 +1,10 @@
 import { useCallback, useState } from "react";
 import { NextPage } from "next";
 
-import { OrderCategoryId } from "../types";
+import { OrderCategoryId, OrderDetail, OrderState } from "../types";
 import { FeatureLayout } from "../components/layouts";
 import { TabItems, TabUl } from "../components/tab-components";
 import { OrderCard } from "../components";
-import { OrderState } from "../types/OrderState";
-import { OrderDetail } from "../types/OrderDetail";
 
 const CATEGORIES: Record<
   OrderCategoryId,

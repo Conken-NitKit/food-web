@@ -1,5 +1,4 @@
-import { OrderDetail } from "../types/OrderDetail";
-import { OrderState } from "../types/OrderState";
+import { OrderDetail, OrderState } from "../types";
 
 interface Props {
   content: {
