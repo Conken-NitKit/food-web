@@ -29,9 +29,9 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
                 {product.orderVolume} x
               </div>
               <p className="ml-0 text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px] text-[transparent] bg-accent-gradient-primary bg-clip-text">
-                  単品 ￥
+                単品 ￥
                 <span className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
-                {product.price.toLocaleString()}
+                  {product.price.toLocaleString()}
                 </span>
               </p>
             </li>
@@ -39,14 +39,14 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
         </ul>
       </div>
       <div className="flex items-center mt-[1.5%] mx-auto w-[92.4%] h-[17%]">
-        <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
-          <span className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
-            合計 ￥
+        <p className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
+          合計 ￥
+          <span className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
+            {content.products
+              .reduce((acc, cur) => acc + cur.price * cur.orderVolume, 0)
+              .toLocaleString()}
           </span>
-          {content.products
-            .reduce((acc, cur) => acc + cur.price * cur.orderVolume, 0)
-            .toLocaleString()}
-        </div>
+        </p>
         {content.state === "waiting" && (
           <div className="flex justify-between ml-auto w-[14.1%]">
             <button className="flex items-center justify-center border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[41.2%] bg-order-card-reject">
