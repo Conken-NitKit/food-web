@@ -60,13 +60,13 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
         {content.state === "done" && (
           <div className="flex items-center ml-auto border border-complete-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[18.3%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-complete-regular font-normal bg-order-card-complete">
             <img src="/complete.svg" className="mx-[12%] w-[13%]" />
-            提供済み
+            <p>提供済み</p>
           </div>
         )}
         {content.state === "canceled" && (
           <div className="flex items-center ml-auto border border-reject-regular rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] w-[25.9%] h-full text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] text-reject-regular font-normal bg-order-card-reject">
             <img src="/reject.svg" className="mx-[8.5%] w-[6.3%]" />
-            キャンセル済み
+            <p>キャンセル済み</p>
           </div>
         )}
       </div>
