@@ -9,8 +9,8 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const session = await getToken({ req, secret: process.env.SECRET });
-  if (!session) return NextResponse.redirect("/api/auth/signin");
+  // const session = await getToken({ req, secret: process.env.SECRET });
+  // if (!session) return NextResponse.redirect(url.origin + "/api/auth/signin");
 
   return NextResponse.next();
 }

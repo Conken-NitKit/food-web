@@ -177,9 +177,10 @@ module.exports = {
         "accent-secondary-light-regular": theme("colors.navajowhite.a100"),
       }),
       textColor: (theme) => ({
+        "primary-regular": theme("colors.brown.a100"),
         "primary-inverted": theme("colors.white.a100"),
         "secondary-regular": theme("colors.gray.a100"),
-        "primary-regular": theme("colors.brown.a100"),
+        "accent-primary-regular": theme("colors.orange.a100"),
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
         "tertiary-regular": theme("colors.coral.a100"),
