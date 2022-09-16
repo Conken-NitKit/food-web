@@ -6,6 +6,7 @@ export const HomeHead = (): JSX.Element => {
       </div>
       <div>
         <h1 className="text-[36px] font-bold leading-[42px]">コンピュータ研究部</h1>
+        <p className="mt-[2.46%] text-[16px] leading-[18.75px]">https://food.netlify/conken-festival</p>
       </div>
     </div>
   );
