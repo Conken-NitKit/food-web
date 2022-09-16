@@ -191,6 +191,7 @@ module.exports = {
       }),
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
+        "secondary-regular": theme("colors.gray.a10"),
       }),
       fontFamily: {
         "menu-card": "lato",
