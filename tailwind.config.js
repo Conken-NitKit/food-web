@@ -168,6 +168,7 @@ module.exports = {
     extend: {
       backgroundColor: (theme) => ({
         "primary-regular": theme("colors.white.a100"),
+        "primary-dark-regular": theme("colors.brown.a100"),
         "secondary-regular": theme("colors.whitesmoke.a100"),
         "secondary-dark-regular": theme("colors.lightgray.a100"),
         "thirdly-regular": theme("colors.gray.a100"),
