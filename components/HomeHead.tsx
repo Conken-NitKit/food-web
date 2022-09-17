@@ -20,13 +20,13 @@ export const HomeHead = (): JSX.Element => {
         </p>
         <div className="flex mt-[3.5%] h-[21.7%]">
           <a className="flex items-center justify-center border border-secondary-regular rounded-[14px] w-[80.4%] h-full text-[14px] text-primary-regular font-bold">
-            モバイルオーダー用のページを確認する
+            <p>モバイルオーダー用のページを確認する</p>
           </a>
           <button
             onClick={urlCopy}
             className="ml-auto border border-secondary-regular rounded-[14px] w-[17.1%] h-full font-bold text-primary-inverted bg-primary-dark-regular"
           >
-            コピー
+            <p>コピー</p>
           </button>
         </div>
       </div>
