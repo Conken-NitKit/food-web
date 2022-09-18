@@ -19,6 +19,9 @@ export const HomeEarnigs = (): JSX.Element => {
           <p className="text-[32px] font-bold">962</p>
         </div>
       </div>
+      <a className="flex items-center justify-center ml-auto mt-[8.3%] border border-secondary-regular rounded-[14px] w-[73.7%] h-[12.1%] text-primary-regular font-bold">
+        <p>売上解析ページを確認する</p>
+      </a>
     </div>
   );
 };
