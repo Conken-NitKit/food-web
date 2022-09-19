@@ -12,7 +12,7 @@ export const HomeHead = (): JSX.Element => {
         🖥
       </div>
       <div className="my-auto ml-[3.3%] w-full">
-        <h1 className=" text-[14px] md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] font-bold text-primary-regular leading-[1.17]">
+        <h1 className="overflow-scroll h-[17px] md:h-[20px] lg:h-[27px] xl:h-[34px] 2xl:h-[40px] text-[14px] md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] font-bold text-primary-regular leading-[1.17]">
           コンピュータ研究部
         </h1>
         <p className="mt-[1.56%] text-[10px] xl:text-[13px] 2xl:text-[15px] text-secondary-regular leading-[1.19]">
