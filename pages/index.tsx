@@ -57,11 +57,15 @@ const Home: NextPage = () => {
       </Head>
       <BasicLayout type="home">
         <HomeHead
-          orderUrl="https://food-web-git-color-palette-tailwindconfig-food-web.vercel.app/menu"
-          siteUrl="https://food-web-git-color-palette-tailwindconfig-food-web.vercel.app/"
+          orderUrl="https://food-web-alpha.vercel.app/menu"
+          siteUrl="https://food-web-alpha.vercel.app/"
           storeName="コンピュータ研究部"
         />
-        <HomeEarnigs totalEarnings={361280} totalOrders={962} />
+        <HomeEarnigs
+          totalEarnings={361280}
+          totalOrders={962}
+          earningsUrl="https://food-web-alpha.vercel.app/sales"
+        />
         <HomeGuide guides={Object.values(guideMock)} />
       </BasicLayout>
     </div>
