@@ -13,7 +13,7 @@ export const HomeGuide = ({ guides }: Props): JSX.Element => {
       <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
         {Object.values(guides).map((guide) => (
           <li
-            key={guide.id}
+            key={guide.guideId}
             className="flex mb-[3.3%] w-[47.45%] h-[25%] even:ml-auto"
           >
             <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square h-full bg-secondary-regular text-[24px]">

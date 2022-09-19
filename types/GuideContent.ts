@@ -1,5 +1,5 @@
 export interface GuideContent {
-  id: number;
+  guideId: number;
   ideogram: string;
   description: string;
 }

@@ -5,44 +5,44 @@ import { BasicLayout } from "../components/layouts";
 
 const guideMock: {
   [key: number]: {
-    id: number;
-    ideogram: string;
+    guideId: number;
+    guideIdeogram: string;
     description: string;
   };
 } = {
   1: {
-    id: 1,
-    ideogram: "🖥",
+    guideId: 1,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
   2: {
-    id: 2,
-    ideogram: "🖥",
+    guideId: 2,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
   3: {
-    id: 3,
-    ideogram: "🖥",
+    guideId: 3,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
   4: {
-    id: 4,
-    ideogram: "🖥",
+    guideId: 4,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
   5: {
-    id: 5,
-    ideogram: "🖥",
+    guideId: 5,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
   6: {
-    id: 6,
-    ideogram: "🖥",
+    guideId: 6,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
   7: {
-    id: 7,
-    ideogram: "🖥",
+    guideId: 7,
+    guideIdeogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
 };
