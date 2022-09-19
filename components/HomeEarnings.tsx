@@ -15,7 +15,7 @@ export const HomeEarnigs = (): JSX.Element => {
             売上合計
           </p>
           <p className="text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold leading-none">
-            ¥{" "}
+            ¥
             <span className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px]">
               361,280
             </span>
