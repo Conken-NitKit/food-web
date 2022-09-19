@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "classnames": "^2.3.1",
     "firebase": "^9.6.10",
     "next": "12.1.0",
