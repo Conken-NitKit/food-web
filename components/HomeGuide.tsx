@@ -1,19 +1,17 @@
+import { GuideContent } from "../types";
+
 interface Props {
-  guide: {
-    id: number;
-    ideogram: string;
-    description: string;
-  }[];
+  guides: GuideContent[];
 }
 
-export const HomeGuide = ({ guide }: Props): JSX.Element => {
+export const HomeGuide = ({ guides }: Props): JSX.Element => {
   return (
     <div className="mx-auto mt-[14px] md:mt-[17px] lg:mt-[23px] xl:mt-[29px] 2xl:mt-[35px] w-[260px] md:w-[312px] lg:w-[415px] xl:w-[519px] 2xl:w-[623px] h-[121px] md:h-[145px] lg:h-[193px] xl:h-[242px] 2xl:h-[290px] text-primary-regular">
       <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] font-bold">
         使い方
       </div>
       <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
-        {Object.values(guide).map((guide) => (
+        {Object.values(guides).map((guide) => (
           <li
             key={guide.id}
             className="flex mb-[3.3%] w-[47.45%] h-[25%] even:ml-auto"

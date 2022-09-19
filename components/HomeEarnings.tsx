@@ -1,4 +1,12 @@
-export const HomeEarnigs = (): JSX.Element => {
+interface Props {
+  totalOrders: number;
+  totalEarnings: number;
+}
+
+export const HomeEarnigs = ({
+  totalOrders,
+  totalEarnings,
+}: Props): JSX.Element => {
   return (
     <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] mx-auto w-[226px] md:w-[271px] lg:w-[361px] xl:w-[452px] 2xl:w-[542px] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular">
       <div className="flex items-center h-[14.1%]">
@@ -17,7 +25,7 @@ export const HomeEarnigs = (): JSX.Element => {
           <p className="text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold leading-none">
             ¥
             <span className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px]">
-              361,280
+              {totalEarnings.toLocaleString()}
             </span>
           </p>
         </div>
@@ -26,7 +34,7 @@ export const HomeEarnigs = (): JSX.Element => {
             注文回数合計
           </p>
           <p className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px] font-bold leading-none">
-            962
+            {totalOrders.toLocaleString()}
           </p>
         </div>
       </div>
