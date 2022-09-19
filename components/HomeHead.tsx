@@ -21,10 +21,10 @@ export const HomeHead = ({
         🖥
       </div>
       <div className="my-auto ml-[3.3%] w-full">
-        <h1 className="overflow-scroll h-[17px] md:h-[20px] lg:h-[27px] xl:h-[34px] 2xl:h-[40px] text-[14px] md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] text-primary-regular leading-[1.17]">
+        <h1 className="overflow-scroll h-[17px] md:h-[20px] lg:h-[27px] xl:h-[34px] 2xl:h-[40px] text-[14px] md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] text-primary-regular font-roboto leading-[1.17]">
           {storeName}
         </h1>
-        <p className="mt-[1.56%] text-[10px] xl:text-[13px] 2xl:text-[15px] text-secondary-regular font-normal leading-[1.19]">
+        <p className="mt-[1.56%] text-[10px] xl:text-[13px] 2xl:text-[15px] text-secondary-regular font-normal font-roboto leading-[1.19]">
           {siteUrl}
         </p>
         <div className="flex mt-[3.5%] h-[21.7%]">
@@ -32,13 +32,13 @@ export const HomeHead = ({
             href={orderUrl}
             className="flex items-center justify-center border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[80.4%] h-full text-[11px] 2xl:text-[13px] text-primary-regular"
           >
-            <p>モバイルオーダー用のページを確認する</p>
+            <p className="font-menu-card">モバイルオーダー用のページを確認する</p>
           </a>
           <button
             onClick={urlCopy}
             className="ml-auto border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-full text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
           >
-            <p>コピー</p>
+            <p className="font-menu-card">コピー</p>
           </button>
         </div>
       </div>
