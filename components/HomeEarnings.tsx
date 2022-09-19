@@ -1,11 +1,13 @@
 interface Props {
   totalOrders: number;
   totalEarnings: number;
+  earningsUrl: string;
 }
 
 export const HomeEarnigs = ({
   totalOrders,
   totalEarnings,
+  earningsUrl,
 }: Props): JSX.Element => {
   return (
     <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] mx-auto w-[226px] md:w-[271px] lg:w-[361px] xl:w-[452px] 2xl:w-[542px] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular font-bold font-roboto">
@@ -38,7 +40,10 @@ export const HomeEarnigs = ({
           </p>
         </div>
       </div>
-      <a className="flex items-center justify-center ml-auto mt-[8.3%] border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[73.7%] h-[12.1%] text-[11px] 2xl:text-[13px] text-primary-regular">
+      <a
+        href={earningsUrl}
+        className="flex items-center justify-center ml-auto mt-[8.3%] border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[73.7%] h-[12.1%] text-[11px] 2xl:text-[13px] text-primary-regular"
+      >
         <p className="font-menu-card">売上解析ページを確認する</p>
       </a>
     </div>
