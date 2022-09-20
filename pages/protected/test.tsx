@@ -1,6 +1,15 @@
 import type { NextPage } from "next";
+import { signOut } from "next-auth/react";
+import { useCallback } from "react";
 
 const SignOut: NextPage = () => {
+  const handleSignOut = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      signOut();
+    },
+    []
+  );
   return (
     <div className="w-screen h-screen bg-accent-gradient-primary">
       <main className="relative flex-1">
@@ -15,6 +24,13 @@ const SignOut: NextPage = () => {
             <p className="text-primary-inverted text-center leading-loose xl:text-start">
               フェスレジは、フェスの会計を支援するためのサービスです。
             </p>
+            <a
+              href="/api/auth/signout/"
+              className="block w-full px-6 py-3 rounded-md text-accent-primary-regular bg-primary-regular text-lg font-bold text-center transition-all hover:brightness-110 active:brightness-75"
+              onClick={handleSignOut}
+            >
+              ログアウト
+            </a>
           </div>
         </div>
       </main>

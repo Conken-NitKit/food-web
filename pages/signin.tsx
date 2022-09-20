@@ -1,7 +1,13 @@
 import type { NextPage } from "next";
-import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useCallback } from "react";
 
 const SignIn: NextPage = () => {
+  const handleSignIn = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    signIn();
+  }, []);
+
   return (
     <div className="w-screen h-screen bg-accent-gradient-primary">
       <main className="relative flex-1">
@@ -16,11 +22,13 @@ const SignIn: NextPage = () => {
             <p className="text-primary-inverted text-center leading-relaxed xl:text-start">
               フェスレジは、フェスの会計を支援するためのサービスです。
             </p>
-            <Link href="/api/auth/signin">
-              <a className="block w-full px-6 py-3 rounded-md text-accent-primary-regular bg-primary-regular text-lg font-bold text-center transition-all hover:brightness-110 active:brightness-75">
-                LINE でログイン
-              </a>
-            </Link>
+            <a
+              href="/api/auth/signin/auth0?csrf=true"
+              className="block w-full px-6 py-3 rounded-md text-accent-primary-regular bg-primary-regular text-lg font-bold text-center transition-all hover:brightness-110 active:brightness-75"
+              onClick={handleSignIn}
+            >
+              LINEでログイン
+            </a>
           </div>
         </div>
       </main>
