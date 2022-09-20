@@ -197,7 +197,7 @@ module.exports = {
       },
       boxShadow: {
         regular: "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
-        large: "0px 3px 12px 0px rgba(0, 0, 0, 0.25)",
+        large: "0px 4px 16px 0px rgba(0, 0, 0, 0.25)",
       },
       lineHeight: {
         basic: "1.17",
