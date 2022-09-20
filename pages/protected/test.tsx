@@ -10,6 +10,7 @@ const SignOut: NextPage = () => {
     },
     []
   );
+
   return (
     <div className="w-screen h-screen bg-accent-gradient-primary">
       <main className="relative flex-1">

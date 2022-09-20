@@ -4,11 +4,15 @@ import classNames from "classnames";
 import { LayoutProps } from "../../types";
 import { MenuItemIcon } from "..";
 import { MENUS_ITEMS } from "../../constants";
+import { useRouter } from "next/router";
 
 export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   type,
   children,
 }) => {
+  const router = useRouter();
+  const { storeId = "" } = router.query;
+
   return (
     <div className="flex w-screen h-screen">
       <div className="flex flex-row-reverse w-[176px] md:w-[211px] lg:w-[282px] xl:w-[352px] 2xl:w-[422px] h-full">
@@ -30,7 +34,12 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
                   }
                 )}
               >
-                <Link href={menuItems.id}>
+                <Link
+                  href={{
+                    pathname: `/[storeId]/${menuItems.id}`,
+                    query: { storeId },
+                  }}
+                >
                   <div className="flex items-center pl-[9%] h-full">
                     <div className="w-[11%]">
                       <MenuItemIcon
