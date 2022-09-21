@@ -6,8 +6,8 @@ interface MenuItems {
 }
 
 export const MENUS_ITEMS: Record<PageId, MenuItems> = {
-  home: {
-    id: "home",
+  "/": {
+    id: "/",
     name: "ホーム",
   },
   menu: {

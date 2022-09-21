@@ -1,5 +1,5 @@
 export type PageId =
-  | "home"
+  | "/"
   | "menu"
   | "orders"
   | "sales"

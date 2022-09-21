@@ -11,7 +11,7 @@ import {
 } from "./icons";
 
 const icons: Record<PageId, (props: IconProps) => JSX.Element> = {
-  home: (props) => <HomeIcon {...props} />,
+  "/": (props) => <HomeIcon {...props} />,
   menu: (props) => <MenuIcon {...props} />,
   monitoring: (props) => <MonitoringIcon {...props} />,
   orders: (props) => <OrderIcon {...props} />,

@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
       {/* 仮置き */}
 
-      <BasicLayout type="home">
+      <BasicLayout type="/">
         <></>
       </BasicLayout>
 
