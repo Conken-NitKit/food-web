@@ -199,8 +199,8 @@ module.exports = {
         small: "0px 1.5px 4px 0px rgba(0, 0, 0, 0.25)",
         middium: "0px 2.5px 8px 0px rgba(0, 0, 0, 0.25)",
         large: "0px 3px 10px 0px rgba(0, 0, 0, 0.25)",
-        ll: "0px 3.5px 12px 0px rgba(0, 0, 0, 0.25)",
-        xxl: "0px 4.5px 16px 0px rgba(0, 0, 0, 0.25)",
+        xl1: "0px 3.5px 12px 0px rgba(0, 0, 0, 0.25)",
+        xl2: "0px 4.5px 16px 0px rgba(0, 0, 0, 0.25)",
       },
       lineHeight: {
         basic: "1.17",
