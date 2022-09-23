@@ -1,7 +1,7 @@
 import { composeMiddleware } from "next-compose-middleware";
 import { NextRequest, NextResponse } from "next/server";
 import { redirectActions } from "./constants/redirectActions";
-import { generateNextAuthMiddleware } from "./middleware/nextAuthMiddleware";
+import { generateNextAuthMiddleware } from "./middlewares/nextAuthMiddleware";
 
 const nextAuthMiddleware = generateNextAuthMiddleware({
   isDebug: process.env.NEXT_PUBLIC_IS_DEBUG === "true",

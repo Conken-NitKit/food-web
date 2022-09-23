@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import React from "react";
+import { useToggle } from "../hooks/useToggle";
 
-export type Props = {
+export type UIProps = {
   className?: string;
   onLabel?: string;
   offLabel?: string;
@@ -10,14 +11,14 @@ export type Props = {
   onClick?: (e: React.MouseEvent) => void;
 };
 
-export const SwitchButton = ({
+export const SwitchButtonUI = ({
   className,
   onLabel,
   offLabel,
   checked,
   disabled = false,
   onClick,
-}: Props): JSX.Element => {
+}: UIProps): JSX.Element => {
   return (
     <button
       className={classNames(
@@ -72,5 +73,27 @@ export const SwitchButton = ({
         />
       </div>
     </button>
+  );
+};
+
+export type Props = {
+  onChange?: (result: boolean) => void;
+} & Omit<UIProps, "checked">;
+
+export const SwitchButton = ({
+  onClick,
+  onChange,
+  ...props
+}: Props): JSX.Element => {
+  const [isChecked, toggle] = useToggle();
+
+  const handleClick = (e: React.MouseEvent) => {
+    const newVallue = toggle();
+    onChange?.(newVallue);
+    onClick?.(e);
+  };
+
+  return (
+    <SwitchButtonUI checked={isChecked} onClick={handleClick} {...props} />
   );
 };
