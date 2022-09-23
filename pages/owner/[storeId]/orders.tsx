@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
 import { NextPage } from "next";
 
-import { OrderCategoryId } from "../../types";
-import { FeatureLayout } from "../../components/layouts";
-import { TabItems, TabUl } from "../../components/tab-components";
+import { OrderCategoryId } from "../../../types";
+import { FeatureLayout } from "../../../components/layouts";
+import { TabItems, TabUl } from "../../../components/tab-components";
 
 const CATEGORIES: Record<
   OrderCategoryId,

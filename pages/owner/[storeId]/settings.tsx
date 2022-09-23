@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import { signOut } from "next-auth/react";
-import { FeatureLayout } from "../../components/layouts";
+import { FeatureLayout } from "../../../components/layouts";
 import {
   SettingLinkItem,
   SettingLinkItemProps,
   SettingSwitchItem,
-} from "../../components/SettingItem";
-import { useToggle } from "../../hooks/useToggle";
+} from "../../../components/SettingItem";
+import { useToggle } from "../../../hooks/useToggle";
 
 const SETTING_CONTENTS: Omit<SettingLinkItemProps, "className">[] = [
   {
@@ -48,6 +48,7 @@ const Settings: NextPage = () => {
           />
           {SETTING_CONTENTS.map((content) => (
             <SettingLinkItem
+              key={content.label}
               className="border-b border-secondary-regular px-1 py-4 hover:opacity-50"
               {...content}
             />

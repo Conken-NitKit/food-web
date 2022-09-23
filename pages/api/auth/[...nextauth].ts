@@ -2,11 +2,15 @@ import NextAuth from "next-auth";
 import Auth0Provider from "next-auth/providers/auth0";
 
 if (!process.env.AUTH0_CLIENT_ID) {
-  throw new Error("AUTH0_CLIENT_ID is not defined");
+  throw new Error(
+    "AUTH0_CLIENT_ID が定義されていません。.envファイル を確認してください。"
+  );
 }
 
 if (!process.env.AUTH0_CLIENT_SECRET) {
-  throw new Error("AUTH0_CLIENT_SECRET is not defined");
+  throw new Error(
+    "AUTH0_CLIENT_SECRET が定義されていません。.envファイル を確認してください。"
+  );
 }
 
 export default NextAuth({

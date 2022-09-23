@@ -11,7 +11,9 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
   children,
 }) => {
   const router = useRouter();
-  const { storeId = "" } = router.query;
+
+  // TODO: フォールバックで "XXX" を入れているが、バックエンドが完成したら受け取らないようにする。
+  const { storeId = "XXX" } = router.query;
 
   return (
     <div className="flex w-screen h-screen">
@@ -36,7 +38,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
               >
                 <Link
                   href={{
-                    pathname: `/[storeId]/${menuItems.id}`,
+                    pathname: `/owner/[storeId]/${menuItems.id}`,
                     query: { storeId },
                   }}
                 >
