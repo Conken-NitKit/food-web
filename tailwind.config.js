@@ -175,6 +175,9 @@ module.exports = {
         "reject-regular": theme("colors.pink.a100"),
         "accent-secondary-regular": theme("colors.goldenyellow.a100"),
         "accent-secondary-light-regular": theme("colors.navajowhite.a100"),
+        "monitoring-product": theme("colors.goldenyellow.a100"),
+        "monitoring-member": theme("colors.pink.a100"),
+        "monitoring-config": theme("colors.green.a100"),
       }),
       textColor: (theme) => ({
         "primary-inverted": theme("colors.white.a100"),
@@ -196,7 +199,7 @@ module.exports = {
         "menu-card": "lato",
       },
       boxShadow: {
-        "regular": "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
+        regular: "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
       },
       lineHeight: {
         basic: "1.17",
