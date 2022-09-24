@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 
 import { FeatureLayout } from "../components/layouts";
 import { useState, useEffect } from "react";
+import Badge from "../components/badge";
 
 type actionList = {
   user: {
@@ -9,11 +10,11 @@ type actionList = {
   };
   type: string;
   message: string;
-  date: string;
+  date: number;
 };
 
 const Monitoring: NextPage = () => {
-  const data = [
+  const dataJson = [
     {
       user: {
         name: "hirata",
@@ -47,11 +48,7 @@ const Monitoring: NextPage = () => {
       date: 202209240902,
     },
   ];
-  const dropDownMenu = useState<boolean>(false);
-  const checkDataNum = () => {};
-  useEffect(() => {
-    console.log(checkDataNum());
-  }, []);
+
   return (
     <FeatureLayout type="monitoring">
       <div>
@@ -64,6 +61,7 @@ const Monitoring: NextPage = () => {
           <div></div>
         </div>
       </div>
+      <Badge bgcolor="bg-monitoring-config" text="商品" />
     </FeatureLayout>
   );
 };
