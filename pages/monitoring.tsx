@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 import { FeatureLayout } from "../components/layouts";
 import { useState, useEffect } from "react";
-import Badge from "../components/badge";
+import ActionHistory from "../components/ActionHistory";
 
 type actionList = {
   user: {
@@ -61,7 +61,30 @@ const Monitoring: NextPage = () => {
           <div></div>
         </div>
       </div>
-      <Badge bgcolor="bg-monitoring-config" text="商品" />
+      <div className="mt-[12px]">
+        <ActionHistory
+          badgeColor="bg-monitoring-config"
+          badgeLabel="商品"
+          actionText="クボ太郎が商品「チーズバーガー」の内容を修正しました"
+          date="2022/09/04"
+        />
+      </div>
+      <div className="mt-[12px]">
+        <ActionHistory
+          badgeColor="bg-monitoring-config"
+          badgeLabel="商品"
+          actionText="クボ太郎が商品「チーズバーガー」の内容を修正しました"
+          date="2022/09/04"
+        />
+      </div>
+      <div className="mt-[12px]">
+        <ActionHistory
+          badgeColor="bg-monitoring-config"
+          badgeLabel="商品"
+          actionText="クボ太郎が商品「チーズバーガー」の内容を修正しました"
+          date="2022/09/04"
+        />
+      </div>
     </FeatureLayout>
   );
 };
