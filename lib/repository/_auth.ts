@@ -12,7 +12,7 @@ import { Repository, RepositoryGenerator } from "./interface";
 /**
  * @description
  * Note: 認証関連のリポジトリを生成するのに必要な Context 情報を示した抽象クラスです
- * Note: ../context.ts 内の Context を使うとこのファイルが ../context.ts に依存してしまうので、抽象クラスを定義しています
+ * Note: ../context.ts 内の Context を使うと、このファイルが ../context.ts に依存してしまうので、抽象クラスを定義しています
  */
 export abstract class Context {
   abstract publicConfig: {
