@@ -8,35 +8,36 @@ import {
 import { withMiddlewareLogger } from "./_utils";
 
 /**
- * @param shouldAuth 認証が必要かどうか
+ * @param isEnableAuth 認証が必要かどうか
  * @param secret next-authのsecret
  * @param isDebug デバッグモードかどうか
  * @param whenUnAuthn 認証が必要なページに認証されていないユーザーがアクセスした際の挙動
  * @param appPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  * @param signInPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  */
-export type NextAuthMiddlewareOption = {
-  shouldAuth?: boolean;
+export type unAuthProtectMiddlewareOption = {
+  isEnableAuth?: boolean;
   secret?: string;
   isDebug?: boolean;
-  whenUnAuthn: Exclude<RedirectAction, typeof redirectActions.NO_REDIRECT>;
+  whenAuthn: RedirectAction;
   appPageURL?: string;
   signInPageURL?: string;
 };
 
 /**
  * @description
- * 認証が必要なページに認証されていないユーザーがアクセスした際の挙動を決定するミドルウェアを生成するファクトリ関数です
+ * サインインページなどの非ログインじのみアクセス可能なページにログイン済みのユーザーがアクセスした際の挙動を決定するミドルウェアを生成するファクトリ関数です
  */
-export const generateNextAuthMiddleware: (
-  option: NextAuthMiddlewareOption
+export const generateUnAuthProtectMiddleware: (
+  option: unAuthProtectMiddlewareOption
 ) => ComposableMiddleware = ({ isDebug, ...option }) => {
   const middleware: ComposableMiddleware = async (req, res, { breakAll }) => {
-    if (!option.shouldAuth) {
+    if (!option.isEnableAuth) {
       return res;
     }
     const token = await getToken({ req, secret: option.secret });
-    if (token) {
+    if (!token) {
+      console.log("認証されていないユーザーがアクセスしました");
       return res;
     }
 
@@ -45,9 +46,12 @@ export const generateNextAuthMiddleware: (
         [redirectActions.REDIRECT_TO_SIGN_IN]: option.signInPageURL,
         [redirectActions.REDIRECT_TO_TOP]: option.appPageURL,
         [redirectActions.NOT_FOUND]: "404",
-      }[option.whenUnAuthn];
-      if (to) {
-        console.log(`認証に失敗したため、 ${to} にリダイレクトします`);
+        [redirectActions.NO_REDIRECT]: "NOT_REDIRECT",
+      }[option.whenAuthn];
+      if (to === "NOT_REDIRECT") {
+        console.log("認証済みの場合もリダイレクトしません");
+      } else if (to) {
+        console.log(`認証済みのため、 ${to} にリダイレクトします`);
       } else {
         console.error(
           `認証に失敗しましたが、リダイレクト先が定義されていません`
@@ -55,7 +59,7 @@ export const generateNextAuthMiddleware: (
       }
     }
 
-    switch (option.whenUnAuthn) {
+    switch (option.whenAuthn) {
       case redirectActions.REDIRECT_TO_TOP:
         if (!option.appPageURL) {
           throw new Error(
@@ -74,6 +78,8 @@ export const generateNextAuthMiddleware: (
         const url = req.nextUrl;
         url.pathname = "/404";
         return NextResponse.rewrite(url);
+      case redirectActions.NO_REDIRECT:
+        return res;
     }
   };
 

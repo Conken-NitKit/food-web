@@ -16,7 +16,7 @@ const generateNextAuth = (config: {
     secret?: string;
   };
 }) => {
-  NextAuth({
+  return NextAuth({
     providers: [
       Auth0Provider({
         clientId: config.auth0.clientId,
