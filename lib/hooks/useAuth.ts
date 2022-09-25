@@ -1,7 +1,15 @@
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { OmitFirstParameters } from "../../types/util";
-import { Context } from "../context";
+import { signInByAuth0 } from "../usecase/_signInByAuth0";
+import { signOut } from "../usecase/_signOut";
+
+export abstract class Context {
+  abstract usecases: {
+    signInByAuth0: ReturnType<typeof signInByAuth0>;
+    signOut: ReturnType<typeof signOut>;
+  };
+}
 
 export const useAuth = (context: Context) => {
   const router = useRouter();

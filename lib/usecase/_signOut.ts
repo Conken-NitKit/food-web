@@ -1,6 +1,11 @@
-import { Context } from "../context";
 import { AuthRepository } from "../repository/_auth";
 import { Usecase } from "./interface";
+
+export abstract class Context {
+  abstract repositories: {
+    auth: AuthRepository;
+  };
+}
 
 export const signOut = (
   context: Readonly<Context>

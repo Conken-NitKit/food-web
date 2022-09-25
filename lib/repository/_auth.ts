@@ -6,9 +6,20 @@ import {
 } from "next-auth/react";
 import type { NextRouter } from "next/router";
 import { OmitFirstParameters } from "../../types/util";
-import { Context } from "../context";
 import { applyLoggerToMethods } from "../util/logger";
 import { Repository, RepositoryGenerator } from "./interface";
+
+export abstract class Context {
+  abstract publicConfig: {
+    isEnableAuth: boolean;
+    isDebug: boolean;
+  };
+}
+
+export type AuthOption = {
+  signInCallbackURL: string;
+  signOutCallbackURL: string;
+};
 
 export interface AuthRepository extends Repository {
   signInByAuth0: (
@@ -20,11 +31,6 @@ export interface AuthRepository extends Repository {
     ...options: Parameters<typeof nextAuthSignOut>
   ) => ReturnType<typeof nextAuthSignOut>;
 }
-
-export type AuthOption = {
-  signInCallbackURL: string;
-  signOutCallbackURL: string;
-};
 
 export const generateAuthRepository: RepositoryGenerator<
   Context,
