@@ -4,6 +4,11 @@ import { OmitFirstParameters } from "../../types/util";
 import { signInByAuth0 } from "../usecase/_signInByAuth0";
 import { signOut } from "../usecase/_signOut";
 
+/**
+ * @description
+ * Note: カスタムフックを実行するのに必要な Context 情報を示した抽象クラスです
+ * Note: ../context.ts 内の Context を使うとこのファイルが ../context.ts に依存してしまうので、抽象クラスを定義しています
+ */
 export abstract class Context {
   abstract usecases: {
     signInByAuth0: ReturnType<typeof signInByAuth0>;
