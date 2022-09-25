@@ -2,6 +2,10 @@ import NextAuth from "next-auth";
 import Auth0Provider from "next-auth/providers/auth0";
 import { secretConfig } from "../../../lib/core/secretConfig";
 
+/**
+ * @description
+ * 認証関連のAPIを生成するファクトリ関数です
+ */
 const generateNextAuth = (config: {
   auth0: {
     clientId: string;

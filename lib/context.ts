@@ -2,6 +2,10 @@ import { PublicConfig, publicConfig } from "./core/config";
 import { builder as repositoriesBuilder } from "./repository";
 import { builder as usecasesBuilder } from "./usecase";
 
+/**
+ * @description
+ * 依存性の注入を行う Context です（俗にいうDIコンテナ）
+ */
 class Context {
   private _repositories!: ReturnType<typeof repositoriesBuilder>;
   get repositories() {

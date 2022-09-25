@@ -1,6 +1,6 @@
 import { ComposableMiddleware } from "next-compose-middleware";
 
-export type TransitObserverOption = {
+export type MiddlewareLoggerOption = {
   locale?: string;
   shouldConsole?: boolean;
 };
@@ -17,7 +17,7 @@ export type TransitObserverOption = {
 export const withMiddlewareLogger = (
   middleware: ComposableMiddleware,
   middlewareName: string,
-  { shouldConsole = false, locale = "ja" }: TransitObserverOption = {}
+  { shouldConsole = false, locale = "ja" }: MiddlewareLoggerOption = {}
 ): ComposableMiddleware => {
   return (req, ...args) => {
     if (shouldConsole) {

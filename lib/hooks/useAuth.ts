@@ -11,6 +11,9 @@ export abstract class Context {
   };
 }
 
+/**
+ * 認証関連のユースケースをまとめたカスタムフックです
+ */
 export const useAuth = (context: Context) => {
   const router = useRouter();
   const { signInByAuth0, signOut } = context.usecases;

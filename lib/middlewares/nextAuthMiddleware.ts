@@ -15,7 +15,7 @@ import { withMiddlewareLogger } from "./_utils";
  * @param appPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  * @param signInPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  */
-export type NextAuthEnv = {
+export type NextAuthMiddlewareOption = {
   shouldAuth?: boolean;
   secret?: string;
   isDebug?: boolean;
@@ -24,24 +24,28 @@ export type NextAuthEnv = {
   signInPageURL?: string;
 };
 
+/**
+ * @description
+ * 認証が必要なページに認証されていないユーザーがアクセスした際の挙動を決定するミドルウェアを生成するファクトリ関数です
+ */
 export const generateNextAuthMiddleware: (
-  env: NextAuthEnv
-) => ComposableMiddleware = ({ isDebug, ...env }) => {
+  option: NextAuthMiddlewareOption
+) => ComposableMiddleware = ({ isDebug, ...option }) => {
   const middleware: ComposableMiddleware = async (req, res, { breakAll }) => {
-    if (!env.shouldAuth) {
+    if (!option.shouldAuth) {
       return res;
     }
-    const token = await getToken({ req, secret: env.secret });
+    const token = await getToken({ req, secret: option.secret });
     if (token) {
       return res;
     }
 
     if (isDebug) {
       const to = {
-        [redirectActions.REDIRECT_TO_SIGN_IN]: env.signInPageURL,
-        [redirectActions.REDIRECT_TO_TOP]: env.appPageURL,
+        [redirectActions.REDIRECT_TO_SIGN_IN]: option.signInPageURL,
+        [redirectActions.REDIRECT_TO_TOP]: option.appPageURL,
         [redirectActions.NOT_FOUND]: "404",
-      }[env.whenUnAuthn];
+      }[option.whenUnAuthn];
       if (to) {
         console.log(`認証に失敗したため、 ${to} にリダイレクトします`);
       } else {
@@ -51,21 +55,21 @@ export const generateNextAuthMiddleware: (
       }
     }
 
-    switch (env.whenUnAuthn) {
+    switch (option.whenUnAuthn) {
       case redirectActions.REDIRECT_TO_TOP:
-        if (!env.appPageURL) {
+        if (!option.appPageURL) {
           throw new Error(
             "whenUnAuthn を REDIRECT_TO_TOP に設定する場合は、appPageURL を設定してください"
           );
         }
-        return NextResponse.redirect(env.appPageURL);
+        return NextResponse.redirect(option.appPageURL);
       case redirectActions.REDIRECT_TO_SIGN_IN:
-        if (!env.signInPageURL) {
+        if (!option.signInPageURL) {
           throw new Error(
             "whenUnAuthn を REDIRECT_TO_SIGN_IN に設定する場合は、signInPageURL を設定してください"
           );
         }
-        return NextResponse.redirect(env.signInPageURL);
+        return NextResponse.redirect(option.signInPageURL);
       case redirectActions.NOT_FOUND:
         const url = req.nextUrl;
         url.pathname = "/404";

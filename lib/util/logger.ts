@@ -1,8 +1,18 @@
+/**
+ * @param locale ロケール
+ * @param shouldConsole console.logを出力するかどうか
+ */
 export type MethodLoggerOption = {
   locale?: string;
   shouldConsole?: boolean;
 };
 
+/**
+ * メソッドを実行した際に、どのメソッドが実行されたかをconsole.logで出力する
+ * @param method 監視対象のメソッド
+ * @param methodName メソッドの名前
+ * @param option
+ */
 export const withMethodLogger = <T extends (...args: any[]) => any>(
   method: T,
   methodName: string,
@@ -23,6 +33,11 @@ export const withMethodLogger = <T extends (...args: any[]) => any>(
   return _method as T;
 };
 
+/**
+ * オブジェクト内のメソッドを全てに withMethodLogger を適用する
+ * @param obj withMethodLogger を適用する対象のオブジェクト
+ * @param option
+ */
 export const applyLoggerToMethods = <
   T extends { [key: string]: (...args: any[]) => any }
 >(

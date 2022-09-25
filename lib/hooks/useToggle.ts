@@ -1,5 +1,8 @@
 import { useCallback, useState } from "react";
 
+/**
+ * フラグを切り替えるカスタムフックです
+ */
 export const useToggle = (initialValue = false) => {
   const [value, setValue] = useState(initialValue);
 
