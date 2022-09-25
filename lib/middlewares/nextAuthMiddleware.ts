@@ -1,8 +1,11 @@
 import { getToken } from "next-auth/jwt";
 import { ComposableMiddleware } from "next-compose-middleware";
 import { NextResponse } from "next/server";
-import { redirectActions, RedirectAction } from "../constants/redirectActions";
-import { withTransitObserver } from "./_utils";
+import {
+  redirectActions,
+  RedirectAction,
+} from "../../constants/redirectActions";
+import { withMiddlewareLogger } from "./_utils";
 
 /**
  * @param shouldAuth 認証が必要かどうか
@@ -70,7 +73,7 @@ export const generateNextAuthMiddleware: (
     }
   };
 
-  return withTransitObserver(middleware, "generateNextAuthMiddleware", {
+  return withMiddlewareLogger(middleware, "generateNextAuthMiddleware", {
     shouldConsole: isDebug,
   });
 };

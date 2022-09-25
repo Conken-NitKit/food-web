@@ -14,7 +14,7 @@ export type TransitObserverOption = {
  * @param option.shouldConsole console.logを出力するかどうか
  * @returns 通過時にconsole.logを出力するmiddleware
  */
-export const withTransitObserver = (
+export const withMiddlewareLogger = (
   middleware: ComposableMiddleware,
   middlewareName: string,
   { shouldConsole = false, locale = "ja" }: TransitObserverOption = {}

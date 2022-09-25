@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { useToggle } from "../hooks/useToggle";
+import { useToggle } from "../lib/hooks/useToggle";
 
 export type UIProps = {
   className?: string;
