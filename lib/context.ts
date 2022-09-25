@@ -4,7 +4,7 @@ import { builder as usecasesBuilder } from "./usecase";
 
 /**
  * @description
- * 依存性の注入を行う Context です（俗にいうDIコンテナ）
+ * 依存性の注入を行う Context です （俗にいうDIコンテナ）
  */
 class Context {
   private _repositories!: ReturnType<typeof repositoriesBuilder>;
