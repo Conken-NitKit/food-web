@@ -8,7 +8,7 @@ interface Props {
 
 export const MenuCard = ({ content, isSold }: Props): JSX.Element => {
   return (
-    <div className="overflow-hidden rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px] shadow-xl1 2xl:shadow-xl2 cursor-pointer font-menu-card hover:opacity-50">
+    <div className="overflow-hidden rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px] shadow-xl 2xl:shadow-2xl cursor-pointer font-menu-card hover:opacity-50">
       <div
         className={classNames(
           "flex items-center justify-center w-full h-[60.8%] text-[51px] 2xl:text-[61px]",
