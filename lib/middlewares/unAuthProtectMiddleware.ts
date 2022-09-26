@@ -21,9 +21,7 @@ export abstract class Context {
 }
 
 /**
- * @param isEnableAuth 認証が必要かどうか
  * @param secret next-authのsecret
- * @param isDebug デバッグモードかどうか
  * @param whenUnAuthn 認証が必要なページに認証されていないユーザーがアクセスした際の挙動
  * @param appPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  * @param signInPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL

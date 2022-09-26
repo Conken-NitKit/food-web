@@ -21,17 +21,13 @@ export abstract class Context {
 }
 
 /**
- * @param isEnableAuth 認証が必要かどうか
  * @param secret next-authのsecret
- * @param isDebug デバッグモードかどうか
  * @param whenUnAuthn 認証が必要なページに認証されていないユーザーがアクセスした際の挙動
  * @param appPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  * @param signInPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  */
 export type authProtectMiddlewareOption = {
-  isEnableAuth?: boolean;
   secret?: string;
-  isDebug?: boolean;
   whenUnAuthn: Exclude<RedirectAction, typeof redirectActions.NO_REDIRECT>;
   appPageURL?: string;
   signInPageURL?: string;
