@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import { useCallback } from "react";
 import { context } from "../lib/context";
-import { useAuth } from "../lib/hooks/useAuth";
+import { useSignInByAuth0 } from "../lib/hooks/auth/useSignInByAuth0";
 
 const SignIn: NextPage = () => {
-  const { signInByAuth0 } = useAuth(context);
+  const { signInByAuth0 } = useSignInByAuth0(context);
 
   const handleSignIn = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();

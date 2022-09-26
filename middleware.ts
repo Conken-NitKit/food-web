@@ -6,11 +6,7 @@ import { secretConfig } from "./lib/core/secretConfig";
 import { generateAuthProtectMiddleware } from "./lib/middlewares/authProtectMiddleware";
 import { generateUnAuthProtectMiddleware } from "./lib/middlewares/unAuthProtectMiddleware";
 
-console.log(secretConfig.nextAuth.url);
-
-const authProtectMiddleware = generateAuthProtectMiddleware({
-  isDebug: context.publicConfig.isDebug,
-  isEnableAuth: context.publicConfig.isEnableAuth,
+const authProtectMiddleware = generateAuthProtectMiddleware(context, {
   secret: secretConfig.nextAuth.secret,
   whenUnAuthn: redirectActions.REDIRECT_TO_TOP,
   appPageURL:
@@ -19,9 +15,7 @@ const authProtectMiddleware = generateAuthProtectMiddleware({
       : "http://localhost:3000/",
 });
 
-const unAuthProtectMiddleware = generateUnAuthProtectMiddleware({
-  isDebug: context.publicConfig.isDebug,
-  isEnableAuth: context.publicConfig.isEnableAuth,
+const unAuthProtectMiddleware = generateUnAuthProtectMiddleware(context, {
   secret: secretConfig.nextAuth.secret,
   whenAuthn: redirectActions.REDIRECT_TO_SIGN_IN,
   signInPageURL: `${

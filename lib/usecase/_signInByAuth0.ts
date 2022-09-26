@@ -4,7 +4,7 @@ import { Usecase } from "./interface";
 /**
  * @description
  * Note: サインインのユースケースを生成するのに必要な Context 情報を示した抽象クラスです
- * Note: ../context.ts 内の Context を使うと、このファイルが ../context.ts に依存してしまうので、抽象クラスを定義しています
+ * Note: lib/context.ts 内の Context を使うと、このファイルが lib/context.ts に依存してしまうので、抽象クラスを定義しています
  */
 export abstract class Context {
   abstract repositories: {

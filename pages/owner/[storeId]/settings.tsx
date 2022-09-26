@@ -8,10 +8,10 @@ import {
   SettingSwitchItemProps,
 } from "../../../components/SettingItem";
 import { context } from "../../../lib/context";
-import { useAuth } from "../../../lib/hooks/useAuth";
+import { useSignOut } from "../../../lib/hooks/auth/useSignOut";
 
 const Settings: NextPage = () => {
-  const { signOut } = useAuth(context);
+  const { signOut } = useSignOut(context);
 
   const settingContents = useMemo<
     (
@@ -59,21 +59,18 @@ const Settings: NextPage = () => {
     <FeatureLayout type="settings">
       <nav>
         <ul>
-          {settingContents.map((content) =>
-            content.type === "link" ? (
-              <SettingLinkItem
-                key={content.label}
-                className="border-b border-secondary-regular px-1 py-4 hover:opacity-50"
-                {...content}
-              />
-            ) : (
-              <SettingSwitchItem
-                key={content.label}
-                className="border-b border-secondary-regular px-1 py-4 hover:opacity-50"
-                {...content}
-              />
-            )
-          )}
+          {settingContents.map((content) => (
+            <li
+              key={content.label}
+              className="border-b border-secondary-regular px-1 py-4 hover:opacity-50"
+            >
+              {content.type === "link" ? (
+                <SettingLinkItem {...content} />
+              ) : (
+                <SettingSwitchItem {...content} />
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </FeatureLayout>

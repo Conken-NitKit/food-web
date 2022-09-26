@@ -1,7 +1,10 @@
+// NOTE: react のコンポーネント外で next-auth/react の関数を使うと、ビルド時にエラーが発生するので、利用時に注入するようにしています。
 import {
-  signIn as nextAuthSignIn,
+  signIn as nextAuthSignInForReact,
+  signOut as nextAuthSignOutForReact,
+} from "next-auth/react";
+import type {
   SignInResponse as NextAuthSignInResponse,
-  signOut as nextAuthSignOut,
   SignOutResponse as NextAuthSignOutResponse,
 } from "next-auth/react";
 import type { NextRouter } from "next/router";
@@ -12,7 +15,7 @@ import { Repository, RepositoryGenerator } from "./interface";
 /**
  * @description
  * Note: 認証関連のリポジトリを生成するのに必要な Context 情報を示した抽象クラスです
- * Note: ../context.ts 内の Context を使うと、このファイルが ../context.ts に依存してしまうので、抽象クラスを定義しています
+ * Note: lib/context.ts 内の Context を使うと、このファイルが lib/context.ts に依存してしまうので、抽象クラスを定義しています
  */
 export abstract class Context {
   abstract publicConfig: {
@@ -31,15 +34,24 @@ export type AuthOption = {
   signOutCallbackURL: string;
 };
 
+type NextAuthSignInForReact = typeof nextAuthSignInForReact;
+type NextAuthSignOutForReact = typeof nextAuthSignOutForReact;
+
 export interface AuthRepository extends Repository {
   signInByAuth0: (
-    router: NextRouter,
-    ...params: OmitFirstParameters<typeof nextAuthSignIn>
-  ) => ReturnType<typeof nextAuthSignIn>;
+    injections: {
+      router: NextRouter;
+      nextAuthSignIn: NextAuthSignInForReact;
+    },
+    ...params: OmitFirstParameters<NextAuthSignInForReact>
+  ) => ReturnType<NextAuthSignInForReact>;
   signOut: (
-    router: NextRouter,
-    ...options: Parameters<typeof nextAuthSignOut>
-  ) => ReturnType<typeof nextAuthSignOut>;
+    injections: {
+      router: NextRouter;
+      nextAuthSignOut: NextAuthSignOutForReact;
+    },
+    ...options: Parameters<NextAuthSignOutForReact>
+  ) => ReturnType<NextAuthSignOutForReact>;
 }
 
 /**
@@ -52,7 +64,7 @@ export const generateAuthRepository: RepositoryGenerator<
   AuthRepository
 > = (context, { signInCallbackURL, signOutCallbackURL }) => {
   const signInByAuth0: AuthRepository["signInByAuth0"] = async (
-    router,
+    { router, nextAuthSignIn },
     options,
     authenticationParams
   ) => {
@@ -93,7 +105,10 @@ export const generateAuthRepository: RepositoryGenerator<
     return response;
   };
 
-  const signOut: AuthRepository["signOut"] = async (router, options) => {
+  const signOut: AuthRepository["signOut"] = async (
+    { router, nextAuthSignOut },
+    options
+  ) => {
     // Note: 認証機能が無効な場合は単純なリダイレクトを行う
     if (!context.publicConfig.isEnableAuth) {
       // Note: options.redirect が false の場合は、どこにもリダイレクトしない

@@ -8,6 +8,19 @@ import {
 import { withMiddlewareLogger } from "./_utils";
 
 /**
+ * @description
+ * Note: カスタムフックを実行するのに必要な Context 情報を示した抽象クラスです
+ * Note: lib/context.ts 内の Context を使うと、このファイルが lib/context.ts に依存してしまうので、抽象クラスを定義しています
+ */
+export abstract class Context {
+  abstract isBrowser: boolean;
+  abstract publicConfig: {
+    isEnableAuth: boolean;
+    isDebug: boolean;
+  };
+}
+
+/**
  * @param isEnableAuth 認証が必要かどうか
  * @param secret next-authのsecret
  * @param isDebug デバッグモードかどうか
@@ -29,18 +42,20 @@ export type authProtectMiddlewareOption = {
  * 認証が必要なページに認証されていないユーザーがアクセスした際の挙動を決定するミドルウェアを生成するファクトリ関数です
  */
 export const generateAuthProtectMiddleware: (
+  context: Context,
   option: authProtectMiddlewareOption
-) => ComposableMiddleware = ({ isDebug, ...option }) => {
-  const middleware: ComposableMiddleware = async (req, res, { breakAll }) => {
-    if (!option.isEnableAuth) {
+) => ComposableMiddleware = (context, { ...option }) => {
+  const middleware: ComposableMiddleware = async (req, res) => {
+    if (context.isBrowser || !context.publicConfig.isEnableAuth) {
       return res;
     }
+
     const token = await getToken({ req, secret: option.secret });
     if (token) {
       return res;
     }
 
-    if (isDebug) {
+    if (context.publicConfig.isDebug) {
       const to = {
         [redirectActions.REDIRECT_TO_SIGN_IN]: option.signInPageURL,
         [redirectActions.REDIRECT_TO_TOP]: option.appPageURL,
@@ -77,7 +92,7 @@ export const generateAuthProtectMiddleware: (
     }
   };
 
-  return withMiddlewareLogger(middleware, "generateNextAuthMiddleware", {
-    shouldConsole: isDebug,
+  return withMiddlewareLogger(middleware, "nextAuthMiddleware", {
+    shouldConsole: context.publicConfig.isDebug,
   });
 };
