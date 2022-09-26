@@ -5,6 +5,7 @@ import {
   redirectActions,
   RedirectAction,
 } from "../../constants/redirectActions";
+import { Logger } from "../../types/logger";
 import { withMiddlewareLogger } from "./_utils";
 
 /**
@@ -14,6 +15,7 @@ import { withMiddlewareLogger } from "./_utils";
  */
 export abstract class Context {
   abstract isBrowser: boolean;
+  abstract logger: Logger;
   abstract publicConfig: {
     isEnableAuth: boolean;
     isDebug: boolean;
@@ -48,7 +50,7 @@ export const generateUnAuthProtectMiddleware: (
 
     const token = await getToken({ req, secret: option.secret });
     if (!token) {
-      console.log("認証されていないユーザーがアクセスしました");
+      context.logger.debug("認証されていないユーザーがアクセスしました");
       return res;
     }
 
@@ -60,11 +62,11 @@ export const generateUnAuthProtectMiddleware: (
         [redirectActions.NO_REDIRECT]: "NOT_REDIRECT",
       }[option.whenAuthn];
       if (to === "NOT_REDIRECT") {
-        console.log("認証済みの場合もリダイレクトしません");
+        context.logger.debug("認証済みの場合もリダイレクトしません");
       } else if (to) {
-        console.log(`認証済みのため、 ${to} にリダイレクトします`);
+        context.logger.debug(`認証済みのため、 ${to} にリダイレクトします`);
       } else {
-        console.error(
+        context.logger.error(
           `認証に失敗しましたが、リダイレクト先が定義されていません`
         );
       }
@@ -94,7 +96,9 @@ export const generateUnAuthProtectMiddleware: (
     }
   };
 
-  return withMiddlewareLogger(middleware, "nextUnAuthMiddleware", {
-    shouldConsole: context.publicConfig.isDebug,
-  });
+  return withMiddlewareLogger(
+    middleware,
+    "nextUnAuthMiddleware",
+    context.logger
+  );
 };

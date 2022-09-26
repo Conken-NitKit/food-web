@@ -5,6 +5,7 @@ import {
   redirectActions,
   RedirectAction,
 } from "../../constants/redirectActions";
+import { Logger } from "../../types/logger";
 import { withMiddlewareLogger } from "./_utils";
 
 /**
@@ -14,6 +15,7 @@ import { withMiddlewareLogger } from "./_utils";
  */
 export abstract class Context {
   abstract isBrowser: boolean;
+  abstract logger: Logger;
   abstract publicConfig: {
     isEnableAuth: boolean;
     isDebug: boolean;
@@ -58,9 +60,9 @@ export const generateAuthProtectMiddleware: (
         [redirectActions.NOT_FOUND]: "404",
       }[option.whenUnAuthn];
       if (to) {
-        console.log(`認証に失敗したため、 ${to} にリダイレクトします`);
+        context.logger.debug(`認証に失敗したため、 ${to} にリダイレクトします`);
       } else {
-        console.error(
+        context.logger.error(
           `認証に失敗しましたが、リダイレクト先が定義されていません`
         );
       }
@@ -88,7 +90,5 @@ export const generateAuthProtectMiddleware: (
     }
   };
 
-  return withMiddlewareLogger(middleware, "nextAuthMiddleware", {
-    shouldConsole: context.publicConfig.isDebug,
-  });
+  return withMiddlewareLogger(middleware, "nextAuthMiddleware", context.logger);
 };

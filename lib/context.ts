@@ -1,4 +1,6 @@
+import { Logger } from "../types/logger";
 import { PublicConfig, publicConfig } from "./core/config";
+import { logger } from "./core/logger";
 import { builder as repositoriesBuilder } from "./repository";
 import { builder as usecasesBuilder } from "./usecase";
 
@@ -17,9 +19,19 @@ class Context {
     return this._usecases;
   }
 
-  readonly publicConfig: PublicConfig;
+  readonly _publicConfig: PublicConfig;
+  get publicConfig() {
+    return this._publicConfig;
+  }
+
+  private _logger: Logger;
+  get logger() {
+    return this._logger;
+  }
+
   constructor(publicConfig: PublicConfig) {
-    this.publicConfig = publicConfig;
+    this._publicConfig = publicConfig;
+    this._logger = logger(this);
   }
 
   readonly isBrowser = !!globalThis.window;

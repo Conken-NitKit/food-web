@@ -1,32 +1,30 @@
 import { ComposableMiddleware } from "next-compose-middleware";
+import { Logger } from "../../types/logger";
 
 export type MiddlewareLoggerOption = {
   locale?: string;
-  shouldConsole?: boolean;
 };
 
 /**
- * middlewareを通過した際に、どのmiddlewareが通過したかをconsole.logで出力する
+ * middlewareを通過した際に、どのmiddlewareが通過したかをlogで出力する
  * @param middleware 監視対象のmiddleware
  * @param middlewareName middlewareの名前
+ * @param logger
  * @param option
- * @param option.locale ロケール
- * @param option.shouldConsole console.logを出力するかどうか
- * @returns 通過時にconsole.logを出力するmiddleware
+ * @returns 通過時にlogを出力するmiddleware
  */
 export const withMiddlewareLogger = (
   middleware: ComposableMiddleware,
   middlewareName: string,
-  { shouldConsole = false, locale = "ja" }: MiddlewareLoggerOption = {}
+  logger: Logger | Console,
+  { locale = "ja" }: MiddlewareLoggerOption = {}
 ): ComposableMiddleware => {
   return (req, ...args) => {
-    if (shouldConsole) {
-      const now = new Date();
-      console.log("現在のパス: ", req.nextUrl.pathname);
-      console.log(
-        `[${now.toLocaleString(locale)}] ${middlewareName} を通過しました`
-      );
-    }
+    const now = new Date();
+    logger.debug("現在のパス: ", req.nextUrl.pathname);
+    logger.debug(
+      `[${now.toLocaleString(locale)}] ${middlewareName} を通過しました`
+    );
     return middleware(req, ...args);
   };
 };

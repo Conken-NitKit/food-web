@@ -11,6 +11,7 @@ import type { NextRouter } from "next/router";
 import { OmitFirstParameters } from "../../types/util";
 import { applyLoggerToMethods } from "../util/logger";
 import { Repository, RepositoryGenerator } from "./interface";
+import { Logger } from "../../types/logger";
 
 /**
  * @description
@@ -18,6 +19,7 @@ import { Repository, RepositoryGenerator } from "./interface";
  * Note: lib/context.ts 内の Context を使うと、このファイルが lib/context.ts に依存してしまうので、抽象クラスを定義しています
  */
 export abstract class Context {
+  abstract logger: Logger;
   abstract publicConfig: {
     isEnableAuth: boolean;
     isDebug: boolean;
@@ -135,8 +137,6 @@ export const generateAuthRepository: RepositoryGenerator<
       signInByAuth0,
       signOut,
     },
-    {
-      shouldConsole: context.publicConfig.isDebug,
-    }
+    context.logger
   );
 };
