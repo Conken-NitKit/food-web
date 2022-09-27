@@ -29,8 +29,6 @@ export const middleware = async (req: NextRequest) => {
   return composeMiddleware(req, NextResponse.next(), {
     scripts: [],
     "/signin": [unAuthProtectMiddleware],
-    "/owner": {
-      scripts: [authProtectMiddleware],
-    },
+    "/owner": [authProtectMiddleware],
   });
 };
