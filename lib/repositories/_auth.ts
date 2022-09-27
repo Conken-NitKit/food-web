@@ -8,7 +8,7 @@ import type {
 } from "next-auth/react";
 import type { NextRouter } from "next/router";
 import { OmitFirstParameters } from "../../types/util";
-import { applyLoggerToMethods } from "../util/logger";
+import { applyLoggerToMethods } from "../utils/logger";
 import { Repository, RepositoryGenerator } from "./interface";
 import { Logger } from "../../types/logger";
 
