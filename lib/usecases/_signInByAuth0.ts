@@ -1,4 +1,4 @@
-import { AuthRepository } from "../repository/_auth";
+import { AuthRepository } from "../repositories/_auth";
 import { Usecase } from "./interface";
 
 /**

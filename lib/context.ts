@@ -2,8 +2,8 @@ import { Logger } from "../types/logger";
 import { PublicConfig, publicConfig } from "./core/config";
 import { logger } from "./core/logger";
 import { secretConfig, SecretConfig } from "./core/secretConfig";
-import { builder as repositoriesBuilder } from "./repository";
-import { builder as usecasesBuilder } from "./usecase";
+import { builder as repositoriesBuilder } from "./repositories";
+import { builder as usecasesBuilder } from "./usecases";
 
 /**
  * @description
