@@ -1,8 +1,8 @@
 import { signIn as nextAuthSignIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { OmitFirstParameters } from "../../../types/util";
-import { signInByAuth0 } from "../../usecase/_signInByAuth0";
+import { OmitFirstParameters } from "../../types/util";
+import { signInByAuth0 } from "../usecase/_signInByAuth0";
 
 /**
  * @description

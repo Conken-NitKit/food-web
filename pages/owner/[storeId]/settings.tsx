@@ -8,7 +8,7 @@ import {
   SettingSwitchItemProps,
 } from "../../../components/SettingItem";
 import { context } from "../../../lib/context";
-import { useSignOut } from "../../../lib/controllers/auth/useSignOut";
+import { useSignOut } from "../../../lib/controllers/useSignOut";
 
 const Settings: NextPage = () => {
   const { signOut } = useSignOut(context);

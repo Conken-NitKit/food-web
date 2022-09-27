@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useCallback } from "react";
 import { context } from "../lib/context";
-import { useSignInByAuth0 } from "../lib/controllers/auth/useSignInByAuth0";
+import { useSignInByAuth0 } from "../lib/controllers/useSignInByAuth0";
 
 const SignIn: NextPage = () => {
   const { signInByAuth0 } = useSignInByAuth0(context);

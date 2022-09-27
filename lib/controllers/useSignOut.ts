@@ -1,8 +1,8 @@
 import { signOut as nextAuthSignOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { OmitFirstParameters } from "../../../types/util";
-import { signOut } from "../../usecase/_signOut";
+import { OmitFirstParameters } from "../../types/util";
+import { signOut } from "../usecase/_signOut";
 
 /**
  * @description
