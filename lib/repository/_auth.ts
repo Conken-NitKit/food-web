@@ -1,4 +1,3 @@
-// NOTE: react のコンポーネント外で next-auth/react の関数を使うと、ビルド時にエラーが発生するので、利用時に注入するようにしています。
 import {
   signIn as nextAuthSignInForReact,
   signOut as nextAuthSignOutForReact,
@@ -39,6 +38,8 @@ export type AuthOption = {
 type NextAuthSignInForReact = typeof nextAuthSignInForReact;
 type NextAuthSignOutForReact = typeof nextAuthSignOutForReact;
 
+// Hack: react のコンポーネント外で next-auth/react の関数を使うと、ビルド時にエラーが発生します。
+// Hack: そのため、呼び出す側でそれらの関数を注入してもらい、この関数内で呼び出すようにしています。
 export interface AuthRepository extends Repository {
   signInByAuth0: (
     injections: {
