@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 
 import { AddMenuCard, MenuCard } from "../components";
 import { FeatureLayout } from "../components/layouts";
+import { MenuModal } from "../components/MenuModal";
 import { MenuContent } from "../types/MenuContent";
 
 //仮置きのデータ（実際はデータベースから取得する）
@@ -66,6 +67,7 @@ const Menu: NextPage = () => {
           <AddMenuCard />
         </li>
       </ul>
+      <MenuModal />
     </FeatureLayout>
   );
 };

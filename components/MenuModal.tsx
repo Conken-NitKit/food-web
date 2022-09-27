@@ -1,0 +1,54 @@
+import { useState } from "react";
+
+export const MenuModal = () => {
+  const [menuName, setMenuName] = useState<string>("");
+  const [menuPrice, setMenuPrice] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+
+  const CreateMenu = () => {};
+
+  return (
+    <div>
+      <div>
+        <h3>メニューを新規作成</h3>
+        <div>
+          <input
+            type="text"
+            value={menuName}
+            onChange={(e) => setMenuName(e.target.value)}
+            id="menu_name"
+          />
+          <label htmlFor="menu_name">メニュー名</label>
+        </div>
+        <div>
+          <input
+            type="number"
+            value={menuPrice}
+            onChange={(e) => setMenuPrice(e.target.value)}
+            id="menu_price"
+          />
+          <label htmlFor="menu_price">価格</label>
+        </div>
+        <div>
+          <label>状態</label>
+        </div>
+        <div>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            id="menu_description"
+          />
+          <label htmlFor="menu_description">説明文</label>
+        </div>
+      </div>
+      <div>
+        <p>商品イメージ</p>
+        <div>🍔</div>
+      </div>
+      <div>
+        <button onClick={CreateMenu}>商品を追加</button>
+        <button onClick={CreateMenu}>商品を追加</button>
+      </div>
+    </div>
+  );
+};
