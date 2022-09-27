@@ -10,11 +10,11 @@ export const logger = (context: Context): Logger => {
   return {
     debug: (msg: any, ...args: any[]) => {
       if (context.publicConfig.isDebug) {
-        console.debug(msg, ...args);
+        console.log(msg, ...args);
       }
     },
     info: (msg: any, ...args: any[]) => {
-      console.info(msg, ...args);
+      console.log(msg, ...args);
     },
     warn: (msg: any, ...args: any[]) => {
       console.warn(msg, ...args);
