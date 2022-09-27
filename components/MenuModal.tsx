@@ -1,6 +1,9 @@
 import { useState } from "react";
+import Modal from "react-modal";
 
 export const MenuModal = () => {
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+
   const [menuName, setMenuName] = useState<string>("");
   const [menuPrice, setMenuPrice] = useState<string>("");
   const [description, setDescription] = useState<string>("");
@@ -8,47 +11,50 @@ export const MenuModal = () => {
   const CreateMenu = () => {};
 
   return (
-    <div>
-      <div>
-        <h3>メニューを新規作成</h3>
+    <>
+      <button onClick={() => setModalIsOpen(true)}>modal</button>
+      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <div>
-          <input
-            type="text"
-            value={menuName}
-            onChange={(e) => setMenuName(e.target.value)}
-            id="menu_name"
-          />
-          <label htmlFor="menu_name">メニュー名</label>
+          <h3>メニューを新規作成</h3>
+          <div>
+            <input
+              type="text"
+              value={menuName}
+              onChange={(e) => setMenuName(e.target.value)}
+              id="menu_name"
+            />
+            <label htmlFor="menu_name">メニュー名</label>
+          </div>
+          <div>
+            <input
+              type="number"
+              value={menuPrice}
+              onChange={(e) => setMenuPrice(e.target.value)}
+              id="menu_price"
+            />
+            <label htmlFor="menu_price">価格</label>
+          </div>
+          <div>
+            <label>状態</label>
+          </div>
+          <div>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              id="menu_description"
+            />
+            <label htmlFor="menu_description">説明文</label>
+          </div>
         </div>
         <div>
-          <input
-            type="number"
-            value={menuPrice}
-            onChange={(e) => setMenuPrice(e.target.value)}
-            id="menu_price"
-          />
-          <label htmlFor="menu_price">価格</label>
+          <p>商品イメージ</p>
+          <div>🍔</div>
         </div>
         <div>
-          <label>状態</label>
+          <button onClick={CreateMenu}>商品を追加</button>
+          <button onClick={CreateMenu}>商品を追加</button>
         </div>
-        <div>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            id="menu_description"
-          />
-          <label htmlFor="menu_description">説明文</label>
-        </div>
-      </div>
-      <div>
-        <p>商品イメージ</p>
-        <div>🍔</div>
-      </div>
-      <div>
-        <button onClick={CreateMenu}>商品を追加</button>
-        <button onClick={CreateMenu}>商品を追加</button>
-      </div>
-    </div>
+      </Modal>
+    </>
   );
 };
