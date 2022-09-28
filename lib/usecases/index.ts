@@ -15,6 +15,6 @@ export const builder = (context: Readonly<Context>) => {
   return {
     signInByAuth0: signInByAuth0(context),
     signOut: signOut(context),
-    verifyAuthToken: verifyAuthToken(context),
+    verifyAuthUser: verifyAuthUser(context),
   } as const;
 };
