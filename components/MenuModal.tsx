@@ -36,6 +36,10 @@ export const MenuModal = () => {
           </div>
           <div>
             <label>状態</label>
+            <select>
+              <option>販売中</option>
+              <option>売り切れ</option>
+            </select>
           </div>
           <div>
             <textarea
@@ -49,6 +53,14 @@ export const MenuModal = () => {
         <div>
           <p>商品イメージ</p>
           <div>🍔</div>
+          <div>
+            <label>絵文字を選択する</label>
+            <select>
+              <option>🍔</option>
+              <option>🍟</option>
+              <option>🍿</option>
+            </select>
+          </div>
         </div>
         <div>
           <button onClick={CreateMenu}>商品を追加</button>
