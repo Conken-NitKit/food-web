@@ -61,7 +61,7 @@ export interface AuthRepository extends Repository {
  * @description
  * 認証機能が無効な場合の signInByAuth0 のダミー関数です
  */
-const generateDummySignInByAuth0Dummy = (
+const _generateDummySignInByAuth0Dummy = (
   _: Context,
   { signInCallbackURL }: Pick<AuthOption, "signInCallbackURL">
 ): AuthRepository["signInByAuth0"] => {
@@ -95,7 +95,7 @@ const generateDummySignInByAuth0Dummy = (
  * @description
  * 認証機能が無効な場合の signOut のダミー関数です
  */
-const generateDummySignOutDummy = (
+const _generateDummySignOutDummy = (
   _: Context,
   { signOutCallbackURL }: Pick<AuthOption, "signOutCallbackURL">
 ): AuthRepository["signOut"] => {
@@ -127,7 +127,7 @@ export const generateAuthRepository: RepositoryGenerator<
   const signInByAuth0: AuthRepository["signInByAuth0"] = async (...params) => {
     // Note: 認証機能が無効な場合はダミーの関数を返す
     if (!context.publicConfig.isEnableAuth) {
-      const dummyMethod = generateDummySignInByAuth0Dummy(context, {
+      const dummyMethod = _generateDummySignInByAuth0Dummy(context, {
         signInCallbackURL,
       });
       const response = await dummyMethod(...params);
@@ -150,7 +150,7 @@ export const generateAuthRepository: RepositoryGenerator<
   const signOut: AuthRepository["signOut"] = async (...params) => {
     // Note: 認証機能が無効な場合は単純なリダイレクトを行う
     if (!context.publicConfig.isEnableAuth) {
-      const dummyMethod = generateDummySignOutDummy(context, {
+      const dummyMethod = _generateDummySignOutDummy(context, {
         signOutCallbackURL,
       });
       const response = await dummyMethod(...params);
