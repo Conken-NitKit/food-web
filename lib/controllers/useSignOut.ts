@@ -2,7 +2,7 @@ import { signOut as nextAuthSignOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { OmitFirstParameters } from "../../types/util";
-import { signOut } from "../usecases/_signOut";
+import { SignOut } from "../usecases";
 
 /**
  * @description
@@ -11,7 +11,7 @@ import { signOut } from "../usecases/_signOut";
  */
 export abstract class Context {
   abstract usecases: {
-    signOut: ReturnType<typeof signOut>;
+    signOut: ReturnType<SignOut>;
   };
 }
 

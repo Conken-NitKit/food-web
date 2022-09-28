@@ -2,6 +2,9 @@ import { Context } from "../context";
 import { signInByAuth0 } from "./_signInByAuth0";
 import { signOut } from "./_signOut";
 
+export type SignInByAuth0 = typeof signInByAuth0;
+export type SignOut = typeof signOut;
+
 /**
  * @description
  * Usecase に追加する Repository を生成するファクトリ関数です

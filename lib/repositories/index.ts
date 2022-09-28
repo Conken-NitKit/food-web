@@ -1,5 +1,7 @@
 import { Context } from "../context";
-import { generateAuthRepository } from "./_auth";
+import { AuthRepository, generateAuthRepository } from "./_auth";
+
+export type { AuthRepository };
 
 /**
  * @description

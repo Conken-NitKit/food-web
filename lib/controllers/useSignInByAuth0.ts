@@ -2,7 +2,7 @@ import { signIn as nextAuthSignIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { OmitFirstParameters } from "../../types/util";
-import { signInByAuth0 } from "../usecases/_signInByAuth0";
+import { SignInByAuth0 } from "../usecases";
 
 /**
  * @description
@@ -11,7 +11,7 @@ import { signInByAuth0 } from "../usecases/_signInByAuth0";
  */
 export abstract class Context {
   abstract usecases: {
-    signInByAuth0: ReturnType<typeof signInByAuth0>;
+    signInByAuth0: ReturnType<SignInByAuth0>;
   };
 }
 
