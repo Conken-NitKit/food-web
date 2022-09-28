@@ -13,7 +13,11 @@ export const MenuModal = () => {
   return (
     <>
       <button onClick={() => setModalIsOpen(true)}>modal</button>
-      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        className="absolute top-[294px] left-[532px] rounded-[8px] w-[472px] h-[565px] bg-white-a100"
+      >
         <div>
           <h3>メニューを新規作成</h3>
           <div>
