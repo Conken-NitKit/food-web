@@ -5,14 +5,12 @@ import {
 } from "next-auth/jwt";
 import {
   signIn as nextAuthSignInForReact,
+  SignInAuthorizationParams as NextAuthSignInAuthorizationParams,
+  SignInOptions as NextAuthSignInOptions,
   signOut as nextAuthSignOutForReact,
-} from "next-auth/react";
-import type {
-  SignInResponse as NextAuthSignInResponse,
-  SignOutResponse as NextAuthSignOutResponse,
+  SignOutParams as NextAuthSignOutParams,
 } from "next-auth/react";
 import type { NextRouter } from "next/router";
-import { OmitFirstParameters } from "../../types/util";
 import { applyLoggerToMethods } from "../utils/logger";
 import { Repository, RepositoryGenerator } from "./interface";
 import { Logger } from "../../types/logger";
@@ -56,15 +54,16 @@ export interface AuthRepository extends Repository {
       router: NextRouter;
       nextAuthSignIn: NextAuthSignInForReact;
     },
-    ...params: OmitFirstParameters<NextAuthSignInForReact>
-  ) => ReturnType<NextAuthSignInForReact>;
+    option?: NextAuthSignInOptions,
+    authorizationParams?: NextAuthSignInAuthorizationParams
+  ) => void;
   signOut: (
     injections: {
       router: NextRouter;
       nextAuthSignOut: NextAuthSignOutForReact;
     },
-    ...params: Parameters<NextAuthSignOutForReact>
-  ) => ReturnType<NextAuthSignOutForReact>;
+    options?: NextAuthSignOutParams
+  ) => void;
   verifyToken: (parmas: GetTokenParams) => Promise<string | JWT | null>;
 }
 
@@ -81,24 +80,7 @@ const _generateDummySignInByAuth0 = (
     if (options?.redirect) {
       return;
     }
-    const ok = await router.push(signInCallbackURL);
-
-    // Note: リダイレクトに成功した場合は、next-auth の成功時のレスポンスと同じ型のオブジェクトを返す
-    // Note: リダイレクトに失敗した場合は、next-auth の失敗時のレスポンスと同じ型のオブジェクトを返す
-    const response: NextAuthSignInResponse = ok
-      ? {
-          ok,
-          status: 200,
-          error: undefined,
-          url: signInCallbackURL,
-        }
-      : {
-          ok,
-          status: 400,
-          error: "Failed to redirect to sign in page",
-          url: signInCallbackURL,
-        };
-    return response;
+    await router.push(signInCallbackURL);
   };
 };
 
@@ -116,13 +98,6 @@ const _generateDummySignOut = (
       return;
     }
     await router.push(signOutCallbackURL);
-
-    // Note: next-auth のレスポンスと同じ型のオブジェクトを返す
-    const response: NextAuthSignOutResponse = {
-      url: options?.callbackUrl ?? signOutCallbackURL,
-    };
-
-    return response;
   };
 };
 
@@ -155,7 +130,8 @@ export const generateAuthRepository: RepositoryGenerator<
     }
 
     const [{ nextAuthSignIn }, options, authenticationParams] = params;
-    const response = await nextAuthSignIn(
+
+    nextAuthSignIn(
       "auth0",
       {
         callbackUrl: signInCallbackURL,
@@ -163,8 +139,6 @@ export const generateAuthRepository: RepositoryGenerator<
       },
       authenticationParams
     );
-
-    return response;
   };
 
   const signOut: AuthRepository["signOut"] = async (...params) => {
@@ -178,12 +152,11 @@ export const generateAuthRepository: RepositoryGenerator<
     }
 
     const [{ nextAuthSignOut }, options] = params;
-    const response = nextAuthSignOut({
+
+    nextAuthSignOut({
       callbackUrl: signOutCallbackURL,
       ...options,
     });
-
-    return response;
   };
 
   const verifyToken: AuthRepository["verifyToken"] = async (params) => {
