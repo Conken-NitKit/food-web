@@ -1,4 +1,3 @@
-import { getToken } from "next-auth/jwt";
 import { ComposableMiddleware } from "next-compose-middleware";
 import { NextResponse } from "next/server";
 import {
@@ -6,6 +5,7 @@ import {
   RedirectAction,
 } from "../../constants/redirectActions";
 import { Logger } from "../../types/logger";
+import { VerifyAuthUser } from "../usecases";
 import { withMiddlewareLogger } from "./_utils";
 
 /**
@@ -20,6 +20,9 @@ export abstract class Context {
     isEnableAuth: boolean;
     isDebug: boolean;
   };
+  abstract usecases: {
+    verifyAuthUser: ReturnType<VerifyAuthUser>;
+  };
 }
 
 /**
@@ -29,7 +32,6 @@ export abstract class Context {
  * @param signInPageURL 認証が必要なページに認証されていないユーザーがアクセスした際にリダイレクトするURL
  */
 export type authProtectMiddlewareOption = {
-  secret?: string;
   whenUnAuthn: Exclude<RedirectAction, typeof redirectActions.NO_REDIRECT>;
   appPageURL?: string;
   signInPageURL?: string;
@@ -48,8 +50,9 @@ export const generateAuthProtectMiddleware: (
       return res;
     }
 
-    const token = await getToken({ req, secret: option.secret });
-    if (token) {
+    const { verifyAuthUser } = context.usecases;
+    const isValid = await verifyAuthUser({ req });
+    if (isValid) {
       return res;
     }
 

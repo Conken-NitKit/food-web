@@ -1,4 +1,3 @@
-import { getToken } from "next-auth/jwt";
 import { ComposableMiddleware } from "next-compose-middleware";
 import { NextResponse } from "next/server";
 import {
@@ -6,6 +5,7 @@ import {
   RedirectAction,
 } from "../../constants/redirectActions";
 import { Logger } from "../../types/logger";
+import { VerifyAuthUser } from "../usecases";
 import { withMiddlewareLogger } from "./_utils";
 
 /**
@@ -19,6 +19,9 @@ export abstract class Context {
   abstract publicConfig: {
     isEnableAuth: boolean;
     isDebug: boolean;
+  };
+  abstract usecases: {
+    verifyAuthUser: ReturnType<VerifyAuthUser>;
   };
 }
 
@@ -48,8 +51,9 @@ export const generateUnAuthProtectMiddleware: (
       return res;
     }
 
-    const token = await getToken({ req, secret: option.secret });
-    if (!token) {
+    const { verifyAuthUser } = context.usecases;
+    const isValid = await verifyAuthUser({ req });
+    if (!isValid) {
       context.logger.debug("認証されていないユーザーがアクセスしました");
       return res;
     }

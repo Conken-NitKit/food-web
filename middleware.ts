@@ -7,7 +7,6 @@ import { generateAuthProtectMiddleware } from "./lib/middlewares/authProtectMidd
 import { generateUnAuthProtectMiddleware } from "./lib/middlewares/unAuthProtectMiddleware";
 
 const authProtectMiddleware = generateAuthProtectMiddleware(context, {
-  secret: secretConfig.nextAuth.secret,
   whenUnAuthn: redirectActions.REDIRECT_TO_TOP,
   appPageURL:
     context.publicConfig.isEnableAuth && secretConfig.nextAuth.url
@@ -16,7 +15,6 @@ const authProtectMiddleware = generateAuthProtectMiddleware(context, {
 });
 
 const unAuthProtectMiddleware = generateUnAuthProtectMiddleware(context, {
-  secret: secretConfig.nextAuth.secret,
   whenAuthn: redirectActions.REDIRECT_TO_SIGN_IN,
   signInPageURL: `${
     context.publicConfig.isEnableAuth && secretConfig.nextAuth.url

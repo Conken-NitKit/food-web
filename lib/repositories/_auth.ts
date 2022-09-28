@@ -1,4 +1,9 @@
 import {
+  getToken as nextAuthGetToken,
+  GetTokenParams,
+  JWT,
+} from "next-auth/jwt";
+import {
   signIn as nextAuthSignInForReact,
   signOut as nextAuthSignOutForReact,
 } from "next-auth/react";
@@ -22,6 +27,11 @@ export abstract class Context {
   abstract publicConfig: {
     isEnableAuth: boolean;
     isDebug: boolean;
+  };
+  abstract secretConfig: {
+    nextAuth: {
+      secret?: string;
+    };
   };
 }
 
@@ -55,6 +65,7 @@ export interface AuthRepository extends Repository {
     },
     ...params: Parameters<NextAuthSignOutForReact>
   ) => ReturnType<NextAuthSignOutForReact>;
+  verifyToken: (parmas: GetTokenParams) => Promise<string | JWT | null>;
 }
 
 /**
@@ -115,6 +126,15 @@ const _generateDummySignOut = (
   };
 };
 
+const DUMMY_JWT: JWT = {
+  name: "dummy",
+  email: "dummy",
+  picture: "dummy",
+  sub: "dummy",
+};
+
+const DUMMY_JWT_RAW = JSON.stringify(DUMMY_JWT);
+
 /**
  * @description
  * 認証関連のリポジトリを生成するファクトリ関数です
@@ -166,10 +186,23 @@ export const generateAuthRepository: RepositoryGenerator<
     return response;
   };
 
+  const verifyToken: AuthRepository["verifyToken"] = async (params) => {
+    // Note: 認証機能が無効な場合はダミーのトークンを返す
+    if (!context.publicConfig.isEnableAuth) {
+      return params.raw ? DUMMY_JWT_RAW : DUMMY_JWT;
+    }
+    const token = await nextAuthGetToken({
+      secret: context.secretConfig.nextAuth.secret,
+      ...params,
+    });
+    return token;
+  };
+
   return applyLoggerToMethods(
     {
       signInByAuth0,
       signOut,
+      verifyToken,
     },
     context.logger
   );
