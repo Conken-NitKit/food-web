@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import { FeatureLayout } from "../components/layouts";
 import { useState, useEffect } from "react";
 import ActionHistory from "../components/ActionHistory";
+import { TabItems } from "../components/tab-components";
 
 type actionList = {
   user: {
@@ -41,7 +42,7 @@ const Monitoring: NextPage = () => {
     },
     {
       user: {
-        name: "kitasiro",
+        name: "kitashiro",
       },
       type: "product",
       message: "北代がハンバーガー売ったらしい。がっぽり☆",
@@ -49,6 +50,15 @@ const Monitoring: NextPage = () => {
     },
   ];
 
+  const data = dataJson as actionList[];
+  const [dropDown, setDropDown] = useState<boolean>(false);
+  const removeDuplicationValues = ([...array]) => {
+    // console.log(array);
+    // console.log(
+    //   array.filter((value, index, self) => self.indexOf(value) === index)
+    // );
+    return array.filter((value, index, self) => self.indexOf(value) === index);
+  };
   return (
     <FeatureLayout type="monitoring">
       <div>
@@ -57,8 +67,20 @@ const Monitoring: NextPage = () => {
       <div className="mt-[55px] flex">
         <div className="opacity-[0.4]">ユーザーでフィルタ</div>
         <div className="ml-[10px]">
-          <div>全て表示</div>
-          <div></div>
+          <div className="flex">
+            <div
+              onClick={() => {
+                dropDown ? setDropDown(false) : setDropDown(true);
+              }}
+            >
+              全て表示
+            </div>
+          </div>
+          {dropDown && (
+            <div>
+              {removeDuplicationValues(data.map((item) => item.user.name))}
+            </div>
+          )}
         </div>
       </div>
       <div className="mt-[12px]">
