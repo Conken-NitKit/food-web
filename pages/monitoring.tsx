@@ -78,7 +78,11 @@ const Monitoring: NextPage = () => {
           </div>
           {dropDown && (
             <div>
-              {removeDuplicationValues(data.map((item) => item.user.name))}
+              {removeDuplicationValues(data.map((item) => item.user.name)).map(
+                (item) => {
+                  return <div>{item}</div>;
+                }
+              )}
             </div>
           )}
         </div>
