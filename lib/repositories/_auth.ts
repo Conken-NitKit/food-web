@@ -53,9 +53,67 @@ export interface AuthRepository extends Repository {
       router: NextRouter;
       nextAuthSignOut: NextAuthSignOutForReact;
     },
-    ...options: Parameters<NextAuthSignOutForReact>
+    ...params: Parameters<NextAuthSignOutForReact>
   ) => ReturnType<NextAuthSignOutForReact>;
 }
+
+/**
+ * @description
+ * 認証機能が無効な場合の signInByAuth0 のダミー関数です
+ */
+const generateDummySignInByAuth0Dummy = (
+  _: Context,
+  { signInCallbackURL }: Pick<AuthOption, "signInCallbackURL">
+): AuthRepository["signInByAuth0"] => {
+  return async ({ router }, options) => {
+    // Note: options.redirect が false の場合は、どこにもリダイレクトしない
+    if (options?.redirect) {
+      return;
+    }
+    const ok = await router.push(signInCallbackURL);
+
+    // Note: リダイレクトに成功した場合は、next-auth の成功時のレスポンスと同じ型のオブジェクトを返す
+    // Note: リダイレクトに失敗した場合は、next-auth の失敗時のレスポンスと同じ型のオブジェクトを返す
+    const response: NextAuthSignInResponse = ok
+      ? {
+          ok,
+          status: 200,
+          error: undefined,
+          url: signInCallbackURL,
+        }
+      : {
+          ok,
+          status: 400,
+          error: "Failed to redirect to sign in page",
+          url: signInCallbackURL,
+        };
+    return response;
+  };
+};
+
+/**
+ * @description
+ * 認証機能が無効な場合の signOut のダミー関数です
+ */
+const generateDummySignOutDummy = (
+  _: Context,
+  { signOutCallbackURL }: Pick<AuthOption, "signOutCallbackURL">
+): AuthRepository["signOut"] => {
+  return async ({ router }, options) => {
+    // Note: options.redirect が false の場合は、どこにもリダイレクトしない
+    if (options?.redirect) {
+      return;
+    }
+    await router.push(signOutCallbackURL);
+
+    // Note: next-auth のレスポンスと同じ型のオブジェクトを返す
+    const response: NextAuthSignOutResponse = {
+      url: options?.callbackUrl ?? signOutCallbackURL,
+    };
+
+    return response;
+  };
+};
 
 /**
  * @description
@@ -66,37 +124,17 @@ export const generateAuthRepository: RepositoryGenerator<
   AuthOption,
   AuthRepository
 > = (context, { signInCallbackURL, signOutCallbackURL }) => {
-  const signInByAuth0: AuthRepository["signInByAuth0"] = async (
-    { router, nextAuthSignIn },
-    options,
-    authenticationParams
-  ) => {
-    // Note: 認証機能が無効な場合は単純なリダイレクトを行う
+  const signInByAuth0: AuthRepository["signInByAuth0"] = async (...params) => {
+    // Note: 認証機能が無効な場合はダミーの関数を返す
     if (!context.publicConfig.isEnableAuth) {
-      // Note: options.redirect が false の場合は、どこにもリダイレクトしない
-      if (options?.redirect) {
-        return;
-      }
-      const ok = await router.push(signInCallbackURL);
-
-      // Note: リダイレクトに成功した場合は、next-auth の成功時のレスポンスと同じ型のオブジェクトを返す
-      // Note: リダイレクトに失敗した場合は、next-auth の失敗時のレスポンスと同じ型のオブジェクトを返す
-      const response: NextAuthSignInResponse = ok
-        ? {
-            ok,
-            status: 200,
-            error: undefined,
-            url: signInCallbackURL,
-          }
-        : {
-            ok,
-            status: 400,
-            error: "Failed to redirect to sign in page",
-            url: signInCallbackURL,
-          };
+      const dummyMethod = generateDummySignInByAuth0Dummy(context, {
+        signInCallbackURL,
+      });
+      const response = await dummyMethod(...params);
       return response;
     }
 
+    const [{ nextAuthSignIn }, options, authenticationParams] = params;
     const response = await nextAuthSignIn(
       "auth0",
       {
@@ -105,32 +143,27 @@ export const generateAuthRepository: RepositoryGenerator<
       },
       authenticationParams
     );
+
     return response;
   };
 
-  const signOut: AuthRepository["signOut"] = async (
-    { router, nextAuthSignOut },
-    options
-  ) => {
+  const signOut: AuthRepository["signOut"] = async (...params) => {
     // Note: 認証機能が無効な場合は単純なリダイレクトを行う
     if (!context.publicConfig.isEnableAuth) {
-      // Note: options.redirect が false の場合は、どこにもリダイレクトしない
-      if (options?.redirect) {
-        return;
-      }
-      await router.push(signOutCallbackURL);
-
-      // Note: next-auth のレスポンスと同じ型のオブジェクトを返す
-      const response: NextAuthSignOutResponse = {
-        url: options?.callbackUrl ?? signOutCallbackURL,
-      };
+      const dummyMethod = generateDummySignOutDummy(context, {
+        signOutCallbackURL,
+      });
+      const response = await dummyMethod(...params);
       return response;
     }
 
-    return nextAuthSignOut({
+    const [{ nextAuthSignOut }, options] = params;
+    const response = nextAuthSignOut({
       callbackUrl: signOutCallbackURL,
       ...options,
     });
+
+    return response;
   };
 
   return applyLoggerToMethods(
