@@ -125,7 +125,7 @@ export const generateAuthRepository: RepositoryGenerator<
   AuthRepository
 > = (context, { signInCallbackURL, signOutCallbackURL }) => {
   const signInByAuth0: AuthRepository["signInByAuth0"] = async (...params) => {
-    // Note: 認証機能が無効な場合はダミーの関数を返す
+    // Note: 認証機能が無効な場合はダミーの結果を返す
     if (!context.publicConfig.isEnableAuth) {
       const dummyMethod = _generateDummySignInByAuth0Dummy(context, {
         signInCallbackURL,
@@ -148,7 +148,7 @@ export const generateAuthRepository: RepositoryGenerator<
   };
 
   const signOut: AuthRepository["signOut"] = async (...params) => {
-    // Note: 認証機能が無効な場合は単純なリダイレクトを行う
+    // Note: 認証機能が無効な場合はダミーの結果を返す
     if (!context.publicConfig.isEnableAuth) {
       const dummyMethod = _generateDummySignOutDummy(context, {
         signOutCallbackURL,
