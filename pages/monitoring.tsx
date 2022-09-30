@@ -51,12 +51,10 @@ const Monitoring: NextPage = () => {
   ];
 
   const data = dataJson as actionList[];
-  const [dropDown, setDropDown] = useState<boolean>(false);
+  const [isDropDownUser, setIsDropDownUser] = useState<boolean>(false);
+  const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
+  const [filter, setFilter] = useState<string>("all");
   const removeDuplicationValues = ([...array]) => {
-    // console.log(array);
-    // console.log(
-    //   array.filter((value, index, self) => self.indexOf(value) === index)
-    // );
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
   return (
@@ -70,17 +68,58 @@ const Monitoring: NextPage = () => {
           <div className="flex">
             <div
               onClick={() => {
-                dropDown ? setDropDown(false) : setDropDown(true);
+                isDropDownUser
+                  ? setIsDropDownUser(false)
+                  : setIsDropDownUser(true);
               }}
             >
               全て表示
             </div>
           </div>
-          {dropDown && (
+          {isDropDownUser && (
             <div>
               {removeDuplicationValues(data.map((item) => item.user.name)).map(
                 (item) => {
-                  return <div>{item}</div>;
+                  return (
+                    <div
+                      onClick={() => {
+                        isDropDownUser && setIsDropDownUser(false);
+                      }}
+                    >
+                      {item}
+                    </div>
+                  );
+                }
+              )}
+            </div>
+          )}
+        </div>
+        <div className="opacity-[0.4]">操作内容でフィルタ</div>
+        <div className="ml-[10px]">
+          <div className="flex">
+            <div
+              onClick={() => {
+                isDropDownType
+                  ? setIsDropDownType(false)
+                  : setIsDropDownType(true);
+              }}
+            >
+              全て表示
+            </div>
+          </div>
+          {isDropDownType && (
+            <div>
+              {removeDuplicationValues(data.map((item) => item.type)).map(
+                (item) => {
+                  return (
+                    <div
+                      onClick={() => {
+                        isDropDownType && setIsDropDownType(false);
+                      }}
+                    >
+                      {item}
+                    </div>
+                  );
                 }
               )}
             </div>
