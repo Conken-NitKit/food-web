@@ -31,6 +31,7 @@ export const MenuModal = () => {
                 value={menuName}
                 onChange={(e) => setMenuName(e.target.value)}
                 id="menu_name"
+                className="border border-solid border-lightgray-a100 rounded box-border"
               />
             </div>
             <div>
@@ -42,11 +43,12 @@ export const MenuModal = () => {
                 value={menuPrice}
                 onChange={(e) => setMenuPrice(e.target.value)}
                 id="menu_price"
+                className="border border-solid border-lightgray-a100 rounded box-border"
               />
             </div>
             <div>
               <label className="block mb-[4px] font-bold">状態</label>
-              <select>
+              <select className="border border-solid border-lightgray-a100 rounded box-border">
                 <option>販売中</option>
                 <option>売り切れ</option>
               </select>
@@ -62,12 +64,15 @@ export const MenuModal = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 id="menu_description"
+                className="border border-solid border-lightgray-a100 rounded box-border"
               />
             </div>
           </div>
           <div>
             <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
-            <div className="mb-[8px]">🍔</div>
+            <div className="mb-[8px] border border-solid border-lightgray-a100 rounded box-border">
+              🍔
+            </div>
             <div>
               <label className="text-[10px]">絵文字を選択する</label>
               <select>
@@ -79,7 +84,10 @@ export const MenuModal = () => {
           </div>
         </div>
         <div className="flex items-end justify-end text-[10px]">
-          <button onClick={CreateMenu} className="mr-[9px]">
+          <button
+            onClick={CreateMenu}
+            className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border"
+          >
             商品を追加
           </button>
           <button onClick={CreateMenu}>商品を追加</button>
