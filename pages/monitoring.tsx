@@ -3,7 +3,9 @@ import type { NextPage } from "next";
 import { FeatureLayout } from "../components/layouts";
 import { useState, useEffect } from "react";
 import ActionHistory from "../components/ActionHistory";
-import { TabItems } from "../components/tab-components";
+import { useMultiFilter } from "../components/hooks/useMultiFilter";
+
+// import { useMultiFilter } from "../components/hooks/useMultiFilter";
 
 type actionList = {
   user: {
@@ -53,7 +55,12 @@ const Monitoring: NextPage = () => {
   const data = dataJson as actionList[];
   const [isDropDownUser, setIsDropDownUser] = useState<boolean>(false);
   const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
-  const [filter, setFilter] = useState<string>("all");
+  const [userFilter, setUserFilter] = useState<string>("all");
+  const [typeFilter, setTypeFilter] = useState<string>("all");
+  const [filteredTargets, changeFilter] = useMultiFilter(data, [
+    (item) => (userFilter === "all" ? true : item.user.name === userFilter),
+    (item) => (typeFilter === "all" ? true : item.type === typeFilter),
+  ]);
   const removeDuplicationValues = ([...array]) => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
@@ -73,17 +80,29 @@ const Monitoring: NextPage = () => {
                   : setIsDropDownUser(true);
               }}
             >
-              全て表示
+              {userFilter}
             </div>
           </div>
           {isDropDownUser && (
             <div>
+              <div
+                onClick={() => {
+                  setUserFilter("all");
+                  isDropDownUser && setIsDropDownUser(false);
+                  changeFilter(0);
+                }}
+              >
+                all
+              </div>
               {removeDuplicationValues(data.map((item) => item.user.name)).map(
                 (item) => {
                   return (
                     <div
+                      key={item}
                       onClick={() => {
                         isDropDownUser && setIsDropDownUser(false);
+                        setUserFilter(item);
+                        changeFilter(0);
                       }}
                     >
                       {item}
@@ -104,16 +123,26 @@ const Monitoring: NextPage = () => {
                   : setIsDropDownType(true);
               }}
             >
-              全て表示
+              {typeFilter}
             </div>
           </div>
           {isDropDownType && (
             <div>
+              <div
+                onClick={() => {
+                  setTypeFilter("all");
+                  isDropDownType && setIsDropDownType(false);
+                }}
+              >
+                all
+              </div>
               {removeDuplicationValues(data.map((item) => item.type)).map(
                 (item) => {
                   return (
                     <div
+                      key={item}
                       onClick={() => {
+                        setTypeFilter(item);
                         isDropDownType && setIsDropDownType(false);
                       }}
                     >
@@ -126,29 +155,19 @@ const Monitoring: NextPage = () => {
           )}
         </div>
       </div>
-      <div className="mt-[12px]">
-        <ActionHistory
-          badgeColor="bg-monitoring-config"
-          badgeLabel="商品"
-          actionText="クボ太郎が商品「チーズバーガー」の内容を修正しました"
-          date="2022/09/04"
-        />
-      </div>
-      <div className="mt-[12px]">
-        <ActionHistory
-          badgeColor="bg-monitoring-config"
-          badgeLabel="商品"
-          actionText="クボ太郎が商品「チーズバーガー」の内容を修正しました"
-          date="2022/09/04"
-        />
-      </div>
-      <div className="mt-[12px]">
-        <ActionHistory
-          badgeColor="bg-monitoring-config"
-          badgeLabel="商品"
-          actionText="クボ太郎が商品「チーズバーガー」の内容を修正しました"
-          date="2022/09/04"
-        />
+      <div>
+        {filteredTargets.map((item) => {
+          return (
+            <div className="mt-[5px]">
+              <ActionHistory
+                badgeColor="bg-monitoring-config"
+                badgeLabel={item.type}
+                actionText={item.message}
+                date={item.date}
+              />
+            </div>
+          );
+        })}
       </div>
     </FeatureLayout>
   );

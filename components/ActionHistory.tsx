@@ -5,7 +5,7 @@ interface Props {
   badgeColor: string;
   badgeLabel: string;
   actionText: string;
-  date: string;
+  date: number;
 }
 
 
