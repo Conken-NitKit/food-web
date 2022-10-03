@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 import ActionHistory from "../components/ActionHistory";
 import { useMultiFilter } from "../components/hooks/useMultiFilter";
 
-// import { useMultiFilter } from "../components/hooks/useMultiFilter";
-
 type actionList = {
   user: {
     name: string;
@@ -57,6 +55,12 @@ const Monitoring: NextPage = () => {
   const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("all");
   const [typeFilter, setTypeFilter] = useState<string>("all");
+  const [removedDuplicateUser, setRemovedDuplicateUser] = useState<string[]>(
+    []
+  );
+  const [removedDuplicateType, setRemovedDuplicateType] = useState<string[]>(
+    []
+  );
   const [filteredTargets, changeFilter] = useMultiFilter(data, [
     (item) => (userFilter === "all" ? true : item.user.name === userFilter),
     (item) => (typeFilter === "all" ? true : item.type === typeFilter),
@@ -64,6 +68,7 @@ const Monitoring: NextPage = () => {
   const removeDuplicationValues = ([...array]) => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
+
   return (
     <FeatureLayout type="monitoring">
       <div>
@@ -100,9 +105,9 @@ const Monitoring: NextPage = () => {
                     <div
                       key={item}
                       onClick={() => {
-                        isDropDownUser && setIsDropDownUser(false);
                         setUserFilter(item);
                         changeFilter(0);
+                        isDropDownUser && setIsDropDownUser(false);
                       }}
                     >
                       {item}
@@ -156,9 +161,9 @@ const Monitoring: NextPage = () => {
         </div>
       </div>
       <div>
-        {filteredTargets.map((item) => {
+        {filteredTargets.map((item, index) => {
           return (
-            <div className="mt-[5px]">
+            <div className="mt-[5px]" key={index}>
               <ActionHistory
                 badgeColor="bg-monitoring-config"
                 badgeLabel={item.type}

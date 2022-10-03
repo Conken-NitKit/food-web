@@ -15,12 +15,16 @@ export const useMultiFilter = <T>(
 
   const changeFilter = useCallback(
     (idx: number) => {
+      console.log("changed");
+
       setCurrentFilter(() => filters[idx]);
     },
     [filters]
   );
 
   const filteredTargets = useMemo(() => {
+    console.log("filtering");
+
     return targets.filter(currentFilter);
   }, [currentFilter, targets]);
 
