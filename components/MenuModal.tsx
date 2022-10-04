@@ -17,7 +17,7 @@ export const MenuModal = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={() => setModalIsOpen(false)}
-        className="absolute top-[29px] left-[53px] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] bg-white-a100 font-menu-card"
+        className="relative top-[29px] left-[53px] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] bg-white-a100 font-menu-card"
       >
         <h3 className="h-[17px] font-bold text-[15px]">メニューを新規作成</h3>
         <div className="flex mt-[14px] gap-x-[19px]">
@@ -88,7 +88,7 @@ export const MenuModal = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-end justify-end text-[10px]">
+        <div className="absolute bottom-[17px] right-[20px] text-[10px]">
           <button
             onClick={CreateMenu}
             className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border w-[67px] h-[23px]"
