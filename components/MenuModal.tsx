@@ -20,7 +20,7 @@ export const MenuModal = () => {
         className="absolute top-[29px] left-[53px] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] bg-white-a100 font-menu-card"
       >
         <h3 className="h-[17px] font-bold text-[15px]">メニューを新規作成</h3>
-        <div className="grid grid-cols-2 mt-[14px] gap-x-[19px]">
+        <div className="flex mt-[14px] gap-x-[19px]">
           <div className="space-y-[12px] text-[12px]">
             <div>
               <label
