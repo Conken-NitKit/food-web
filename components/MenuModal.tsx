@@ -73,7 +73,7 @@ export const MenuModal = () => {
           </div>
           <div>
             <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
-            <div className="mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] bg-accent-secondary-light-regular">
+            <div className="flex mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] items-center justify-center text-[46px] font-bold bg-accent-secondary-light-regular">
               🍔
             </div>
             <div className="bg-goldenyellow-a100">
