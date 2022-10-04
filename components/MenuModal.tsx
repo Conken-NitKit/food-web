@@ -73,10 +73,10 @@ export const MenuModal = () => {
           </div>
           <div>
             <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
-            <div className="mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px]">
+            <div className="mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] bg-accent-secondary-light-regular">
               🍔
             </div>
-            <div>
+            <div className="bg-goldenyellow-a100">
               <label className="w-[130px] h-[25px] text-[10px]">
                 絵文字を選択する
               </label>
@@ -95,7 +95,10 @@ export const MenuModal = () => {
           >
             商品を追加
           </button>
-          <button onClick={CreateMenu} className="w-[66px] h-[23px]">
+          <button
+            onClick={CreateMenu}
+            className="w-[66px] h-[23px] bg-goldenyellow-a100"
+          >
             商品を追加
           </button>
         </div>
