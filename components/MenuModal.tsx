@@ -97,7 +97,7 @@ export const MenuModal = () => {
           </button>
           <button
             onClick={CreateMenu}
-            className="w-[66px] h-[23px] bg-goldenyellow-a100"
+            className="rounded-[2px] w-[66px] h-[23px] bg-goldenyellow-a100"
           >
             商品を追加
           </button>
