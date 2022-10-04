@@ -23,7 +23,10 @@ export const MenuModal = () => {
         <div className="grid grid-cols-2 mt-[14px] gap-x-[19px]">
           <div className="space-y-[12px] text-[12px]">
             <div>
-              <label htmlFor="menu_name" className="block mb-[3px] font-bold">
+              <label
+                htmlFor="menu_name"
+                className="block mb-[3px] font-bold w-[284px]"
+              >
                 メニュー名
               </label>
               <input
@@ -31,7 +34,7 @@ export const MenuModal = () => {
                 value={menuName}
                 onChange={(e) => setMenuName(e.target.value)}
                 id="menu_name"
-                className="border border-solid border-lightgray-a100 rounded box-border"
+                className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
               />
             </div>
             <div>
@@ -43,12 +46,12 @@ export const MenuModal = () => {
                 value={menuPrice}
                 onChange={(e) => setMenuPrice(e.target.value)}
                 id="menu_price"
-                className="border border-solid border-lightgray-a100 rounded box-border"
+                className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
               />
             </div>
             <div>
               <label className="block mb-[4px] font-bold">状態</label>
-              <select className="border border-solid border-lightgray-a100 rounded box-border">
+              <select className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]">
                 <option>販売中</option>
                 <option>売り切れ</option>
               </select>
@@ -64,17 +67,19 @@ export const MenuModal = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 id="menu_description"
-                className="border border-solid border-lightgray-a100 rounded box-border"
+                className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
               />
             </div>
           </div>
           <div>
             <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
-            <div className="mb-[8px] border border-solid border-lightgray-a100 rounded box-border">
+            <div className="mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px]">
               🍔
             </div>
             <div>
-              <label className="text-[10px]">絵文字を選択する</label>
+              <label className="w-[130px] h-[25px] text-[10px]">
+                絵文字を選択する
+              </label>
               <select>
                 <option>🍔</option>
                 <option>🍟</option>
@@ -86,11 +91,13 @@ export const MenuModal = () => {
         <div className="flex items-end justify-end text-[10px]">
           <button
             onClick={CreateMenu}
-            className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border"
+            className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border w-[67px] h-[23px]"
           >
             商品を追加
           </button>
-          <button onClick={CreateMenu}>商品を追加</button>
+          <button onClick={CreateMenu} className="w-[66px] h-[23px]">
+            商品を追加
+          </button>
         </div>
       </Modal>
     </>
