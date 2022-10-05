@@ -76,11 +76,11 @@ export const MenuModal = () => {
             <div className="flex mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] items-center justify-center text-[46px] font-bold bg-accent-secondary-light-regular">
               🍔
             </div>
-            <div className="bg-goldenyellow-a100">
-              <label className="w-[130px] h-[25px] text-[10px]">
+            <div className="relative rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100">
+              <p className="flex absolute items-center justify-center w-full h-full z-[1]">
                 絵文字を選択する
-              </label>
-              <select>
+              </p>
+              <select className="absolute w-full h-full z-[2] opacity-0 appearance-none">
                 <option>🍔</option>
                 <option>🍟</option>
                 <option>🍿</option>
