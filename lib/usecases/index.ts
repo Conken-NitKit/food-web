@@ -1,11 +1,11 @@
 import { Context } from "../context";
-import { signInByAuth0 } from "./_signInByAuth0";
-import { signOut } from "./_signOut";
-import { verifyAuthUser } from "./_verifyAuthUser";
+import { generateSignInByAuth0 } from "./_signInByAuth0";
+import { generateSignOut } from "./_signOut";
+import { generateVerifyAuthUser } from "./_verifyAuthUser";
 
-export type SignInByAuth0 = typeof signInByAuth0;
-export type SignOut = typeof signOut;
-export type VerifyAuthUser = typeof verifyAuthUser;
+export type { SignInByAuth0 } from "./_signInByAuth0";
+export type { SignOut } from "./_signOut";
+export type { VerifyAuthUser } from "./_verifyAuthUser";
 
 /**
  * @description
@@ -13,8 +13,8 @@ export type VerifyAuthUser = typeof verifyAuthUser;
  */
 export const builder = (context: Readonly<Context>) => {
   return {
-    signInByAuth0: signInByAuth0(context),
-    signOut: signOut(context),
-    verifyAuthUser: verifyAuthUser(context),
+    signInByAuth0: generateSignInByAuth0(context),
+    signOut: generateSignOut(context),
+    verifyAuthUser: generateVerifyAuthUser(context),
   } as const;
 };

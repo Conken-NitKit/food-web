@@ -12,13 +12,18 @@ export abstract class Context {
   };
 }
 
+export type VerifyAuthUser = Usecase<
+  Parameters<AuthRepository["verifyToken"]>,
+  Promise<boolean>
+>;
+
 /**
  * @description
  * 有効なユーザーであるかどうかを確認するユースケースを生成する関数です
  */
-export const verifyAuthUser = (
+export const generateVerifyAuthUser = (
   context: Readonly<Context>
-): Usecase<Parameters<AuthRepository["verifyToken"]>, Promise<boolean>> => {
+): VerifyAuthUser => {
   const authRepository = context.repositories.auth;
   return async (...signInByAuth0Params) => {
     const token = await authRepository.verifyToken(...signInByAuth0Params);

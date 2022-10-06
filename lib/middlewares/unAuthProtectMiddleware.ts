@@ -21,7 +21,7 @@ export abstract class Context {
     isDebug: boolean;
   };
   abstract usecases: {
-    verifyAuthUser: ReturnType<VerifyAuthUser>;
+    verifyAuthUser: VerifyAuthUser;
   };
 }
 

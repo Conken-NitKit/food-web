@@ -11,7 +11,7 @@ import { SignOut } from "../usecases";
  */
 export abstract class Context {
   abstract usecases: {
-    signOut: ReturnType<SignOut>;
+    signOut: SignOut;
   };
 }
 

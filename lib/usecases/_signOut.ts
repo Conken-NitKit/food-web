@@ -12,16 +12,16 @@ export abstract class Context {
   };
 }
 
+export type SignOut = Usecase<
+  Parameters<AuthRepository["signOut"]>,
+  ReturnType<AuthRepository["signOut"]>
+>;
+
 /**
  * @description
  * authRepository.signOut を実行する関数です
  */
-export const signOut = (
-  context: Readonly<Context>
-): Usecase<
-  Parameters<AuthRepository["signOut"]>,
-  ReturnType<AuthRepository["signOut"]>
-> => {
+export const generateSignOut = (context: Readonly<Context>): SignOut => {
   const authRepository = context.repositories.auth;
   return async (...signOutParams) => {
     const result = await authRepository.signOut(...signOutParams);

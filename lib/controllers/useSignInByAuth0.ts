@@ -11,7 +11,7 @@ import { SignInByAuth0 } from "../usecases";
  */
 export abstract class Context {
   abstract usecases: {
-    signInByAuth0: ReturnType<SignInByAuth0>;
+    signInByAuth0: SignInByAuth0;
   };
 }
 

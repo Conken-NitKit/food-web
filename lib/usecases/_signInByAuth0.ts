@@ -12,16 +12,18 @@ export abstract class Context {
   };
 }
 
+export type SignInByAuth0 = Usecase<
+  Parameters<AuthRepository["signInByAuth0"]>,
+  ReturnType<AuthRepository["signInByAuth0"]>
+>;
+
 /**
  * @description
  * authRepository.signInByAuth0 を実行する関数です
  */
-export const signInByAuth0 = (
+export const generateSignInByAuth0 = (
   context: Readonly<Context>
-): Usecase<
-  Parameters<AuthRepository["signInByAuth0"]>,
-  ReturnType<AuthRepository["signInByAuth0"]>
-> => {
+): SignInByAuth0 => {
   const authRepository = context.repositories.auth;
   return async (...signInByAuth0Params) => {
     const result = await authRepository.signInByAuth0(...signInByAuth0Params);
