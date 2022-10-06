@@ -51,7 +51,7 @@ export const MenuModal = () => {
             </div>
             <div>
               <label className="block mb-[4px] font-bold">状態</label>
-              <select className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]">
+              <select className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer">
                 <option>販売中</option>
                 <option>売り切れ</option>
               </select>
@@ -80,7 +80,7 @@ export const MenuModal = () => {
               <p className="flex absolute items-center justify-center w-full h-full z-[1]">
                 絵文字を選択する
               </p>
-              <select className="absolute w-full h-full z-[2] opacity-0 appearance-none">
+              <select className="absolute w-full h-full z-[2] opacity-0 cursor-pointer">
                 <option>🍔</option>
                 <option>🍟</option>
                 <option>🍿</option>
