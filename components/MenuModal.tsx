@@ -80,7 +80,7 @@ export const MenuModal = () => {
               <p className="flex absolute items-center justify-center w-full h-full z-[1]">
                 絵文字を選択する
               </p>
-              <select className="absolute w-full h-full z-[2] opacity-0 cursor-pointer">
+              <select className="absolute w-full h-full z-[2] opacity-0 cursor-pointer focus:z-[-1] focus:opacity-100">
                 <option>🍔</option>
                 <option>🍟</option>
                 <option>🍿</option>
