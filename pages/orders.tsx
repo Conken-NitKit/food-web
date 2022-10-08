@@ -124,7 +124,7 @@ const Orders: NextPage = () => {
           </li>
         ))}
       </TabUl>
-      <ul className="overflow-y-scroll mt-[-8px] ml-[-8px] pt-[8px] pl-[8px] h-[calc(100%-31px)] md:h-[calc(100%-37px)] lg:h-[calc(100%-49px)] xl:h-[calc(100%-61px)] 2xl:h-[calc(100%-75px)]">
+      <ul className="overflow-y-scroll flex flex-wrap gap-y-[17px] md:gap-y-[20px] lg:gap-y-[27px] xl:gap-y-[34px] 2xl:gap-y-[40px] gap-y-[px] mt-[-8px] ml-[-8px] pt-[8px] pl-[8px] h-[calc(100%-31px)] md:h-[calc(100%-37px)] lg:h-[calc(100%-49px)] xl:h-[calc(100%-61px)] 2xl:h-[calc(100%-75px)]">
         {selectedCategory === "all"
           ? Object.values(OrderDetails).map((detail) => (
               <li key={detail.orderNumber}>
