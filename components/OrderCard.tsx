@@ -17,6 +17,10 @@ const getTotalAmount: (
 };
 
 export const OrderCard = ({ content }: Props): JSX.Element => {
+  const totalAmount = content.products
+    .reduce(getTotalAmount, 0)
+    .toLocaleString();
+
   return (
     <div className="overflow-hidden mb-[17px] md:mb-[20px] lg:mb-[27px] xl:mb-[34px] 2xl:mb-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[15px] xl:rounded-[19px] 2xl:rounded-[23px] w-[419px] md:w-[503px] lg:w-[671px] xl:w-[838px] 2xl:w-[1006px] h-[131px] md:h-[157px] lg:h-[210px] xl:h-[262px] 2xl:h-[315px] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] font-bold font-menu-card text-primary-regular shadow-regular bg-primary-regular">
       <h3 className="ml-[2.7%] pt-[2.7%] text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-[1.2]">
@@ -50,7 +54,7 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
         <p className="text-[7px] md:text-[9px] lg:text-[12px] xl:text-[14px] 2xl:text-[17px]">
           合計 ￥
           <span className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
-            {content.products.reduce(getTotalAmount, 0).toLocaleString()}
+            {totalAmount}
           </span>
         </p>
         {content.state === "waiting" && (
