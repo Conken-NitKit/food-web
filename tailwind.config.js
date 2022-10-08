@@ -200,7 +200,11 @@ module.exports = {
         "menu-card": "lato",
       },
       boxShadow: {
-        "regular": "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
+        small: "0px 1px 3px 0px rgba(0, 0, 0, 0.25)",
+        middium: "0px 1px 4px 0px rgba(0, 0, 0, 0.25)",
+        large: "0px 1px 5px 0px rgba(0, 0, 0, 0.25)",
+        xl: "0px 2px 6px 0px rgba(0, 0, 0, 0.25)",
+        "2xl": "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
       },
       lineHeight: {
         basic: "1.17",
