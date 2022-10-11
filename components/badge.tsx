@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import type { NextPage } from "next";
 
 interface Props {
   bgcolor: string;
@@ -9,8 +8,8 @@ interface Props {
 const Badge = ({ bgcolor, label }: Props): JSX.Element => {
   return (
     <div>
-      <div className={classNames("w-[58px] h-[18px] rounded", bgcolor)}>
-        <div className="text-xs flex justify-center items-center font-bold ">
+      <div className={classNames("rounded w-[58px] h-[18px]", bgcolor)}>
+        <div className="flex justify-center items-center text-xs font-bold">
           {label}
         </div>
       </div>

@@ -9,24 +9,18 @@ export const useMultiFilter = <T>(
   filters: ((target: T) => boolean)[],
   { defaultIndex = 0 }: UseMultiFilterOptions = {}
 ) => {
-  const [currentFilter, setCurrentFilter] = useState<typeof filters[0]>(
-    () => filters[defaultIndex]
-  );
+  const [index, setIndex] = useState(defaultIndex);
 
   const changeFilter = useCallback(
     (idx: number) => {
-      console.log("changed");
-
-      setCurrentFilter(() => filters[idx]);
+      setIndex(idx);
     },
     [filters]
   );
 
   const filteredTargets = useMemo(() => {
-    console.log("filtering");
-
-    return targets.filter(currentFilter);
-  }, [currentFilter, targets]);
+    return targets.filter(filters[index]);
+  }, [index, targets]);
 
   return [filteredTargets, changeFilter] as const;
 };

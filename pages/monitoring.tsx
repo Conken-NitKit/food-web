@@ -1,9 +1,7 @@
 import type { NextPage } from "next";
-
 import { FeatureLayout } from "../components/layouts";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ActionHistory from "../components/ActionHistory";
-import { useMultiFilter } from "../components/hooks/useMultiFilter";
 
 type actionList = {
   user: {
@@ -55,16 +53,7 @@ const Monitoring: NextPage = () => {
   const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("all");
   const [typeFilter, setTypeFilter] = useState<string>("all");
-  const [removedDuplicateUser, setRemovedDuplicateUser] = useState<string[]>(
-    []
-  );
-  const [removedDuplicateType, setRemovedDuplicateType] = useState<string[]>(
-    []
-  );
-  const [filteredTargets, changeFilter] = useMultiFilter(data, [
-    (item) => (userFilter === "all" ? true : item.user.name === userFilter),
-    (item) => (typeFilter === "all" ? true : item.type === typeFilter),
-  ]);
+
   const removeDuplicationValues = ([...array]) => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
@@ -74,10 +63,10 @@ const Monitoring: NextPage = () => {
       <div>
         システム運用者がシステムに対して実行した操作の履歴を見ることが出来ます。
       </div>
-      <div className="mt-[55px] flex">
-        <div className="opacity-[0.4]">ユーザーでフィルタ</div>
+      <div className="flex mt-[57px]">
+        <div className="opacity-[0.4] ">ユーザーでフィルタ</div>
         <div className="ml-[10px]">
-          <div className="flex">
+          <div className="flex w-[68px]">
             <div
               onClick={() => {
                 isDropDownUser
@@ -87,14 +76,22 @@ const Monitoring: NextPage = () => {
             >
               {userFilter}
             </div>
+            <div
+              onClick={() => {
+                isDropDownUser
+                  ? setIsDropDownUser(false)
+                  : setIsDropDownUser(true);
+              }}
+              className="w-[10px] h-[10px] border-[2px] border-t-[transparent] border-r-[transparent] border-b-[#565656] border-l-[#565656] -rotate-45 ml-[10px] mt-[3px]"
+            ></div>
           </div>
           {isDropDownUser && (
-            <div>
+            <div className="z-10 absolute">
               <div
+                className="w-[70px] h-[20px] mt-[5px] bg-white-a95"
                 onClick={() => {
                   setUserFilter("all");
                   isDropDownUser && setIsDropDownUser(false);
-                  changeFilter(0);
                 }}
               >
                 all
@@ -103,10 +100,10 @@ const Monitoring: NextPage = () => {
                 (item) => {
                   return (
                     <div
+                      className="w-[70px] h-[20px] mt-[5px]"
                       key={item}
                       onClick={() => {
                         setUserFilter(item);
-                        changeFilter(0);
                         isDropDownUser && setIsDropDownUser(false);
                       }}
                     >
@@ -118,7 +115,7 @@ const Monitoring: NextPage = () => {
             </div>
           )}
         </div>
-        <div className="opacity-[0.4]">操作内容でフィルタ</div>
+        <div className="ml-[58px] opacity-[0.4]">操作内容でフィルタ</div>
         <div className="ml-[10px]">
           <div className="flex">
             <div
@@ -130,6 +127,14 @@ const Monitoring: NextPage = () => {
             >
               {typeFilter}
             </div>
+            <div
+              onClick={() => {
+                isDropDownType
+                  ? setIsDropDownType(false)
+                  : setIsDropDownType(true);
+              }}
+              className="w-[10px] h-[10px] border-[2px] border-t-[transparent] border-r-[transparent] border-b-[#565656] border-l-[#565656] -rotate-45 ml-[10px] mt-[3px]"
+            ></div>
           </div>
           {isDropDownType && (
             <div>
@@ -160,19 +165,26 @@ const Monitoring: NextPage = () => {
           )}
         </div>
       </div>
-      <div>
-        {filteredTargets.map((item, index) => {
-          return (
-            <div className="mt-[5px]" key={index}>
-              <ActionHistory
-                badgeColor="bg-monitoring-config"
-                badgeLabel={item.type}
-                actionText={item.message}
-                date={item.date}
-              />
-            </div>
-          );
-        })}
+      <div className="mt-[28px] space-y-3">
+        {data
+          .filter((item) =>
+            userFilter === "all" ? true : item.user.name === userFilter
+          )
+          .filter((item) =>
+            typeFilter === "all" ? true : item.type === typeFilter
+          )
+          .map((item) => {
+            return (
+              <div key={item.date}>
+                <ActionHistory
+                  badgeColor="bg-monitoring-config"
+                  badgeLabel={item.type}
+                  actionText={item.message}
+                  date={item.date}
+                />
+              </div>
+            );
+          })}
       </div>
     </FeatureLayout>
   );
