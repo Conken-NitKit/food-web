@@ -68,6 +68,7 @@ const Monitoring: NextPage = () => {
         <div className="ml-[10px]">
           <div className="flex w-[68px]">
             <div
+              className="ml-[10px]"
               onClick={() => {
                 isDropDownUser
                   ? setIsDropDownUser(false)
@@ -86,32 +87,34 @@ const Monitoring: NextPage = () => {
             ></div>
           </div>
           {isDropDownUser && (
-            <div className="z-10 absolute">
+            <div className="z-10 absolute shadow-regular">
+              <div className=" mt-[5px] w-[75px] h-[10px] bg-primary-regular rounded-t-2xl "></div>
               <div
-                className="w-[70px] h-[20px] mt-[5px] bg-white-a95"
+                className=" w-[75px] h-[20px] bg-primary-regular "
                 onClick={() => {
                   setUserFilter("all");
                   isDropDownUser && setIsDropDownUser(false);
                 }}
               >
-                all
+                <div className="ml-[10px]">all</div>
               </div>
               {removeDuplicationValues(data.map((item) => item.user.name)).map(
                 (item) => {
                   return (
                     <div
-                      className="w-[70px] h-[20px] mt-[5px]"
+                      className="w-[75px] h-[25px] bg-primary-regular"
                       key={item}
                       onClick={() => {
                         setUserFilter(item);
                         isDropDownUser && setIsDropDownUser(false);
                       }}
                     >
-                      {item}
+                      <div className="mx-[10px]">{item}</div>
                     </div>
                   );
                 }
               )}
+              <div className=" w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
             </div>
           )}
         </div>
@@ -119,6 +122,7 @@ const Monitoring: NextPage = () => {
         <div className="ml-[10px]">
           <div className="flex">
             <div
+              className="ml-[10px]"
               onClick={() => {
                 isDropDownType
                   ? setIsDropDownType(false)
@@ -137,30 +141,34 @@ const Monitoring: NextPage = () => {
             ></div>
           </div>
           {isDropDownType && (
-            <div>
+            <div className="z-10 absolute">
+              <div className=" mt-[5px] w-[75px] h-[10px] rounded-t-2xl"></div>
               <div
+                className=" w-[75px] h-[20px] bg-primary-regular "
                 onClick={() => {
                   setTypeFilter("all");
                   isDropDownType && setIsDropDownType(false);
                 }}
               >
-                all
+                <div className="ml-[10px]">all</div>
               </div>
               {removeDuplicationValues(data.map((item) => item.type)).map(
                 (item) => {
                   return (
                     <div
+                      className="w-[75px] h-[25px] bg-primary-regular"
                       key={item}
                       onClick={() => {
                         setTypeFilter(item);
                         isDropDownType && setIsDropDownType(false);
                       }}
                     >
-                      {item}
+                      <div className="mx-[10px]">{item}</div>
                     </div>
                   );
                 }
               )}
+              <div className=" w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
             </div>
           )}
         </div>
