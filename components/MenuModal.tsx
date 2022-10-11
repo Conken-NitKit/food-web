@@ -7,8 +7,18 @@ export const MenuModal = () => {
   const [menuName, setMenuName] = useState<string>("");
   const [menuPrice, setMenuPrice] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  const [isPrice, setIsPrice] = useState<boolean>(false);
 
-  const CreateMenu = () => {};
+  const createMenu = () => {};
+
+  const checkPrice = (value: string) => {
+    setMenuPrice(value);
+    if (isNaN(Number(value))) {
+      setIsPrice(true);
+    } else {
+      setIsPrice(false);
+    }
+  };
 
   return (
     <>
@@ -42,12 +52,13 @@ export const MenuModal = () => {
                 価格
               </label>
               <input
-                type="number"
+                type="text"
                 value={menuPrice}
-                onChange={(e) => setMenuPrice(e.target.value)}
+                onChange={(e) => checkPrice(e.target.value)}
                 id="menu_price"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
               />
+              {isPrice && <div>半角で数値を入力してください。</div>}
             </div>
             <div>
               <label className="block mb-[4px] font-bold">状態</label>
@@ -90,13 +101,13 @@ export const MenuModal = () => {
         </div>
         <div className="absolute bottom-[17px] right-[20px] text-[10px]">
           <button
-            onClick={CreateMenu}
+            onClick={createMenu}
             className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border w-[67px] h-[23px]"
           >
             商品を追加
           </button>
           <button
-            onClick={CreateMenu}
+            onClick={createMenu}
             className="rounded-[2px] w-[66px] h-[23px] bg-goldenyellow-a100"
           >
             商品を追加
