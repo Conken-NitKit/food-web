@@ -8,12 +8,12 @@ export const MenuModal = () => {
 
   const [menuName, setMenuName] = useState<string>("");
   const [menuPrice, setMenuPrice] = useState<string>("");
-  const [menuStatus, setMenuStatus] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
+  const [menuIsSold, setMenuIsSold] = useState<string>("");
+  const [promotion, setPromotion] = useState<string>("");
   const [isPrice, setIsPrice] = useState<boolean>(false);
 
-  const [emojiSelect, setEmojiSelect] = useState<boolean>(false);
-  const [emojiData, setEmojiData] = useState<EmojiClickData>({
+  const [ideogramSelect, setIdeogramSelect] = useState<boolean>(false);
+  const [ideogramData, setIdeogramData] = useState<EmojiClickData>({
     activeSkinTone: SkinTones.NEUTRAL,
     unified: "",
     unifiedWithoutSkinTone: "",
@@ -34,8 +34,8 @@ export const MenuModal = () => {
   };
 
   const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
-    setEmojiData(emojiData);
-    setEmojiSelect(false);
+    setIdeogramData(emojiData);
+    setIdeogramSelect(false);
   };
 
   return (
@@ -82,8 +82,8 @@ export const MenuModal = () => {
               <label className="block mb-[4px] font-bold">状態</label>
               <select
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer"
-                value={menuStatus}
-                onChange={(e) => setMenuStatus(e.target.value)}
+                value={menuIsSold}
+                onChange={(e) => setMenuIsSold(e.target.value)}
               >
                 <option value="onSale">販売中</option>
                 <option value="soldOut">売り切れ</option>
@@ -97,8 +97,8 @@ export const MenuModal = () => {
                 説明文
               </label>
               <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                value={promotion}
+                onChange={(e) => setPromotion(e.target.value)}
                 id="menu_description"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
               />
@@ -107,11 +107,11 @@ export const MenuModal = () => {
           <div>
             <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
             <div className="flex mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] items-center justify-center text-[46px] font-bold bg-accent-secondary-light-regular">
-              {emojiData.emoji}
+              {ideogramData.emoji}
             </div>
             <button
               className="rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100 cursor-pointer"
-              onClick={() => setEmojiSelect(true)}
+              onClick={() => setIdeogramSelect(true)}
             >
               絵文字を選択する
             </button>
@@ -133,8 +133,8 @@ export const MenuModal = () => {
         </div>
       </Modal>
       <Modal
-        isOpen={emojiSelect}
-        onRequestClose={() => setEmojiSelect(false)}
+        isOpen={ideogramSelect}
+        onRequestClose={() => setIdeogramSelect(false)}
         className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
         <EmojiPicker onEmojiClick={handleEmojiClick} />
