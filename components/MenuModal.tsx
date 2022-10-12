@@ -1,13 +1,26 @@
 import { useState } from "react";
 import Modal from "react-modal";
+import EmojiPicker from "emoji-picker-react";
+import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
 
 export const MenuModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const [menuName, setMenuName] = useState<string>("");
   const [menuPrice, setMenuPrice] = useState<string>("");
+  const [menuStatus, setMenuStatus] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [isPrice, setIsPrice] = useState<boolean>(false);
+
+  const [emojiSelect, setEmojiSelect] = useState<boolean>(false);
+  const [emojiData, setEmojiData] = useState<EmojiClickData>({
+    activeSkinTone: SkinTones.NEUTRAL,
+    unified: "",
+    unifiedWithoutSkinTone: "",
+    emoji: "🍔",
+    names: [""],
+    getImageUrl: (emojiStyle: EmojiStyle) => "",
+  });
 
   const createMenu = () => {};
 
@@ -18,6 +31,11 @@ export const MenuModal = () => {
     } else {
       setIsPrice(false);
     }
+  };
+
+  const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
+    setEmojiData(emojiData);
+    setEmojiSelect(false);
   };
 
   return (
@@ -62,9 +80,13 @@ export const MenuModal = () => {
             </div>
             <div>
               <label className="block mb-[4px] font-bold">状態</label>
-              <select className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer">
-                <option>販売中</option>
-                <option>売り切れ</option>
+              <select
+                className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer"
+                value={menuStatus}
+                onChange={(e) => setMenuStatus(e.target.value)}
+              >
+                <option value="onSale">販売中</option>
+                <option value="soldOut">売り切れ</option>
               </select>
             </div>
             <div>
@@ -85,18 +107,14 @@ export const MenuModal = () => {
           <div>
             <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
             <div className="flex mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] items-center justify-center text-[46px] font-bold bg-accent-secondary-light-regular">
-              🍔
+              {emojiData.emoji}
             </div>
-            <div className="relative rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100">
-              <p className="flex absolute items-center justify-center w-full h-full z-[1]">
-                絵文字を選択する
-              </p>
-              <select className="absolute w-full h-full z-[2] opacity-0 cursor-pointer focus:z-[-1] focus:opacity-100">
-                <option>🍔</option>
-                <option>🍟</option>
-                <option>🍿</option>
-              </select>
-            </div>
+            <button
+              className="rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100 cursor-pointer"
+              onClick={() => setEmojiSelect(true)}
+            >
+              絵文字を選択する
+            </button>
           </div>
         </div>
         <div className="absolute bottom-[17px] right-[20px] text-[10px]">
@@ -113,6 +131,13 @@ export const MenuModal = () => {
             商品を追加
           </button>
         </div>
+      </Modal>
+      <Modal
+        isOpen={emojiSelect}
+        onRequestClose={() => setEmojiSelect(false)}
+        className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+      >
+        <EmojiPicker onEmojiClick={handleEmojiClick} />
       </Modal>
     </>
   );
