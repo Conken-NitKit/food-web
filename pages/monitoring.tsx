@@ -83,14 +83,29 @@ const Monitoring: NextPage = () => {
                   ? setIsDropDownUser(false)
                   : setIsDropDownUser(true);
               }}
-              className="w-[10px] h-[10px] border-[2px] border-t-[transparent] border-r-[transparent] border-b-[#565656] border-l-[#565656] -rotate-45 ml-[10px] mt-[3px]"
-            ></div>
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.25 8.625L12 15.375L18.75 8.625"
+                  stroke="#2D0D0D"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
           </div>
           {isDropDownUser && (
-            <div className="z-10 absolute shadow-regular">
-              <div className=" mt-[5px] w-[75px] h-[10px] bg-primary-regular rounded-t-2xl "></div>
+            <div className="z-10 absolute shadow-dropDown ">
+              <div className=" mt-[5px] w-[75px] h-[10px] bg-monitoring-config  rounded-t-2xl "></div>
               <div
-                className=" w-[75px] h-[20px] bg-primary-regular "
+                className="w-[75px] h-[20px] bg-primary-regular "
                 onClick={() => {
                   setUserFilter("all");
                   isDropDownUser && setIsDropDownUser(false);
@@ -137,8 +152,23 @@ const Monitoring: NextPage = () => {
                   ? setIsDropDownType(false)
                   : setIsDropDownType(true);
               }}
-              className="w-[10px] h-[10px] border-[2px] border-t-[transparent] border-r-[transparent] border-b-[#565656] border-l-[#565656] -rotate-45 ml-[10px] mt-[3px]"
-            ></div>
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.25 8.625L12 15.375L18.75 8.625"
+                  stroke="#2D0D0D"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
           </div>
           {isDropDownType && (
             <div className="z-10 absolute">
