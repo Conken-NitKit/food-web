@@ -102,10 +102,10 @@ const Monitoring: NextPage = () => {
             </div>
           </div>
           {isDropDownUser && (
-            <div className="z-10 absolute shadow-dropDown ">
-              <div className=" mt-[5px] w-[75px] h-[10px] bg-monitoring-config  rounded-t-2xl "></div>
+            <div className="z-10 absolute mt-[5px] rounded-2xl shadow-dropDown">
+              <div className="  w-[75px] h-[10px] bg-primary-regular rounded-t-2xl "></div>
               <div
-                className="w-[75px] h-[20px] bg-primary-regular "
+                className="w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
                   setUserFilter("all");
                   isDropDownUser && setIsDropDownUser(false);
@@ -117,7 +117,7 @@ const Monitoring: NextPage = () => {
                 (item) => {
                   return (
                     <div
-                      className="w-[75px] h-[25px] bg-primary-regular"
+                      className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
                       key={item}
                       onClick={() => {
                         setUserFilter(item);
@@ -171,10 +171,10 @@ const Monitoring: NextPage = () => {
             </div>
           </div>
           {isDropDownType && (
-            <div className="z-10 absolute">
-              <div className=" mt-[5px] w-[75px] h-[10px] rounded-t-2xl"></div>
+            <div className="z-10 absolute mt-[5px] rounded-2xl shadow-dropDown">
+              <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
               <div
-                className=" w-[75px] h-[20px] bg-primary-regular "
+                className=" w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
                   setTypeFilter("all");
                   isDropDownType && setIsDropDownType(false);
@@ -186,7 +186,7 @@ const Monitoring: NextPage = () => {
                 (item) => {
                   return (
                     <div
-                      className="w-[75px] h-[25px] bg-primary-regular"
+                      className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
                       key={item}
                       onClick={() => {
                         setTypeFilter(item);
