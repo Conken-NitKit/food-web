@@ -102,8 +102,8 @@ const Monitoring: NextPage = () => {
             </div>
           </div>
           {isDropDownUser && (
-            <div className="z-10 absolute mt-[5px] rounded-2xl shadow-dropDown">
-              <div className="  w-[75px] h-[10px] bg-primary-regular rounded-t-2xl "></div>
+            <div className="absolute mt-[5px] z-10 rounded-2xl shadow-dropDown">
+              <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
               <div
                 className="w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
@@ -129,7 +129,7 @@ const Monitoring: NextPage = () => {
                   );
                 }
               )}
-              <div className=" w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
+              <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl"></div>
             </div>
           )}
         </div>
@@ -171,7 +171,7 @@ const Monitoring: NextPage = () => {
             </div>
           </div>
           {isDropDownType && (
-            <div className="z-10 absolute mt-[5px] rounded-2xl shadow-dropDown">
+            <div className="absolute mt-[5px] z-10 rounded-2xl shadow-dropDown">
               <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
               <div
                 className=" w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
@@ -198,7 +198,7 @@ const Monitoring: NextPage = () => {
                   );
                 }
               )}
-              <div className=" w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
+              <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
             </div>
           )}
         </div>
