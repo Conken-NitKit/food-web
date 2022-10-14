@@ -178,11 +178,13 @@ module.exports = {
         "monitoring-product": theme("colors.goldenyellow.a100"),
         "monitoring-member": theme("colors.pink.a100"),
         "monitoring-config": theme("colors.green.a100"),
+        "complete-regular": theme("colors.green.a100"),
       }),
       textColor: (theme) => ({
+        "primary-regular": theme("colors.brown.a100"),
         "primary-inverted": theme("colors.white.a100"),
         "secondary-regular": theme("colors.gray.a100"),
-        "primary-regular": theme("colors.brown.a100"),
+        "accent-primary-regular": theme("colors.orange.a100"),
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
         "tertiary-regular": theme("colors.coral.a100"),
@@ -194,13 +196,18 @@ module.exports = {
       }),
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
+        "secondary-regular": theme("colors.lightgray.a100"),
       }),
       fontFamily: {
         "menu-card": "lato",
       },
       boxShadow: {
-        regular: "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
         dropDown: "0px 0px 8px 0px rgba(0, 0, 0, 0.30)",
+        small: "0px 1px 3px 0px rgba(0, 0, 0, 0.25)",
+        middium: "0px 1px 4px 0px rgba(0, 0, 0, 0.25)",
+        large: "0px 1px 5px 0px rgba(0, 0, 0, 0.25)",
+        xl: "0px 2px 6px 0px rgba(0, 0, 0, 0.25)",
+        "2xl": "0px 2px 8px 0px rgba(0, 0, 0, 0.25)",
       },
       lineHeight: {
         basic: "1.17",
