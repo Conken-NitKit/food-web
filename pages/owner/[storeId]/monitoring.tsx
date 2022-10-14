@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
-import ActionHistory from "../../../components/ActionHistory";
+import { ActionHistory } from "../../../components";
 
 type actionList = {
   user: {
@@ -113,22 +113,22 @@ const Monitoring: NextPage = () => {
               >
                 <div className="ml-[10px]">all</div>
               </div>
-              {removeDuplicationValues(actionHistory.map((item) => item.user.name)).map(
-                (item) => {
-                  return (
-                    <div
-                      className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
-                      key={item}
-                      onClick={() => {
-                        setUserFilter(item);
-                        isDropDownUser && setIsDropDownUser(false);
-                      }}
-                    >
-                      <div className="mx-[10px]">{item}</div>
-                    </div>
-                  );
-                }
-              )}
+              {removeDuplicationValues(
+                actionHistory.map((item) => item.user.name)
+              ).map((item) => {
+                return (
+                  <div
+                    className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
+                    key={item}
+                    onClick={() => {
+                      setUserFilter(item);
+                      isDropDownUser && setIsDropDownUser(false);
+                    }}
+                  >
+                    <div className="mx-[10px]">{item}</div>
+                  </div>
+                );
+              })}
               <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl"></div>
             </div>
           )}
@@ -182,22 +182,22 @@ const Monitoring: NextPage = () => {
               >
                 <div className="ml-[10px]">all</div>
               </div>
-              {removeDuplicationValues(actionHistory.map((item) => item.type)).map(
-                (item) => {
-                  return (
-                    <div
-                      className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
-                      key={item}
-                      onClick={() => {
-                        setTypeFilter(item);
-                        isDropDownType && setIsDropDownType(false);
-                      }}
-                    >
-                      <div className="mx-[10px]">{item}</div>
-                    </div>
-                  );
-                }
-              )}
+              {removeDuplicationValues(
+                actionHistory.map((item) => item.type)
+              ).map((item) => {
+                return (
+                  <div
+                    className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
+                    key={item}
+                    onClick={() => {
+                      setTypeFilter(item);
+                      isDropDownType && setIsDropDownType(false);
+                    }}
+                  >
+                    <div className="mx-[10px]">{item}</div>
+                  </div>
+                );
+              })}
               <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
             </div>
           )}
@@ -227,5 +227,3 @@ const Monitoring: NextPage = () => {
     </FeatureLayout>
   );
 };
-
-export default Monitoring;

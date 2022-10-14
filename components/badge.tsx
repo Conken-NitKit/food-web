@@ -5,7 +5,7 @@ interface Props {
   label: string;
 }
 
-const Badge = ({ bgcolor, label }: Props): JSX.Element => {
+export const Badge = ({ bgcolor, label }: Props): JSX.Element => {
   return (
     <div>
       <div className={classNames("rounded w-[58px] h-[18px]", bgcolor)}>
@@ -16,5 +16,3 @@ const Badge = ({ bgcolor, label }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default Badge;

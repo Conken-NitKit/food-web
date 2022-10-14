@@ -1,4 +1,4 @@
-import Badge from "./badge";
+import { Badge } from "./badge";
 
 interface Props {
   badgeColor: string;
@@ -7,7 +7,7 @@ interface Props {
   date: number;
 }
 
-const ActionHistory = ({
+export const ActionHistory = ({
   badgeColor,
   badgeLabel,
   actionText,
@@ -30,5 +30,3 @@ const ActionHistory = ({
     </div>
   );
 };
-
-export default ActionHistory;
