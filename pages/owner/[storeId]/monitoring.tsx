@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { FeatureLayout } from "../components/layouts";
+import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
-import ActionHistory from "../components/ActionHistory";
+import ActionHistory from "../../../components/ActionHistory";
 
 type actionList = {
   user: {
