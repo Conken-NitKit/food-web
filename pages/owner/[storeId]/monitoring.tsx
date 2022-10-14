@@ -227,3 +227,5 @@ const Monitoring: NextPage = () => {
     </FeatureLayout>
   );
 };
+
+export default Monitoring;
