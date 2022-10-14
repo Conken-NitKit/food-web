@@ -13,7 +13,7 @@ type actionList = {
 };
 
 const Monitoring: NextPage = () => {
-  const dataJson = [
+  const actionHistoryJson = [
     {
       user: {
         name: "hirata",
@@ -48,7 +48,7 @@ const Monitoring: NextPage = () => {
     },
   ];
 
-  const data = dataJson as actionList[];
+  const actionHistory = actionHistoryJson as actionList[];
   const [isDropDownUser, setIsDropDownUser] = useState<boolean>(false);
   const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("all");
@@ -113,7 +113,7 @@ const Monitoring: NextPage = () => {
               >
                 <div className="ml-[10px]">all</div>
               </div>
-              {removeDuplicationValues(data.map((item) => item.user.name)).map(
+              {removeDuplicationValues(actionHistory.map((item) => item.user.name)).map(
                 (item) => {
                   return (
                     <div
@@ -182,7 +182,7 @@ const Monitoring: NextPage = () => {
               >
                 <div className="ml-[10px]">all</div>
               </div>
-              {removeDuplicationValues(data.map((item) => item.type)).map(
+              {removeDuplicationValues(actionHistory.map((item) => item.type)).map(
                 (item) => {
                   return (
                     <div
@@ -204,7 +204,7 @@ const Monitoring: NextPage = () => {
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
-        {data
+        {actionHistory
           .filter((item) =>
             userFilter === "all" ? true : item.user.name === userFilter
           )
