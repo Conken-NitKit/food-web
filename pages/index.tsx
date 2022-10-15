@@ -76,7 +76,7 @@ const Home: NextPage = () => {
             <div className="flex mt-[3.5%] h-[21.7%]">
               <a
                 href="https://food-web-alpha.vercel.app/menu"
-                className="flex items-center justify-center border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[80.4%] h-full text-[11px] 2xl:text-[13px] text-primary-regular"
+                className="flex items-center justify-center border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[80.4%] h-full text-[11px] 2xl:text-[13px] text-primary-regular"
               >
                 <p className="font-menu-card">
                   モバイルオーダー用のページを確認する
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
               </a>
               <button
                 onClick={urlCopy}
-                className="ml-auto border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-full text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
+                className="ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-full text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
               >
                 <p className="font-menu-card">コピー</p>
               </button>
@@ -101,7 +101,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="flex items-center mt-[5.3%] w-full h-[41%]">
-            <div className="pr-[12.6%] border-r border-secondary-regular text-center">
+            <div className="pr-[12.6%] border-r border-thirdry-regular text-center">
               <p className="mb-[13.5%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
                 売上合計
               </p>
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
           </div>
           <a
             href="https://food-web-alpha.vercel.app/sales"
-            className="flex items-center justify-center ml-auto mt-[8.3%] border border-secondary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[73.7%] h-[12.1%] text-[11px] 2xl:text-[13px] text-primary-regular"
+            className="flex items-center justify-center ml-auto mt-[8.3%] border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[73.7%] h-[12.1%] text-[11px] 2xl:text-[13px] text-primary-regular"
           >
             <p className="font-menu-card">売上解析ページを確認する</p>
           </a>
