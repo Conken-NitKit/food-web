@@ -1,3 +1,4 @@
+export { ChevronForwardIcon } from "./ChevronForwardIcon";
 export { HomeIcon } from "./HomeIcon";
 export { MenuIcon } from "./MenuIcon";
 export { OrderIcon } from "./OrderIcon";
