@@ -174,8 +174,46 @@ const カテゴリメニューがあるページコンポーネント: NextPage 
 };
 ```
 
+## ローカルで認証機能を ON にする。
+
+> 認証機能を常時有効にすると大変なので、原則 OFF にしてください。
+
+STEP1:
+`yarn expose` コマンドを実行し、 PC のローカルホストに Auth0 側からアクセス可能にする。
+(この際に発行される URL はサーバーの状況によりランダムに決定します)
+
+```
+$ yarn expose
+yarn run v1.22.19
+$ lt --port 3000 --subdomain food-web
+your url is: https://food-web.loca.lt
+```
+
+STEP2:
+環境変数を書き換えて、以下のように書き換える。
+
+- Auth0 に送信する Callback URL が STEP1 で発行したものと同じになるようにする。
+- 認証機能を有効にする。
+
+```diff
+ AUTH0_CLIENT_ID=YOUR_CLIENT_ID
+ AUTH0_CLIENT_SECRET=YOUR_CLIENT_SECRET
+ AUTH0_ISSUER=YOUR_CLIENT_ISSUER
+ NEXTAUTH_SECRET=YOUR_NEXTAUTH_SECRET
++NEXTAUTH_URL=https://food-web.loca.lt
+-NEXT_PUBLIC_NO_AUTH=false
++NEXT_PUBLIC_NO_AUTH=false
+ NEXT_PUBLIC_IS_DEBUG=true
+```
+
+STEP3:
+auth0 の管理画面にいき、 STEP1 で発行された URL を `Application URIs` の項目に記載する。
+(権限が必要なので、変更を行いたい場合は [窪田さん](https://github.com/kubo-hide-kun) に連絡ください)
+
+[auth0 の設定](https://user-images.githubusercontent.com/41711771/192577425-de54beb5-3545-4da6-b465-4ee65ca70551.png)
+
 ## その他
 
-- 全ての Pull Request の Reviewers には必ず[窪田さん](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
+- 全ての Pull Request の Reviewers には必ず[窪田](https://github.com/kubo-hide-kun)と[平田](https://github.com/Umiteru2004)を含めること。
 
 - push の前には必ず`git pull origin develop`すること。
