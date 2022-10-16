@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
-import useEvent from "react-use-event-hook";
+import useEvent from "@react-hook/event";
 import { ActionHistory } from "../../../components";
 
 type actionList = {
@@ -59,9 +59,14 @@ const Monitoring: NextPage = () => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
   const dropDownClose = () => {
-    setIsDropDownUser(false);
-    setIsDropDownType(false);
+    if (isDropDownUser) {
+      setIsDropDownUser(false);
+    }
+    if (isDropDownType) {
+      setIsDropDownType(false);
+    }
   };
+  useEvent(window, "click", dropDownClose);
 
   return (
     <FeatureLayout type="monitoring">
