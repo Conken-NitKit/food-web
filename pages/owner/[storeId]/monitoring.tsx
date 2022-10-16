@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
+import useEvent from "react-use-event-hook";
 import { ActionHistory } from "../../../components";
 
 type actionList = {
@@ -57,6 +58,10 @@ const Monitoring: NextPage = () => {
   const removeDuplicationValues = ([...array]) => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
+  const dropDownClose = () => {
+    setIsDropDownUser(false);
+    setIsDropDownType(false);
+  };
 
   return (
     <FeatureLayout type="monitoring">
@@ -70,18 +75,14 @@ const Monitoring: NextPage = () => {
             <div
               className="ml-[10px]"
               onClick={() => {
-                isDropDownUser
-                  ? setIsDropDownUser(false)
-                  : setIsDropDownUser(true);
+                setIsDropDownUser(true);
               }}
             >
               {userFilter}
             </div>
             <div
               onClick={() => {
-                isDropDownUser
-                  ? setIsDropDownUser(false)
-                  : setIsDropDownUser(true);
+                setIsDropDownUser(true);
               }}
             >
               <svg
@@ -108,7 +109,6 @@ const Monitoring: NextPage = () => {
                 className="w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
                   setUserFilter("all");
-                  isDropDownUser && setIsDropDownUser(false);
                 }}
               >
                 <div className="ml-[10px]">all</div>
@@ -122,7 +122,6 @@ const Monitoring: NextPage = () => {
                     key={item}
                     onClick={() => {
                       setUserFilter(item);
-                      isDropDownUser && setIsDropDownUser(false);
                     }}
                   >
                     <div className="mx-[10px]">{item}</div>
@@ -139,18 +138,14 @@ const Monitoring: NextPage = () => {
             <div
               className="ml-[10px]"
               onClick={() => {
-                isDropDownType
-                  ? setIsDropDownType(false)
-                  : setIsDropDownType(true);
+                setIsDropDownType(true);
               }}
             >
               {typeFilter}
             </div>
             <div
               onClick={() => {
-                isDropDownType
-                  ? setIsDropDownType(false)
-                  : setIsDropDownType(true);
+                setIsDropDownType(true);
               }}
             >
               <svg
@@ -177,7 +172,6 @@ const Monitoring: NextPage = () => {
                 className=" w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
                   setTypeFilter("all");
-                  isDropDownType && setIsDropDownType(false);
                 }}
               >
                 <div className="ml-[10px]">all</div>
@@ -191,7 +185,6 @@ const Monitoring: NextPage = () => {
                     key={item}
                     onClick={() => {
                       setTypeFilter(item);
-                      isDropDownType && setIsDropDownType(false);
                     }}
                   >
                     <div className="mx-[10px]">{item}</div>
