@@ -1,15 +1,20 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
+import { menuContent } from "../pages/menu";
 
-export const MenuModal = () => {
+interface Props {
+  addMenu: (newMenu: menuContent) => void;
+}
+
+export const MenuModal = ({ addMenu }: Props): JSX.Element => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const [menuName, setMenuName] = useState<string>("");
   const [menuPrice, setMenuPrice] = useState<string>("");
   const [menuIsSold, setMenuIsSold] = useState<string>("");
-  const [promotion, setPromotion] = useState<string>("");
+  const [menuPromotion, setMenuPromotion] = useState<string>("");
   const [isPrice, setIsPrice] = useState<boolean>(false);
 
   const [ideogramSelect, setIdeogramSelect] = useState<boolean>(false);
@@ -22,7 +27,32 @@ export const MenuModal = () => {
     getImageUrl: (emojiStyle: EmojiStyle) => "",
   });
 
-  const createMenu = () => {};
+  const [newMenu, setNewMenu] = useState<menuContent>({
+    a: {
+      product: {
+        ideogram: ideogramData.emoji,
+        name: menuName,
+        promotion: menuPromotion,
+        price: Number(menuPrice),
+      },
+      isSold: menuIsSold === "soldOut" ? true : false,
+    },
+  });
+
+  const createMenu = () => {
+    setNewMenu({
+      a: {
+        product: {
+          ideogram: ideogramData.emoji,
+          name: menuName,
+          promotion: menuPromotion,
+          price: Number(menuPrice),
+        },
+        isSold: menuIsSold === "soldOut" ? true : false,
+      },
+    });
+    addMenu(newMenu);
+  };
 
   const checkPrice = (value: string) => {
     setMenuPrice(value);
@@ -97,8 +127,8 @@ export const MenuModal = () => {
                 説明文
               </label>
               <textarea
-                value={promotion}
-                onChange={(e) => setPromotion(e.target.value)}
+                value={menuPromotion}
+                onChange={(e) => setMenuPromotion(e.target.value)}
                 id="menu_description"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
               />

@@ -6,7 +6,7 @@ import { FeatureLayout } from "../components/layouts";
 import { MenuModal } from "../components/MenuModal";
 import { MenuContent } from "../types/MenuContent";
 
-interface menuContent {
+export interface menuContent {
   [key: string]: {
     product: MenuContent;
     isSold: boolean;
@@ -58,6 +58,13 @@ const Menu: NextPage = () => {
     },
   });
 
+  const addMenu = (newMenu: menuContent) => {
+    setMenuContents({
+      ...menuContents,
+      ...newMenu,
+    });
+  };
+
   return (
     <FeatureLayout type="menu">
       <ul className="flex flex-wrap pt-[48px] 2xl:pt-[58px] gap-y-[48px] 2xl:gap-y-[58px] gap-x-[38px] 2xl:gap-x-[46px]">
@@ -70,7 +77,7 @@ const Menu: NextPage = () => {
           <AddMenuCard />
         </li>
       </ul>
-      <MenuModal />
+      <MenuModal addMenu={addMenu} />
     </FeatureLayout>
   );
 };
