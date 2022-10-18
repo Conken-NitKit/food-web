@@ -3,14 +3,7 @@ import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
 import useEvent from "@react-hook/event";
 import OperationCard from "../../../components/OperationCard";
-type actionList = {
-  user: {
-    name: string;
-  };
-  type: string;
-  message: string;
-  date: number;
-};
+import { operationCard } from "../../../types/operationCard";
 
 const Monitoring: NextPage = () => {
   const operationCardJson = [
@@ -48,7 +41,7 @@ const Monitoring: NextPage = () => {
     },
   ];
 
-  const operationCard = operationCardJson as actionList[];
+  const operationCard = operationCardJson as operationCard[];
   const [userDropDown, setUserDropDown] = useState<boolean>(false);
   const [typeDropDown, setTypeDropDown] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("全て表示");
