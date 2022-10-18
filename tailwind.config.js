@@ -176,8 +176,8 @@ module.exports = {
         "accent-secondary-regular": theme("colors.goldenyellow.a100"),
         "accent-secondary-light-regular": theme("colors.navajowhite.a100"),
         "monitoring-product": theme("colors.goldenyellow.a100"),
-        "monitoring-member": theme("colors.pink.a100"),
-        "monitoring-config": theme("colors.green.a100"),
+        "monitoring-member": theme("colors.green.a100"),
+        "monitoring-config": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
       }),
       textColor: (theme) => ({
