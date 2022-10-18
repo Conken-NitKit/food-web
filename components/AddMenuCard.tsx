@@ -14,7 +14,7 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
 
   const [menuPrice, setMenuPrice] = useState<string>("");
   const [menuIsSold, setMenuIsSold] = useState<string>("");
-  const [isPrice, setIsPrice] = useState<boolean>(false);
+  const [isPrice, setIsPrice] = useState<boolean>(true);
 
   const [ideogramSelect, setIdeogramSelect] = useState<boolean>(false);
   const [ideogramData, setIdeogramData] = useState<EmojiClickData>({
@@ -90,7 +90,9 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
   }, [menuPrice]);
 
   const createMenu = () => {
-    addMenu(newMenu);
+    if (isPrice === false) {
+      addMenu(newMenu);
+    }
   };
 
   const checkPrice = (value: string) => {
