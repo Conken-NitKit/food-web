@@ -4,6 +4,7 @@ import { useState } from "react";
 import useEvent from "@react-hook/event";
 import OperationCard from "../../../components/OperationCard";
 import { operationCard } from "../../../types/operationCard";
+import DropDown from "../../../components/DropDown";
 
 const Monitoring: NextPage = () => {
   const operationCardJson = [
@@ -64,73 +65,17 @@ const Monitoring: NextPage = () => {
   return (
     <FeatureLayout type="monitoring">
       <div>
-        システム運用者がシステムに対して実行した操作の履歴を見ることが出来ます。
-      </div>
-      <div className="flex mt-[57px]">
-        <div className="opacity-[0.4] ">ユーザーでフィルタ</div>
-        <div className="ml-[10px]">
-          <div className="flex w-[100px]">
-            <div
-              className="ml-[10px]"
-              onClick={() => {
-                setUserDropDown(true);
-              }}
-            >
-              {userFilter}
-            </div>
-            <div
-              onClick={() => {
-                setUserDropDown(true);
-              }}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.25 8.625L12 15.375L18.75 8.625"
-                  stroke="#2D0D0D"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-          </div>
-          {userDropDown && (
-            <div className="absolute mt-[5px] z-10 rounded-2xl shadow-dropDown">
-              <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
-              <div
-                className="w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
-                onClick={() => {
-                  setUserFilter("全て表示");
-                }}
-              >
-                <div className="ml-[8px]">全て表示</div>
-              </div>
-              {removeDuplicationValues(
-                operationCard.map((item) => item.user.name)
-              ).map((item) => {
-                return (
-                  <div
-                    className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
-                    key={item}
-                    onClick={() => {
-                      setUserFilter(item);
-                    }}
-                  >
-                    <div className="mx-[8px]">{item}</div>
-                  </div>
-                );
-              })}
-              <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl"></div>
-            </div>
-          )}
+        <div>
+          システム運用者がシステムに対して実行した操作の履歴を見ることが出来ます。
         </div>
-        <div className="ml-[70px] opacity-[0.4]">操作内容でフィルタ</div>
+        <div className="flex mt-[57px]">
+          <DropDown
+            text="ユーザーでフィルタ"
+            items={removeDuplicationValues(operationCard)}
+            setState={setUserFilter}
+          />
+        </div>
+        {/* <div className="ml-[70px] opacity-[0.4]">操作内容でフィルタ</div>
         <div className="ml-[10px]">
           <div className="flex">
             <div
@@ -192,7 +137,7 @@ const Monitoring: NextPage = () => {
               <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl "></div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
       <div className="mt-[28px] space-y-3">
         {operationCard
@@ -205,9 +150,7 @@ const Monitoring: NextPage = () => {
           .map((item) => {
             return (
               <div key={item.date}>
-                <OperationCard
-                  operationCard={item}
-                />
+                <OperationCard operationCard={item} />
               </div>
             );
           })}
