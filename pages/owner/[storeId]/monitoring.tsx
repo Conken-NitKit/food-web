@@ -206,10 +206,7 @@ const Monitoring: NextPage = () => {
             return (
               <div key={item.date}>
                 <OperationCard
-                  badgeColor="bg-monitoring-config"
-                  badgeLabel={item.type}
-                  actionText={item.message}
-                  date={item.date}
+                  operationCard={item}
                 />
               </div>
             );

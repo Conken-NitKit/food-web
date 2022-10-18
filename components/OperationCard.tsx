@@ -1,18 +1,22 @@
 import { Badge } from "./badge";
-
+import { operationCard } from "../types/operationCard";
 interface Props {
-  badgeColor: string;
-  badgeLabel: string;
-  actionText: string;
-  date: number;
+  operationCard: operationCard;
 }
 
-const OperationCard = ({
-  badgeColor,
-  badgeLabel,
-  actionText,
-  date,
-}: Props): JSX.Element => {
+const OperationCard = ({ operationCard }: Props): JSX.Element => {
+  const badgeColor = (type: string) => {
+    switch (type) {
+      case "member":
+        return "bg-monitoring-member";
+      case "product":
+        return "bg-monitoring-product";
+      case "config":
+        return "bg-monitoring-config";
+      default:
+        return "error";
+    }
+  };
   return (
     <div>
       <div className="flex border  border-primary-regular rounded-[14px]  py-[10px] w-[1000px] h-[64px]">
@@ -20,11 +24,18 @@ const OperationCard = ({
         <div className="ml-[10px]">
           <div className=" flex">
             <div className="mt-2px">
-              <Badge bgcolor={badgeColor} label={badgeLabel} />
+              <Badge
+                bgcolor={badgeColor(operationCard.type)}
+                label={operationCard.type}
+              />
             </div>
-            <div className="ml-[10px] text-xs font-bold">{actionText}</div>
+            <div className="ml-[10px] text-xs font-bold">
+              {operationCard.message}
+            </div>
           </div>
-          <div className="text-xs text-secondary-regular mt-[3px]">{date}</div>
+          <div className="text-xs text-secondary-regular mt-[3px]">
+            {operationCard.date}
+          </div>
         </div>
       </div>
     </div>
