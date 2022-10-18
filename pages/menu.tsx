@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AddMenuCard, MenuCard } from "../components";
 import { FeatureLayout } from "../components/layouts";
 import { MenuContent } from "../types/MenuContent";
+import UUID from "uuidjs";
 
 export interface menu {
   [key: string]: {
@@ -13,6 +14,8 @@ export interface menu {
 }
 
 const Menu: NextPage = () => {
+  const ID = UUID.generate();
+
   //仮置きのデータ（実際はデータベースから取得する）
   const [menuContents, setMenuContents] = useState<menu>({
     hamburger1: {
@@ -60,7 +63,9 @@ const Menu: NextPage = () => {
   const addMenu = (newMenu: menu) => {
     setMenuContents({
       ...menuContents,
-      ...newMenu,
+      [ID]: {
+        ...newMenu.a,
+      },
     });
   };
 
