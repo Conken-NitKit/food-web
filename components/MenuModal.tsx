@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
@@ -11,10 +11,8 @@ interface Props {
 export const MenuModal = ({ addMenu }: Props): JSX.Element => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
-  const [menuName, setMenuName] = useState<string>("");
   const [menuPrice, setMenuPrice] = useState<string>("");
   const [menuIsSold, setMenuIsSold] = useState<string>("");
-  const [menuPromotion, setMenuPromotion] = useState<string>("");
   const [isPrice, setIsPrice] = useState<boolean>(false);
 
   const [ideogramSelect, setIdeogramSelect] = useState<boolean>(false);
@@ -31,26 +29,66 @@ export const MenuModal = ({ addMenu }: Props): JSX.Element => {
     a: {
       product: {
         ideogram: ideogramData.emoji,
-        name: menuName,
-        promotion: menuPromotion,
+        name: "",
+        promotion: "",
         price: Number(menuPrice),
       },
       isSold: menuIsSold === "soldOut" ? true : false,
     },
   });
 
-  const createMenu = () => {
+  const onChangeNewMenu = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setNewMenu({
       a: {
         product: {
+          ...newMenu.a.product,
+          [e.target.name]: e.target.value,
+        },
+        isSold: newMenu.a.isSold,
+      },
+    });
+  };
+
+  useEffect(() => {
+    setNewMenu({
+      a: {
+        product: {
+          ...newMenu.a.product,
           ideogram: ideogramData.emoji,
-          name: menuName,
-          promotion: menuPromotion,
-          price: Number(menuPrice),
+        },
+        isSold: newMenu.a.isSold,
+      },
+    });
+  }, [ideogramData.emoji]);
+
+  useEffect(() => {
+    setNewMenu({
+      a: {
+        product: {
+          ...newMenu.a.product,
         },
         isSold: menuIsSold === "soldOut" ? true : false,
       },
     });
+  }, [menuIsSold]);
+
+  useEffect(() => {
+    if (isPrice === false) {
+      setNewMenu({
+        a: {
+          product: {
+            ...newMenu.a.product,
+            price: Number(menuPrice),
+          },
+          isSold: newMenu.a.isSold,
+        },
+      });
+    }
+  }, [menuPrice]);
+
+  const createMenu = () => {
     addMenu(newMenu);
   };
 
@@ -89,10 +127,11 @@ export const MenuModal = ({ addMenu }: Props): JSX.Element => {
               </label>
               <input
                 type="text"
-                value={menuName}
-                onChange={(e) => setMenuName(e.target.value)}
+                value={newMenu.a.product.name}
+                onChange={onChangeNewMenu}
                 id="menu_name"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
+                name="name"
               />
             </div>
             <div>
@@ -127,10 +166,11 @@ export const MenuModal = ({ addMenu }: Props): JSX.Element => {
                 説明文
               </label>
               <textarea
-                value={menuPromotion}
-                onChange={(e) => setMenuPromotion(e.target.value)}
+                value={newMenu.a.product.promotion}
+                onChange={onChangeNewMenu}
                 id="menu_description"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
+                name="promotion"
               />
             </div>
           </div>
