@@ -50,8 +50,8 @@ const Monitoring: NextPage = () => {
   ];
 
   const actionHistory = actionHistoryJson as actionList[];
-  const [isDropDownUser, setIsDropDownUser] = useState<boolean>(false);
-  const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
+  const [userDropDown, setUserDropDown] = useState<boolean>(false);
+  const [typeDropDown, setTypeDropDown] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("全て表示");
   const [typeFilter, setTypeFilter] = useState<string>("全て表示");
 
@@ -59,13 +59,14 @@ const Monitoring: NextPage = () => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
   const dropDownClose = () => {
-    if (isDropDownUser) {
-      setIsDropDownUser(false);
+    if (userDropDown) {
+      setUserDropDown(false);
     }
-    if (isDropDownType) {
-      setIsDropDownType(false);
+    if (typeDropDown) {
+      setTypeDropDown(false);
     }
   };
+  const badgeColor = (type: string) => {};
   // useEvent(window, "click", dropDownClose);
 
   return (
@@ -80,14 +81,14 @@ const Monitoring: NextPage = () => {
             <div
               className="ml-[10px]"
               onClick={() => {
-                setIsDropDownUser(true);
+                setUserDropDown(true);
               }}
             >
               {userFilter}
             </div>
             <div
               onClick={() => {
-                setIsDropDownUser(true);
+                setUserDropDown(true);
               }}
             >
               <svg
@@ -107,7 +108,7 @@ const Monitoring: NextPage = () => {
               </svg>
             </div>
           </div>
-          {isDropDownUser && (
+          {userDropDown && (
             <div className="absolute mt-[5px] z-10 rounded-2xl shadow-dropDown">
               <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
               <div
@@ -143,14 +144,14 @@ const Monitoring: NextPage = () => {
             <div
               className="ml-[10px]"
               onClick={() => {
-                setIsDropDownType(true);
+                setTypeDropDown(true);
               }}
             >
               {typeFilter}
             </div>
             <div
               onClick={() => {
-                setIsDropDownType(true);
+                setTypeDropDown(true);
               }}
             >
               <svg
@@ -170,7 +171,7 @@ const Monitoring: NextPage = () => {
               </svg>
             </div>
           </div>
-          {isDropDownType && (
+          {typeDropDown && (
             <div className="absolute mt-[5px] z-10 rounded-2xl shadow-dropDown">
               <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
               <div
