@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { AddMenuCard, MenuCard } from "../components";
 import { FeatureLayout } from "../components/layouts";
-import { MenuModal } from "../components/MenuModal";
 import { MenuContent } from "../types/MenuContent";
 
 export interface menu {
@@ -74,10 +73,9 @@ const Menu: NextPage = () => {
           </li>
         ))}
         <li key="add-menu-card">
-          <AddMenuCard />
+          <AddMenuCard addMenu={addMenu} />
         </li>
       </ul>
-      <MenuModal addMenu={addMenu} />
     </FeatureLayout>
   );
 };
