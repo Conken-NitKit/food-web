@@ -27,12 +27,9 @@ export const OrderCard = ({ content }: Props): JSX.Element => {
         注文番号 #{content.orderNumber}
       </h3>
       <div className="mx-auto mt-[3.5%] border-b border-primary-regular border-dashed w-[95%] h-[44.2%]">
-        <ul className="overflow-scroll mx-auto pb-[1.7%] w-[97%] h-[calc(100%+1px)]">
+        <ul className="grid overflow-y-scroll gap-y-[12.9%] mx-auto pb-[1.7%] w-[97%] h-[calc(100%+1px)]">
           {Object.values(content.products).map((product) => (
-            <li
-              className="flex items-center mb-[1.7%] last:mb-0"
-              key={product.name}
-            >
+            <li className="flex items-center" key={product.name}>
               <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square w-[5.8%] text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px] bg-accent-secondary-light-regular">
                 {product.ideogram}
               </div>
