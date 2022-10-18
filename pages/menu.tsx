@@ -6,7 +6,7 @@ import { FeatureLayout } from "../components/layouts";
 import { MenuModal } from "../components/MenuModal";
 import { MenuContent } from "../types/MenuContent";
 
-export interface menuContent {
+export interface menu {
   [key: string]: {
     product: MenuContent;
     isSold: boolean;
@@ -15,7 +15,7 @@ export interface menuContent {
 
 const Menu: NextPage = () => {
   //仮置きのデータ（実際はデータベースから取得する）
-  const [menuContents, setMenuContents] = useState<menuContent>({
+  const [menuContents, setMenuContents] = useState<menu>({
     hamburger1: {
       product: {
         ideogram: "🍔",
@@ -58,7 +58,7 @@ const Menu: NextPage = () => {
     },
   });
 
-  const addMenu = (newMenu: menuContent) => {
+  const addMenu = (newMenu: menu) => {
     setMenuContents({
       ...menuContents,
       ...newMenu,

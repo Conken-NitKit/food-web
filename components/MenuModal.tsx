@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
-import { menuContent } from "../pages/menu";
+import { menu } from "../pages/menu";
 
 interface Props {
-  addMenu: (newMenu: menuContent) => void;
+  addMenu: (newMenu: menu) => void;
 }
 
 export const MenuModal = ({ addMenu }: Props): JSX.Element => {
@@ -25,7 +25,7 @@ export const MenuModal = ({ addMenu }: Props): JSX.Element => {
     getImageUrl: (emojiStyle: EmojiStyle) => "",
   });
 
-  const [newMenu, setNewMenu] = useState<menuContent>({
+  const [newMenu, setNewMenu] = useState<menu>({
     a: {
       product: {
         ideogram: ideogramData.emoji,
