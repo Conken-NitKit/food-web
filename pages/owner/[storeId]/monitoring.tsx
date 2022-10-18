@@ -52,8 +52,8 @@ const Monitoring: NextPage = () => {
   const actionHistory = actionHistoryJson as actionList[];
   const [isDropDownUser, setIsDropDownUser] = useState<boolean>(false);
   const [isDropDownType, setIsDropDownType] = useState<boolean>(false);
-  const [userFilter, setUserFilter] = useState<string>("all");
-  const [typeFilter, setTypeFilter] = useState<string>("all");
+  const [userFilter, setUserFilter] = useState<string>("全て表示");
+  const [typeFilter, setTypeFilter] = useState<string>("全て表示");
 
   const removeDuplicationValues = ([...array]) => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
@@ -66,7 +66,7 @@ const Monitoring: NextPage = () => {
       setIsDropDownType(false);
     }
   };
-  useEvent(window, "click", dropDownClose);
+  // useEvent(window, "click", dropDownClose);
 
   return (
     <FeatureLayout type="monitoring">
@@ -76,7 +76,7 @@ const Monitoring: NextPage = () => {
       <div className="flex mt-[57px]">
         <div className="opacity-[0.4] ">ユーザーでフィルタ</div>
         <div className="ml-[10px]">
-          <div className="flex w-[68px]">
+          <div className="flex w-[100px]">
             <div
               className="ml-[10px]"
               onClick={() => {
@@ -113,10 +113,10 @@ const Monitoring: NextPage = () => {
               <div
                 className="w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
-                  setUserFilter("all");
+                  setUserFilter("全て表示");
                 }}
               >
-                <div className="ml-[10px]">all</div>
+                <div className="ml-[8px]">全て表示</div>
               </div>
               {removeDuplicationValues(
                 actionHistory.map((item) => item.user.name)
@@ -129,7 +129,7 @@ const Monitoring: NextPage = () => {
                       setUserFilter(item);
                     }}
                   >
-                    <div className="mx-[10px]">{item}</div>
+                    <div className="mx-[8px]">{item}</div>
                   </div>
                 );
               })}
@@ -137,7 +137,7 @@ const Monitoring: NextPage = () => {
             </div>
           )}
         </div>
-        <div className="ml-[58px] opacity-[0.4]">操作内容でフィルタ</div>
+        <div className="ml-[70px] opacity-[0.4]">操作内容でフィルタ</div>
         <div className="ml-[10px]">
           <div className="flex">
             <div
@@ -176,10 +176,10 @@ const Monitoring: NextPage = () => {
               <div
                 className=" w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
                 onClick={() => {
-                  setTypeFilter("all");
+                  setTypeFilter("全て表示");
                 }}
               >
-                <div className="ml-[10px]">all</div>
+                <div className="ml-[10px]">全て表示</div>
               </div>
               {removeDuplicationValues(
                 actionHistory.map((item) => item.type)
@@ -204,10 +204,10 @@ const Monitoring: NextPage = () => {
       <div className="mt-[28px] space-y-3">
         {actionHistory
           .filter((item) =>
-            userFilter === "all" ? true : item.user.name === userFilter
+            userFilter === "全て表示" ? true : item.user.name === userFilter
           )
           .filter((item) =>
-            typeFilter === "all" ? true : item.type === typeFilter
+            typeFilter === "全て表示" ? true : item.type === typeFilter
           )
           .map((item) => {
             return (
