@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
 import useEvent from "@react-hook/event";
-import { ActionHistory } from "../../../components";
-
+import OperationCard from "../../../components/OperationCard";
 type actionList = {
   user: {
     name: string;
@@ -14,7 +13,7 @@ type actionList = {
 };
 
 const Monitoring: NextPage = () => {
-  const actionHistoryJson = [
+  const operationCardJson = [
     {
       user: {
         name: "hirata",
@@ -49,7 +48,7 @@ const Monitoring: NextPage = () => {
     },
   ];
 
-  const actionHistory = actionHistoryJson as actionList[];
+  const operationCard = operationCardJson as actionList[];
   const [userDropDown, setUserDropDown] = useState<boolean>(false);
   const [typeDropDown, setTypeDropDown] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("全て表示");
@@ -120,7 +119,7 @@ const Monitoring: NextPage = () => {
                 <div className="ml-[8px]">全て表示</div>
               </div>
               {removeDuplicationValues(
-                actionHistory.map((item) => item.user.name)
+                operationCard.map((item) => item.user.name)
               ).map((item) => {
                 return (
                   <div
@@ -183,7 +182,7 @@ const Monitoring: NextPage = () => {
                 <div className="ml-[10px]">全て表示</div>
               </div>
               {removeDuplicationValues(
-                actionHistory.map((item) => item.type)
+                operationCard.map((item) => item.type)
               ).map((item) => {
                 return (
                   <div
@@ -203,7 +202,7 @@ const Monitoring: NextPage = () => {
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
-        {actionHistory
+        {operationCard
           .filter((item) =>
             userFilter === "全て表示" ? true : item.user.name === userFilter
           )
@@ -213,7 +212,7 @@ const Monitoring: NextPage = () => {
           .map((item) => {
             return (
               <div key={item.date}>
-                <ActionHistory
+                <OperationCard
                   badgeColor="bg-monitoring-config"
                   badgeLabel={item.type}
                   actionText={item.message}

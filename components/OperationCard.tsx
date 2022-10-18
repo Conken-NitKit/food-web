@@ -7,7 +7,7 @@ interface Props {
   date: number;
 }
 
-export const ActionHistory = ({
+const OperationCard = ({
   badgeColor,
   badgeLabel,
   actionText,
@@ -30,3 +30,5 @@ export const ActionHistory = ({
     </div>
   );
 };
+
+export default OperationCard;
