@@ -10,12 +10,12 @@ const DropDown = (props: Props): JSX.Element => {
   const [dropDownOpen, setDropDownOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<string>("全て表示");
   return (
-    <div>
+    <div className="flex">
       <div className="opacity-[0.4]">ユーザーでフィルタ</div>
       <div className="ml-[10px]">
         <div className="flex w-[100px]">
           <div
-            className="ml-[10px]"
+            className="ml-[10px] whitespace-nowrap"
             onClick={() => {
               setDropDownOpen(true);
             }}
@@ -27,44 +27,39 @@ const DropDown = (props: Props): JSX.Element => {
               setDropDownOpen(true);
             }}
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.25 8.625L12 15.375L18.75 8.625"
-                stroke="#2D0D0D"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          {/* <div className="absolute mt-[5px] z-10 shadow-dropDown">
-            <div className="w-[75px] h-[10px] bg-primary-regular rounded-t-2xl"></div>
-            <div
-              className="w-[75px] h-[20px] bg-primary-regular hover:bg-secondary-dark-regular"
-              onClick={() => {
-                setSelectedItem("全て表示");
-              }}
-            >
-              <div className="ml-[8px]">全て表示</div>
-            </div>
-            {props.items.map((item) => {
-              <div
-                className="w-[75px] h-[25px] bg-primary-regular hover:bg-secondary-dark-regular"
-                key={item}
-                onClick={() => {
-                  setSelectedItem(item);
-                }}
+            {dropDownOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
               >
-                <div className="mx-[8px]">{item}</div>
-              </div>;
-            })}
-          </div> */}
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="M368 368L144 144M368 144L144 368"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.25 8.625L12 15.375L18.75 8.625"
+                  stroke="#2D0D0D"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            )}
+          </div>
           <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl"></div>
         </div>
       </div>
