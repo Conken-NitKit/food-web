@@ -87,6 +87,25 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
   const createMenu = () => {
     if (isPrice === false) {
       addMenu(newMenu);
+      setNewMenu({
+        product: {
+          ...newMenu.product,
+          name: "",
+          promotion: "",
+        },
+        isSold: newMenu.isSold,
+      });
+      setIdeogramData({
+        activeSkinTone: SkinTones.NEUTRAL,
+        unified: "",
+        unifiedWithoutSkinTone: "",
+        emoji: "🍔",
+        names: [""],
+        getImageUrl: (emojiStyle: EmojiStyle) => "",
+      });
+      setMenuPrice("");
+      setMenuIsSold("onSale");
+      setModalIsOpen(false);
     }
   };
 
