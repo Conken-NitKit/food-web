@@ -5,6 +5,7 @@ import { AddMenuCard, MenuCard } from "../components";
 import { FeatureLayout } from "../components/layouts";
 import { MenuContent } from "../types/MenuContent";
 import UUID from "uuidjs";
+import { addMenu } from "../components/AddMenuCard";
 
 export interface menu {
   [key: string]: {
@@ -60,11 +61,11 @@ const Menu: NextPage = () => {
     },
   });
 
-  const addMenu = (newMenu: menu) => {
+  const addMenu = (newMenu: addMenu) => {
     setMenuContents({
       ...menuContents,
       [ID]: {
-        ...newMenu.a,
+        ...newMenu,
       },
     });
   };

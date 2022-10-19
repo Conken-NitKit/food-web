@@ -3,10 +3,15 @@ import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
-import { menu } from "../pages/menu";
+import { MenuContent } from "../types/MenuContent";
 
 interface Props {
-  addMenu: (newMenu: menu) => void;
+  addMenu: (newMenu: addMenu) => void;
+}
+
+export interface addMenu {
+  product: MenuContent;
+  isSold: boolean;
 }
 
 export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
@@ -26,65 +31,55 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
     getImageUrl: (emojiStyle: EmojiStyle) => "",
   });
 
-  const [newMenu, setNewMenu] = useState<menu>({
-    a: {
-      product: {
-        ideogram: ideogramData.emoji,
-        name: "",
-        promotion: "",
-        price: Number(menuPrice),
-      },
-      isSold: menuIsSold === "soldOut" ? true : false,
+  const [newMenu, setNewMenu] = useState<addMenu>({
+    product: {
+      ideogram: ideogramData.emoji,
+      name: "",
+      promotion: "",
+      price: Number(menuPrice),
     },
+    isSold: menuIsSold === "soldOut" ? true : false,
   });
 
   const onChangeNewMenu = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setNewMenu({
-      a: {
-        product: {
-          ...newMenu.a.product,
-          [e.target.name]: e.target.value,
-        },
-        isSold: newMenu.a.isSold,
+      product: {
+        ...newMenu.product,
+        [e.target.name]: e.target.value,
       },
+      isSold: newMenu.isSold,
     });
   };
 
   useEffect(() => {
     setNewMenu({
-      a: {
-        product: {
-          ...newMenu.a.product,
-          ideogram: ideogramData.emoji,
-        },
-        isSold: newMenu.a.isSold,
+      product: {
+        ...newMenu.product,
+        ideogram: ideogramData.emoji,
       },
+      isSold: newMenu.isSold,
     });
   }, [ideogramData.emoji]);
 
   useEffect(() => {
     setNewMenu({
-      a: {
-        product: {
-          ...newMenu.a.product,
-        },
-        isSold: menuIsSold === "soldOut" ? true : false,
+      product: {
+        ...newMenu.product,
       },
+      isSold: menuIsSold === "soldOut" ? true : false,
     });
   }, [menuIsSold]);
 
   useEffect(() => {
     if (isPrice === false) {
       setNewMenu({
-        a: {
-          product: {
-            ...newMenu.a.product,
-            price: Number(menuPrice),
-          },
-          isSold: newMenu.a.isSold,
+        product: {
+          ...newMenu.product,
+          price: Number(menuPrice),
         },
+        isSold: newMenu.isSold,
       });
     }
   }, [menuPrice]);
@@ -138,7 +133,7 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
               </label>
               <input
                 type="text"
-                value={newMenu.a.product.name}
+                value={newMenu.product.name}
                 onChange={onChangeNewMenu}
                 id="menu_name"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
@@ -177,7 +172,7 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
                 説明文
               </label>
               <textarea
-                value={newMenu.a.product.promotion}
+                value={newMenu.product.promotion}
                 onChange={onChangeNewMenu}
                 id="menu_description"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
