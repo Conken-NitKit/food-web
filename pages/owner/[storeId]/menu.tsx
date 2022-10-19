@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 
-import { AddMenuCard, MenuCard } from "../components";
-import { FeatureLayout } from "../components/layouts";
-import { MenuContent } from "../types/MenuContent";
 import UUID from "uuidjs";
-import { addMenu } from "../components/AddMenuCard";
+import { AddMenuCard, MenuCard } from "../../../components";
+import { addMenu } from "../../../components/AddMenuCard";
+import { FeatureLayout } from "../../../components/layouts";
+import { MenuContent } from "../../../types/MenuContent";
 
 export interface menu {
   [key: string]: {
