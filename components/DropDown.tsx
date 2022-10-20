@@ -12,14 +12,10 @@ const DropDown = (props: Props): JSX.Element => {
   const [selectedItem, setSelectedItem] = useState<string>("全て表示");
 
   const closeDropDown = useCallback(() => {
-    console.log("yeah");
-    console.log(dropDownOpen + "close");
     if (dropDownOpen) {
       setDropDownOpen(false);
-      console.log("yahharo");
     }
   }, [dropDownOpen]);
-  console.log(dropDownOpen);
 
   useEffect(() => {
     window.addEventListener("click", closeDropDown);
