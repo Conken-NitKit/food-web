@@ -55,9 +55,9 @@ const DropDown = (props: Props): JSX.Element => {
                   <path
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="32"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="32"
                     d="M368 368L144 144M368 144L144 368"
                   />
                 </svg>
