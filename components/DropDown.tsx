@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TabItems } from "./tab-components";
-import useEvent from "@react-hook/event";
+import { useEffect } from "react";
 
 interface Props {
   text: string;
@@ -22,7 +22,11 @@ const DropDown = (props: Props): JSX.Element => {
       setDropDownOpen(false);
     }
   };
-  useEvent(globalThis, "click", closeDropDown);
+  useEffect(() => {
+    window.addEventListener("click", closeDropDown);
+    return () => window.removeEventListener("click", closeDropDown);
+  }, []);
+
   return (
     <div className="flex">
       <div className="opacity-[0.4]">ユーザーでフィルタ</div>
