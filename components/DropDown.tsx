@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TabItems } from "./tab-components";
+import useEvent from "@react-hook/event";
 
 interface Props {
   text: string;
@@ -9,6 +10,19 @@ interface Props {
 const DropDown = (props: Props): JSX.Element => {
   const [dropDownOpen, setDropDownOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<string>("全て表示");
+  const changeDropDownState = () => {
+    if (dropDownOpen) {
+      setDropDownOpen(false);
+    } else {
+      setDropDownOpen(true);
+    }
+  };
+  const closeDropDown = () => {
+    if (dropDownOpen) {
+      setDropDownOpen(false);
+    }
+  };
+  useEvent(globalThis, "click", closeDropDown);
   return (
     <div className="flex">
       <div className="opacity-[0.4]">ユーザーでフィルタ</div>
@@ -17,31 +31,37 @@ const DropDown = (props: Props): JSX.Element => {
           <div
             className="ml-[10px] whitespace-nowrap"
             onClick={() => {
-              setDropDownOpen(true);
+              changeDropDownState();
             }}
           >
             {selectedItem}
           </div>
           <div
             onClick={() => {
-              setDropDownOpen(true);
+              changeDropDownState();
             }}
           >
             {dropDownOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="ionicon"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                  d="M368 368L144 144M368 144L144 368"
-                />
-              </svg>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ionicon"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M368 368L144 144M368 144L144 368"
+                  />
+                </svg>
+                <div>aaa</div>
+                <div className="absolute z-10 ">
+                  <div className="bg-monitoring-product hover:bg-secondary-dark-regular shadow-dropDown"></div>
+                </div>
+              </div>
             ) : (
               <svg
                 width="24"
@@ -60,7 +80,6 @@ const DropDown = (props: Props): JSX.Element => {
               </svg>
             )}
           </div>
-          <div className="w-[75px] h-[10px] bg-primary-regular rounded-b-2xl"></div>
         </div>
       </div>
       {/* <div className="opacity-[0.4] ">ユーザーでフィルタ</div>
