@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TabItems } from "./tab-components";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 
 interface Props {
   text: string;
@@ -10,22 +10,21 @@ interface Props {
 const DropDown = (props: Props): JSX.Element => {
   const [dropDownOpen, setDropDownOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<string>("全て表示");
-  const changeDropDownState = () => {
+
+  const closeDropDown = useCallback(() => {
+    console.log("yeah");
+    console.log(dropDownOpen + "close");
     if (dropDownOpen) {
       setDropDownOpen(false);
-    } else {
-      setDropDownOpen(true);
+      console.log("yahharo");
     }
-  };
-  const closeDropDown = () => {
-    if (dropDownOpen) {
-      setDropDownOpen(false);
-    }
-  };
+  }, [dropDownOpen]);
+  console.log(dropDownOpen);
+
   useEffect(() => {
     window.addEventListener("click", closeDropDown);
     return () => window.removeEventListener("click", closeDropDown);
-  }, []);
+  }, [dropDownOpen]);
 
   return (
     <div className="flex">
@@ -35,14 +34,14 @@ const DropDown = (props: Props): JSX.Element => {
           <div
             className="ml-[10px] whitespace-nowrap"
             onClick={() => {
-              changeDropDownState();
+              setDropDownOpen(true);
             }}
           >
             {selectedItem}
           </div>
           <div
             onClick={() => {
-              changeDropDownState();
+              setDropDownOpen(true);
             }}
           >
             {dropDownOpen ? (
