@@ -3,11 +3,11 @@ import { useState } from "react";
 
 import UUID from "uuidjs";
 import { AddMenuCard, MenuCard } from "../../../components";
-import { addMenu } from "../../../components/AddMenuCard";
+import { AddMenu } from "../../../components/AddMenuCard";
 import { FeatureLayout } from "../../../components/layouts";
 import { MenuContent } from "../../../types/MenuContent";
 
-export interface menu {
+export interface Menu {
   [key: string]: {
     product: MenuContent;
     isSold: boolean;
@@ -15,10 +15,10 @@ export interface menu {
 }
 
 const Menu: NextPage = () => {
-  const ID = UUID.generate();
+  const id = UUID.generate();
 
   //仮置きのデータ（実際はデータベースから取得する）
-  const [menuContents, setMenuContents] = useState<menu>({
+  const [MenuContents, SetMenuContents] = useState<Menu>({
     hamburger1: {
       product: {
         ideogram: "🍔",
@@ -61,10 +61,10 @@ const Menu: NextPage = () => {
     },
   });
 
-  const addMenu = (newMenu: addMenu) => {
-    setMenuContents({
-      ...menuContents,
-      [ID]: {
+  const addMenu = (newMenu: AddMenu) => {
+    SetMenuContents({
+      ...MenuContents,
+      [id]: {
         ...newMenu,
       },
     });
@@ -73,7 +73,7 @@ const Menu: NextPage = () => {
   return (
     <FeatureLayout type="menu">
       <ul className="flex flex-wrap pt-[48px] 2xl:pt-[58px] gap-y-[48px] 2xl:gap-y-[58px] gap-x-[38px] 2xl:gap-x-[46px]">
-        {Object.values(menuContents).map((content) => (
+        {Object.values(MenuContents).map((content) => (
           <li key={content.product.name}>
             <MenuCard content={content.product} isSold={content.isSold} />
           </li>
