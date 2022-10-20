@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TabItems } from "./tab-components";
 import { useEffect, useCallback } from "react";
-
+import { useGlobalClickEvent } from "../components/hooks/useGlobalClickEvent";
 interface Props {
   text: string;
   items: string[];
@@ -16,11 +16,7 @@ const DropDown = (props: Props): JSX.Element => {
       setDropDownOpen(false);
     }
   }, [dropDownOpen]);
-
-  useEffect(() => {
-    window.addEventListener("click", closeDropDown);
-    return () => window.removeEventListener("click", closeDropDown);
-  }, [dropDownOpen]);
+  useGlobalClickEvent(closeDropDown);
 
   return (
     <div className="flex">
