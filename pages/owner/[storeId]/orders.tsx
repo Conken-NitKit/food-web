@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { NextPage } from "next";
 
 import { OrderCategoryId, OrderDetail, OrderState } from "../../../types";
@@ -108,6 +108,15 @@ const Orders: NextPage = () => {
     };
   }, []);
 
+  const displayOrders = useMemo(() => {
+    if (selectedCategory === "all") {
+      return Object.values(OrderDetails);
+    }
+    return Object.values(OrderDetails).filter(
+      (detail) => detail.state === selectedCategory
+    );
+  }, [selectedCategory]);
+
   return (
     <FeatureLayout type="orders">
       <TabUl>
@@ -124,20 +133,12 @@ const Orders: NextPage = () => {
           </li>
         ))}
       </TabUl>
-      <ul className="grid overflow-y-scroll gap-y-[17px] md:gap-y-[20px] lg:gap-y-[27px] xl:gap-y-[34px] 2xl:gap-y-[40px] mt-[-8px] mb-[-8px] ml-[-8px] pt-[8px] pb-[8px] pl-[8px] h-[calc(100%-23px)] md:h-[calc(100%-29px)] lg:h-[calc(100%-41px)] xl:h-[calc(100%-53px)] 2xl:h-[calc(100%-67px)]">
-        {selectedCategory === "all"
-          ? Object.values(OrderDetails).map((detail) => (
-              <li key={detail.orderNumber}>
-                <OrderCard content={detail} />
-              </li>
-            ))
-          : Object.values(OrderDetails)
-              .filter((detail) => detail.state === selectedCategory)
-              .map((detail) => (
-                <li key={detail.orderNumber}>
-                  <OrderCard content={detail} />
-                </li>
-              ))}
+      <ul className="grid overflow-y-scroll gap-y-[17px] md:gap-y-[20px] lg:gap-y-[27px] xl:gap-y-[34px] 2xl:gap-y-[40px] mt-[-8px]  ml-[-8px] pt-[8px]  pl-[8px] h-[calc(100%-23px)] md:h-[calc(100%-29px)] lg:h-[calc(100%-41px)] xl:h-[calc(100%-53px)] 2xl:h-[calc(100%-67px)]">
+        {displayOrders.map((order) => (
+          <li key={order.orderNumber}>
+            <OrderCard content={order} />
+          </li>
+        ))}
       </ul>
     </FeatureLayout>
   );
