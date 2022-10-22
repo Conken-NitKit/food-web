@@ -52,9 +52,23 @@ const DropDown = (props: Props): JSX.Element => {
                     d="M368 368L144 144M368 144L144 368"
                   />
                 </svg>
-                <div>aaa</div>
-                <div className="absolute z-10 ">
-                  <div className="bg-monitoring-product hover:bg-secondary-dark-regular shadow-dropDown"></div>
+                <div
+                  onClick={() => {
+                    console.log(props.items);
+                  }}
+                >
+                  aaa
+                </div>
+                <div className="absolute z-10 rounded-2xl shadow-dropDown">
+                  <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
+                  {props.items.map((item) => {
+                    <div>
+                      <div className="w-[120px] h-[30px] bg-primary-regular ">
+                        aaa
+                      </div>
+                    </div>;
+                  })}
+                  <div className="w-[120px] h-[16px] rounded-b-2xl bg-primary-regular "></div>
                 </div>
               </div>
             ) : (
