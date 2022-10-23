@@ -29,7 +29,7 @@ const CATEGORIES: Record<
 };
 
 //仮置きのデータ（実際はデータベースから取得する）
-const OrderDetails: {
+const orders: {
   [key: number]: {
     products: OrderDetail[];
     orderNumber: number;
@@ -110,10 +110,10 @@ const Orders: NextPage = () => {
 
   const displayOrders = useMemo(() => {
     if (selectedCategory === "all") {
-      return Object.values(OrderDetails);
+      return Object.values(orders);
     }
-    return Object.values(OrderDetails).filter(
-      (detail) => detail.state === selectedCategory
+    return Object.values(orders).filter(
+      (order) => order.state === selectedCategory
     );
   }, [selectedCategory]);
 
