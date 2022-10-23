@@ -64,7 +64,7 @@ const DropDown = (props: Props): JSX.Element => {
                   {props.items.map((item) => {
                     <div>
                       <div className="w-[120px] h-[30px] bg-primary-regular ">
-                        aaa
+                        {item}
                       </div>
                     </div>;
                   })}
