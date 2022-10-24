@@ -76,6 +76,13 @@ const Monitoring: NextPage = () => {
             )}
             setState={setUserFilter}
           />
+          <DropDown
+            text="操作内容でフィルタ"
+            items={removeDuplicationValues(
+              operationCard.map((item) => item.type)
+            )}
+            setState={setTypeFilter}
+          />
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
