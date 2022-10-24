@@ -15,7 +15,7 @@ export interface Menu {
 }
 
 const Menu: NextPage = () => {
-  const id = UUID.generate();
+  const ID = UUID.generate();
 
   //仮置きのデータ（実際はデータベースから取得する）
   const [MenuContents, SetMenuContents] = useState<Menu>({
@@ -64,7 +64,7 @@ const Menu: NextPage = () => {
   const addMenu = (newMenu: AddMenu) => {
     SetMenuContents({
       ...MenuContents,
-      [id]: {
+      [ID]: {
         ...newMenu,
       },
     });
