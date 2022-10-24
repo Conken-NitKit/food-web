@@ -36,12 +36,12 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
 
   const NEW_MENU: AddMenu = {
     product: {
-      ideogram: IdeogramData.emoji,
+      ideogram: "🍔",
       name: "",
       promotion: "",
-      price: Number(menuPrice),
+      price: 0,
     },
-    isSold: menuIsSold === "soldOut" ? true : false,
+    isSold: false,
   };
 
   const [NewMenu, SetNewMenu] = useState<AddMenu>(NEW_MENU);
@@ -78,7 +78,12 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
   }, [menuIsSold]);
 
   useEffect(() => {
-    if (isPrice === false) {
+    if (menuPrice === "") {
+      setIsPrice(true);
+    } else if (isNaN(Number(menuPrice))) {
+      setIsPrice(true);
+    } else {
+      setIsPrice(false);
       SetNewMenu({
         product: {
           ...NewMenu.product,
@@ -93,12 +98,7 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
     if (isPrice === false) {
       addMenu(NewMenu);
       SetNewMenu({
-        product: {
-          ...NewMenu.product,
-          name: "",
-          promotion: "",
-        },
-        isSold: NewMenu.isSold,
+        ...NEW_MENU,
       });
       SetIdeogramData({
         activeSkinTone: SkinTones.NEUTRAL,
@@ -114,19 +114,11 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
     }
   };
 
-  const checkPrice = (value: string) => {
-    setMenuPrice(value);
-    if (isNaN(Number(value))) {
-      setIsPrice(true);
-    } else {
-      setIsPrice(false);
-    }
-  };
-
   const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
     SetIdeogramData(emojiData);
     setIdeogramSelect(false);
   };
+
   return (
     <>
       <div
@@ -181,7 +173,7 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
               <input
                 type="text"
                 value={menuPrice}
-                onChange={(e) => checkPrice(e.target.value)}
+                onChange={(e) => setMenuPrice(e.target.value)}
                 id="menu_price"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
               />
