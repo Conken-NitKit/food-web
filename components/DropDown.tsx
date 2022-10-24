@@ -31,7 +31,6 @@ const DropDown = (props: Props): JSX.Element => {
           >
             {selectedItem}
           </div>
-
           {dropDownOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -43,26 +42,48 @@ const DropDown = (props: Props): JSX.Element => {
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="32"
+                strokeWidth="38"
                 d="M368 368L144 144M368 144L144 368"
               />
             </svg>
           ) : (
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              onClick={() => {
+                setDropDownOpen(true);
+              }}
             >
-              <path
-                d="M5.25 8.625L12 15.375L18.75 8.625"
-                stroke="#2D0D0D"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.25 8.625L12 15.375L18.75 8.625"
+                  stroke="#2D0D0D"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          )}
+          {dropDownOpen && (
+            <div className="ml-[30px] absolute z-10 rounded-2xl shadow-dropDown mt-[30px]">
+              <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
+              <ul>
+                {Object.values(props.items).map((item) => (
+                  <li
+                    key={item}
+                    className="w-[120px] h-[30px] bg-primary-regular hover:bg-secondary-dark-regular"
+                  >
+                    <div className="ml-[20px]">{item}</div>
+                  </li>
+                ))}
+              </ul>
+              <div className="w-[120px] h-[16px] rounded-b-2xl bg-primary-regular "></div>
+            </div>
           )}
         </div>
       </div>
