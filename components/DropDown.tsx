@@ -42,7 +42,7 @@ const DropDown = (props: Props): JSX.Element => {
                 stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="38"
+                strokeWidth="32"
                 d="M368 368L144 144M368 144L144 368"
               />
             </svg>
@@ -78,7 +78,14 @@ const DropDown = (props: Props): JSX.Element => {
                     key={item}
                     className="w-[120px] h-[30px] bg-primary-regular hover:bg-secondary-dark-regular"
                   >
-                    <div className="ml-[20px]">{item}</div>
+                    <div
+                      onClick={() => {
+                        setSelectedItem(item);
+                      }}
+                      className="ml-[20px]"
+                    >
+                      {item}
+                    </div>
                   </li>
                 ))}
               </ul>
