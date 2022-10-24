@@ -31,67 +31,39 @@ const DropDown = (props: Props): JSX.Element => {
           >
             {selectedItem}
           </div>
-          <div
-            onClick={() => {
-              setDropDownOpen(true);
-            }}
-          >
-            {dropDownOpen ? (
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ionicon"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="32"
-                    d="M368 368L144 144M368 144L144 368"
-                  />
-                </svg>
-                <div
-                  onClick={() => {
-                    console.log(props.items);
-                  }}
-                >
-                  aaa
-                </div>
-                <div className="absolute z-10 rounded-2xl shadow-dropDown">
-                  <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
-                  <ul>
-                    {Object.values(props.items).map((item) => (
-                      <li
-                        key={item}
-                        className="w-[120px] h-[30px] bg-primary-regular "
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="w-[120px] h-[16px] rounded-b-2xl bg-primary-regular "></div>
-                </div>
-              </div>
-            ) : (
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+
+          {dropDownOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <path
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5.25 8.625L12 15.375L18.75 8.625"
-                  stroke="#2D0D0D"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            )}
-          </div>
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="32"
+                d="M368 368L144 144M368 144L144 368"
+              />
+            </svg>
+          ) : (
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.25 8.625L12 15.375L18.75 8.625"
+                stroke="#2D0D0D"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          )}
         </div>
       </div>
       {/* <div className="opacity-[0.4] ">ユーザーでフィルタ</div>
