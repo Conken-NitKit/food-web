@@ -97,9 +97,10 @@ export const AddMenuCard = (): JSX.Element => {
   const createMenu = () => {
     if (isPrice === false) {
       /*
-        本番環境(データベース上)に追加されるデータ
         import UUID from "uuidjs";
         const ID = UUID.generate();
+        本番環境(データベース上)に追加されるデータ
+        この関数内にデータを送信する関数をおく
         [ID]: {
           ...NewMenu,
         }
