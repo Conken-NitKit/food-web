@@ -16,9 +16,7 @@ export interface Menu {
 
 const Menu: NextPage = () => {
   const ID = UUID.generate();
-
-  //仮置きのデータ（実際はデータベースから取得する）
-  const [MenuContents, SetMenuContents] = useState<Menu>({
+  const MENU_CONTENTS: Menu = {
     hamburger1: {
       product: {
         ideogram: "🍔",
@@ -59,7 +57,10 @@ const Menu: NextPage = () => {
       },
       isSold: false,
     },
-  });
+  };
+
+  //仮置きのデータ（実際はデータベースから取得する）
+  const [MenuContents, SetMenuContents] = useState<Menu>(MENU_CONTENTS);
 
   const addMenu = (newMenu: AddMenu) => {
     SetMenuContents({

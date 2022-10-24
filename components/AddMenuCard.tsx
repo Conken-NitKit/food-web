@@ -15,6 +15,15 @@ export interface AddMenu {
 }
 
 export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
+  const IDEOGRAM_DATA: EmojiClickData = {
+    activeSkinTone: SkinTones.NEUTRAL,
+    unified: "",
+    unifiedWithoutSkinTone: "",
+    emoji: "🍔",
+    names: [""],
+    getImageUrl: (emojiStyle: EmojiStyle) => "",
+  };
+
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const [menuPrice, setMenuPrice] = useState<string>("");
@@ -22,16 +31,10 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
   const [isPrice, setIsPrice] = useState<boolean>(true);
 
   const [ideogramSelect, setIdeogramSelect] = useState<boolean>(false);
-  const [IdeogramData, SetIdeogramData] = useState<EmojiClickData>({
-    activeSkinTone: SkinTones.NEUTRAL,
-    unified: "",
-    unifiedWithoutSkinTone: "",
-    emoji: "🍔",
-    names: [""],
-    getImageUrl: (emojiStyle: EmojiStyle) => "",
-  });
+  const [IdeogramData, SetIdeogramData] =
+    useState<EmojiClickData>(IDEOGRAM_DATA);
 
-  const [NewMenu, SetNewMenu] = useState<AddMenu>({
+  const NEW_MENU: AddMenu = {
     product: {
       ideogram: IdeogramData.emoji,
       name: "",
@@ -39,7 +42,9 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
       price: Number(menuPrice),
     },
     isSold: menuIsSold === "soldOut" ? true : false,
-  });
+  };
+
+  const [NewMenu, SetNewMenu] = useState<AddMenu>(NEW_MENU);
 
   const onChangeNewMenu = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
