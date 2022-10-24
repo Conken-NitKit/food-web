@@ -61,13 +61,16 @@ const DropDown = (props: Props): JSX.Element => {
                 </div>
                 <div className="absolute z-10 rounded-2xl shadow-dropDown">
                   <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
-                  {props.items.map((item) => {
-                    <div>
-                      <div className="w-[120px] h-[30px] bg-primary-regular ">
+                  <ul>
+                    {Object.values(props.items).map((item) => (
+                      <li
+                        key={item}
+                        className="w-[120px] h-[30px] bg-primary-regular "
+                      >
                         {item}
-                      </div>
-                    </div>;
-                  })}
+                      </li>
+                    ))}
+                  </ul>
                   <div className="w-[120px] h-[16px] rounded-b-2xl bg-primary-regular "></div>
                 </div>
               </div>
