@@ -72,6 +72,16 @@ const DropDown = (props: Props): JSX.Element => {
           {dropDownOpen && (
             <div className="ml-[30px] absolute z-10 rounded-2xl shadow-dropDown mt-[30px]">
               <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
+              <div className="w-[120px] h-[30px] bg-primary-regular hover:bg-secondary-dark-regular">
+                <div
+                  className="ml-[20px]"
+                  onClick={() => {
+                    setSelectedItem("全て表示");
+                  }}
+                >
+                  全て表示
+                </div>
+              </div>
               <ul>
                 {Object.values(props.items).map((item) => (
                   <li
