@@ -20,7 +20,7 @@ const DropDown = (props: Props): JSX.Element => {
 
   return (
     <div className="flex">
-      <div className="opacity-[0.4]">ユーザーでフィルタ</div>
+      <div className="opacity-[0.4] whitespace-nowrap">{props.text}</div>
       <div className="ml-[10px]">
         <div className="flex w-[100px]">
           <div
