@@ -14,7 +14,7 @@ export interface AddMenu {
   isSold: boolean;
 }
 
-export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
+export const AddMenuCard = (): JSX.Element => {
   const IDEOGRAM_DATA: EmojiClickData = {
     activeSkinTone: SkinTones.NEUTRAL,
     unified: "",
@@ -104,7 +104,6 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
           ...NewMenu,
         }
       */
-      addMenu(NewMenu);
       SetNewMenu({
         ...NEW_MENU,
       });
