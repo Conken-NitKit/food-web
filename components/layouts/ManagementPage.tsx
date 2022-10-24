@@ -1,5 +1,14 @@
-import JSXStyle from "styled-jsx/style";
+import { PageId } from "../../types";
+import { FeatureLayout } from "./Feature";
 
-export const ManagementPageLayout = (): JSX.Element => {
-  return <></>;
+interface Props {
+  type: PageId;
+}
+
+export const ManagementPageLayout = ({ type }: Props): JSX.Element => {
+  return (
+    <FeatureLayout type={type}>
+      <></>
+    </FeatureLayout>
+  );
 };
