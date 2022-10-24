@@ -1,7 +1,4 @@
-import { Children, ReactNode } from "react";
 import classNames from "classnames";
-
-import { OrderCategoryId } from "../../types";
 
 interface Props {
   categoryName: string;
