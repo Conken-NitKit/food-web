@@ -153,7 +153,7 @@ export const AddMenuCard = ({ addMenu }: Props): JSX.Element => {
             backgroundColor: "rgba(0, 0, 0, .2)",
           },
         }}
-        className="relative top-[50%] left-[50%] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] translate-x-[-50%] translate-y-[-50%] bg-white-a100 font-menu-card"
+        className="relative top-[50%] left-[50%] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] translate-x-[-50%] translate-y-[-50%] bg-white-a100 font-menu-card outline-none"
       >
         <h3 className="h-[17px] font-bold text-[15px]">メニューを新規作成</h3>
         <div className="flex mt-[14px] gap-x-[19px]">
