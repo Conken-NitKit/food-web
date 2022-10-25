@@ -175,14 +175,11 @@ module.exports = {
         "reject-regular": theme("colors.pink.a100"),
         "accent-secondary-regular": theme("colors.goldenyellow.a100"),
         "accent-secondary-light-regular": theme("colors.navajowhite.a100"),
-<<<<<<< HEAD
         "monitoring-product": theme("colors.goldenyellow.a100"),
         "monitoring-member": theme("colors.green.a100"),
         "monitoring-config": theme("colors.pink.a100"),
-=======
         "order-card-reject": theme("colors.pink.a10"),
         "order-card-complete": theme("colors.green.a10"),
->>>>>>> 961d683e5f306b579db9640748030d41da628769
         "complete-regular": theme("colors.green.a100"),
       }),
       textColor: (theme) => ({
