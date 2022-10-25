@@ -38,7 +38,7 @@ export const BasicLayout: ({ type, children }: LayoutProps) => JSX.Element = ({
               >
                 <Link
                   href={{
-                    pathname: `/owner/[storeId]/${menuItems.id}`,
+                    pathname: `/owner/[storeId]/${menuItems.path}`,
                     query: { storeId },
                   }}
                 >
