@@ -51,16 +51,6 @@ const Monitoring: NextPage = () => {
   const removeDuplicationValues = ([...array]) => {
     return array.filter((value, index, self) => self.indexOf(value) === index);
   };
-  const dropDownClose = () => {
-    if (userDropDown) {
-      setUserDropDown(false);
-    }
-    if (typeDropDown) {
-      setTypeDropDown(false);
-    }
-  };
-  const badgeColor = (type: string) => {};
-  // useEvent(window, "click", dropDownClose);
 
   return (
     <FeatureLayout type="monitoring">
