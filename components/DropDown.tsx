@@ -38,6 +38,7 @@ const DropDown = (props: Props): JSX.Element => {
                 className="ionicon"
                 viewBox="0 0 512 512"
               >
+                <title>Close</title>
                 <path
                   fill="none"
                   stroke="currentColor"
@@ -79,6 +80,7 @@ const DropDown = (props: Props): JSX.Element => {
                   className="ml-[20px]"
                   onClick={() => {
                     setSelectedItem("全て表示");
+                    props.setState("全て表示");
                   }}
                 >
                   全て表示
@@ -93,6 +95,7 @@ const DropDown = (props: Props): JSX.Element => {
                     <div
                       onClick={() => {
                         setSelectedItem(item);
+                        props.setState(item);
                       }}
                       className="ml-[20px]"
                     >
