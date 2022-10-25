@@ -8,14 +8,20 @@ interface Props {
   setState: (value: string) => void;
 }
 const DropDown = (props: Props): JSX.Element => {
-  const [dropDownOpen, setDropDownOpen] = useState<boolean>(false);
+  const [isDropDownOpen, setIsDropDownOpen] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<string>("全て表示");
-
+  const dropDownOpen = () => {
+    setIsDropDownOpen(true);
+  };
+  const changeSelectItem = (item: string) => {
+    setSelectedItem(item);
+    props.setState(item);
+  };
   const closeDropDown = useCallback(() => {
-    if (dropDownOpen) {
-      setDropDownOpen(false);
+    if (isDropDownOpen) {
+      setIsDropDownOpen(false);
     }
-  }, [dropDownOpen]);
+  }, [isDropDownOpen]);
   useGlobalClickEvent(closeDropDown);
 
   return (
@@ -23,15 +29,10 @@ const DropDown = (props: Props): JSX.Element => {
       <div className="opacity-[0.4] whitespace-nowrap">{props.text}</div>
       <div className="ml-[10px]">
         <div className="flex w-[100px]">
-          <div
-            className="ml-[10px] whitespace-nowrap"
-            onClick={() => {
-              setDropDownOpen(true);
-            }}
-          >
+          <div className="ml-[10px] whitespace-nowrap" onClick={dropDownOpen}>
             {selectedItem}
           </div>
-          {dropDownOpen ? (
+          {isDropDownOpen ? (
             <div className="absolute">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +51,7 @@ const DropDown = (props: Props): JSX.Element => {
               </svg>
             </div>
           ) : (
-            <div
-              onClick={() => {
-                setDropDownOpen(true);
-              }}
-            >
+            <div onClick={dropDownOpen}>
               <svg
                 width="24"
                 height="24"
@@ -72,15 +69,14 @@ const DropDown = (props: Props): JSX.Element => {
               </svg>
             </div>
           )}
-          {dropDownOpen && (
+          {isDropDownOpen && (
             <div className="ml-[30px] absolute z-10 rounded-2xl shadow-2xl mt-[30px]">
               <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
               <div className="w-[120px] h-[30px] bg-primary-regular hover:bg-secondary-dark-regular">
                 <div
                   className="ml-[20px]"
                   onClick={() => {
-                    setSelectedItem("全て表示");
-                    props.setState("全て表示");
+                    changeSelectItem("全て表示");
                   }}
                 >
                   全て表示
@@ -94,8 +90,7 @@ const DropDown = (props: Props): JSX.Element => {
                   >
                     <div
                       onClick={() => {
-                        setSelectedItem(item);
-                        props.setState(item);
+                        changeSelectItem(item);
                       }}
                       className="ml-[20px]"
                     >
