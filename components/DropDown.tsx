@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { TabItems } from "./tab-components";
-import { useEffect, useCallback } from "react";
+import { useCallback } from "react";
 import { useGlobalClickEvent } from "../components/hooks/useGlobalClickEvent";
 interface Props {
   text: string;
