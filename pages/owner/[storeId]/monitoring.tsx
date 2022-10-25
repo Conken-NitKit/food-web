@@ -43,8 +43,6 @@ const Monitoring: NextPage = () => {
   ];
 
   const operationCard = operationCardJson as operationCard[];
-  const [userDropDown, setUserDropDown] = useState<boolean>(false);
-  const [typeDropDown, setTypeDropDown] = useState<boolean>(false);
   const [userFilter, setUserFilter] = useState<string>("全て表示");
   const [typeFilter, setTypeFilter] = useState<string>("全て表示");
 
