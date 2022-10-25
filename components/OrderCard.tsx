@@ -9,10 +9,7 @@ interface Props {
   };
 }
 
-const getTotalAmount: (
-  previousValue: number,
-  currentValue: OrderDetail
-) => number = (prev, cur) => {
+const getTotalAmount = (prev: number, cur: OrderDetail): number => {
   return prev + cur.price * cur.orderVolume;
 };
 
