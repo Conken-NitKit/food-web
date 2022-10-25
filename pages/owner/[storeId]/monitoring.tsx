@@ -42,7 +42,7 @@ const Monitoring: NextPage = () => {
     },
   ];
 
-  const operationCard = operationCardJson as operationCard[];
+  const operationCardList = operationCardJson as operationCard[];
   const [userFilter, setUserFilter] = useState<string>("全て表示");
   const [typeFilter, setTypeFilter] = useState<string>("全て表示");
 
@@ -60,7 +60,7 @@ const Monitoring: NextPage = () => {
           <DropDown
             text="ユーザーでフィルタ"
             items={removeDuplicationValues(
-              operationCard.map((item) => item.user.name)
+              operationCardList.map((item) => item.user.name)
             )}
             setState={setUserFilter}
           />
@@ -68,7 +68,7 @@ const Monitoring: NextPage = () => {
             <DropDown
               text="操作内容でフィルタ"
               items={removeDuplicationValues(
-                operationCard.map((item) => item.type)
+                operationCardList.map((item) => item.type)
               )}
               setState={setTypeFilter}
             />
@@ -76,7 +76,7 @@ const Monitoring: NextPage = () => {
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
-        {operationCard
+        {operationCardList
           .filter((item) =>
             userFilter === "全て表示" ? true : item.user.name === userFilter
           )

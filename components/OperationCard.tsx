@@ -1,4 +1,4 @@
-import { Badge } from "./badge";
+import { Badge } from "./Badge";
 import { operationCard } from "../types/operationCard";
 interface Props {
   operationCard: operationCard;
