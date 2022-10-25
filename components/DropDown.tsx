@@ -70,7 +70,7 @@ const DropDown = (props: Props): JSX.Element => {
             </div>
           )}
           {isDropDownOpen && (
-            <div className="ml-[30px] absolute z-10 rounded-2xl shadow-2xl mt-[30px]">
+            <div className="absolute mt-[30px] ml-[30px] z-10 rounded-2xl shadow-2xl">
               <div className="w-[120px] h-[16px] rounded-t-2xl bg-primary-regular "></div>
               <div className="w-[120px] h-[30px] bg-primary-regular hover:bg-secondary-dark-regular">
                 <div
@@ -99,7 +99,7 @@ const DropDown = (props: Props): JSX.Element => {
                   </li>
                 ))}
               </ul>
-              <div className="w-[120px] h-[16px] rounded-b-2xl bg-primary-regular "></div>
+              <div className="w-[120px] h-[16px] rounded-b-2xl bg-primary-regular"></div>
             </div>
           )}
         </div>
