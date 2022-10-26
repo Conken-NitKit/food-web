@@ -3,7 +3,9 @@ import { FeatureLayout } from "../../../components/layouts";
 import { ManagementPageLayout } from "../../../components/layouts/ManagementPage";
 
 const Users: NextPage = () => {
-  return <ManagementPageLayout type="users"></ManagementPageLayout>;
+  const tips = "システムの共同編集者を管理することができます。";
+
+  return <ManagementPageLayout type="users" tips={tips}></ManagementPageLayout>;
 };
 
 export default Users;
