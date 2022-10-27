@@ -4,7 +4,7 @@ interface Props {
   operationCard: operationCard;
 }
 
-const OperationCard = ({ operationCard }: Props): JSX.Element => {
+export const OperationCard = ({ operationCard }: Props): JSX.Element => {
   const badgeColor = (type: string) => {
     switch (type) {
       case "member":
@@ -41,5 +41,3 @@ const OperationCard = ({ operationCard }: Props): JSX.Element => {
     </div>
   );
 };
-
-export default OperationCard;
