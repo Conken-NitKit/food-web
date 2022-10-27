@@ -128,7 +128,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 基本的にホーム以外の全てのページで使用する。
 
-### category-menu-components
+### tab-components
 
 - 以下の形で使用することを想定している。
 
@@ -136,7 +136,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 import {
   CategoryMenuItems,
   CategoryUl,
-} from "../components/category-menu-components";
+} from "../components/tab-components";
 
 const CATEGORIES: Record<
   カテゴリIDの型,
