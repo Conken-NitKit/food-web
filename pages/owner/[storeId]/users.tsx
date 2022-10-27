@@ -7,7 +7,7 @@ const Users: NextPage = () => {
 
   return (
     <ManagementPageLayout type="users" tips={tips}>
-      <></>
+      <div></div>
     </ManagementPageLayout>
   );
 };
