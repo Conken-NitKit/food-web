@@ -1,3 +1,3 @@
 export const AddUserCard = (): JSX.Element => {
-  return <></>;
+  return <div></div>;
 };
