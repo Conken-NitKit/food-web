@@ -128,6 +128,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - 基本的にホームページ、管理系ページ（ページタイトルの下に短い説明文があるページ）以外の全てのページで使用する。
 
+### ManagementPageLayout
+
+- 管理系ページ（ページタイトルの下に短い説明文があるページ）で使用します。
+
+- `<ManagementPageLayout type="（PageId）" tips="（ページタイトル下の説明文）" >（children）</ManagementPageLayout>`の形で使用します。
+
 ### tab-components
 
 - 以下の形で使用することを想定している。
