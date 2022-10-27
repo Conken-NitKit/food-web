@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { FeatureLayout } from "../../../components/layouts";
 import { useState } from "react";
-import OperationCard from "../../../components/OperationCard";
+import { OperationCard } from "../../../components/OperationCard";
 import { operationCard } from "../../../types/operationCard";
 import DropDown from "../../../components/DropDown";
 
