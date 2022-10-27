@@ -1,10 +1,10 @@
 import { Badge } from "./Badge";
-import { operationCard } from "../types/operationCard";
+import { MonitoringLog } from "../types/MonitoringLog";
 interface Props {
-  operationCard: operationCard;
+  log: MonitoringLog;
 }
 
-export const OperationCard = ({ operationCard }: Props): JSX.Element => {
+export const MonitoringCard = ({ log }: Props): JSX.Element => {
   const badgeColor = (type: string) => {
     switch (type) {
       case "member":
@@ -24,17 +24,12 @@ export const OperationCard = ({ operationCard }: Props): JSX.Element => {
         <div className="ml-[10px]">
           <div className=" flex">
             <div className="mt-2px">
-              <Badge
-                bgcolor={badgeColor(operationCard.type)}
-                label={operationCard.type}
-              />
+              <Badge bgcolor={badgeColor(log.type)} label={log.type} />
             </div>
-            <div className="ml-[10px] text-xs font-bold">
-              {operationCard.message}
-            </div>
+            <div className="ml-[10px] text-xs font-bold">{log.message}</div>
           </div>
           <div className="text-xs text-secondary-regular mt-[3px]">
-            {operationCard.date}
+            {log.date}
           </div>
         </div>
       </div>

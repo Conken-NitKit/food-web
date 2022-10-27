@@ -1,4 +1,4 @@
-export interface operationCard {
+export interface MonitoringLog {
   user: {
     name: string;
   };
