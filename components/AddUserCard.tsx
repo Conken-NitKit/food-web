@@ -6,7 +6,7 @@ interface Props {
   type: type;
 }
 
-export const UserCard = ({ type }: Props): JSX.Element => {
+export const AddUserCard = ({ type }: Props): JSX.Element => {
   const isAddCard = type === "add-card";
 
   return (
