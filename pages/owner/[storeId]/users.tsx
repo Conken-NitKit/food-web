@@ -2,12 +2,13 @@ import { NextPage } from "next";
 
 import { ManagementPageLayout } from "../../../components/layouts/ManagementPage";
 import { UserCard } from "../../../components";
+import { User } from "../../../types";
 
 const Users: NextPage = () => {
   const tips = "システムの共同編集者を管理することができます。";
 
   //TODO: DB実装後にDBのデータに変更すること。現状定数ですが、DB実装後は変数になるのでキャメルケースにしてます。
-  const users = [
+  const users: User[] = [
     { id: "user_a", name: "ユーザーA", isAdmin: true },
     { id: "user_b", name: "ユーザーB", isAdmin: false },
   ];
