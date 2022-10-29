@@ -9,8 +9,8 @@ const Users: NextPage = () => {
 
   //TODO: DB実装後にDBのデータに変更すること。現状定数ですが、DB実装後は変数になるのでキャメルケースにしてます。
   const users: User[] = [
-    { id: "user_a", name: "ユーザーA", isAdmin: true },
-    { id: "user_b", name: "ユーザーB", isAdmin: false },
+    { id: "user_a", name: "ユーザーA", icon: "", isAdmin: true },
+    { id: "user_b", name: "ユーザーB", icon: "", isAdmin: false },
   ];
 
   return (
