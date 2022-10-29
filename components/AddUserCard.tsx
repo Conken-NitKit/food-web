@@ -1,20 +1,5 @@
-import classNames from "classnames";
-
-type type = "user-card" | "add-card";
-
-interface Props {
-  type: type;
-}
-
-export const AddUserCard = ({ type }: Props): JSX.Element => {
-  const isAddCard = type === "add-card";
-
+export const AddUserCard = (): JSX.Element => {
   return (
-    <div
-      className={classNames(
-        "w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]",
-        { "border-t border-secondary-regular": !isAddCard }
-      )}
-    ></div>
+    <div className="w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]"></div>
   );
 };
