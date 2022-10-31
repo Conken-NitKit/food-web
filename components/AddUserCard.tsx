@@ -1,3 +1,5 @@
+import { UserCardTitleSpace } from "./UserCardTitleSpace";
+
 export const AddUserCard = (): JSX.Element => {
   return (
     <div className="flex items-center w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]">
@@ -5,9 +7,11 @@ export const AddUserCard = (): JSX.Element => {
         ＋
       </button>
 
-      <p className="ml-1 md:ml-1.5 lg:ml-2 xl:ml-2.5 2xl:ml-3 text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl">
-        共同編集者の追加
-      </p>
+      <UserCardTitleSpace>
+        <p className="text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl">
+          共同編集者の追加
+        </p>
+      </UserCardTitleSpace>
     </div>
   );
 };
