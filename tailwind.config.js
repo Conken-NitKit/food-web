@@ -200,6 +200,7 @@ module.exports = {
         "secondary-regular": theme("colors.lightgray.a100"),
       }),
       fontFamily: {
+        "secondary-regular": "lato, sans-serif",
         "menu-card": "lato",
       },
       boxShadow: {
