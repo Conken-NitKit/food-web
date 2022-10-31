@@ -30,7 +30,8 @@ export const AddMenuCard = (): JSX.Element => {
   const [menuIsSold, setMenuIsSold] = useState<string>("");
   const [isPrice, setIsPrice] = useState<boolean>(true);
 
-  const [ideogramSelect, setIdeogramSelect] = useState<boolean>(false);
+  const [ideogramModalIsOpen, setIdeogramModalIsOpen] =
+    useState<boolean>(false);
   const [IdeogramData, SetIdeogramData] =
     useState<EmojiClickData>(IDEOGRAM_DATA);
 
@@ -124,7 +125,7 @@ export const AddMenuCard = (): JSX.Element => {
 
   const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
     SetIdeogramData(emojiData);
-    setIdeogramSelect(false);
+    setIdeogramModalIsOpen(false);
   };
 
   return (
@@ -221,7 +222,7 @@ export const AddMenuCard = (): JSX.Element => {
             </div>
             <button
               className="rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100 cursor-pointer"
-              onClick={() => setIdeogramSelect(true)}
+              onClick={() => setIdeogramModalIsOpen(true)}
             >
               絵文字を選択する
             </button>
@@ -243,8 +244,8 @@ export const AddMenuCard = (): JSX.Element => {
         </div>
       </Modal>
       <Modal
-        isOpen={ideogramSelect}
-        onRequestClose={() => setIdeogramSelect(false)}
+        isOpen={ideogramModalIsOpen}
+        onRequestClose={() => setIdeogramModalIsOpen(false)}
         style={{
           overlay: {
             position: "fixed",
