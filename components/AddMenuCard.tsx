@@ -229,10 +229,10 @@ export const AddMenuCard = (): JSX.Element => {
         </div>
         <div className="absolute bottom-[17px] right-[20px] text-[10px]">
           <button
-            onClick={createMenu}
+            onClick={() => setModalIsOpen(false)}
             className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border w-[67px] h-[23px]"
           >
-            商品を追加
+            キャンセル
           </button>
           <button
             onClick={createMenu}
