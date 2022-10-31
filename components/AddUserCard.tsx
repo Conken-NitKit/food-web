@@ -5,7 +5,9 @@ export const AddUserCard = (): JSX.Element => {
         ＋
       </button>
 
-      <p>共同編集者の追加</p>
+      <p className="ml-1 md:ml-1.5 lg:ml-2 xl:ml-2.5 2xl:ml-3 text-xs lg:text-base xl:text-xl 2xl:text-2xl">
+        共同編集者の追加
+      </p>
     </div>
   );
 };
