@@ -128,7 +128,7 @@ export const AddMenuCard = (): JSX.Element => {
   };
 
   return (
-    <>
+    <div>
       <div
         className="border border-primary-regular border-dashed rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px]"
         onClick={() => setModalIsOpen(true)}
@@ -259,6 +259,6 @@ export const AddMenuCard = (): JSX.Element => {
       >
         <EmojiPicker onEmojiClick={handleEmojiClick} />
       </Modal>
-    </>
+    </div>
   );
 };
