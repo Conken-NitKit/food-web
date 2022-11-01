@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 import { ManagementPageLayout } from "../../../components/layouts/ManagementPage";
-import { AddUserCard } from "../../../components";
+import { AddUserCard, UserCard } from "../../../components";
 import { User } from "../../../types";
 
 const Users: NextPage = () => {
@@ -29,7 +29,9 @@ const Users: NextPage = () => {
         <AddUserCard />
         <ul>
           {users.map((user) => (
-            <li key={user.id}></li>
+            <li key={user.id}>
+              <UserCard />
+            </li>
           ))}
         </ul>
       </div>
