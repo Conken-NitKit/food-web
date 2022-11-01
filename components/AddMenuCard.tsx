@@ -47,6 +47,20 @@ export const AddMenuCard = (): JSX.Element => {
 
   const [NewMenu, SetNewMenu] = useState<AddMenu>(NEW_MENU);
 
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const openIdeogramModal = () => {
+    setIdeogramModalIsOpen(true);
+  };
+  const closeIdeogramModal = () => {
+    setIdeogramModalIsOpen(false);
+  };
+
   const onChangeNewMenu = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -119,20 +133,20 @@ export const AddMenuCard = (): JSX.Element => {
       });
       setMenuPrice("");
       setMenuIsSold("onSale");
-      setModalIsOpen(false);
+      closeModal();
     }
   };
 
   const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
     SetIdeogramData(emojiData);
-    setIdeogramModalIsOpen(false);
+    closeIdeogramModal();
   };
 
   return (
     <div>
       <div
         className="border border-primary-regular border-dashed rounded-[19px] 2xl:rounded-[23px] w-[237px] 2xl:w-[284px] h-[247px] 2xl:h-[297px]"
-        onClick={() => setModalIsOpen(true)}
+        onClick={openModal}
       >
         <div className="flex mt-[38.3%] mx-auto border-[3px] border-primary-regular rounded-full w-[26px] 2xl:w-[32px] h-[26px] 2xl:h-[32px]">
           <div className="m-auto w-[60%] h-[15%] bg-thirdly-regular before:block before:rotate-90 before:w-[100%] before:h-[100%] before:content-[''] before:bg-thirdly-regular" />
@@ -143,7 +157,7 @@ export const AddMenuCard = (): JSX.Element => {
       </div>
       <Modal
         isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
+        onRequestClose={closeModal}
         style={{
           overlay: {
             position: "fixed",
@@ -222,7 +236,7 @@ export const AddMenuCard = (): JSX.Element => {
             </div>
             <button
               className="rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100 cursor-pointer"
-              onClick={() => setIdeogramModalIsOpen(true)}
+              onClick={openIdeogramModal}
             >
               絵文字を選択する
             </button>
@@ -230,7 +244,7 @@ export const AddMenuCard = (): JSX.Element => {
         </div>
         <div className="absolute bottom-[17px] right-[20px] text-[10px]">
           <button
-            onClick={() => setModalIsOpen(false)}
+            onClick={closeModal}
             className="mr-[9px] border border-solid border-lightgray-a100 rounded box-border w-[67px] h-[23px]"
           >
             キャンセル
@@ -245,7 +259,7 @@ export const AddMenuCard = (): JSX.Element => {
       </Modal>
       <Modal
         isOpen={ideogramModalIsOpen}
-        onRequestClose={() => setIdeogramModalIsOpen(false)}
+        onRequestClose={closeIdeogramModal}
         style={{
           overlay: {
             position: "fixed",
