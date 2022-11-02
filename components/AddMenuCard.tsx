@@ -26,10 +26,6 @@ export const AddMenuCard = (): JSX.Element => {
 
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
-  const [menuPrice, setMenuPrice] = useState<string>("");
-  const [menuIsSold, setMenuIsSold] = useState<string>("");
-  const [isPrice, setIsPrice] = useState<boolean>(true);
-
   const [ideogramModalIsOpen, setIdeogramModalIsOpen] =
     useState<boolean>(false);
   const [IdeogramData, SetIdeogramData] =
@@ -62,56 +58,43 @@ export const AddMenuCard = (): JSX.Element => {
   };
 
   const onChangeNewMenu = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
-    SetNewMenu({
-      product: {
-        ...NewMenu.product,
-        [e.target.name]: e.target.value,
-      },
-      isSold: NewMenu.isSold,
-    });
+    switch (e.target.name) {
+      case "price":
+        if (e.target.value !== "" || !isNaN(Number(e.target.value))) {
+          SetNewMenu({
+            product: {
+              ...NewMenu.product,
+              price: Number(e.target.value),
+            },
+            isSold: NewMenu.isSold,
+          });
+        }
+        break;
+      case "isSold":
+        SetNewMenu({
+          product: {
+            ...NewMenu.product,
+          },
+          isSold: e.target.value === "soldOut" ? true : false,
+        });
+        break;
+      default:
+        SetNewMenu({
+          product: {
+            ...NewMenu.product,
+            [e.target.name]: e.target.value,
+          },
+          isSold: NewMenu.isSold,
+        });
+    }
   };
 
-  useEffect(() => {
-    SetNewMenu({
-      product: {
-        ...NewMenu.product,
-        ideogram: IdeogramData.emoji,
-      },
-      isSold: NewMenu.isSold,
-    });
-  }, [IdeogramData.emoji]);
-
-  useEffect(() => {
-    SetNewMenu({
-      product: {
-        ...NewMenu.product,
-      },
-      isSold: menuIsSold === "soldOut" ? true : false,
-    });
-  }, [menuIsSold]);
-
-  useEffect(() => {
-    if (menuPrice === "") {
-      setIsPrice(true);
-    } else if (isNaN(Number(menuPrice))) {
-      setIsPrice(true);
-    } else {
-      setIsPrice(false);
-      SetNewMenu({
-        product: {
-          ...NewMenu.product,
-          price: Number(menuPrice),
-        },
-        isSold: NewMenu.isSold,
-      });
-    }
-  }, [menuPrice]);
-
   const createMenu = () => {
-    if (isPrice === false) {
-      /*
+    /*
         import UUID from "uuidjs";
         const ID = UUID.generate();
         本番環境(データベース上)に追加されるデータ
@@ -120,26 +103,30 @@ export const AddMenuCard = (): JSX.Element => {
           ...NewMenu,
         }
       */
-      SetNewMenu({
-        ...NEW_MENU,
-      });
-      SetIdeogramData({
-        activeSkinTone: SkinTones.NEUTRAL,
-        unified: "",
-        unifiedWithoutSkinTone: "",
-        emoji: "🍔",
-        names: [""],
-        getImageUrl: (emojiStyle: EmojiStyle) => "",
-      });
-      setMenuPrice("");
-      setMenuIsSold("onSale");
-      closeModal();
-    }
+    SetNewMenu({
+      ...NEW_MENU,
+    });
+    SetIdeogramData({
+      activeSkinTone: SkinTones.NEUTRAL,
+      unified: "",
+      unifiedWithoutSkinTone: "",
+      emoji: "🍔",
+      names: [""],
+      getImageUrl: (emojiStyle: EmojiStyle) => "",
+    });
+    closeModal();
   };
 
   const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
     SetIdeogramData(emojiData);
     closeIdeogramModal();
+    SetNewMenu({
+      product: {
+        ...NewMenu.product,
+        ideogram: emojiData.emoji,
+      },
+      isSold: NewMenu.isSold,
+    });
   };
 
   return (
@@ -195,19 +182,20 @@ export const AddMenuCard = (): JSX.Element => {
               </label>
               <input
                 type="text"
-                value={menuPrice}
-                onChange={(e) => setMenuPrice(e.target.value)}
+                value={NewMenu.product.price}
+                onChange={onChangeNewMenu}
+                name="price"
                 id="menu_price"
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
               />
-              {isPrice && <div>半角で数値を入力してください。</div>}
             </div>
             <div>
               <label className="block mb-[4px] font-bold">状態</label>
               <select
                 className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer"
-                value={menuIsSold}
-                onChange={(e) => setMenuIsSold(e.target.value)}
+                value={NewMenu.isSold ? "soldOut" : "onSale"}
+                onChange={onChangeNewMenu}
+                name="isSold"
               >
                 <option value="onSale">販売中</option>
                 <option value="soldOut">売り切れ</option>
