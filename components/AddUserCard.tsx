@@ -1,4 +1,4 @@
-import { UserCardTitleSpace } from "./UserCardTitleSpace";
+import { UserCardTitleSpace, UserCardTitle } from ".";
 
 export const AddUserCard = (): JSX.Element => {
   return (
@@ -8,9 +8,7 @@ export const AddUserCard = (): JSX.Element => {
       </button>
 
       <UserCardTitleSpace>
-        <p className="text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl">
-          共同編集者の追加
-        </p>
+        <UserCardTitle type="add-card" title="共同編集者の追加" />
       </UserCardTitleSpace>
     </div>
   );
