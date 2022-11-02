@@ -8,7 +8,7 @@ export const AddUserCard = (): JSX.Element => {
       </button>
 
       <UserCardTitleSpace>
-        <UserCardTitle type="add-card" title="共同編集者の追加" />
+        <UserCardTitle cardType="add-card" title="共同編集者の追加" />
       </UserCardTitleSpace>
     </div>
   );

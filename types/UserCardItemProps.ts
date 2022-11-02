@@ -1,3 +1,3 @@
 export interface UserCardItemProps {
-  type: "user-card" | "add-card";
+  cardType: "user-card" | "add-card";
 }

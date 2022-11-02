@@ -6,8 +6,8 @@ interface Props extends UserCardItemProps {
   title: string;
 }
 
-export const UserCardTitle = ({ type, title }: Props): JSX.Element => {
-  const isAddCardItem = type === "add-card";
+export const UserCardTitle = ({ cardType, title }: Props): JSX.Element => {
+  const isAddCardItem = cardType === "add-card";
 
   return (
     <p
