@@ -2,7 +2,7 @@ export interface MonitoringLog {
   user: {
     name: string;
   };
-  type: string;
+  type: "member" | "product" | "order";
   message: string;
   date: number;
 }

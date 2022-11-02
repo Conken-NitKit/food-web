@@ -5,6 +5,12 @@ interface Props {
 }
 
 export const MonitoringCard = ({ log }: Props): JSX.Element => {
+  type OperationType = Record<"member" |"product" | "order", string>
+  const BADGE_COLORS: OperationType = {
+    member: "bg-monitoring-member",
+    product: "bg-monitoring-product",
+    order: "bg-monitoring-order",
+  }
   const badgeColor = (type: string) => {
     switch (type) {
       case "member":
@@ -24,7 +30,7 @@ export const MonitoringCard = ({ log }: Props): JSX.Element => {
         <div className="ml-[10px]">
           <div className=" flex">
             <div className="mt-2px">
-              <Badge bgcolor={badgeColor(log.type)} label={log.type} />
+              <Badge bgcolor={BADGE_COLORS[log.type]} label={log.type} />
             </div>
             <div className="ml-[10px] text-xs font-bold">{log.message}</div>
           </div>
