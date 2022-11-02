@@ -1,6 +1,11 @@
+import { User } from "../types";
 import { UserCardOutline, UserCardTitleSpace, UserCardTitle } from ".";
 
-export const UserCard = (): JSX.Element => {
+interface Props {
+  userData: User;
+}
+
+export const UserCard = ({ userData }: Props): JSX.Element => {
   return (
     <UserCardOutline cardType="user-card">
       <UserCardTitleSpace>
