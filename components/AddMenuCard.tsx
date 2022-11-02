@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
 import { MenuContent } from "../types/MenuContent";
-
-interface Props {
-  addMenu: (newMenu: AddMenu) => void;
-}
 
 export interface AddMenu {
   product: MenuContent;
