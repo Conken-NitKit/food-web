@@ -5,6 +5,7 @@ export interface Item {
   id: string;
   label: string;
 }
+
 interface Props {
   label: string;
   items: Item[];
@@ -19,14 +20,9 @@ const DropDown = ({ label, items, onChange }: Props): JSX.Element => {
     setIsOpen(true);
   }, [setIsOpen]);
 
-  const a = () => {
-    setIsOpen(false);
-  };
   const createItemClickHandler = useCallback(
     (item: Item) => {
       return () => {
-        console.log("item", item);
-
         setSelectedItem(item);
         onChange(item);
       };
