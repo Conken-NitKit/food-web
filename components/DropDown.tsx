@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { useGlobalClickEvent } from "../components/hooks/useGlobalClickEvent";
 import { CloseIcon } from "./icons/CloseIcon";
 import { ChevronDownIcon } from "./icons/ChevronDown";
+
 export interface Item {
   id: string;
   label: string;
