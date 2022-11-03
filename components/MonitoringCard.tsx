@@ -1,28 +1,17 @@
 import { Badge } from "./Badge";
 import { MonitoringLog } from "../types/MonitoringLog";
+
 interface Props {
   log: MonitoringLog;
 }
 
+const BADGE_COLORS: Record<MonitoringLog["type"], string> = {
+  member: "bg-monitoring-member",
+  product: "bg-monitoring-product",
+  order: "bg-monitoring-order",
+};
+
 export const MonitoringCard = ({ log }: Props): JSX.Element => {
-  type OperationType = Record<"member" |"product" | "order", string>
-  const BADGE_COLORS: OperationType = {
-    member: "bg-monitoring-member",
-    product: "bg-monitoring-product",
-    order: "bg-monitoring-order",
-  }
-  const badgeColor = (type: string) => {
-    switch (type) {
-      case "member":
-        return "bg-monitoring-member";
-      case "product":
-        return "bg-monitoring-product";
-      case "config":
-        return "bg-monitoring-config";
-      default:
-        return "error";
-    }
-  };
   return (
     <div>
       <div className="flex border  border-primary-regular rounded-[14px]  py-[10px] w-[1000px] h-[64px]">
