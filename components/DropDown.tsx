@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { useGlobalClickEvent } from "../components/hooks/useGlobalClickEvent";
-
+import { CloseIcon } from "./icons/CloseIcon";
+import { ChevronDownIcon } from "./icons/ChevronDown";
 export interface Item {
   id: string;
   label: string;
@@ -48,45 +49,7 @@ const DropDown = ({ label, items, onChange }: Props): JSX.Element => {
             <div className="ml-[10px] whitespace-nowrap">
               {selectedItem.label}
             </div>
-            {isOpen ? (
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  className="ionicon"
-                  viewBox="0 0 512 512"
-                >
-                  <title>Close</title>
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="32"
-                    d="M368 368L144 144M368 144L144 368"
-                  />
-                </svg>
-              </div>
-            ) : (
-              <div>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.25 8.625L12 15.375L18.75 8.625"
-                    stroke="#2D0D0D"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            )}
+            <div>{isOpen ? <CloseIcon /> : <ChevronDownIcon />}</div>
           </div>
           {isOpen && (
             <div className="absolute mt-[30px] ml-[30px] py-[16px] z-10 rounded-2xl shadow-2xl bg-primary-regular">
