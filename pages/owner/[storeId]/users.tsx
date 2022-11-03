@@ -12,7 +12,7 @@ const Users: NextPage = () => {
     {
       id: "user_a",
       name: "ユーザーA",
-      icon: "https://drive.google.com/file/d/1-Gz6MO_39wXHYXTNxT46IPXSvUavS9Qr/view?usp=sharing",
+      icon: "/vercel.svg",
       isAdmin: true,
     },
     {
