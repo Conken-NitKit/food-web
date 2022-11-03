@@ -12,8 +12,8 @@ export const UserCardTitle = ({ cardType, title }: Props): JSX.Element => {
   return (
     <p
       className={classNames(
-        "text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl leading-basic",
-        { "font-bold": !isAddCardItem }
+        "text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl",
+        { "font-bold !leading-basic": !isAddCardItem }
       )}
     >
       {title}
