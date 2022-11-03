@@ -105,16 +105,16 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       </div>
       <div className="mt-[28px] space-y-3">
         {logs
-          .filter((item) =>
-            userFilter === "全て表示" ? true : item.user.name === userFilter
+          .filter((log) =>
+            userFilter === "全て表示" ? true : log.user.name === userFilter
           )
-          .filter((item) =>
-            typeFilter === "全て表示" ? true : item.type === typeFilter
+          .filter((log) =>
+            typeFilter === "全て表示" ? true : log.type === typeFilter
           )
-          .map((item) => {
+          .map((log) => {
             return (
-              <div key={item.date}>
-                <MonitoringCard log={item} />
+              <div key={log.date}>
+                <MonitoringCard log={log} />
               </div>
             );
           })}
