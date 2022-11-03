@@ -19,9 +19,14 @@ const DropDown = ({ label, items, onChange }: Props): JSX.Element => {
     setIsOpen(true);
   }, [setIsOpen]);
 
+  const a = () => {
+    setIsOpen(false);
+  };
   const createItemClickHandler = useCallback(
     (item: Item) => {
       return () => {
+        console.log("item", item);
+
         setSelectedItem(item);
         onChange(item);
       };
@@ -44,7 +49,9 @@ const DropDown = ({ label, items, onChange }: Props): JSX.Element => {
       <div className="ml-[10px]">
         <div className="flex w-[100px]">
           <div className="flex" onClick={onButtonClick}>
-            <div className="ml-[10px] whitespace-nowrap">{selectedItem.label}</div>
+            <div className="ml-[10px] whitespace-nowrap">
+              {selectedItem.label}
+            </div>
             {isOpen ? (
               <div>
                 <svg
@@ -94,9 +101,7 @@ const DropDown = ({ label, items, onChange }: Props): JSX.Element => {
                     className="w-[120px] h-[30px] hover:bg-secondary-dark-regular"
                   >
                     <div
-                      onClick={() => {
-                        createItemClickHandler(item);
-                      }}
+                      onClick={createItemClickHandler(item)}
                       className="ml-[20px]"
                     >
                       {item.label}

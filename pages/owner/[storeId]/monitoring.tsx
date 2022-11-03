@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { FeatureLayout } from "../../../components/layouts";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { MonitoringCard } from "../../../components/MonitoringCard";
 import { MonitoringLog } from "../../../types/MonitoringLog";
 import DropDown, { Item as DropDownItem } from "../../../components/DropDown";
@@ -78,6 +78,10 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
     );
   }, [logs]);
 
+  const withAll = useCallback((items: DropDownItem[]) => {
+    return [{ id: "all", label: "全て表示" }, ...items];
+  }, []);
+
   return (
     <FeatureLayout type="monitoring">
       <div>
@@ -87,13 +91,13 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
         <div className="flex mt-[57px]">
           <DropDown
             label="ユーザーでフィルタ"
-            items={selectableUserItems}
+            items={withAll(selectableUserItems)}
             onChange={handleUserFilterChange}
           />
           <div className="ml-[54px]">
             <DropDown
               label="操作内容でフィルタ"
-              items={selectableTypeItems}
+              items={withAll(selectableTypeItems)}
               onChange={handleTypeFilterChange}
             />
           </div>
