@@ -22,7 +22,9 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
 
       <UserCardTitleSpace>
         <UserCardTitle cardType="user-card" title={title} />
-        <p>@{userId}</p>
+        <p className="text-[10px] xl:text-xs 2xl:text-sm text-secondary-regular leading-basic">
+          @{userId}
+        </p>
       </UserCardTitleSpace>
     </UserCardOutline>
   );
