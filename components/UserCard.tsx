@@ -8,8 +8,9 @@ interface Props {
 }
 
 export const UserCard = ({ userData }: Props): JSX.Element => {
-  const iconSrc = userData.icon;
+  const userId = userData.id;
   const userName = userData.name;
+  const iconSrc = userData.icon;
   const isAdmin = userData.isAdmin;
   const title: string = isAdmin ? `${userName}（管理者）` : userName;
 
@@ -21,6 +22,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
 
       <UserCardTitleSpace>
         <UserCardTitle cardType="user-card" title={title} />
+        <p>@{userId}</p>
       </UserCardTitleSpace>
     </UserCardOutline>
   );
