@@ -52,6 +52,7 @@ const MOCK_LOG: MonitoringLog[] = [
 interface Props {
   logs: MonitoringLog[];
 }
+
 const ITEM_TO_UNSELECT = { id: "all", label: "全て表示" };
 
 const Monitoring: NextPage<Props> = ({ logs }) => {
@@ -61,6 +62,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const [targetTypeItem, setTargetTypeItem] = useState<DropDownItem | null>(
     null
   );
+  
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     const userItemsWithDuplicates = logs
       .map((log) => log.user)
