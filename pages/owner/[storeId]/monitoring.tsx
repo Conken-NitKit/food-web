@@ -117,9 +117,9 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   return (
     <FeatureLayout type="monitoring">
       <div>
-        <div>
+        <p>
           システム運用者がシステムに対して実行した操作の履歴を見ることが出来ます。
-        </div>
+        </p>
         <div className="flex mt-[57px]">
           <DropDown
             label="ユーザーでフィルタ"
