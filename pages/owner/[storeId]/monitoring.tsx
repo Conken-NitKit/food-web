@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 import { MonitoringCard } from "../../../components/MonitoringCard";
 import { MonitoringLog } from "../../../types/MonitoringLog";
 import DropDown, { Item as DropDownItem } from "../../../components/DropDown";
-import { removeDuplicationValues } from "../../../utils/array";
+import { removeDuplicationFromArray } from "../../../utils/array";
 
 const MOCK_LOG: MonitoringLog[] = [
   {
@@ -58,7 +58,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   };
 
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
-    return removeDuplicationValues(logs.map((log) => log.user.name)).map(
+    return removeDuplicationFromArray(logs.map((log) => log.user.name)).map(
       (name) => {
         return {
           id: name,
@@ -69,7 +69,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   }, [logs]);
 
   const selectableTypeItems = useMemo<DropDownItem[]>(() => {
-    return removeDuplicationValues(logs.map((log) => log.type)).map(
+    return removeDuplicationFromArray(logs.map((log) => log.type)).map(
       (logType) => {
         return {
           id: logType,
