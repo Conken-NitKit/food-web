@@ -47,7 +47,9 @@ interface Props {
 
 const ALL = "全て表示";
 const Monitoring: NextPage<Props> = ({ logs }) => {
-  const [selectedUserId, setSelectedUserId] = useState<MonitoringLog["user"] | null>(null);
+  const [targetUser, setTargetUser] = useState<MonitoringLog["user"] | null>(
+    null
+  );
   const [targetType, setTargetType] = useState<MonitoringLog["type"] | null>(
     null
   );
