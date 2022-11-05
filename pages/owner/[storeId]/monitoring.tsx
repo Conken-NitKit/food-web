@@ -48,7 +48,7 @@ interface Props {
 const ALL = "全て表示";
 const Monitoring: NextPage<Props> = ({ logs }) => {
   const [selectedUserId, setSelectedUserId] = useState<string>(ALL);
-  const [selectedTypeId, setSelectedTypeFilter] = useState<string>(ALL);
+  const [selectedTypeId, setSelectedTypeId] = useState<string>(ALL);
 
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     return removeDuplicationFromArray(logs.map((log) => log.user.name)).map(
@@ -78,16 +78,16 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
 
   const handleUserFilterChange = useCallback(
     (item: DropDownItem) => {
-      setSelectedUserId(item.label);
+      setSelectedUserId(item.id);
     },
-    [withAll(selectableUserItems)]
+    [selectableUserItems]
   );
 
   const handleTypeFilterChange = useCallback(
     (item: DropDownItem) => {
-      setSelectedTypeFilter(item.label);
+      setSelectedTypeId(item.id);
     },
-    [withAll(selectableTypeItems)]
+    [selectableTypeItems]
   );
 
   return (
