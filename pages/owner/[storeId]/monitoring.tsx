@@ -47,8 +47,8 @@ interface Props {
 
 const ALL = "全て表示";
 const Monitoring: NextPage<Props> = ({ logs }) => {
-  const [userFilter, setUserFilter] = useState<string>(ALL);
-  const [typeFilter, setTypeFilter] = useState<string>(ALL);
+  const [selectedUserId, setSelectedUserId] = useState<string>(ALL);
+  const [selectedTypeId, setSelectedTypeFilter] = useState<string>(ALL);
 
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     return removeDuplicationFromArray(logs.map((log) => log.user.name)).map(
@@ -78,14 +78,14 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
 
   const handleUserFilterChange = useCallback(
     (item: DropDownItem) => {
-      setUserFilter(item.label);
+      setSelectedUserId(item.label);
     },
     [withAll(selectableUserItems)]
   );
 
   const handleTypeFilterChange = useCallback(
     (item: DropDownItem) => {
-      setTypeFilter(item.label);
+      setSelectedTypeFilter(item.label);
     },
     [withAll(selectableTypeItems)]
   );
@@ -113,8 +113,12 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       </div>
       <div className="mt-[28px] space-y-3">
         {logs
-          .filter((log) => userFilter === ALL || log.user.name === userFilter)
-          .filter((log) => typeFilter === ALL || log.type === typeFilter)
+          .filter(
+            (log) => selectedUserId === ALL || log.user.name === selectedUserId
+          )
+          .filter(
+            (log) => selectedTypeId === ALL || log.type === selectedTypeId
+          )
           .map((log) => {
             return (
               <div key={log.date}>
