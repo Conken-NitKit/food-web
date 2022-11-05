@@ -10,12 +10,13 @@ export const Badge = ({
   children,
 }: PropsWithChildren<Props>): JSX.Element => {
   return (
-    <div>
-      <div className={classNames("rounded w-[58px] h-[18px]", bgcolor)}>
-        <div className="flex justify-center items-center text-xs font-bold">
-          {children}
-        </div>
-      </div>
+    <div
+      className={classNames(
+        "flex justify-center items-center text-xs font-bold rounded w-[58px] h-[18px]",
+        bgcolor
+      )}
+    >
+      {children}
     </div>
   );
 };
