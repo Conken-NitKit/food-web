@@ -11,7 +11,7 @@ const MOCK_LOG: MonitoringLog[] = [
     user: {
       name: "うみてる",
       userId: "umiteru",
-      accountId: "umiteru",
+      accountId: "umiteru1",
     },
     type: "member",
     message: "うみてるを追加",
@@ -21,7 +21,7 @@ const MOCK_LOG: MonitoringLog[] = [
     user: {
       name: "うみてる",
       userId: "umiteru",
-      accountId: "umiteru",
+      accountId: "umiteru2",
     },
     type: "member",
     message: "うみてるをメンバーから除外しました。バイバイ",
@@ -31,7 +31,7 @@ const MOCK_LOG: MonitoringLog[] = [
     user: {
       name: "きーた",
       userId: "qiita",
-      accountId: "qiita",
+      accountId: "qiita1",
     },
     type: "member",
     message: "きーたがjoin! やったね！",
@@ -41,7 +41,7 @@ const MOCK_LOG: MonitoringLog[] = [
     user: {
       name: "きーた",
       userId: "qiita",
-      accountId: "qiita",
+      accountId: "qiita2",
     },
     type: "product",
     message: "きーたがハンバーガー売ったらしい。がっぽり☆",
