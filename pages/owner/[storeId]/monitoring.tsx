@@ -9,34 +9,42 @@ import { removeDuplicationFromArray } from "../../../utils/array";
 const MOCK_LOG: MonitoringLog[] = [
   {
     user: {
-      name: "hirata",
+      name: "umiteru",
+      userId: "umiteru",
+      accountId: "umiteru",
     },
     type: "member",
-    message: "平田を追加",
+    message: "うみてるを追加",
     date: 202209240859,
   },
   {
     user: {
-      name: "hirata",
+      name: "umiteru",
+      userId: "umiteru",
+      accountId: "umiteru",
     },
     type: "member",
-    message: "平田をメンバーから除外しました。バイバイ",
+    message: "うみてるをメンバーから除外しました。バイバイ",
     date: 202209240900,
   },
   {
     user: {
-      name: "kitashiro",
+      name: "qiita",
+      userId: "qiita",
+      accountId: "qiita",
     },
     type: "member",
-    message: "北代がjoin! やったね！",
+    message: "きーたがjoin! やったね！",
     date: 202209240901,
   },
   {
     user: {
-      name: "kitashiro",
+      name: "qiita",
+      userId: "qiita",
+      accountId: "qiita",
     },
     type: "product",
-    message: "北代がハンバーガー売ったらしい。がっぽり☆",
+    message: "きーたがハンバーガー売ったらしい。がっぽり☆",
     date: 202209240902,
   },
 ];
@@ -44,13 +52,13 @@ const MOCK_LOG: MonitoringLog[] = [
 interface Props {
   logs: MonitoringLog[];
 }
+const ITEM_TO_UNSELECT = { id: "all", label: "全て表示" };
 
-const ALL = "全て表示";
 const Monitoring: NextPage<Props> = ({ logs }) => {
-  const [targetUser, setTargetUser] = useState<MonitoringLog["user"] | null>(
+  const [targetUserItem, setTargetUserItem] = useState<DropDownItem | null>(
     null
   );
-  const [targetType, setTargetType] = useState<MonitoringLog["type"] | null>(
+  const [targetTypeItem, setTargetTypeItem] = useState<DropDownItem | null>(
     null
   );
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
@@ -79,22 +87,22 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
     return typeItems;
   }, [logs]);
 
-  const withAll = useCallback((items: DropDownItem[]) => {
-    return [{ id: "all", label: ALL }, ...items];
+  const withUnselect = useCallback((items: DropDownItem[]) => {
+    return [ITEM_TO_UNSELECT, ...items];
   }, []);
 
   const handleUserFilterChange = useCallback(
     (item: DropDownItem) => {
-      setSelectedUserId(item.id);
+      setTargetUserItem(item.id === ITEM_TO_UNSELECT.id ? null : item);
     },
-    [selectableUserItems]
+    [targetUserItem]
   );
 
   const handleTypeFilterChange = useCallback(
     (item: DropDownItem) => {
-      setSelectedTypeId(item.id);
+      setTargetTypeItem(item.id === ITEM_TO_UNSELECT.id ? null : item);
     },
-    [selectableTypeItems]
+    [targetTypeItem]
   );
 
   return (
@@ -106,13 +114,13 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
         <div className="flex mt-[57px]">
           <DropDown
             label="ユーザーでフィルタ"
-            items={withAll(selectableUserItems)}
+            items={withUnselect(selectableUserItems)}
             onChange={handleUserFilterChange}
           />
           <div className="ml-[54px]">
             <DropDown
               label="操作内容でフィルタ"
-              items={withAll(selectableTypeItems)}
+              items={withUnselect(selectableTypeItems)}
               onChange={handleTypeFilterChange}
             />
           </div>
@@ -121,11 +129,9 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       <div className="mt-[28px] space-y-3">
         {logs
           .filter(
-            (log) => selectedUserId === ALL || log.user.name === selectedUserId
+            (log) => !targetUserItem || targetUserItem.id === log.user.userId
           )
-          .filter(
-            (log) => selectedTypeId === ALL || log.type === selectedTypeId
-          )
+          .filter((log) => !targetTypeItem || targetTypeItem.id === log.type)
           .map((log) => {
             return (
               <div key={log.date}>
