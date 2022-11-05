@@ -50,13 +50,6 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const [userFilter, setUserFilter] = useState<string>(ALL);
   const [typeFilter, setTypeFilter] = useState<string>(ALL);
 
-  const handleUserFilterChange = (item: DropDownItem) => {
-    setUserFilter(item.label);
-  };
-  const handleTypeFilterChange = (item: DropDownItem) => {
-    setTypeFilter(item.label);
-  };
-
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     return removeDuplicationFromArray(logs.map((log) => log.user.name)).map(
       (name) => {
@@ -82,6 +75,20 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const withAll = useCallback((items: DropDownItem[]) => {
     return [{ id: "all", label: ALL }, ...items];
   }, []);
+
+  const handleUserFilterChange = useCallback(
+    (item: DropDownItem) => {
+      setUserFilter(item.label);
+    },
+    [withAll(selectableUserItems)]
+  );
+
+  const handleTypeFilterChange = useCallback(
+    (item: DropDownItem) => {
+      setTypeFilter(item.label);
+    },
+    [withAll(selectableTypeItems)]
+  );
 
   return (
     <FeatureLayout type="monitoring">
