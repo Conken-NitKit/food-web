@@ -113,12 +113,8 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       </div>
       <div className="mt-[28px] space-y-3">
         {logs
-          .filter((log) =>
-            userFilter === ALL ? true : log.user.name === userFilter
-          )
-          .filter((log) =>
-            typeFilter === ALL ? true : log.type === typeFilter
-          )
+          .filter((log) => userFilter === ALL || log.user.name === userFilter)
+          .filter((log) => typeFilter === ALL || log.type === typeFilter)
           .map((log) => {
             return (
               <div key={log.date}>
