@@ -47,9 +47,10 @@ interface Props {
 
 const ALL = "全て表示";
 const Monitoring: NextPage<Props> = ({ logs }) => {
-  const [selectedUserId, setSelectedUserId] = useState<string>(ALL);
-  const [selectedTypeId, setSelectedTypeId] = useState<string>(ALL);
-
+  const [selectedUserId, setSelectedUserId] = useState<MonitoringLog["user"] | null>(null);
+  const [targetType, setTargetType] = useState<MonitoringLog["type"] | null>(
+    null
+  );
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     const userItemsWithDuplicates = logs
       .map((log) => log.user.name)
