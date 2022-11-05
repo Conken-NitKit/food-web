@@ -45,9 +45,10 @@ interface Props {
   logs: MonitoringLog[];
 }
 
+const ALL = "全て表示";
 const Monitoring: NextPage<Props> = ({ logs }) => {
-  const [userFilter, setUserFilter] = useState<string>("全て表示");
-  const [typeFilter, setTypeFilter] = useState<string>("全て表示");
+  const [userFilter, setUserFilter] = useState<string>(ALL);
+  const [typeFilter, setTypeFilter] = useState<string>(ALL);
 
   const handleUserFilterChange = (item: DropDownItem) => {
     setUserFilter(item.label);
@@ -79,7 +80,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   }, [logs]);
 
   const withAll = useCallback((items: DropDownItem[]) => {
-    return [{ id: "all", label: "全て表示" }, ...items];
+    return [{ id: "all", label: ALL }, ...items];
   }, []);
 
   return (
@@ -106,10 +107,10 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       <div className="mt-[28px] space-y-3">
         {logs
           .filter((log) =>
-            userFilter === "全て表示" ? true : log.user.name === userFilter
+            userFilter === ALL ? true : log.user.name === userFilter
           )
           .filter((log) =>
-            typeFilter === "全て表示" ? true : log.type === typeFilter
+            typeFilter === ALL ? true : log.type === typeFilter
           )
           .map((log) => {
             return (
