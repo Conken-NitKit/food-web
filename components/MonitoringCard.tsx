@@ -1,5 +1,6 @@
 import { Badge } from "./Badge";
 import { MonitoringLog } from "../types/MonitoringLog";
+import { getFormattedDate } from "../utils/date";
 
 interface Props {
   log: MonitoringLog;
@@ -24,7 +25,7 @@ export const MonitoringCard = ({ log }: Props): JSX.Element => {
             <div className="ml-[10px] text-xs font-bold">{log.message}</div>
           </div>
           <div className="text-xs text-secondary-regular mt-[3px]">
-            {log.date}
+            {getFormattedDate(log.timestamp)}
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const MOCK_LOG: MonitoringLog[] = [
     },
     type: "member",
     message: "うみてるを追加",
-    date: 202209240859,
+    timestamp: 1667662827391,
   },
   {
     user: {
@@ -25,7 +25,7 @@ const MOCK_LOG: MonitoringLog[] = [
     },
     type: "member",
     message: "うみてるをメンバーから除外しました。バイバイ",
-    date: 202209240900,
+    timestamp: 1667664827400,
   },
   {
     user: {
@@ -35,7 +35,7 @@ const MOCK_LOG: MonitoringLog[] = [
     },
     type: "member",
     message: "きーたがjoin! やったね！",
-    date: 202209240901,
+    timestamp: 1667667827500,
   },
   {
     user: {
@@ -45,7 +45,7 @@ const MOCK_LOG: MonitoringLog[] = [
     },
     type: "product",
     message: "きーたがハンバーガー売ったらしい。がっぽり☆",
-    date: 202209240902,
+    timestamp: 1667668827600,
   },
 ];
 
@@ -138,7 +138,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       <div className="mt-[28px] space-y-3">
         {displayLogs.map((log) => {
           return (
-            <div key={log.date}>
+            <div key={log.timestamp}>
               <MonitoringCard log={log} />
             </div>
           );

@@ -6,5 +6,5 @@ export interface MonitoringLog {
   };
   type: "member" | "product" | "order";
   message: string;
-  date: number;
+  timestamp: number;
 }
