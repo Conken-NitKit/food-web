@@ -62,7 +62,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const [targetTypeItem, setTargetTypeItem] = useState<DropDownItem | null>(
     null
   );
-  
+
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     const userItemsWithDuplicates = logs
       .map((log) => log.user)
@@ -87,6 +87,12 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
       });
     const typeItems = removeDuplicationFromArray(typeItemsWithDuplicates);
     return typeItems;
+  }, [logs]);
+
+  const displayLogs = useMemo<MonitoringLog[]>(() => {
+    return logs
+      .filter((log) => !targetUserItem || targetUserItem.id === log.user.userId)
+      .filter((log) => !targetTypeItem || targetTypeItem.id === log.type);
   }, [logs]);
 
   const withUnselect = useCallback((items: DropDownItem[]) => {
@@ -130,18 +136,13 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
-        {logs
-          .filter(
-            (log) => !targetUserItem || targetUserItem.id === log.user.userId
-          )
-          .filter((log) => !targetTypeItem || targetTypeItem.id === log.type)
-          .map((log) => {
-            return (
-              <div key={log.date}>
-                <MonitoringCard log={log} />
-              </div>
-            );
-          })}
+        {displayLogs.map((log) => {
+          return (
+            <div key={log.date}>
+              <MonitoringCard log={log} />
+            </div>
+          );
+        })}
       </div>
     </FeatureLayout>
   );
