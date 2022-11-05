@@ -9,7 +9,7 @@ import { removeDuplicationFromArray } from "../../../utils/array";
 const MOCK_LOG: MonitoringLog[] = [
   {
     user: {
-      name: "umiteru",
+      name: "うみてる",
       userId: "umiteru",
       accountId: "umiteru",
     },
@@ -19,7 +19,7 @@ const MOCK_LOG: MonitoringLog[] = [
   },
   {
     user: {
-      name: "umiteru",
+      name: "うみてる",
       userId: "umiteru",
       accountId: "umiteru",
     },
@@ -29,7 +29,7 @@ const MOCK_LOG: MonitoringLog[] = [
   },
   {
     user: {
-      name: "qiita",
+      name: "きーた",
       userId: "qiita",
       accountId: "qiita",
     },
@@ -39,7 +39,7 @@ const MOCK_LOG: MonitoringLog[] = [
   },
   {
     user: {
-      name: "qiita",
+      name: "きーた",
       userId: "qiita",
       accountId: "qiita",
     },
@@ -63,11 +63,11 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   );
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
     const userItemsWithDuplicates = logs
-      .map((log) => log.user.name)
-      .map((name) => {
+      .map((log) => log.user)
+      .map((user) => {
         return {
-          id: name,
-          label: name,
+          id: user.userId,
+          label: user.name,
         };
       });
     const userItems = removeDuplicationFromArray(userItemsWithDuplicates);
@@ -94,6 +94,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const handleUserFilterChange = useCallback(
     (item: DropDownItem) => {
       setTargetUserItem(item.id === ITEM_TO_UNSELECT.id ? null : item);
+      console.log(item);
     },
     [targetUserItem]
   );
