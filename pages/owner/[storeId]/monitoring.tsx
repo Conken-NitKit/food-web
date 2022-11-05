@@ -102,7 +102,6 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const handleUserFilterChange = useCallback(
     (item: DropDownItem) => {
       setTargetUserItem(item.id === ITEM_TO_UNSELECT.id ? null : item);
-      console.log(item);
     },
     [targetUserItem]
   );
