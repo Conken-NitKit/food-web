@@ -51,25 +51,29 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   const [selectedTypeId, setSelectedTypeId] = useState<string>(ALL);
 
   const selectableUserItems = useMemo<DropDownItem[]>(() => {
-    return removeDuplicationFromArray(logs.map((log) => log.user.name)).map(
-      (name) => {
+    const userItemsWithDuplicates = logs
+      .map((log) => log.user.name)
+      .map((name) => {
         return {
           id: name,
           label: name,
         };
-      }
-    );
+      });
+    const userItems = removeDuplicationFromArray(userItemsWithDuplicates);
+    return userItems;
   }, [logs]);
 
   const selectableTypeItems = useMemo<DropDownItem[]>(() => {
-    return removeDuplicationFromArray(logs.map((log) => log.type)).map(
-      (logType) => {
+    const typeItemsWithDuplicates = logs
+      .map((log) => log.type)
+      .map((type) => {
         return {
-          id: logType,
-          label: logType,
+          id: type,
+          label: type,
         };
-      }
-    );
+      });
+    const typeItems = removeDuplicationFromArray(typeItemsWithDuplicates);
+    return typeItems;
   }, [logs]);
 
   const withAll = useCallback((items: DropDownItem[]) => {
