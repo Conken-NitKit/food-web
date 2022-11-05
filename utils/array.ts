@@ -1,3 +1,10 @@
 export const removeDuplicationFromArray = <T>(array: T[]) => {
-  return array.filter((value, index, self) => self.indexOf(value) === index);
+  const stringifiedArray = array.map((value) => JSON.stringify(value));
+
+  const removedArray = array.filter((value, index) => {
+    const foundIndex = stringifiedArray.indexOf(JSON.stringify(value));
+    return foundIndex === index;
+  });
+
+  return removedArray;
 };
