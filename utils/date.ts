@@ -1,5 +1,5 @@
-export const getFormattedDate = (unixTimeStampMs: number) => {
-  const date = new Date(unixTimeStampMs);
+export const getFormattedDate = (unixTimestampMs: number) => {
+  const date = new Date(unixTimestampMs);
   return date.toLocaleString("ja-JP", {
     year: "numeric",
     month: "2-digit",
