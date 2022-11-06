@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { GuideCaption, PageTransitionButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
+import { CopyUrl } from "../../../utils";
 
 const guideMock: {
   [key: number]: {
@@ -48,13 +49,6 @@ const guideMock: {
 };
 
 const Home: NextPage = () => {
-  const urlCopy = () => {
-    navigator.clipboard
-      .writeText("https://food-web-alpha.vercel.app/")
-      .then(() => {
-        alert("copied!");
-      }, alert);
-  };
   return (
     <div className="w-screen h-screen">
       <Head>
@@ -81,7 +75,7 @@ const Home: NextPage = () => {
                 pagePath="https://food-web-alpha.vercel.app/menu"
               />
               <button
-                onClick={urlCopy}
+                onClick={CopyUrl}
                 className="flex justify-center items-center ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-[18px] xl:h-[22px] 2xl:h-[27px] text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
               >
                 <p className="font-menu-card">コピー</p>
@@ -134,11 +128,11 @@ const Home: NextPage = () => {
           <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
             {Object.values(guideMock).map((guide) => (
               <li>
-              <GuideCaption
-                key={guide.guideId}
-                ideogram={guide.ideogram}
-                description={guide.description}
-              />
+                <GuideCaption
+                  key={guide.guideId}
+                  ideogram={guide.ideogram}
+                  description={guide.description}
+                />
               </li>
             ))}
           </ul>
