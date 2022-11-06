@@ -90,10 +90,11 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   }, [logs]);
 
   const displayLogs = useMemo<MonitoringLog[]>(() => {
-    return logs
+    const filteredLogs = logs
       .filter((log) => !targetUserItem || targetUserItem.id === log.user.userId)
       .filter((log) => !targetTypeItem || targetTypeItem.id === log.type);
-  }, [logs]);
+    return filteredLogs;
+  }, [logs, targetUserItem, targetTypeItem]);
 
   const withUnselect = useCallback((items: DropDownItem[]) => {
     return [DROP_DOWN_ITEM_TO_DESELECT, ...items];
@@ -139,7 +140,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
-        {displayLogs.map((log) => {
+        {Object.values(displayLogs).map((log) => {
           return (
             <div key={log.timestamp}>
               <MonitoringCard log={log} />
