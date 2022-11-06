@@ -70,8 +70,8 @@ const Home: NextPage = () => {
             </p>
             <div className="flex item-center mt-[3.5%] h-[22.7%]">
               <PageTransitionButton
-                regularText="モバイルオーダー用ページを確認する"
-                secondaryText="モバイルオーダーページ"
+                pcLabel="モバイルオーダー用ページを確認する"
+                spLabel="モバイルオーダーページ"
                 pagePath="https://food-web-alpha.vercel.app/menu"
               />
               <button
@@ -115,8 +115,8 @@ const Home: NextPage = () => {
           </div>
           <div className="flex justify-end mt-[8.3%]">
             <PageTransitionButton
-              regularText="売上解析ページを確認する"
-              secondaryText="売上解析ページ"
+              pcLabel="売上解析ページを確認する"
+              spLabel="売上解析ページ"
               pagePath="https://food-web-alpha.vercel.app/sales"
             />
           </div>
