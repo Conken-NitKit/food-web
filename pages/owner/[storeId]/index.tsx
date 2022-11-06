@@ -6,7 +6,7 @@ import { CopyUrl } from "../../../utils";
 import { GuideContent } from "../../../types/GuideContent";
 import { useMemo } from "react";
 
-const GUIDEMOCK: GuideContent[] = [
+const GUIDE_MOCKS: GuideContent[] = [
   {
     guideId: 1,
     ideogram: "🖥",
