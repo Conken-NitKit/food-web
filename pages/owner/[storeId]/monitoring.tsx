@@ -53,7 +53,7 @@ interface Props {
   logs: MonitoringLog[];
 }
 
-const ITEM_TO_UNSELECT = { id: "all", label: "全て表示" };
+const DROP_DOWN_ITEM_TO_DESELECT = { id: "__unselected__", label: "全て表示" };
 
 const Monitoring: NextPage<Props> = ({ logs }) => {
   const [targetUserItem, setTargetUserItem] = useState<DropDownItem | null>(
@@ -96,19 +96,23 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
   }, [logs]);
 
   const withUnselect = useCallback((items: DropDownItem[]) => {
-    return [ITEM_TO_UNSELECT, ...items];
+    return [DROP_DOWN_ITEM_TO_DESELECT, ...items];
   }, []);
 
   const handleUserFilterChange = useCallback(
     (item: DropDownItem) => {
-      setTargetUserItem(item.id === ITEM_TO_UNSELECT.id ? null : item);
+      setTargetUserItem(
+        item.id === DROP_DOWN_ITEM_TO_DESELECT.id ? null : item
+      );
     },
     [targetUserItem]
   );
 
   const handleTypeFilterChange = useCallback(
     (item: DropDownItem) => {
-      setTargetTypeItem(item.id === ITEM_TO_UNSELECT.id ? null : item);
+      setTargetTypeItem(
+        item.id === DROP_DOWN_ITEM_TO_DESELECT.id ? null : item
+      );
     },
     [targetTypeItem]
   );
