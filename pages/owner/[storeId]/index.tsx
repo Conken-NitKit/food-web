@@ -5,7 +5,7 @@ import { BasicLayout } from "../../../components/layouts";
 import { CopyUrl } from "../../../utils";
 import { GuideContent } from "../../../types/GuideContent";
 
-const guideMock: {
+const GUIDEMOCK: {
   [key: string]: GuideContent;
 } = {
   1: {
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
             使い方
           </div>
           <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
-            {Object.values(guideMock).map((guide) => (
+            {Object.values(GUIDEMOCK).map((guide) => (
               <li>
                 <GuideCaption
                   key={guide.guideId}
