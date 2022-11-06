@@ -4,6 +4,7 @@ import { GuideCaption, LinkButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
 import { CopyUrl } from "../../../utils";
 import { GuideContent } from "../../../types/GuideContent";
+import { useMemo } from "react";
 
 const GUIDEMOCK: {
   [key: string]: GuideContent;
@@ -46,6 +47,10 @@ const GUIDEMOCK: {
 };
 
 const Home: NextPage = () => {
+  const getTime = useMemo(() => {
+    return `${new Date().getFullYear()}年${new Date().getMonth() + 1}月`;
+  }, []);
+
   return (
     <div className="w-screen h-screen">
       <Head>
@@ -86,7 +91,7 @@ const Home: NextPage = () => {
               今月
             </div>
             <p className="ml-[2.12%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
-              {new Date().getFullYear()}年{new Date().getMonth() + 1}月
+              {getTime}
             </p>
           </div>
           <div className="flex items-center mt-[5.3%] w-full h-[41%]">
