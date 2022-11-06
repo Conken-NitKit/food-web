@@ -19,10 +19,8 @@ export const MonitoringCard = ({ log }: Props): JSX.Element => {
         {/* 画像貼る予定 */}
       </div>
       <div className="ml-[10px]">
-        <div className=" flex">
-          <div className="mt-[2px]">
-            <Badge bgColor={BADGE_COLORS[log.type]}>{log.type}</Badge>
-          </div>
+        <div className="flex">
+          <Badge bgColor={BADGE_COLORS[log.type]}>{log.type}</Badge>
           <div className="ml-[10px] text-xs font-bold">{log.message}</div>
         </div>
         <div className="text-xs text-secondary-regular mt-[3px]">
