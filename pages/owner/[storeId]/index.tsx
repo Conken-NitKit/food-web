@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { PageTransitionButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
 
 const guideMock: {
@@ -74,18 +75,12 @@ const Home: NextPage = () => {
             <p className="mt-[1.56%] text-[10px] xl:text-[13px] 2xl:text-[15px] text-secondary-regular font-normal font-roboto leading-[1.19]">
               https://food-web-alpha.vercel.app/
             </p>
-            <div className="flex mt-[3.5%] h-[21.7%]">
-              <a
-                href="https://food-web-alpha.vercel.app/menu"
-                className="flex items-center justify-center border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[80.4%] h-full text-[11px] 2xl:text-[13px] text-primary-regular"
-              >
-                <p className="hidden md:block font-menu-card">
-                  モバイルオーダー用のページを確認する
-                </p>
-                <p className="md:hidden font-menu-card">
-                  モバイルオーダーページ
-                </p>
-              </a>
+            <div className="flex item-center mt-[3.5%] h-[22.7%]">
+              <PageTransitionButton
+                regularText="モバイルオーダー用ページを確認する"
+                secondaryText="モバイルオーダーページ"
+                pagePath="https://food-web-alpha.vercel.app/menu"
+              />
               <button
                 onClick={urlCopy}
                 className="ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-full text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
@@ -125,15 +120,13 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
-          <a
-            href="https://food-web-alpha.vercel.app/sales"
-            className="flex items-center justify-center ml-auto mt-[8.3%] border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[73.7%] h-[12.1%] text-[11px] 2xl:text-[13px] text-primary-regular"
-          >
-            <p className="hidden md:block font-menu-card">
-              売上解析ページを確認する
-            </p>
-            <p className="md:hidden font-menu-card">売上解析ページ</p>
-          </a>
+          <div className="flex justify-end mt-[8.3%]">
+            <PageTransitionButton
+              regularText="売上解析ページを確認する"
+              secondaryText="売上解析ページ"
+              pagePath="https://food-web-alpha.vercel.app/sales"
+            />
+          </div>
         </div>
         <div className="mx-auto mt-[14px] md:mt-[17px] lg:mt-[23px] xl:mt-[29px] 2xl:mt-[35px] w-[260px] md:w-[312px] lg:w-[415px] xl:w-[519px] 2xl:w-[623px] h-[121px] md:h-[145px] lg:h-[193px] xl:h-[242px] 2xl:h-[290px] text-primary-regular font-bold">
           <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
