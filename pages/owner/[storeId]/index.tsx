@@ -139,4 +139,3 @@ const Home: NextPage = () => {
   );
 };
 export default Home;
-// <HomeGuide guides={Object.values(guideMock)} />
