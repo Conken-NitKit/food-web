@@ -2,9 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { GuideCaption, LinkButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
-import { CopyUrl } from "../../../utils";
 import { GuideContent } from "../../../types/GuideContent";
 import { useMemo } from "react";
+import { copyUrl } from "../../../utils/CopyUrl";
 
 const GUIDE_MOCKS: GuideContent[] = [
   {
@@ -75,7 +75,7 @@ const Home: NextPage = () => {
                 pagePath="https://food-web-alpha.vercel.app/menu"
               />
               <button
-                onClick={CopyUrl}
+                onClick={copyUrl}
                 className="flex justify-center items-center ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-[18px] xl:h-[22px] 2xl:h-[27px] text-[11px] 2xl:text-[13px] text-primary-inverted font-menu-card bg-primary-dark-regular"
               >
                 コピー
