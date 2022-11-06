@@ -68,10 +68,10 @@ const Home: NextPage = () => {
             🖥
           </div>
           <div className="my-auto ml-[3.3%] w-full">
-            <h1 className="overflow-scroll h-[17px] md:h-[20px] lg:h-[27px] xl:h-[34px] 2xl:h-[40px] text-[14px] md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] text-primary-regular font-roboto leading-[1.17]">
+            <h1 className="overflow-scroll h-[17px] md:h-[20px] lg:h-[27px] xl:h-[34px] 2xl:h-[40px] text-[14px] md:text-[17px] lg:text-[23px] xl:text-[29px] 2xl:text-[35px] text-primary-regular font-regular leading-[1.17]">
               コンピュータ研究部
             </h1>
-            <p className="mt-[1.56%] text-[10px] xl:text-[13px] 2xl:text-[15px] text-secondary-regular font-normal font-roboto leading-[1.19]">
+            <p className="mt-[1.56%] text-[10px] xl:text-[13px] 2xl:text-[15px] text-secondary-regular font-normal font-regular leading-[1.19]">
               https://food-web-alpha.vercel.app/
             </p>
             <div className="flex item-center mt-[3.5%] h-[22.7%]">
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] mx-auto w-[226px] md:w-[271px] lg:w-[361px] xl:w-[452px] 2xl:w-[542px] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular font-bold font-roboto">
+        <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] mx-auto w-[226px] md:w-[271px] lg:w-[361px] xl:w-[452px] 2xl:w-[542px] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular font-bold font-regular">
           <div className="flex items-center h-[14.1%]">
             <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
               今月
