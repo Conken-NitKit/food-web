@@ -6,45 +6,43 @@ import { CopyUrl } from "../../../utils";
 import { GuideContent } from "../../../types/GuideContent";
 import { useMemo } from "react";
 
-const GUIDEMOCK: {
-  [key: string]: GuideContent;
-} = {
-  1: {
+const GUIDEMOCK: GuideContent[] = [
+  {
     guideId: 1,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-  2: {
+  {
     guideId: 2,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-  3: {
+  {
     guideId: 3,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-  4: {
+  {
     guideId: 4,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-  5: {
+  {
     guideId: 5,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-  6: {
+  {
     guideId: 6,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-  7: {
+  {
     guideId: 7,
     ideogram: "🖥",
     description: "あああああああああああああああああああああああああああ",
   },
-};
+];
 
 const Home: NextPage = () => {
   const getTime = useMemo(() => {
