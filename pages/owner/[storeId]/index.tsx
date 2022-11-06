@@ -82,7 +82,7 @@ const Home: NextPage = () => {
               />
               <button
                 onClick={urlCopy}
-                className="ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-full text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
+                className="flex justify-center items-center ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-[11px] md:h-[13px] lg:h-[18px] xl:h-[22px] 2xl:h-[27px] text-[11px] 2xl:text-[13px] text-primary-inverted bg-primary-dark-regular"
               >
                 <p className="font-menu-card">コピー</p>
               </button>
