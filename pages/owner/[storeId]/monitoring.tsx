@@ -140,7 +140,7 @@ const Monitoring: NextPage<Props> = ({ logs }) => {
         </div>
       </div>
       <div className="mt-[28px] space-y-3">
-        {Object.values(displayLogs).map((log) => {
+        {displayLogs.map((log) => {
           return (
             <div key={log.timestamp}>
               <MonitoringCard log={log} />
