@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import { PageTransitionButton } from "../../../components";
+import { GuideCaption, PageTransitionButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
 
 const guideMock: {
@@ -134,17 +133,11 @@ const Home: NextPage = () => {
           </div>
           <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
             {Object.values(guideMock).map((guide) => (
-              <li
+              <GuideCaption
                 key={guide.guideId}
-                className="flex mb-[3.3%] w-[47.45%] h-[25%] even:ml-auto"
-              >
-                <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square h-full bg-secondary-regular text-[24px]">
-                  {guide.ideogram}
-                </div>
-                <p className="ml-[6.5%] h-[80%] text-[6px] md:text-[8px] lg:text-[10px] xl:text-[13px] 2xl:text-[15px] line-clamp-2 font-roboto">
-                  {guide.description}
-                </p>
-              </li>
+                ideogram={guide.ideogram}
+                description={guide.description}
+              />
             ))}
           </ul>
         </div>
