@@ -4,7 +4,7 @@ interface Props {
   pagePath: string;
 }
 
-export const PageTransitionButton = ({
+export const LinkButton = ({
   pcLabel,
   spLabel,
   pagePath,

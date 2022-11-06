@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { GuideCaption, PageTransitionButton } from "../../../components";
+import { GuideCaption, LinkButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
 import { CopyUrl } from "../../../utils";
 import { GuideContent } from "../../../types/GuideContent";
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
               https://food-web-alpha.vercel.app/
             </p>
             <div className="flex item-center mt-[3.5%] h-[22.7%]">
-              <PageTransitionButton
+              <LinkButton
                 pcLabel="モバイルオーダー用ページを確認する"
                 spLabel="モバイルオーダーページ"
                 pagePath="https://food-web-alpha.vercel.app/menu"
@@ -111,7 +111,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="flex justify-end mt-[8.3%]">
-            <PageTransitionButton
+            <LinkButton
               pcLabel="売上解析ページを確認する"
               spLabel="売上解析ページ"
               pagePath="https://food-web-alpha.vercel.app/sales"
