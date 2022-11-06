@@ -3,3 +3,4 @@ export { MenuCard } from "./MenuCard";
 export { AddMenuCard } from "./AddMenuCard";
 export { OrderCard } from "./OrderCard";
 export { PageTransitionButton } from "./PageTransitionButton";
+export { GuideCaption } from "./GuideCaption";
