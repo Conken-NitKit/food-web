@@ -54,7 +54,7 @@ const DropDown = ({ label, items, onChange }: Props): JSX.Element => {
         {isOpen && (
           <div className="absolute mt-[30px] ml-[30px] py-[16px] z-10 rounded-2xl shadow-2xl bg-primary-regular">
             <ul>
-              {Object.values(items).map((item) => (
+              {items.map((item) => (
                 <li
                   key={item.id}
                   className="w-[120px] h-[30px] pl-[20px] hover:bg-secondary-dark-regular"
