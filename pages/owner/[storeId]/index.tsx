@@ -3,13 +3,10 @@ import Head from "next/head";
 import { GuideCaption, PageTransitionButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
 import { CopyUrl } from "../../../utils";
+import { GuideContent } from "../../../types/GuideContent";
 
 const guideMock: {
-  [key: number]: {
-    guideId: number;
-    ideogram: string;
-    description: string;
-  };
+  [key: string]: GuideContent;
 } = {
   1: {
     guideId: 1,
