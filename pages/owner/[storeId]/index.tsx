@@ -4,7 +4,7 @@ import { GuideCaption, LinkButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
 import { GuideContent } from "../../../types/GuideContent";
 import { useMemo } from "react";
-import { copyUrl } from "../../../utils/CopyUrl";
+import { copyUrl } from "../../../utils/copyUrl";
 
 const GUIDE_MOCKS: GuideContent[] = [
   {
