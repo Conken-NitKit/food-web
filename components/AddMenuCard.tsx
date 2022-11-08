@@ -60,7 +60,7 @@ export const AddMenuCard = (): JSX.Element => {
   ) => {
     switch (e.target.name) {
       case "price":
-        if (e.target.value !== "" || !isNaN(Number(e.target.value))) {
+        if (!isNaN(Number(e.target.value))) {
           SetNewMenu({
             product: {
               ...NewMenu.product,
