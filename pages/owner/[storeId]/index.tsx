@@ -45,7 +45,7 @@ const GUIDE_MOCKS: GuideContent[] = [
 ];
 
 const Home: NextPage = () => {
-  const getTime = useMemo(() => {
+  const getDate = useMemo(() => {
     return `${new Date().getFullYear()}年${new Date().getMonth() + 1}月`;
   }, []);
 
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
               今月
             </div>
             <p className="ml-[2.12%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
-              {getTime}
+              {getDate}
             </p>
           </div>
           <div className="flex items-center mt-[5.3%] w-full h-[41%]">
