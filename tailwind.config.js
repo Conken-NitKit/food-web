@@ -196,7 +196,7 @@ module.exports = {
       }),
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
-        "thirdry-regular": theme("colors.gray.a10"),
+        "tertiary-regular": theme("colors.gray.a10"),
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
         "secondary-regular": theme("colors.lightgray.a100"),

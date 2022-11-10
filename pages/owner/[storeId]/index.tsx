@@ -76,7 +76,7 @@ const Home: NextPage = () => {
               />
               <button
                 onClick={copyUrl}
-                className="flex justify-center items-center ml-auto border border-thirdry-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-[18px] xl:h-[22px] 2xl:h-[27px] text-[11px] 2xl:text-[13px] text-primary-inverted font-menu-card bg-primary-dark-regular"
+                className="flex justify-center items-center ml-auto border border-tertiary-regular rounded-[6px] md:rounded-[7px] lg:rounded-[9px] xl:rounded-[11px] 2xl:rounded-[13px] w-[17.1%] h-[18px] xl:h-[22px] 2xl:h-[27px] text-[11px] 2xl:text-[13px] text-primary-inverted font-menu-card bg-primary-dark-regular"
               >
                 コピー
               </button>
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="flex items-center mt-[5.3%] w-full h-[41%]">
-            <div className="pr-[12.6%] border-r border-thirdry-regular text-center">
+            <div className="pr-[12.6%] border-r border-tertiary-regular text-center">
               <p className="mb-[13.5%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
                 売上合計
               </p>
