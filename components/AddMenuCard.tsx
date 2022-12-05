@@ -151,7 +151,7 @@ export const AddMenuCard = (): JSX.Element => {
             backgroundColor: "rgba(0, 0, 0, .2)",
           },
         }}
-        className="relative top-[50%] left-[50%] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] translate-x-[-50%] translate-y-[-50%] bg-white-a100 font-menu-card outline-none"
+        className="relative top-[50%] left-[50%] pt-[15px] pb-[17px] pr-[20px] pl-[19px] rounded-[8px] w-[472px] h-[565px] translate-x-[-50%] translate-y-[-50%] bg-white-a100 font-menu-card outline-none text-brown-a100"
       >
         <h3 className="h-[17px] font-bold text-[15px]">メニューを新規作成</h3>
         <form onSubmit={createMenu}>
@@ -224,7 +224,7 @@ export const AddMenuCard = (): JSX.Element => {
               </div>
               <button
                 type="button"
-                className="rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100 cursor-pointer"
+                className="rounded-[4px] w-[130px] h-[25px] text-[10px] bg-goldenyellow-a100 cursor-pointer text-[#000000]"
                 onClick={openIdeogramModal}
               >
                 絵文字を選択する
