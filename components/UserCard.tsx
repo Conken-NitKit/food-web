@@ -29,6 +29,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
           @{userId}
         </p>
       </UserCardTitleSpace>
+      <button></button>
     </UserCardOutline>
   );
 };
