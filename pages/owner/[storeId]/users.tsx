@@ -18,7 +18,7 @@ const Users: NextPage = () => {
     {
       id: "user_b",
       name: "ユーザーB",
-      icon: "",
+      icon: "/vercel.svg",
       isAdmin: false,
     },
   ];
