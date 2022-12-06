@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import Image from "next/image";
 
 import { User } from "../types";
@@ -9,10 +10,12 @@ interface Props {
 
 export const UserCard = ({ userData }: Props): JSX.Element => {
   const userId = userData.id;
-  const userName = userData.name;
   const iconSrc = userData.icon;
-  const isAdmin = userData.isAdmin;
-  const title: string = isAdmin ? `${userName}（管理者）` : userName;
+  const title = useMemo<string>(() => {
+    const userName = userData.name;
+    const isAdmin = userData.isAdmin;
+    return isAdmin ? `${userName}（管理者）` : userName;
+  }, []);
 
   return (
     <UserCardOutline cardType="user-card">
