@@ -79,7 +79,7 @@ const Order: NextPage = () => {
                     <div className="mb-[9px] font-bold">
                       {content.product.name}
                     </div>
-                    <div className="text-[12px] opacity-[0.8] font-light">
+                    <div className="text-[12px] opacity-[0.8] font-light whitespace-pre-line">
                       {content.product.promotion}
                     </div>
                   </div>
