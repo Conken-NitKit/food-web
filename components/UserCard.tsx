@@ -29,7 +29,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
           @{userId}
         </p>
       </UserCardTitleSpace>
-      <button></button>
+      <button className="flex flex-col justify-between ml-auto mr-[1%] w-[2px] md:w-[3px] lg:w-[4px] xl:w-[5px] 2xl:w-[6px] h-[30%]"></button>
     </UserCardOutline>
   );
 };
