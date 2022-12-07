@@ -16,6 +16,8 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
     const isAdmin = userData.isAdmin;
     return isAdmin ? `${userName}（管理者）` : userName;
   }, []);
+  const dotClass =
+    "rounded-[50%] w-[100%] aspect-square bg-text-primary-regular";
 
   return (
     <UserCardOutline cardType="user-card">
@@ -25,14 +27,16 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
 
       <UserCardTitleSpace>
         <UserCardTitle cardType="user-card" title={title} />
+
         <p className="text-[10px] xl:text-xs 2xl:text-sm text-secondary-regular leading-basic">
           @{userId}
         </p>
       </UserCardTitleSpace>
+
       <button className="flex flex-col justify-between ml-auto mr-[1%] w-[2px] md:w-[3px] lg:w-[4px] xl:w-[5px] 2xl:w-[6px] h-[30%]">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className={dotClass}></div>
+        <div className={dotClass}></div>
+        <div className={dotClass}></div>
       </button>
     </UserCardOutline>
   );
