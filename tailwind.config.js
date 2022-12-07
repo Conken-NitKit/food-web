@@ -178,6 +178,7 @@ module.exports = {
         "order-card-reject": theme("colors.pink.a10"),
         "order-card-complete": theme("colors.green.a10"),
         "complete-regular": theme("colors.green.a100"),
+        "text-primary-regular": theme("colors.brown.a100"),
       }),
       textColor: (theme) => ({
         "primary-regular": theme("colors.brown.a100"),
