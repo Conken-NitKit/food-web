@@ -83,59 +83,61 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] mx-auto w-[226px] md:w-[271px] lg:w-[361px] xl:w-[452px] 2xl:w-[542px] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular font-bold font-regular">
-          <div className="flex items-center h-[14.1%]">
+        <div className="mx-auto w-[260px] md:w-[312px] lg:w-[415px] xl:w-[519px] 2xl:w-[623px]">
+          <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] w-[226px] md:w-[271px] lg:w-[361px] xl:w-[452px] 2xl:w-[542px] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular font-bold font-regular">
+            <div className="flex items-center h-[14.1%]">
+              <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
+                今月
+              </div>
+              <p className="ml-[2.12%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
+                {getDate}
+              </p>
+            </div>
+            <div className="flex items-center mt-[5.3%] w-full h-[41%]">
+              <div className="pr-[12.6%] border-r border-tertiary-regular text-center">
+                <p className="mb-[13.5%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
+                  売上合計
+                </p>
+                <p className="text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-none">
+                  ¥
+                  <span className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px]">
+                    {(361280).toLocaleString()}
+                  </span>
+                </p>
+              </div>
+              <div className="pl-[14.2%] text-center">
+                <p className="mb-[20.9%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
+                  注文回数合計
+                </p>
+                <p className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px] leading-none">
+                  {(962).toLocaleString()}
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-end mt-[8.3%]">
+              <LinkButton
+                pcLabel="売上解析ページを確認する"
+                spLabel="売上解析ページ"
+                pagePath="https://food-web-alpha.vercel.app/sales"
+              />
+            </div>
+          </div>
+          <div className="mt-[14px] md:mt-[17px] lg:mt-[23px] xl:mt-[29px] 2xl:mt-[35px] w-[260px] md:w-[312px] lg:w-[415px] xl:w-[519px] 2xl:w-[623px] h-[121px] md:h-[145px] lg:h-[193px] xl:h-[242px] 2xl:h-[290px] text-primary-regular font-bold">
             <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
-              今月
+              使い方
             </div>
-            <p className="ml-[2.12%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
-              {getDate}
-            </p>
+            <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
+              {GUIDE_MOCKS.map((guide) => (
+                <li>
+                  <GuideCaption
+                    key={guide.guideId}
+                    ideogram={guide.ideogram}
+                    description={guide.description}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex items-center mt-[5.3%] w-full h-[41%]">
-            <div className="pr-[12.6%] border-r border-tertiary-regular text-center">
-              <p className="mb-[13.5%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
-                売上合計
-              </p>
-              <p className="text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-none">
-                ¥
-                <span className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px]">
-                  {(361280).toLocaleString()}
-                </span>
-              </p>
-            </div>
-            <div className="pl-[14.2%] text-center">
-              <p className="mb-[20.9%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
-                注文回数合計
-              </p>
-              <p className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px] leading-none">
-                {(962).toLocaleString()}
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-end mt-[8.3%]">
-            <LinkButton
-              pcLabel="売上解析ページを確認する"
-              spLabel="売上解析ページ"
-              pagePath="https://food-web-alpha.vercel.app/sales"
-            />
-          </div>
-        </div>
-        <div className="mx-auto mt-[14px] md:mt-[17px] lg:mt-[23px] xl:mt-[29px] 2xl:mt-[35px] w-[260px] md:w-[312px] lg:w-[415px] xl:w-[519px] 2xl:w-[623px] h-[121px] md:h-[145px] lg:h-[193px] xl:h-[242px] 2xl:h-[290px] text-primary-regular font-bold">
-          <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
-            使い方
-          </div>
-          <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
-            {GUIDE_MOCKS.map((guide) => (
-              <li>
-                <GuideCaption
-                  key={guide.guideId}
-                  ideogram={guide.ideogram}
-                  description={guide.description}
-                />
-              </li>
-            ))}
-          </ul>
         </div>
       </BasicLayout>
     </div>
