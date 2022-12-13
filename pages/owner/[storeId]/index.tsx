@@ -126,7 +126,7 @@ const Home: NextPage = () => {
             <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
               使い方
             </div>
-            <ul className="overflow-scroll flex flex-wrap mt-[4.93%] h-[85%]">
+            <ul className="overflow-scroll flex flex-wrap mt-[4.93%] gap-x-[calc(100%-246px)] md:gap-x-[calc(100%-296px)] lg:gap-x-[calc(100%-394px)] xl:gap-x-[calc(100%-492px)] 2xl:gap-x-[calc(100%-592px)] gap-y-[9px] md:gap-y-[10px] lg:gap-y-[14px] xl:gap-y-[17px] 2xl:gap-y-[21px] h-[85%]">
               {GUIDE_MOCKS.map((guide) => (
                 <li key={guide.guideId}>
                   <GuideCaption

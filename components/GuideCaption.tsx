@@ -5,7 +5,7 @@ interface Props {
 
 export const GuideCaption = ({ ideogram, description }: Props): JSX.Element => {
   return (
-    <div className="flex mb-[9px] md:mb-[10px] lg:mb-[14px] xl:mb-[17px] 2xl:mb-[21px] w-[123px] md:w-[148px] lg:w-[197px] xl:w-[246px] 2xl:w-[296px] h-[26px] md:h-[31px] lg:h-[41px] xl:h-[51px] 2xl:h-[61px] even:ml-auto">
+    <div className="flex w-[123px] md:w-[148px] lg:w-[197px] xl:w-[246px] 2xl:w-[296px] h-[26px] md:h-[31px] lg:h-[41px] xl:h-[51px] 2xl:h-[61px]">
       <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square h-full bg-secondary-regular text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
         {ideogram}
       </div>
