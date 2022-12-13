@@ -95,7 +95,7 @@ const Home: NextPage = () => {
             </div>
             <div className="flex items-center mt-[5.3%] w-full h-[41%]">
               <div className="pr-[12.6%] border-r border-tertiary-regular text-center">
-                <p className="mb-[13.5%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
+                <p className="mb-[13.5%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
                   売上合計
                 </p>
                 <p className="text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px] leading-none">
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
                 </p>
               </div>
               <div className="pl-[14.2%] text-center">
-                <p className="mb-[20.9%] text-[10px] xl:text-[13px] 2xl:text-[15px]">
+                <p className="mb-[20.9%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
                   注文回数合計
                 </p>
                 <p className="text-[13px] md:text-[15px] lg:text-[20px] xl:text-[26px] 2xl:text-[31px] leading-none">
