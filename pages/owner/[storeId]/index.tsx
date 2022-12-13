@@ -2,9 +2,14 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { GuideCaption, LinkButton } from "../../../components";
 import { BasicLayout } from "../../../components/layouts";
-import { GuideContent } from "../../../types/GuideContent";
 import { useMemo } from "react";
 import { copyUrl } from "../../../utils/copyUrl";
+
+interface GuideContent {
+  guideId: number;
+  ideogram: string;
+  description: string;
+}
 
 const GUIDE_MOCKS: GuideContent[] = [
   {
