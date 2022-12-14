@@ -2,5 +2,5 @@ export interface User {
   id: string;
   name: string;
   icon: string;
-  isAdmin: boolean;
+  role: string;
 }
