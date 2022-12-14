@@ -31,7 +31,14 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
         </p>
       </UserCardTitleSpace>
 
-      <button className="flex flex-col items-center justify-between ml-auto h-[30%] aspect-square"></button>
+      <button className="ml-auto h-[30%] aspect-square">
+        <Image
+          src="/three-dots.svg"
+          width={24}
+          height={24}
+          layout="responsive"
+        />
+      </button>
     </UserCardOutline>
   );
 };
