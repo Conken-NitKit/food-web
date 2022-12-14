@@ -13,13 +13,13 @@ const Users: NextPage = () => {
       id: "user_a",
       name: "ユーザーA",
       icon: "/vercel.svg",
-      isAdmin: true,
+      role: "admin",
     },
     {
       id: "user_b",
       name: "ユーザーB",
       icon: "/vercel.svg",
-      isAdmin: false,
+      role: "member",
     },
   ];
 
