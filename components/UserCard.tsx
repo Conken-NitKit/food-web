@@ -11,11 +11,16 @@ interface Props {
 export const UserCard = ({ userData }: Props): JSX.Element => {
   const userId = userData.id;
   const iconSrc = userData.icon;
+
   const title = useMemo<string>(() => {
-    const userName = userData.name;
-    const isAdmin = userData.isAdmin;
-    return isAdmin ? `${userName}（管理者）` : userName;
-  }, []);
+    switch (userData.role) {
+      case "admin":
+        return `${userData.name}（管理者）`;
+
+      default:
+        return userData.name;
+    }
+  }, [userData]);
 
   return (
     <UserCardOutline cardType="user-card">
