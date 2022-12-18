@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { UserCardItemProps } from "../types";
+import { UserCardItemProps } from "../../types";
 
 interface Props extends UserCardItemProps {
   title: string;

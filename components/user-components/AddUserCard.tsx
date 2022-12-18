@@ -1,4 +1,6 @@
-import { UserCardOutline, UserCardTitleSpace, UserCardTitle } from ".";
+import { UserCardOutline } from "./UserCardOutline";
+import { UserCardTitle } from "./UserCardTitle";
+import { UserCardTitleSpace } from "./UserCardTitleSpace";
 
 export const AddUserCard = (): JSX.Element => {
   return (

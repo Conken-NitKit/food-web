@@ -1,8 +1,10 @@
 import { useMemo } from "react";
 import Image from "next/image";
 
-import { User } from "../types";
-import { UserCardOutline, UserCardTitleSpace, UserCardTitle } from ".";
+import { User } from "../../types";
+import { UserCardOutline } from "./UserCardOutline";
+import { UserCardTitleSpace } from "./UserCardTitleSpace";
+import { UserCardTitle } from "./UserCardTitle";
 
 interface Props {
   userData: User;
