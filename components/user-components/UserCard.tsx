@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import Image from "next/image";
 
 import { User } from "../../types";
-import { UserCardOutline } from "./UserCardOutline";
 import { UserCardTitleSpace } from "./UserCardTitleSpace";
 import { UserCardTitle } from "./UserCardTitle";
 
@@ -25,7 +24,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
   }, [userData.role, userData.name]);
 
   return (
-    <UserCardOutline cardType="user-card">
+    <div className="flex items-center w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]">
       <div className="relative rounded-md md:rounded-lg lg:rounded-lg xl:rounded-xl 2xl:rounded-2xl w-6 md:w-[29px] lg:w-[37px] xl:w-[47px] 2xl:w-14 h-2/3">
         <Image src={iconSrc} layout="fill" />
       </div>
@@ -46,6 +45,6 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
           layout="responsive"
         />
       </button>
-    </UserCardOutline>
+    </div>
   );
 };
