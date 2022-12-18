@@ -20,7 +20,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
       default:
         return userData.name;
     }
-  }, [userData]);
+  }, [userData.role, userData.name]);
 
   return (
     <UserCardOutline cardType="user-card">
