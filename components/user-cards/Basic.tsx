@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import Image from "next/image";
 
 import { Roles, User } from "../../types";
@@ -12,16 +11,7 @@ export const UserCard = ({ user }: Props): JSX.Element => {
     admin: `${user.name}（管理者）`,
     member: user.name,
   };
-
-  const title = useMemo<string>(() => {
-    switch (user.role) {
-      case "admin":
-        return `${user.name}（管理者）`;
-
-      default:
-        return user.name;
-    }
-  }, [user.role, user.name]);
+  const title = titles[user.role];
 
   return (
     <div className="flex items-center border-t border-secondary-regular w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]">
