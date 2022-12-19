@@ -11,7 +11,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
   const userId = userData.id;
   const iconSrc = userData.icon;
 
-  const title = useMemo<string>(() => {
+  const userName = useMemo<string>(() => {
     switch (userData.role) {
       case "admin":
         return `${userData.name}（管理者）`;
@@ -29,7 +29,7 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
 
       <div className="ml-1 md:ml-1.5 lg:ml-2 xl:ml-2.5 2xl:ml-3">
         <p className="text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl font-bold !leading-basic">
-          {title}
+          {userName}
         </p>
 
         <p className="text-[10px] xl:text-xs 2xl:text-sm text-secondary-regular leading-basic">
