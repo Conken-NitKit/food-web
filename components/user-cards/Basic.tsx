@@ -4,22 +4,22 @@ import Image from "next/image";
 import { User } from "../../types";
 
 interface Props {
-  userData: User;
+  user: User;
 }
 
-export const UserCard = ({ userData }: Props): JSX.Element => {
-  const userId = userData.id;
-  const iconSrc = userData.icon;
+export const UserCard = ({ user }: Props): JSX.Element => {
+  const userId = user.id;
+  const iconSrc = user.icon;
 
   const userName = useMemo<string>(() => {
-    switch (userData.role) {
+    switch (user.role) {
       case "admin":
-        return `${userData.name}（管理者）`;
+        return `${user.name}（管理者）`;
 
       default:
-        return userData.name;
+        return user.name;
     }
-  }, [userData.role, userData.name]);
+  }, [user.role, user.name]);
 
   return (
     <div className="flex items-center border-t border-secondary-regular w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]">

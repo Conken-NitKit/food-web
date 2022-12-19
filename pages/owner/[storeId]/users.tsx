@@ -30,7 +30,7 @@ const Users: NextPage = () => {
         <ul>
           {users.map((user) => (
             <li key={user.id}>
-              <UserCard userData={user} />
+              <UserCard user={user} />
             </li>
           ))}
         </ul>
