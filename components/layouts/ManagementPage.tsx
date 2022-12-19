@@ -16,7 +16,8 @@ export const ManagementPageLayout = ({
 }: Props): JSX.Element => {
   return (
     <FeatureLayout type={type}>
-      {/* note: FeatureLayoutのページタイトルの下のmarginが必要以上に大きかったので、マイナスのmarginを指定しています。 */}
+      {/* HACK: FeatureLayoutのページタイトルの下のmarginが必要以上に大きかったので、マイナスのmarginを指定しています。 */}
+      {/* TODO: FeatureLayout側を別PRで修正します */}
       <p className="mt-[-10px] md:mt-[-12px] lg:mt-[-16px] xl:mt-[-20px] 2xl:mt-[-24px] text-primary-regular text-[10px] xl:text-xs 2xl:text-base">
         {tips}
       </p>
