@@ -8,9 +8,6 @@ interface Props {
 }
 
 export const UserCard = ({ user }: Props): JSX.Element => {
-  const userId = user.id;
-  const iconSrc = user.icon;
-
   const userName = useMemo<string>(() => {
     switch (user.role) {
       case "admin":
@@ -24,7 +21,7 @@ export const UserCard = ({ user }: Props): JSX.Element => {
   return (
     <div className="flex items-center border-t border-secondary-regular w-full h-9 md:h-11 lg:h-14 xl:h-[70px] 2xl:h-[84px]">
       <div className="relative rounded-md md:rounded-lg lg:rounded-lg xl:rounded-xl 2xl:rounded-2xl w-6 md:w-[29px] lg:w-[37px] xl:w-[47px] 2xl:w-14 h-2/3">
-        <Image src={iconSrc} layout="fill" />
+        <Image src={user.icon} layout="fill" />
       </div>
 
       <div className="ml-1 md:ml-1.5 lg:ml-2 xl:ml-2.5 2xl:ml-3">
@@ -33,7 +30,7 @@ export const UserCard = ({ user }: Props): JSX.Element => {
         </p>
 
         <p className="text-[10px] xl:text-xs 2xl:text-sm text-secondary-regular leading-basic">
-          @{userId}
+          @{user.id}
         </p>
       </div>
 
