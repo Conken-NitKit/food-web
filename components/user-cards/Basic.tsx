@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const UserCard = ({ user }: Props): JSX.Element => {
-  const userName = useMemo<string>(() => {
+  const title = useMemo<string>(() => {
     switch (user.role) {
       case "admin":
         return `${user.name}（管理者）`;
@@ -26,7 +26,7 @@ export const UserCard = ({ user }: Props): JSX.Element => {
 
       <div className="ml-1 md:ml-1.5 lg:ml-2 xl:ml-2.5 2xl:ml-3">
         <p className="text-primary-regular text-xs lg:text-base xl:text-xl 2xl:text-2xl font-bold !leading-basic">
-          {userName}
+          {title}
         </p>
 
         <p className="text-[10px] xl:text-xs 2xl:text-sm text-secondary-regular leading-basic">
