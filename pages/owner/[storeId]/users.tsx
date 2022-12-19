@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 import { ManagementPageLayout } from "../../../components/layouts/ManagementPage";
-import { AddUserCard, UserCard } from "../../../components/user-components";
+import { AddUserCard, UserCard } from "../../../components/user-cards";
 import { User } from "../../../types";
 
 const Users: NextPage = () => {
