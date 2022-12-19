@@ -1,13 +1,18 @@
 import { useMemo } from "react";
 import Image from "next/image";
 
-import { User } from "../../types";
+import { Roles, User } from "../../types";
 
 interface Props {
   user: User;
 }
 
 export const UserCard = ({ user }: Props): JSX.Element => {
+  const titles: Record<Roles, string> = {
+    admin: `${user.name}（管理者）`,
+    member: user.name,
+  };
+
   const title = useMemo<string>(() => {
     switch (user.role) {
       case "admin":
