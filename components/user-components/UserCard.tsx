@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import Image from "next/image";
 
 import { User } from "../../types";
-import { UserCardTitleSpace } from "./UserCardTitleSpace";
 import { UserCardTitle } from "./UserCardTitle";
 
 interface Props {
@@ -29,13 +28,13 @@ export const UserCard = ({ userData }: Props): JSX.Element => {
         <Image src={iconSrc} layout="fill" />
       </div>
 
-      <UserCardTitleSpace>
+      <div className="ml-1 md:ml-1.5 lg:ml-2 xl:ml-2.5 2xl:ml-3">
         <UserCardTitle cardType="user-card" title={title} />
 
         <p className="text-[10px] xl:text-xs 2xl:text-sm text-secondary-regular leading-basic">
           @{userId}
         </p>
-      </UserCardTitleSpace>
+      </div>
 
       <button className="ml-auto h-[30%] aspect-square">
         <Image
