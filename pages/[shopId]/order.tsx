@@ -91,12 +91,13 @@ const Order: NextPage = () => {
                     </div>
                   </div>
                 </div>
-                <div
+                <button
+                  type="button"
                   onClick={addCart}
-                  className="flex items-center justify-center absolute bottom-[0px] right-[0px] w-[78px] h-[34px] bg-red-a100 rounded-tl-[13px] rounded-br-[13px] font-['Mulish'] text-white-a100 text-[13px] font-extrabold"
+                  className="flex items-center justify-center absolute bottom-[0px] right-[0px] w-[78px] h-[34px] bg-red-a100 cursor-pointer rounded-tl-[13px] rounded-br-[13px] font-['Mulish'] text-white-a100 text-[13px] font-extrabold"
                 >
                   + ADD
-                </div>
+                </button>
                 <div className="absolute bottom-[57px] right-[14px] w-[65px] h-[22px] font-menu-card text-brown-a100 text-[10px] font-bold">
                   単品 ￥{content.product.price}
                 </div>
@@ -105,9 +106,12 @@ const Order: NextPage = () => {
           })}
         </ul>
       </div>
-      <div className="flex items-center justify-center fixed bottom-[12px] left-[50%] w-[301px] h-[41px] translate-x-[-50%] bg-brown-a100 text-white-a100 font-light text-[12px]">
+      <button
+        type="button"
+        className="flex items-center justify-center fixed bottom-[12px] left-[50%] w-[301px] h-[41px] translate-x-[-50%] bg-brown-a100 text-white-a100 font-light text-[12px] cursor-pointer"
+      >
         カートを確認する({orderQuantity})
-      </div>
+      </button>
     </div>
   );
 };
