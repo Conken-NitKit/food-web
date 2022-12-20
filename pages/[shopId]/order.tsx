@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { useState } from "react";
 import { MenuContent } from "../../types/MenuContent";
 
 //仮置きのデータ（実際はデータベースから取得する）
@@ -56,6 +57,12 @@ const OrderContents: {
 };
 
 const Order: NextPage = () => {
+  const [orderQuantity, setOrderQuantity] = useState<number>(0);
+
+  const addCart = () => {
+    setOrderQuantity((prev) => prev + 1);
+  };
+
   return (
     <div>
       <div className="absolute w-full h-[224px] bg-red-a100"></div>
@@ -84,7 +91,10 @@ const Order: NextPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-center absolute bottom-[0px] right-[0px] w-[78px] h-[34px] bg-red-a100 rounded-tl-[13px] rounded-br-[13px] font-['Mulish'] text-white-a100 text-[13px] font-extrabold">
+                <div
+                  onClick={addCart}
+                  className="flex items-center justify-center absolute bottom-[0px] right-[0px] w-[78px] h-[34px] bg-red-a100 rounded-tl-[13px] rounded-br-[13px] font-['Mulish'] text-white-a100 text-[13px] font-extrabold"
+                >
                   + ADD
                 </div>
                 <div className="absolute bottom-[57px] right-[14px] w-[65px] h-[22px] font-menu-card text-brown-a100 text-[10px] font-bold">
@@ -96,7 +106,7 @@ const Order: NextPage = () => {
         </ul>
       </div>
       <div className="flex items-center justify-center fixed bottom-[12px] left-[50%] w-[301px] h-[41px] translate-x-[-50%] bg-brown-a100 text-white-a100 font-light text-[12px]">
-        カートを確認する(1)
+        カートを確認する({orderQuantity})
       </div>
     </div>
   );
