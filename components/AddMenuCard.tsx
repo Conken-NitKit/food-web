@@ -93,12 +93,7 @@ export const AddMenuCard = (): JSX.Element => {
       ...NEW_MENU,
     });
     SetIdeogramData({
-      activeSkinTone: SkinTones.NEUTRAL,
-      unified: "",
-      unifiedWithoutSkinTone: "",
-      emoji: "🍔",
-      names: [""],
-      getImageUrl: (emojiStyle: EmojiStyle) => "",
+      ...IDEOGRAM_DATA,
     });
     closeModal();
   };
