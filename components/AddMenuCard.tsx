@@ -58,47 +58,37 @@ export const AddMenuCard = (): JSX.Element => {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    switch (e.target.name) {
-      case "price":
-        if (!isNaN(Number(e.target.value))) {
-          SetNewMenu({
-            product: {
-              ...NewMenu.product,
-              price: Number(e.target.value),
-            },
-            isSold: NewMenu.isSold,
-          });
-        }
-        break;
-      case "isSold":
-        SetNewMenu({
-          product: {
-            ...NewMenu.product,
-          },
-          isSold: e.target.value === "soldOut" ? true : false,
-        });
-        break;
-      default:
-        SetNewMenu({
-          product: {
-            ...NewMenu.product,
-            [e.target.name]: e.target.value,
-          },
-          isSold: NewMenu.isSold,
-        });
-    }
+    ((PrevNewMenu) => {
+      switch (e.target.name) {
+        case "name":
+          PrevNewMenu.product.name = e.target.value;
+          break;
+        case "price":
+          if (!isNaN(Number(e.target.value))) {
+            PrevNewMenu.product.price = Number(e.target.value);
+          }
+          break;
+        case "isSold":
+          PrevNewMenu.isSold = e.target.value === "soldOut";
+          break;
+        case "promotion":
+          PrevNewMenu.product.promotion = e.target.value;
+          break;
+      }
+      SetNewMenu(PrevNewMenu);
+    })(Object.assign({}, NewMenu));
   };
 
   const createMenu = () => {
     /*
-        import UUID from "uuidjs";
-        const ID = UUID.generate();
-        本番環境(データベース上)に追加されるデータ
-        この関数内にデータを送信する関数をおく
-        [ID]: {
-          ...NewMenu,
-        }
-      */
+      import UUID from "uuidjs";
+      const ID = UUID.generate();
+      本番環境(データベース上)に追加されるデータ
+      この関数内にデータを送信する関数をおく
+      [ID]: {
+        ...NewMenu,
+      }
+    */
     SetNewMenu({
       ...NEW_MENU,
     });
