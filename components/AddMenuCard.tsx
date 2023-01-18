@@ -35,7 +35,7 @@ export const AddMenuCard = (): JSX.Element => {
       price: 0,
     },
     isSold: false,
-  };
+  } as const;
 
   const [NewMenu, SetNewMenu] = useState<AddMenu>(NEW_MENU);
 
