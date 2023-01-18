@@ -58,7 +58,7 @@ export const AddMenuCard = (): JSX.Element => {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    ((PrevNewMenu) => {
+    const changeNewMenu = (PrevNewMenu: AddMenu) => {
       switch (e.target.name) {
         case "name":
           PrevNewMenu.product.name = e.target.value;
@@ -75,8 +75,9 @@ export const AddMenuCard = (): JSX.Element => {
           PrevNewMenu.product.promotion = e.target.value;
           break;
       }
-      SetNewMenu(PrevNewMenu);
-    })(Object.assign({}, NewMenu));
+      return PrevNewMenu;
+    };
+    SetNewMenu(changeNewMenu(Object.assign({}, NewMenu)));
   };
 
   const createMenu = () => {
