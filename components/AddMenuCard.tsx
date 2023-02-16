@@ -64,7 +64,7 @@ export const AddMenuCard = (): JSX.Element => {
           PrevNewMenu.product.name = e.target.value;
           break;
         case "price":
-          if (!isNaN(Number(e.target.value))) {
+          if (!Number.isNaN(Number(e.target.value))) {
             PrevNewMenu.product.price = Number(e.target.value);
           }
           break;
@@ -77,7 +77,7 @@ export const AddMenuCard = (): JSX.Element => {
       }
       return PrevNewMenu;
     };
-    SetNewMenu(changeNewMenu(Object.assign({}, NewMenu)));
+    SetNewMenu(changeNewMenu({ ...NewMenu }));
   };
 
   const createMenu = () => {
