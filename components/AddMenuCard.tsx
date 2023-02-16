@@ -82,13 +82,11 @@ export const AddMenuCard = (): JSX.Element => {
 
   const createMenu = () => {
     /*
-      import UUID from "uuidjs";
-      const ID = UUID.generate();
-      本番環境(データベース上)に追加されるデータ
-      この関数内にデータを送信する関数をおく
-      [ID]: {
-        ...NewMenu,
-      }
+      TODO: この関数内で本番環境(データベース上)にデータを送信する必要がある
+            IDは用意する必要がある
+            [ID]: {
+              ...NewMenu,
+            }
     */
     SetNewMenu({
       ...NEW_MENU,
