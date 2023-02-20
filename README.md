@@ -122,13 +122,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - `<BasicLayout type="(ページファイル名)">(JSX)</BasicLayout>`として、()内を編集してページファイルで使用する。
 
-### FeaturePageLayout
+### FeatureLayout
 
-- `<FeaturePageLayout type="(ページファイル名)">(JSX)</FeaturePageLayout>`として、()内を編集してページファイルで使用する。
+- `<FeatureLayout type="(ページファイル名)">(JSX)</FeatureLayout>`として、()内を編集してページファイルで使用する。
 
-- 基本的にホーム以外の全てのページで使用する。
+- 基本的にホームページ、管理系ページ（ページタイトルの下に短い説明文があるページ）以外の全てのページで使用する。
 
-### category-menu-components
+### ManagementPageLayout
+
+- 管理系ページ（ページタイトルの下に短い説明文があるページ）で使用します。
+
+- `<ManagementPageLayout type="（PageId）" tips="（ページタイトル下の説明文）" >（children）</ManagementPageLayout>`の形で使用します。
+
+### tab-components
 
 - 以下の形で使用することを想定している。
 
@@ -136,7 +142,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 import {
   CategoryMenuItems,
   CategoryUl,
-} from "../components/category-menu-components";
+} from "../components/tab-components";
 
 const CATEGORIES: Record<
   カテゴリIDの型,
