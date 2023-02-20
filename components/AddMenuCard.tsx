@@ -77,7 +77,8 @@ export const AddMenuCard = (): JSX.Element => {
       }
       return PrevNewMenu;
     };
-    SetNewMenu(changeNewMenu({ ...NewMenu }));
+
+    SetNewMenu((prev) => changeNewMenu({ ...prev }));
   };
 
   const createMenu = () => {
