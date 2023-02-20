@@ -5,10 +5,10 @@ import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
 import { MenuContent } from "../types/MenuContent";
 
-export interface AddMenu {
+type AddMenu = {
   product: MenuContent;
   isSold: boolean;
-}
+};
 
 export const AddMenuCard = (): JSX.Element => {
   const IDEOGRAM_DATA: EmojiClickData = {
