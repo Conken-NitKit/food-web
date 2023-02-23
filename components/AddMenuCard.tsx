@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
 import { MenuContent } from "../types/MenuContent";
+import set from "lodash/set";
 
 type AddMenu = {
   product: MenuContent;
@@ -56,29 +57,41 @@ export const AddMenuCard = (): JSX.Element => {
   const onChangeNewMenu = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
+    type: "string" | "number" | "boolean",
+    path: string
   ) => {
-    const changeNewMenu = (PrevNewMenu: AddMenu) => {
-      switch (e.target.name) {
-        case "name":
-          PrevNewMenu.product.name = e.target.value;
-          break;
-        case "price":
-          if (!Number.isNaN(Number(e.target.value))) {
-            PrevNewMenu.product.price = Number(e.target.value);
-          }
-          break;
-        case "isSold":
-          PrevNewMenu.isSold = e.target.value === "soldOut";
-          break;
-        case "promotion":
-          PrevNewMenu.product.promotion = e.target.value;
-          break;
-      }
-      return PrevNewMenu;
+    const value = e.target.value;
+
+    const changeNewMenu = (val: string | number | boolean) => {
+      SetNewMenu((prev) => set({ ...prev }, path, val));
     };
 
-    SetNewMenu((prev) => changeNewMenu({ ...prev }));
+    switch (type) {
+      case "string":
+        changeNewMenu(value);
+        break;
+      case "number":
+        if (!Number.isNaN(Number(value))) {
+          changeNewMenu(Number(value));
+        }
+        break;
+      case "boolean":
+        changeNewMenu(value === "TRUE");
+        break;
+    }
+  };
+
+  const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
+    SetIdeogramData(emojiData);
+    closeIdeogramModal();
+    SetNewMenu({
+      product: {
+        ...NewMenu.product,
+        ideogram: emojiData.emoji,
+      },
+      isSold: NewMenu.isSold,
+    });
   };
 
   const createMenu = () => {
@@ -96,18 +109,6 @@ export const AddMenuCard = (): JSX.Element => {
       ...IDEOGRAM_DATA,
     });
     closeModal();
-  };
-
-  const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
-    SetIdeogramData(emojiData);
-    closeIdeogramModal();
-    SetNewMenu({
-      product: {
-        ...NewMenu.product,
-        ideogram: emojiData.emoji,
-      },
-      isSold: NewMenu.isSold,
-    });
   };
 
   return (
@@ -152,10 +153,9 @@ export const AddMenuCard = (): JSX.Element => {
                 <input
                   type="text"
                   value={NewMenu.product.name}
-                  onChange={onChangeNewMenu}
+                  onChange={(e) => onChangeNewMenu(e, "string", "product.name")}
                   id="menu_name"
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
-                  name="name"
                 />
               </div>
               <div>
@@ -168,8 +168,9 @@ export const AddMenuCard = (): JSX.Element => {
                 <input
                   type="text"
                   value={NewMenu.product.price}
-                  onChange={onChangeNewMenu}
-                  name="price"
+                  onChange={(e) =>
+                    onChangeNewMenu(e, "number", "product.price")
+                  }
                   id="menu_price"
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
                 />
@@ -178,12 +179,11 @@ export const AddMenuCard = (): JSX.Element => {
                 <label className="block mb-[4px] font-bold">状態</label>
                 <select
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer"
-                  value={NewMenu.isSold ? "soldOut" : "onSale"}
-                  onChange={onChangeNewMenu}
-                  name="isSold"
+                  value={NewMenu.isSold ? "TRUE" : "FALSE"}
+                  onChange={(e) => onChangeNewMenu(e, "boolean", "isSold")}
                 >
-                  <option value="onSale">販売中</option>
-                  <option value="soldOut">売り切れ</option>
+                  <option value="FALSE">販売中</option>
+                  <option value="TRUE">売り切れ</option>
                 </select>
               </div>
               <div>
@@ -195,7 +195,9 @@ export const AddMenuCard = (): JSX.Element => {
                 </label>
                 <textarea
                   value={NewMenu.product.promotion}
-                  onChange={onChangeNewMenu}
+                  onChange={(e) =>
+                    onChangeNewMenu(e, "string", "product.promotion")
+                  }
                   id="menu_description"
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
                   name="promotion"
