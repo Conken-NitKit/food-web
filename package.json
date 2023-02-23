@@ -12,6 +12,7 @@
     "classnames": "^2.3.1",
     "emoji-picker-react": "^4.3.0",
     "firebase": "^9.6.10",
+    "lodash": "^4.17.21",
     "next": "^12.3.1",
     "next-auth": "^4.14.0",
     "next-compose-middleware": "^2.0.6",
@@ -20,6 +21,7 @@
     "react-modal": "^3.15.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "@types/node": "17.0.18",
     "@types/react": "17.0.39",
     "@types/react-modal": "^3.13.1",
