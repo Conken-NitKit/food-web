@@ -5,6 +5,7 @@ import EmojiPicker from "emoji-picker-react";
 import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
 import { MenuContent } from "../types/MenuContent";
 import set from "lodash/set";
+import get from "lodash/get";
 
 type AddMenu = {
   product: MenuContent;
@@ -58,7 +59,6 @@ export const AddMenuCard = (): JSX.Element => {
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >,
-    type: "string" | "number" | "boolean",
     path: string
   ) => {
     const value = e.target.value;
@@ -67,7 +67,7 @@ export const AddMenuCard = (): JSX.Element => {
       SetNewMenu((prev) => set({ ...prev }, path, val));
     };
 
-    switch (type) {
+    switch (typeof get(NewMenu, path)) {
       case "string":
         changeNewMenu(value);
         break;
@@ -77,8 +77,10 @@ export const AddMenuCard = (): JSX.Element => {
         }
         break;
       case "boolean":
-        changeNewMenu(value === "TRUE");
+        changeNewMenu(value === "true");
         break;
+      default:
+        throw new TypeError("処理できない型です");
     }
   };
 
@@ -153,7 +155,7 @@ export const AddMenuCard = (): JSX.Element => {
                 <input
                   type="text"
                   value={NewMenu.product.name}
-                  onChange={(e) => onChangeNewMenu(e, "string", "product.name")}
+                  onChange={(e) => onChangeNewMenu(e, "product.name")}
                   id="menu_name"
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
                 />
@@ -168,9 +170,7 @@ export const AddMenuCard = (): JSX.Element => {
                 <input
                   type="text"
                   value={NewMenu.product.price}
-                  onChange={(e) =>
-                    onChangeNewMenu(e, "number", "product.price")
-                  }
+                  onChange={(e) => onChangeNewMenu(e, "product.price")}
                   id="menu_price"
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
                 />
@@ -179,11 +179,11 @@ export const AddMenuCard = (): JSX.Element => {
                 <label className="block mb-[4px] font-bold">状態</label>
                 <select
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer"
-                  value={NewMenu.isSold ? "TRUE" : "FALSE"}
-                  onChange={(e) => onChangeNewMenu(e, "boolean", "isSold")}
+                  value={NewMenu.isSold ? "true" : "false"}
+                  onChange={(e) => onChangeNewMenu(e, "isSold")}
                 >
-                  <option value="FALSE">販売中</option>
-                  <option value="TRUE">売り切れ</option>
+                  <option value="false">販売中</option>
+                  <option value="true">売り切れ</option>
                 </select>
               </div>
               <div>
@@ -195,9 +195,7 @@ export const AddMenuCard = (): JSX.Element => {
                 </label>
                 <textarea
                   value={NewMenu.product.promotion}
-                  onChange={(e) =>
-                    onChangeNewMenu(e, "string", "product.promotion")
-                  }
+                  onChange={(e) => onChangeNewMenu(e, "product.promotion")}
                   id="menu_description"
                   className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
                   name="promotion"
