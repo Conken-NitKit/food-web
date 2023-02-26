@@ -84,16 +84,10 @@ export const AddMenuCard = (): JSX.Element => {
     }
   };
 
-  const handleEmojiClick = (emojiData: EmojiClickData, event: MouseEvent) => {
+  const handleEmojiClick = (emojiData: EmojiClickData) => {
     SetIdeogramData(emojiData);
     closeIdeogramModal();
-    SetNewMenu({
-      product: {
-        ...NewMenu.product,
-        ideogram: emojiData.emoji,
-      },
-      isSold: NewMenu.isSold,
-    });
+    SetNewMenu((prev) => set({ ...prev }, "product.ideogram", emojiData.emoji));
   };
 
   const createMenu = () => {
@@ -247,7 +241,7 @@ export const AddMenuCard = (): JSX.Element => {
         }}
         className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
-        <EmojiPicker onEmojiClick={handleEmojiClick} />
+        <EmojiPicker onEmojiClick={(emoji) => handleEmojiClick(emoji)} />
       </Modal>
     </div>
   );
