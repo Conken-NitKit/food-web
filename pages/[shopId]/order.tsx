@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Image from "next/image";
 import { useState } from "react";
 import { MenuContent } from "../../types/MenuContent";
 
@@ -65,7 +66,15 @@ const Order: NextPage = () => {
 
   return (
     <div>
-      <div className="absolute w-full h-[224px] bg-red-a100" />
+      <div className="absolute w-full h-[224px]">
+        <Image
+          src="/order-page-header.svg"
+          alt="order-page-header"
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      {/* <div className="absolute w-full h-[224px] bg-red-a100" /> */}
       <div className="absolute top-[176px] pt-[32px] pr-[15px] pl-[16px] w-full h-full bg-white-a100 rounded-t-[16px]">
         <p className="mb-[16px] text-brown-a100 text-[20px] font-bold">
           コンピュータ研究部
