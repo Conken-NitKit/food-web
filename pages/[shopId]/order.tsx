@@ -74,8 +74,7 @@ const Order: NextPage = () => {
           objectFit="cover"
         />
       </div>
-      {/* <div className="absolute w-full h-[224px] bg-red-a100" /> */}
-      <div className="absolute top-[176px] pt-[32px] pr-[15px] pl-[16px] w-full h-full bg-white-a100 rounded-t-[16px]">
+      <div className="absolute top-[176px] mb-[50px] pt-[32px] pr-[15px] pl-[16px] w-full h-full bg-white-a100 rounded-t-[16px]">
         <p className="mb-[16px] text-brown-a100 text-[20px] font-bold">
           コンピュータ研究部
         </p>
@@ -114,7 +113,6 @@ const Order: NextPage = () => {
             );
           })}
         </ul>
-        <div className="w-full h-[50px] bg-white-a100" />
       </div>
       <button
         type="button"
