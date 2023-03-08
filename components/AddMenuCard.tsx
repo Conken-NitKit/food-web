@@ -98,9 +98,7 @@ export const AddMenuCard = (): JSX.Element => {
               ...NewMenu,
             }
     */
-    SetNewMenu({
-      ...NEW_MENU,
-    });
+    SetNewMenu(NEW_MENU);
     SetIdeogramData({
       ...IDEOGRAM_DATA,
     });
