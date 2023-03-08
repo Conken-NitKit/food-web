@@ -7,7 +7,7 @@ import { MenuContent } from "../types/MenuContent";
 import set from "lodash/set";
 import get from "lodash/get";
 
-type AddMenu = {
+type AdditionalMenu = {
   product: MenuContent;
   isSold: boolean;
 };
@@ -29,7 +29,7 @@ export const AddMenuCard = (): JSX.Element => {
   const [IdeogramData, SetIdeogramData] =
     useState<EmojiClickData>(IDEOGRAM_DATA);
 
-  const NEW_MENU: AddMenu = {
+  const NEW_MENU: AdditionalMenu = {
     product: {
       ideogram: "🍔",
       name: "",
@@ -39,7 +39,7 @@ export const AddMenuCard = (): JSX.Element => {
     isSold: false,
   } as const;
 
-  const [NewMenu, SetNewMenu] = useState<AddMenu>(NEW_MENU);
+  const [NewMenu, SetNewMenu] = useState<AdditionalMenu>(NEW_MENU);
 
   const openModal = () => {
     setModalIsOpen(true);
