@@ -149,7 +149,7 @@ export const AddMenuCard = (): JSX.Element => {
                   value={NewMenu.product.name}
                   onChange={(e) => onChangeNewMenu(e, "product.name")}
                   id="menu_name"
-                  className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
+                  className="border border-solid border-lightgray-a100 rounded box-border pl-[8px] w-[284px] h-[31px]"
                 />
               </div>
               <div>
@@ -164,13 +164,13 @@ export const AddMenuCard = (): JSX.Element => {
                   value={NewMenu.product.price}
                   onChange={(e) => onChangeNewMenu(e, "product.price")}
                   id="menu_price"
-                  className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px]"
+                  className="border border-solid border-lightgray-a100 rounded box-border pl-[8px] w-[284px] h-[31px]"
                 />
               </div>
               <div>
                 <label className="block mb-[4px] font-bold">状態</label>
                 <select
-                  className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[31px] cursor-pointer"
+                  className="border border-solid border-lightgray-a100 rounded box-border pl-[4px] w-[284px] h-[31px] cursor-pointer"
                   value={NewMenu.isSold ? "true" : "false"}
                   onChange={(e) => onChangeNewMenu(e, "isSold")}
                 >
@@ -189,7 +189,7 @@ export const AddMenuCard = (): JSX.Element => {
                   value={NewMenu.product.promotion}
                   onChange={(e) => onChangeNewMenu(e, "product.promotion")}
                   id="menu_description"
-                  className="border border-solid border-lightgray-a100 rounded box-border w-[284px] h-[215px]"
+                  className="border border-solid border-lightgray-a100 rounded box-border p-[8px] w-[284px] h-[215px]"
                   name="promotion"
                 />
               </div>
