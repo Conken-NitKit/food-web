@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Modal from "react-modal";
 import EmojiPicker from "emoji-picker-react";
-import { EmojiClickData, SkinTones, EmojiStyle } from "emoji-picker-react";
+import { EmojiClickData } from "emoji-picker-react";
 import { MenuContent } from "../types/MenuContent";
 import set from "lodash/set";
 import get from "lodash/get";
@@ -13,21 +13,10 @@ type AdditionalMenu = {
 };
 
 export const AddMenuCard = (): JSX.Element => {
-  const IDEOGRAM_DATA: EmojiClickData = {
-    activeSkinTone: SkinTones.NEUTRAL,
-    unified: "",
-    unifiedWithoutSkinTone: "",
-    emoji: "🍔",
-    names: [""],
-    getImageUrl: (emojiStyle: EmojiStyle) => "",
-  };
-
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const [ideogramModalIsOpen, setIdeogramModalIsOpen] =
     useState<boolean>(false);
-  const [IdeogramData, SetIdeogramData] =
-    useState<EmojiClickData>(IDEOGRAM_DATA);
 
   const NEW_MENU: AdditionalMenu = {
     product: {
@@ -85,7 +74,6 @@ export const AddMenuCard = (): JSX.Element => {
   };
 
   const handleEmojiClick = (emojiData: EmojiClickData) => {
-    SetIdeogramData(emojiData);
     closeIdeogramModal();
     SetNewMenu((prev) => set({ ...prev }, "product.ideogram", emojiData.emoji));
   };
@@ -99,9 +87,6 @@ export const AddMenuCard = (): JSX.Element => {
             }
     */
     SetNewMenu(NEW_MENU);
-    SetIdeogramData({
-      ...IDEOGRAM_DATA,
-    });
     closeModal();
   };
 
