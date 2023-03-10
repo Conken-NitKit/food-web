@@ -175,7 +175,6 @@ export const AddMenuCard = (): JSX.Element => {
                   onChange={(e) => onChangeNewMenu(e, "product.promotion")}
                   id="menu_description"
                   className="border border-solid border-lightgray-a100 rounded box-border p-[8px] w-[284px] h-[215px]"
-                  name="promotion"
                 />
               </div>
             </div>
