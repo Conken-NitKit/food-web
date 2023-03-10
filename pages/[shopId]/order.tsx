@@ -85,7 +85,10 @@ const Order: NextPage = () => {
         <ul>
           {Object.values(OrderContents).map((content) => {
             return (
-              <li className="relative mb-[16px] pt-[18px] pb-[15px] pr-[14px] pl-[11px] w-full h-[94px] bg-navajowhite-a100 rounded-[13px]">
+              <li
+                key={content.product.name}
+                className="relative mb-[16px] pt-[18px] pb-[15px] pr-[14px] pl-[11px] w-full h-[94px] bg-navajowhite-a100 rounded-[13px]"
+              >
                 <div className="grid grid-cols-5 grid-rows-1">
                   <div className="flex items-center text-center mt-[5px] w-[64px] h-[48px] font-menu-card font-bold text-[48px]">
                     {content.product.ideogram}
