@@ -66,7 +66,7 @@ const Order: NextPage = () => {
 
   return (
     <div>
-      <div className="absolute w-full h-[224px]">
+      <div className="fixed w-full h-[224px] z-[-1]">
         <Image
           src="/order-page-header.svg"
           alt="order-page-header"
