@@ -75,9 +75,9 @@ const Order: NextPage = () => {
         />
       </div>
       <div className="absolute top-[176px] pt-[32px] pr-[15px] pl-[16px] w-full h-full bg-white-a100 rounded-t-[16px]">
-        <p className="mb-[16px] text-brown-a100 text-[20px] font-bold">
+        <h1 className="mb-[16px] text-brown-a100 text-[20px] font-bold">
           コンピュータ研究部
-        </p>
+        </h1>
         <div className="mb-[27px] text-gray-a100 text-[12px]">
           <p>プログラミングとかする部活です。</p>
           <p>平日の放課後は毎日活動しています。</p>
