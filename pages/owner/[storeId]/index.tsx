@@ -91,9 +91,9 @@ const Home: NextPage = () => {
         <div className="mx-auto w-[260px] md:w-[312px] lg:w-[415px] xl:w-[519px] 2xl:w-[623px]">
           <div className="mt-[20px] md:mt-[24px] lg:mt-[32px] xl:mt-[40px] 2xl:mt-[48px] w-[87%] h-[94px] md:h-[112px] lg:h-[150px] xl:h-[187px] 2xl:h-[225px] text-primary-regular font-bold font-regular">
             <div className="flex items-center h-[14.1%]">
-              <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
+              <h3 className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
                 今月
-              </div>
+              </h3>
               <p className="ml-[2.12%] text-[10px] xl:text-[13px] 2xl:text-[15px] font-normal">
                 {getDate}
               </p>
@@ -128,9 +128,9 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="mt-[14px] md:mt-[17px] lg:mt-[23px] xl:mt-[29px] 2xl:mt-[35px]  h-[121px] md:h-[145px] lg:h-[193px] xl:h-[242px] 2xl:h-[290px] text-primary-regular font-bold">
-            <div className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
+            <h3 className="text-[11px] md:text-[13px] lg:text-[18px] xl:text-[22px] 2xl:text-[27px]">
               使い方
-            </div>
+            </h3>
             <ul className="overflow-scroll flex flex-wrap mt-[4.93%] gap-x-[calc(100%-246px)] md:gap-x-[calc(100%-296px)] lg:gap-x-[calc(100%-394px)] xl:gap-x-[calc(100%-492px)] 2xl:gap-x-[calc(100%-592px)] gap-y-[9px] md:gap-y-[10px] lg:gap-y-[14px] xl:gap-y-[17px] 2xl:gap-y-[21px] h-[85%]">
               {GUIDE_MOCKS.map((guide) => (
                 <li key={guide.guideId}>
