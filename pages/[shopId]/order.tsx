@@ -74,7 +74,7 @@ const Order: NextPage = () => {
           objectFit="cover"
         />
       </div>
-      <div className="absolute top-[176px] pt-[32px] pr-[15px] pl-[16px] w-full h-full bg-white-a100 rounded-t-[16px]">
+      <div className="absolute top-[176px] pt-[32px] pb-[49px] pr-[15px] pl-[16px] w-full bg-white-a100 rounded-t-[16px]">
         <h1 className="mb-[16px] text-brown-a100 text-[20px] font-bold">
           コンピュータ研究部
         </h1>
