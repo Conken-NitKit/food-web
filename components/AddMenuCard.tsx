@@ -9,43 +9,41 @@ export const AddMenuCard = (): JSX.Element => {
   const modal = useModalControll(false);
   const ideogramModal = useModalControll(false);
 
-  const [newIdeogram, setNewIdeogram] = useState<string>("🍔");
-  const [newName, setNewName] = useState<string>("");
-  const [newPromotion, setNewPromotion] = useState<string>("");
-  const [newPrice, setNewPrice] = useState<number>(0);
-  const [newIsSold, setNewIsSold] = useState<boolean>(false);
+  const [ideogram, setIdeogram] = useState<string>("🍔");
+  const [name, setName] = useState<string>("");
+  const [promotion, setPromotion] = useState<string>("");
+  const [price, setPrice] = useState<number>(0);
+  const [isSold, setIsSold] = useState<boolean>(false);
 
   const handleIdeogramClick = (emojiData: EmojiClickData) => {
     ideogramModal.close();
-    setNewIdeogram(emojiData.emoji);
+    setIdeogram(emojiData.emoji);
   };
 
-  const handleNewNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewName(e.target.value);
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   };
 
-  const handleNewPromotionChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setNewPromotion(e.target.value);
+  const handlePromotionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setPromotion(e.target.value);
   };
 
-  const handleNewPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!Number.isNaN(Number(e.target.value))) {
-      setNewPrice(Number(e.target.value));
+      setPrice(Number(e.target.value));
     }
   };
 
-  const handleNewIsSoldChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setNewIsSold(e.target.value === "true");
+  const handleIsSoldChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setIsSold(e.target.value === "true");
   };
 
-  const newMenuReset = () => {
-    setNewIdeogram("🍔");
-    setNewName("");
-    setNewPromotion("");
-    setNewPrice(0);
-    setNewIsSold(false);
+  const menuReset = () => {
+    setIdeogram("🍔");
+    setName("");
+    setPromotion("");
+    setPrice(0);
+    setIsSold(false);
   };
 
   const createMenu = (e: React.FormEvent<HTMLFormElement>) => {
@@ -55,15 +53,15 @@ export const AddMenuCard = (): JSX.Element => {
             IDは用意する必要がある
             [ID]: {
               product: {
-                ideogram: newIdeogram,
-                name: newName,
-                promotion: newPromotion,
-                price: newPrice,
+                ideogram: ideogram,
+                name: name,
+                promotion: promotion,
+                price: price,
               },
-              isSold: newIsSold,
+              isSold: isSold,
             }Number
     */
-    newMenuReset();
+    menuReset();
     modal.close();
   };
 
@@ -108,8 +106,8 @@ export const AddMenuCard = (): JSX.Element => {
                 </label>
                 <input
                   type="text"
-                  value={newName}
-                  onChange={handleNewNameChange}
+                  value={name}
+                  onChange={handleNameChange}
                   id="menu_name"
                   className="border border-solid border-lightgray-a100 rounded box-border pl-[8px] w-[284px] h-[31px]"
                 />
@@ -123,8 +121,8 @@ export const AddMenuCard = (): JSX.Element => {
                 </label>
                 <input
                   type="text"
-                  value={newPrice}
-                  onChange={handleNewPriceChange}
+                  value={price}
+                  onChange={handlePriceChange}
                   id="menu_price"
                   className="border border-solid border-lightgray-a100 rounded box-border pl-[8px] w-[284px] h-[31px]"
                 />
@@ -133,8 +131,8 @@ export const AddMenuCard = (): JSX.Element => {
                 <label className="block mb-[4px] font-bold">状態</label>
                 <select
                   className="border border-solid border-lightgray-a100 rounded box-border pl-[4px] w-[284px] h-[31px] cursor-pointer"
-                  value={newIsSold ? "true" : "false"}
-                  onChange={handleNewIsSoldChange}
+                  value={isSold ? "true" : "false"}
+                  onChange={handleIsSoldChange}
                 >
                   <option value="false">販売中</option>
                   <option value="true">売り切れ</option>
@@ -148,8 +146,8 @@ export const AddMenuCard = (): JSX.Element => {
                   説明文
                 </label>
                 <textarea
-                  value={newPromotion}
-                  onChange={handleNewPromotionChange}
+                  value={promotion}
+                  onChange={handlePromotionChange}
                   id="menu_description"
                   className="border border-solid border-lightgray-a100 rounded box-border p-[8px] w-[284px] h-[215px]"
                 />
@@ -158,7 +156,7 @@ export const AddMenuCard = (): JSX.Element => {
             <div>
               <p className="mb-[5px] font-bold text-[12px]">商品イメージ</p>
               <div className="flex mb-[8px] border border-solid border-lightgray-a100 rounded box-border w-[130px] h-[130px] items-center justify-center text-[46px] font-bold bg-accent-secondary-light-regular">
-                {newIdeogram}
+                {ideogram}
               </div>
               <button
                 type="button"
