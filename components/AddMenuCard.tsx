@@ -48,7 +48,8 @@ export const AddMenuCard = (): JSX.Element => {
     setNewIsSold(false);
   };
 
-  const createMenu = () => {
+  const createMenu = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     /*
       TODO: この関数内で本番環境(データベース上)にデータを送信する必要がある
             IDは用意する必要がある
