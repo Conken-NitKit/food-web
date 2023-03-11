@@ -92,7 +92,7 @@ const Order: NextPage = () => {
                 <div className="flex items-center text-center mt-[8px] mr-[6px] w-[64px] h-[48px] font-menu-card font-bold text-[48px]">
                   {content.product.ideogram}
                 </div>
-                <div className="mt-[3px] w-full h-full font-['Mulish'] text-[#121212]">
+                <div className="flex-auto mt-[3px] font-['Mulish'] text-[#121212]">
                   <div className="mb-[9px] h-[16px] font-bold">
                     {content.product.name}
                   </div>
