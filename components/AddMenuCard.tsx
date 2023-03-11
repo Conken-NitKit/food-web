@@ -208,7 +208,7 @@ export const AddMenuCard = (): JSX.Element => {
         }}
         className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
-        <EmojiPicker onEmojiClick={(emoji) => handleEmojiClick(emoji)} />
+        <EmojiPicker onEmojiClick={handleEmojiClick} />
       </Modal>
     </div>
   );
