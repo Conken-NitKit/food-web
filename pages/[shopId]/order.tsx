@@ -68,10 +68,11 @@ const Order: NextPage = () => {
     <div>
       <div className="fixed w-full h-[224px] z-[-1]">
         <Image
-          src="/order-page-header.svg"
+          src="/order-page-header.png"
           alt="order-page-header"
           layout="fill"
           objectFit="cover"
+          loading="eager"
         />
       </div>
       <div className="absolute top-[176px] pt-[32px] pb-[49px] pr-[15px] pl-[16px] w-full bg-white-a100 rounded-t-[16px]">
