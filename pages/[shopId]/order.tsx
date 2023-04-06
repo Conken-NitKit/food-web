@@ -83,10 +83,10 @@ const Order: NextPage = () => {
           <p>平日の放課後は毎日活動しています。</p>
         </div>
         <ul>
-          {Object.values(OrderContents).map((content) => {
+          {Object.entries(OrderContents).map(([key, content]) => {
             return (
               <li
-                key={content.product.name}
+                key={key}
                 className="flex relative mb-[16px] pt-[15px] pb-[15px] pr-[14px] pl-[11px] w-full h-[94px] bg-navajowhite-a100 rounded-[13px]"
               >
                 <div className="flex items-center text-center mt-[8px] mr-[6px] w-[64px] h-[48px] font-menu-card font-bold text-[48px]">
