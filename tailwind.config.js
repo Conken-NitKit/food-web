@@ -168,6 +168,7 @@ module.exports = {
     extend: {
       backgroundColor: (theme) => ({
         "primary-regular": theme("colors.white.a100"),
+        "primary-dark-regular": theme("colors.brown.a100"),
         "secondary-regular": theme("colors.whitesmoke.a100"),
         "secondary-dark-regular": theme("colors.lightgray.a100"),
         "thirdly-regular": theme("colors.gray.a100"),
@@ -195,6 +196,7 @@ module.exports = {
       }),
       borderColor: (theme) => ({
         "primary-regular": theme("colors.gray.a100"),
+        "tertiary-regular": theme("colors.gray.a10"),
         "reject-regular": theme("colors.pink.a100"),
         "complete-regular": theme("colors.green.a100"),
         "secondary-regular": theme("colors.lightgray.a100"),
@@ -202,6 +204,7 @@ module.exports = {
       fontFamily: {
         "secondary-regular": "lato, sans-serif",
         "menu-card": "lato",
+        regular: "roboto",
       },
       boxShadow: {
         small: "0px 1px 3px 0px rgba(0, 0, 0, 0.25)",
@@ -216,5 +219,5 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

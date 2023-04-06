@@ -1,0 +1,17 @@
+interface Props {
+  ideogram: string;
+  description: string;
+}
+
+export const GuideCaption = ({ ideogram, description }: Props): JSX.Element => {
+  return (
+    <div className="flex w-[123px] md:w-[148px] lg:w-[197px] xl:w-[246px] 2xl:w-[296px] h-[26px] md:h-[31px] lg:h-[41px] xl:h-[51px] 2xl:h-[61px]">
+      <div className="flex items-center justify-center rounded-[6px] md:rounded-[8px] lg:rounded-[10px] xl:rounded-[13px] 2xl:rounded-[15px] aspect-square h-full bg-secondary-regular text-[10px] md:text-[12px] lg:text-[15px] xl:text-[19px] 2xl:text-[23px]">
+        {ideogram}
+      </div>
+      <p className="ml-[6.5%] h-[50%] lg:h-[80%] text-[10px] xl:text-[13px] 2xl:text-[15px] line-clamp-1 lg:line-clamp-2">
+        {description}
+      </p>
+    </div>
+  );
+};
