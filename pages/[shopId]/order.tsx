@@ -6,6 +6,7 @@ import { OrderContentsList } from "../../components/OrderContentsList";
 const Order: NextPage = () => {
   const [orderQuantity, setOrderQuantity] = useState<number>(0);
 
+  // TODO: ここに商品が選択された時の処理を追加する
   const addCart = useCallback(() => {
     setOrderQuantity((prev) => prev + 1);
   }, []);
